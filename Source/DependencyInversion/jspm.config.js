@@ -26,11 +26,6 @@ SystemJS.config({
                     "loader": "plugin-babel"
                 }
             }
-        },
-        "github:dolittle/dolittle.javascript.core/Source/Execution@master": {
-            "map": {
-                "dolittle-javascript-reflection": "github:dolittle/dolittle.javascript.core/Source/Execution@master"
-            }
         }
     },
     map: {
