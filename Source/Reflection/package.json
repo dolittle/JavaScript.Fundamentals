@@ -1,7 +1,7 @@
 {
-  "name": "dolittle-execution",
-  "description": "",
-  "version": "1.0.0",
+  "name": "dolittle-reflection",
+  "description": "Reflection for JavaScript",
+  "version": "1.0.5",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/karma/bin/karma start"
@@ -17,12 +17,11 @@
   },
   "homepage": "http://www.dolittle.io",
   "jspm": {
-    "jspmNodeConversion": false,
-    "name": "execution",
+    "registry": "npm",
+    "jspmPackage": true,
+    "format": "amd",
+    "name": "dolittle-reflection",
     "main": "index.js",
-    "dependencies": {
-      "dolittle-reflection": "npm:dolittle-reflection@^1.0.5"
-    },
     "devDependencies": {
       "plugin-babel": "npm:systemjs-plugin-babel@^0.0.21"
     }

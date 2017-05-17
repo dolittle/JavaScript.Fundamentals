@@ -40,6 +40,14 @@ SystemJS.config({
         "npm:*.json",
         "github:*/*.json"
     ],
-    map: {},
-    packages: {}
+    map: {
+        "dolittle-execution": "npm:dolittle-execution@1.0.0"
+    },
+    packages: {
+        "npm:dolittle-execution@1.0.0": {
+            "map": {
+                "dolittle-reflection": "npm:dolittle-reflection@1.0.3"
+            }
+        }
+    }
 });

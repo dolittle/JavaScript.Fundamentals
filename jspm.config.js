@@ -2,26 +2,21 @@ SystemJS.config({
     paths: {
         "npm:": "jspm_packages/npm/",
         "github:": "jspm_packages/github/",
-        "dolittle-javascript-dependencyinversion/": "Source/DependencyInversion/",
     },
     browserConfig: {
-        "baseURL": "/"
+        "paths": {
+            "npm:": "/jspm_packages/npm/",
+            "github:": "/jspm_packages/github/"
+        }
+    },
+    nodeConfig: {
+        "paths": {
+            "npm:": "jspm_packages/npm/",
+            "github:": "jspm_packages/github/"
+        }
     },
     transpiler: "plugin-babel",
     packages: {
-        "cratis-client-javascript-dependencyinversion": {
-            "main": "Distribution/index.js",
-            "meta": {
-                "*.js": {
-                    "loader": "plugin-babel"
-                }
-            }
-        },
-        "github:Cratis/JavaScript.Core@master": {
-            "map": {
-                "cratis-javascript-reflection": "github:Cratis/JavaScript.Reflection@master"
-            }
-        }
     },
     map: {
         "Distribution": "local:Distribution@master",
@@ -41,6 +36,8 @@ SystemJS.config({
         "github:*/*.json"
     ],
     map: {
+        "dolittle-reflection": "./Source/Reflection/index.js",
+        "dolittle-execution": "./Source/Execution/index.js",
         "assert": "npm:jspm-nodelibs-assert@0.2.0",
         "buffer": "npm:jspm-nodelibs-buffer@0.2.0",
         "constants": "npm:jspm-nodelibs-constants@0.2.1",

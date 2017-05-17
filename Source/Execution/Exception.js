@@ -2,9 +2,10 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {TypeInfo} from "./Reflection/TypeInfo";
+import {TypeInfo} from "dolittle-reflection";
 
 const _message = new WeakMap();
+
 
 /**
  * Defines a base for structured exceptions 
