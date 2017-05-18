@@ -15,7 +15,6 @@ export class BindingTargetIsNotBasedOnFunction extends Exception
      * Initializes a new instance of {BindingTargetIsNotBasedOnFunction}
      */
     constructor(type) {
-        
         super(`Binding target ´${type}´ is not a function at its core`);
         this.type = type;
     }
