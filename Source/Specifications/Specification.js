@@ -16,7 +16,7 @@ export class Specification {
     /**
      * Initializes new instance of {Specification}
      */
-    constructor(evaulator) {
+    constructor(evaluator) {
         _evaluator.set(this, evaluator);
     }
 
@@ -71,7 +71,6 @@ export class Specification {
  * @param {evaluator} The function that gets called to evaluate
  */
 Specification.when = (evaluator) => {
-    let specification = new Specification();
-    _evaluator.set(specification, evaluator);
+    let specification = new Specification(evaluator);
     return specification;
 };

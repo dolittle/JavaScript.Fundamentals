@@ -18,7 +18,5 @@ describe("when left hand is not satisfied and right hand is", () => {
     
     rule.evaluate(instance);
 
-    let satisfied = rule.isSatisfied();
-
-    it("should not be considered satisfied", () => satisfied.should.be.false);
+    it("should not be considered satisfied", () => rule.isSatisfied.should.be.false);
 });

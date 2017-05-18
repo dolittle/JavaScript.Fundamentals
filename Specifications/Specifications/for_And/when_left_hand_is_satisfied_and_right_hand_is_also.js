@@ -11,14 +11,11 @@ describe("when left hand is satisfied and right hand is also", () => {
     let leftHandSide = new Specification(leftHandSideEvaluator);
 
     let rightHandSideEvaluator = sinon.stub().returns(true);
-    let rightHandSide = Bifrost.specifications.Specification.create();
-    rightHandSide.evaluator = rightHandSideEvaluator;
+    let rightHandSide = new Specification(rightHandSideEvaluator);
 
     let instance = { something: 42 };
     let rule = new And(leftHandSide, rightHandSide);
     rule.evaluate(instance);
     
-    let satisfied = rule.isSatisfied();
-
-    it("should be considered satisfied", () => satisfied.should.be.true);
+    it("should be considered satisfied", () => rule.isSatisfied.should.be.true);
 });

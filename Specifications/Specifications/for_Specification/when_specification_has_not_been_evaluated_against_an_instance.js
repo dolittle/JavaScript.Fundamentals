@@ -5,10 +5,9 @@
 import {Specification} from "/Source/Specifications/Specification";
 
 describe("when specification has not been evaluated against an instance", () => {
-
-    let evaluator = sinon.stub();
+    var evaluator = sinon.stub();
     let rule = new Specification(evaluator);
 
-    it("should not call the evaluator", () => evaluator.called.should.be.true);
+    it("should not call the evaluator", () => evaluator.called.should.be.false);
     it("should not be satisfied", () => rule.isSatisfied.should.be.false);
 });
