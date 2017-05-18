@@ -2,7 +2,7 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Exception} from "/Source/Execution/Exception";
+import {Exception} from "/Source/Exceptions/Exception";
 
 const message = "My Exception";
 
@@ -12,8 +12,7 @@ class MyException extends Exception
         super(message);
     }
 }
- 
- 
+
 describe("when throwing exception without message parameters", () => {
     let result = null;
 

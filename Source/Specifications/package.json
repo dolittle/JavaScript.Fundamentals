@@ -1,0 +1,26 @@
+{
+  "name": "dolittle-specifications",
+  "description": "Implementations of the Specification pattern",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules/karma/bin/karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolittle/javascript.core.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dolittle/javascript.core/issues"
+  },
+  "homepage": "http://www.dolittle.io",
+  "jspm": {
+    "name": "specifications",
+    "main": "specifications.js",
+    "devDependencies": {
+      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.21"
+    }
+  }
+}

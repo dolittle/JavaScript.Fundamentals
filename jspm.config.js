@@ -18,8 +18,6 @@ SystemJS.config({
         "child_process": "npm:jspm-nodelibs-child_process@0.2.0",
         "core-js": "npm:core-js@1.2.7",
         "plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
-        "dolittle-reflection": "./Source/Reflection/index.js",
-        "dolittle-execution": "./Source/Execution/index.js"
     }
 });
 
@@ -30,6 +28,10 @@ SystemJS.config({
         "github:*/*.json"
     ],
     map: {
+        "dolittle-reflection": "./Source/Reflection/index.js",
+        "dolittle-exceptions": "./Source/Exceptions/index.js",
+        "dolittle-specifictions": "./Source/Specifications/index.js",
+        "dolittle-dependencyinversion": "./Source/DependencyInversion/index.js",
         "assert": "npm:jspm-nodelibs-assert@0.2.0",
         "buffer": "npm:jspm-nodelibs-buffer@0.2.0",
         "constants": "npm:jspm-nodelibs-constants@0.2.1",

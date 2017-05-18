@@ -1,5 +1,5 @@
 {
-  "name": "dolittle-execution",
+  "name": "dolittle-exceptions",
   "description": "",
   "version": "1.0.0",
   "main": "index.js",
@@ -18,7 +18,7 @@
   "homepage": "http://www.dolittle.io",
   "jspm": {
     "jspmNodeConversion": false,
-    "name": "execution",
+    "name": "exceptions",
     "main": "index.js",
     "dependencies": {
       "dolittle-reflection": "npm:dolittle-reflection@^1.0.5"

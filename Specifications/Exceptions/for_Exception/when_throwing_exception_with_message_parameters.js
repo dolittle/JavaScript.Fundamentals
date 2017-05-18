@@ -2,17 +2,22 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Exception} from "/Source/Execution/Exception";
+import {Exception} from "/Source/Exceptions/Exception";
 
 class MyException extends Exception
 {
+    constructor(first, second) {
+        super(`${first} - ${second}`);
+        this.first = first;
+        this.second = second;
+    }
 }
 
-describe("when throwing exception without message parameters", () => {
+describe("when throwing exception with message parameters", () => {
     let result = null;
 
-    try { MyException.throw(); } catch(e) { result = e }
+    try { MyException.throw("something","wrong"); } catch(e) { result = e }
 
     it("should be of the specific exception type", () => result.should.be.instanceof(MyException));
-    it("should have an empty message", () => result.message.should.equal(""));
+    it("should have the expected message", () => result.message.should.equal("something - wrong"));
 });

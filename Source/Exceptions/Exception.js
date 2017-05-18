@@ -1,11 +1,10 @@
 /*---------------------------------------------------------------------------------------------
- *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
- *  Licensed under the MIT License. See LICENSE in the project root for license information.
+ *  Copyright (c) Einar Ingebrigtsen. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import {TypeInfo} from "dolittle-reflection";
 
 const _message = new WeakMap();
-
 
 /**
  * Defines a base for structured exceptions 
@@ -31,7 +30,10 @@ export class Exception
     /**
      * Throw an instance of the exception
      */
-    static throw(messageParameters) {
-        throw new this();
+    static throw() {
+        let bindArguments = [null];
+        for( var argumentIndex=0; argumentIndex<arguments.length; argumentIndex++) bindArguments.push(arguments[argumentIndex]);
+        var boundException = this.bind.apply(this, bindArguments);
+        throw new boundException();
     }
 }

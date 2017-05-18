@@ -1,18 +1,10 @@
 SystemJS.config({
   paths: {
-    "dolittle-javascript-execution/": "src/"
+    "npm:": "jspm_packages/npm/",
+    "dolittle-specifications/": "./"
   },
   browserConfig: {
-    "paths": {
-      "npm:": "/jspm_packages/npm/",
-      "github:": "/jspm_packages/github/"
-    }
-  },
-  nodeConfig: {
-    "paths": {
-      "npm:": "jspm_packages/npm/",
-      "github:": "jspm_packages/github/"
-    }
+    "baseURL": "/"
   },
   devConfig: {
     "map": {
@@ -21,7 +13,7 @@ SystemJS.config({
   },
   transpiler: "plugin-babel",
   packages: {
-    "dolittle-execution": {
+    "dolittle-specifications": {
       "main": "index.js",
       "meta": {
         "*.js": {
@@ -37,8 +29,6 @@ SystemJS.config({
     "npm:@*/*.json",
     "npm:*.json"
   ],
-  map: {
-    "dolittle-reflection": "npm:dolittle-reflection@1.0.5"
-  },
+  map: {},
   packages: {}
 });
