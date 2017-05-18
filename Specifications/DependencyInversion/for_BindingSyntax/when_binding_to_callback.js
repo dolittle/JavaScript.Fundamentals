@@ -2,11 +2,12 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {BindingSyntax} from "/Source/DependencyInversion/DependencyInversion/BindingSyntax";
-import {CallbackActivationStrategy} from "/Source/DependencyInversion/DependencyInversion/Strategies/CallbackActivationStrategy";
+import * as Context from "./given/a_bound_service";
+
+import {BindingSyntax} from "/Source/DependencyInversion/BindingSyntax";
+import {CallbackActivationStrategy} from "/Source/DependencyInversion/Strategies/CallbackActivationStrategy";
 import {ScopeSyntax} from "/Source/DependencyInversion/ScopeSyntax";
 import {TransientScope} from "/Source/DependencyInversion/Scopes/TransientScope";
-import * as Context from "./given/a_bound_service";
 import {Binding} from "/Source/DependencyInversion/Binding";
 
 describe("when binding to callback", () => {
@@ -25,6 +26,7 @@ describe("when binding to callback", () => {
             scopeSyntax = context.bindingSyntax.toCallback(() => {});
         })();
     });
+
 
     it("should set the correct constant activation strategy on the syntax", () => (context.bindingSyntax.strategy instanceof CallbackActivationStrategy).should.be.true);
     it("should set the scope syntax on the binding syntax", () => (context.bindingSyntax.scopeSyntax instanceof ScopeSyntax).should.be.true);

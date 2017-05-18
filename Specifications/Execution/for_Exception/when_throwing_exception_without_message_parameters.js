@@ -12,7 +12,8 @@ class MyException extends Exception
         super(message);
     }
 }
-
+ 
+ 
 describe("when throwing exception without message parameters", () => {
     let result = null;
 

@@ -26,6 +26,7 @@
     "chai": "^3.5.0",
     "electron": "^1.6.8",
     "eslint": "^3.19.0",
+    "express-cachebust": "^0.0.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.1",

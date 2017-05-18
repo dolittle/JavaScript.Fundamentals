@@ -2,7 +2,7 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Exception} from "cratis-javascript-core";
+import {Exception} from "dolittle-execution";
 
 /**
  * The exception that gets thrown when there already is a binding for the given service

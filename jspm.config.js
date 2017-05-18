@@ -1,8 +1,4 @@
 SystemJS.config({
-    paths: {
-        "npm:": "jspm_packages/npm/",
-        "github:": "jspm_packages/github/",
-    },
     browserConfig: {
         "paths": {
             "npm:": "/jspm_packages/npm/",
@@ -16,16 +12,14 @@ SystemJS.config({
         }
     },
     transpiler: "plugin-babel",
-    packages: {
-    },
     map: {
         "Distribution": "local:Distribution@master",
         "babel-runtime": "npm:babel-runtime@5.8.38",
         "child_process": "npm:jspm-nodelibs-child_process@0.2.0",
         "core-js": "npm:core-js@1.2.7",
         "plugin-babel": "npm:systemjs-plugin-babel@0.0.12",
-        "cratis-javascript-reflection": "github:Cratis/JavaScript.Reflection@master",
-        "cratis-javascript-core": "github:Cratis/JavaScript.Core@master"
+        "dolittle-reflection": "./Source/Reflection/index.js",
+        "dolittle-execution": "./Source/Execution/index.js"
     }
 });
 
@@ -36,8 +30,6 @@ SystemJS.config({
         "github:*/*.json"
     ],
     map: {
-        "dolittle-reflection": "./Source/Reflection/index.js",
-        "dolittle-execution": "./Source/Execution/index.js",
         "assert": "npm:jspm-nodelibs-assert@0.2.0",
         "buffer": "npm:jspm-nodelibs-buffer@0.2.0",
         "constants": "npm:jspm-nodelibs-constants@0.2.1",
@@ -286,6 +278,12 @@ SystemJS.config({
         "npm:string_decoder@1.0.0": {
             "map": {
                 "buffer-shims": "npm:buffer-shims@1.0.0"
+            }
+        },
+        "npm:upath@0.1.7": {
+            "map": {
+                "underscore.string": "npm:underscore.string@2.3.3",
+                "lodash": "npm:lodash@3.10.1"
             }
         }
     }

@@ -2,7 +2,7 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {NotImplemented} from "cratis-javascript-core";
+import {NotImplemented} from "dolittle-execution";
 
 /**
  * Defines the basics of a scope.

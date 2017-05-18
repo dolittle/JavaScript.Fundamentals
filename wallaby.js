@@ -1,6 +1,7 @@
 // http://ilikekillnerds.com/2016/04/webpack-typescript-aurelia-wallaby-js/
 // https://github.com/wallabyjs/wallaby-jspm-sample/blob/master/wallaby.js
 "use strict";
+var cachebust = require('express-cachebust');
 
 module.exports = function (wallaby) {
     return {
@@ -15,15 +16,17 @@ module.exports = function (wallaby) {
             { pattern: "package.json", instrument: false, load: false },
             { pattern: "Specifications/**/given/*.js", load: false },
             { pattern: "!Source/**/jspm_packages/**/*.js", instrument: false },
-            { pattern: "Source/**/*.js", instrument:true, load: false }
+            { pattern: "Source/**/*.js", load: false }
         ],
         tests: [
-            { pattern: "!Specifications/**/given/*.js", instrument: true, load: false },
-            { pattern: "Specifications/**/*.js", instrument: true, load: false }
+            { pattern: "!Specifications/**/given/*.js", load: false },
+            { pattern: "Specifications/**/*.js", load: false }
         ],
 
         compilers: {
-            "**/*.js": wallaby.compilers.babel()
+            "**/*.js": wallaby.compilers.babel({
+                babelrc: true
+            })
         },
 
         env: {
@@ -31,6 +34,7 @@ module.exports = function (wallaby) {
         },
 
         middleware: (app, express) => {
+            app.use(cachebust("/"));
             app.use("/jspm_packages", express.static(require("path").join(__dirname, "jspm_packages")));
         },
 
@@ -42,13 +46,19 @@ module.exports = function (wallaby) {
 
             System.import("./package.json!./json.js").then(function (pkg) {
 
+                console.log("Package loaded");
+
                 var systemConfig = {
                     transpiler: false,
                     packages: {
-                        format: "cjs",
-                        meta: { "*.js": {} },
                         "/": {
-                            defaultExtension: "js"
+                            defaultExtension: "js",
+                            format: "cjs",
+                            meta: {
+                                "*": {
+                                    
+                                }
+                            }
                         }
                     }
                 };
@@ -56,9 +66,8 @@ module.exports = function (wallaby) {
                 System.config(systemConfig);
 
                 var promises = [];
-                console.log("********* Found : "+wallaby.tests.length+" tests");
                 for (var i = 0, len = wallaby.tests.length; i < len; i++) {
-                    console.log("Pushing : "+wallaby.tests[i]);
+                    console.log("Import : "+wallaby.tests[i]);
                     promises.push(System['import'](wallaby.tests[i]));
                 }
 
