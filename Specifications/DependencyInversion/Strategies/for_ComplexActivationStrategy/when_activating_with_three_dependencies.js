@@ -2,14 +2,13 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {ComplexActivationStrategy} from "/Source/DependencyInversion/Strategies/ComplexActivationStrategy";
+import { ComplexActivationStrategy } from "/Source/DependencyInversion/Strategies/ComplexActivationStrategy";
 
 var _first = null;
 var _second = null;
 var _third = null;
 
-class MyClass
-{
+class MyClass {
     constructor(first, second, third) {
         _first = first;
         _second = second;
@@ -19,9 +18,9 @@ class MyClass
 
 describe("when activating with three dependencies", () => {
     var instances = [
-        {"first": "instance"},
-        {"second": "instance"},
-        {"third": "instance"}
+        { "first": "instance" },
+        { "second": "instance" },
+        { "third": "instance" }
     ];
     let servicesResolved = [];
     let currentInstance = 0;
@@ -36,7 +35,7 @@ describe("when activating with three dependencies", () => {
                     currentInstance++;
                 }
             };
-                
+
             return promise;
         }
     };
@@ -48,7 +47,7 @@ describe("when activating with three dependencies", () => {
     let strategy = new ComplexActivationStrategy(container);
     let instance = null;
 
-    beforeEach(() => {
+    beforeEach((done) => {
         _first = null;
         _second = null;
         _third = null;
@@ -57,7 +56,10 @@ describe("when activating with three dependencies", () => {
         instance = null;
 
         (becauseOf => {
-            strategy.activate(activationContext, binding).then((i) => instance = i);
+            strategy.activate(activationContext, binding).then((i) => {
+                instance = i;
+                done();
+            });
         })();
     });
 
