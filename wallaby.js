@@ -82,7 +82,7 @@ module.exports = function (wallaby) {
             });
         },
 
-        testFramework: "mocha",
+        testFramework: "jasmine",
 
         debug: true
     };
