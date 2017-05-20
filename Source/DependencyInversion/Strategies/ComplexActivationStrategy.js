@@ -23,8 +23,8 @@ export class ComplexActivationStrategy extends ActivationStrategy
         let dependencyInstances = [];
         let container = this.container;
         let dependencyCount = 0;
-        
-        var promise = new Promise((resolve, reject) => {
+
+        let promise = new Promise((resolve, reject) => {
             dependencies.forEach((dependency, dependencyIndex) => {
                 container.get(dependency).then(instance => {
                     dependencyInstances[dependencyIndex] = instance;
