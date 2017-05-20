@@ -15,39 +15,6 @@ function parseUri(sourceUri){
 
     return uri;
 }	
-    
-/*
-function given(moduleName, context, specification) {
-    var base = "base/";
-    var position = moduleName.indexOf(base);
-    position += base.length;
-    
-    var uri = parseUri(moduleName);
-    var root = uri.directoryPath;
-    context = context.split(" ").join("_");
-    var fullContext = root+"given/"+context;
-    
-    var context = null;
-    
-    System.import(fullContext).then(module => {
-        var context = module.default;
-        
-        console.log("Context loaded");
-    });
-    
-    return function() {
-        var suite = this;
-        
-        console.log("Calling spec");
-        
-        var proto = context;
-        proto.prototype = suite;
-        var instance = new proto();
-        debugger;
-        specification.call(instance);    
-    };
-}
-*/
 
 function given(context, specification) {
     return function() {
