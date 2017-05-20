@@ -9,7 +9,7 @@ module.exports = function (wallaby) {
             { pattern: "!**/jspm_packages", instrument: false },
             { pattern: "jspm_packages/system.js", instrument: false },
             { pattern: "node_modules/chai/chai.js", instrument: false },
-            { pattern: "node_modules/chai-as-promised/chai-as-promised.js", instrument: false },
+            { pattern: "node_modules/chai-as-promised/lib/chai-as-promised.js", instrument: false },
             { pattern: "node_modules/sinon/pkg/sinon.js", instrument: false },
             { pattern: "jspm.config.js", instrument: false },
             { pattern: "json.js", instrument: false, load: false },
