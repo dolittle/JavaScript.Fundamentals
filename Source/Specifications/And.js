@@ -24,7 +24,27 @@ export class And extends Specification {
     }
 
     /**
+     * Get the left of the expression
+     * 
+     * @return {Specification} instance for the left rule
+     */
+    get left() {
+        return _leftHandSide.get(this);
+    }
+
+    /**
+     * Get the right of the expression
+     * 
+     * @return {Specification} instance for the right rule
+     */
+    get right() {
+        return _rightHandSide.get(this);
+    }
+
+    /**
      * Get wether or not the {And} operator is satisfied
+     * 
+     * @return Returns true if satisfied, false if not
      */
     get isSatisfied() {
         return  _leftHandSide.get(this).isSatisfied && 

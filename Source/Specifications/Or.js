@@ -14,6 +14,7 @@ export class Or extends Specification {
 
     /**
      * Initializes a new instance of {And}
+     * 
      * @param {leftHandSide} The left hand side of the expression
      * @param {rightHandSide} The right hand side of the expression
      */
@@ -21,6 +22,24 @@ export class Or extends Specification {
         super(null);
         _leftHandSide.set(this, leftHandSide);
         _rightHandSide.set(this, rightHandSide);
+    }
+
+    /**
+     * Get the left of the expression
+     * 
+     * @return {Specification} instance for the left rule
+     */
+    get left() {
+        return _leftHandSide.get(this);
+    }
+
+    /**
+     * Get the right of the expression
+     * 
+     * @return {Specification} instance for the right rule
+     */
+    get right() {
+        return _rightHandSide.get(this);
     }
 
     /**
