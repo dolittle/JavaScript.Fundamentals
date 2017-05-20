@@ -7,6 +7,8 @@ const _currentInstance = new WeakMap();
 
 /**
  * Represents a rule based on the specification pattern
+ * 
+ * @property {boolean} isSatisfied - Returns true if satisfied, false if not* 
  */
 export class Specification {
 
@@ -20,7 +22,7 @@ export class Specification {
     /**
      * Gets the evaluator for the {Specification}
      * 
-     * @return Instance of the function that performs evaluation
+     * @property {function} evaluator - Instance of the function that performs evaluation
      */
     get evaluator() {
         return _evaluator.get(this);
@@ -29,7 +31,7 @@ export class Specification {
     /**
      * Gets whether or not the rule is satisfied
      * 
-     * @return Returns true if satisfied, false if not
+     * @property {boolean} isSatisfied - Returns true if satisfied, false if not
      */
     get isSatisfied() {
         let instance = _currentInstance.get(this);
@@ -43,7 +45,7 @@ export class Specification {
     /**
      * Evaluates the rule against an instance. This instance becomes the current instance for the rule.
      * 
-     * @param {instance} The instance to evaluate against
+     * @param {object} instance - The instance to evaluate against
      */
     evaluate(instance) {
         _currentInstance.set(this, instance);
@@ -54,7 +56,7 @@ export class Specification {
 /**
  * Starts a specification
  * 
- * @param {evaluator} The function that gets called to evaluate
+ * @param {function} evaluator - The function that gets called to evaluate
  */
 Specification.when = (evaluator) => {
     let specification = new Specification(evaluator);

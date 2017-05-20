@@ -9,7 +9,7 @@ let Spec = OriginalSpecification.default.Specification;
 /**
  * Takes this rule and appends another rule with a logical AND operand
  * 
- * @param {rule} The other rule to AND together with this
+ * @param {function} rule - The other rule to AND together with this
  */
 Spec.prototype.and = function(rule) { 
     let specification = new Spec(rule);
@@ -20,7 +20,7 @@ Spec.prototype.and = function(rule) {
 /**
  * Takes this rule and appends another rule with a logical OR operand
  * 
- * @param {rule} The other rule to AND together with this
+ * @param {function} rule - The other rule to AND together with this
  */
 Spec.prototype.or = function(rule) {
     let specification = new Spec(rule);
