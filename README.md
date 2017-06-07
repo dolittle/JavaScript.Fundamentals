@@ -1,2 +1,2 @@
-# javascript.core
-The Core JavaScript project
+# JavaScript.Fundamentals
+The Fundamentals for JavaScript
