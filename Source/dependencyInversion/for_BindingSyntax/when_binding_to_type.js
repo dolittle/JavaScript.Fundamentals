@@ -2,11 +2,10 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {BindingSyntax} from "/Source/DependencyInversion/BindingSyntax";
-import {TypeActivationStrategy} from "/Source/DependencyInversion/Strategies/TypeActivationStrategy";
-import {ScopeSyntax} from "/Source/DependencyInversion/ScopeSyntax";
-import {TransientScope} from "/Source/DependencyInversion/Scopes/TransientScope";
-import {Binding} from "/Source/DependencyInversion/Binding";
+import {TypeActivationStrategy} from "../Strategies/TypeActivationStrategy";
+import {ScopeSyntax} from "../ScopeSyntax";
+import {TransientScope} from "../Scopes/TransientScope";
+import {Binding} from "../Binding";
 import * as Context from "./given/a_bound_service";
 
 describe("when binding to type", () => {

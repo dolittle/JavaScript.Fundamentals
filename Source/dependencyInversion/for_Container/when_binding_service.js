@@ -2,9 +2,7 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Container} from "/Source/DependencyInversion/Container";
-import {Binding} from "/Source/DependencyInversion/Binding";
-import {BindingSyntax} from "/Source/DependencyInversion/BindingSyntax";
+import {BindingSyntax} from "../BindingSyntax";
 import * as Context from "./given/an_empty_container";
 
 describe("when binding service", () => {

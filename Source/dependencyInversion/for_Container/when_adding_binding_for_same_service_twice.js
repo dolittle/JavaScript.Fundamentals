@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import * as Context from "./given/an_empty_container";
-import {BindingForServiceAlreadyExists} from "/Source/DependencyInversion/BindingForServiceAlreadyExists";
+import {BindingForServiceAlreadyExists} from "../BindingForServiceAlreadyExists";
 
 describe("when adding binding for same service twice", () => {
     var binding = {

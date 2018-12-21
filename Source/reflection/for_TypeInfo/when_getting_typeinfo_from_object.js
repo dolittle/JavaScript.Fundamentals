@@ -2,7 +2,7 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {TypeInfo} from "/Source/Reflection/TypeInfo";
+import {TypeInfo} from "../TypeInfo";
 
 describe("when getting typeinfo from object", () => {
     let obj = {};

@@ -2,11 +2,10 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {BindingSyntax} from "/Source/DependencyInversion/BindingSyntax";
-import {ConstantActivationStrategy} from "/Source/DependencyInversion/Strategies/ConstantActivationStrategy";
-import {ScopeSyntax} from "/Source/DependencyInversion/ScopeSyntax";
-import {TransientScope} from "/Source/DependencyInversion/Scopes/TransientScope";
-import {Binding} from "/Source/DependencyInversion/Binding";
+import {ConstantActivationStrategy} from "../Strategies/ConstantActivationStrategy";
+import {ScopeSyntax} from "../ScopeSyntax";
+import {TransientScope} from "../Scopes/TransientScope";
+import {Binding} from "../Binding";
 import * as Context from "./given/a_bound_service";
 
 describe("when binding to constant", () => {

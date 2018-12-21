@@ -2,8 +2,8 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {ScopeSyntax} from "/Source/DependencyInversion/ScopeSyntax";
-import {Scope} from "/Source/DependencyInversion/Scopes/Scope";
+import {ScopeSyntax} from "../../ScopeSyntax";
+import {Scope} from "../../Scopes/Scope";
 
 export default class 
 {

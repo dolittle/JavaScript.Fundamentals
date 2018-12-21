@@ -4,7 +4,6 @@
  *--------------------------------------------------------------------------------------------*/
 import {Scope} from "./Scopes/Scope";
 import {SingletonScope} from "./Scopes/SingletonScope";
-import {Binding} from "./Binding";
 
 const _singletonScope = new SingletonScope();
 const _bindingSyntax = new WeakMap();

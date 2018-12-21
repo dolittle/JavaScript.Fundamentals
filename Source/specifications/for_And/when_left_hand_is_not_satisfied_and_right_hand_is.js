@@ -2,8 +2,8 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Specification} from "/Source/Specifications/Specification";
-import {And} from "/Source/Specifications/And";
+import {Specification} from "../Specification";
+import {And} from "../And";
 
 describe("when left hand is not satisfied and right hand is", () => {
     

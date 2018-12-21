@@ -2,7 +2,7 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Binding} from "/Source/DependencyInversion/Binding";
+import {Binding} from "../Binding";
 
 describe("when creating", () => {
     const service = "My Service";

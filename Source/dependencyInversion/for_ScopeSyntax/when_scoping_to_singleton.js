@@ -3,12 +3,10 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import * as Context from "./given/an_undefined_scope";
-import {SingletonScope} from "/Source/DependencyInversion/Scopes/SingletonScope";
-import {Binding} from "/Source/DependencyInversion/Binding";
+import {SingletonScope} from "../Scopes/SingletonScope";
 
 describe("when scoping to singleton", () => {
     let context = null;
-    let binding = null;
 
     beforeEach(() => {
         context = new Context.default();

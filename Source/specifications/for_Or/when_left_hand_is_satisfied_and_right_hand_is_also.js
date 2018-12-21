@@ -2,8 +2,8 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { Specification } from "/Source/Specifications/Specification";
-import { Or } from "/Source/Specifications/Or";
+import { Specification } from "../Specification";
+import { Or } from "../Or";
 
 describe("when left hand is satisfied and right hand is also", () => {
     

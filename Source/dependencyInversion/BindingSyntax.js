@@ -5,7 +5,6 @@
 import {ScopeSyntax} from "./ScopeSyntax";
 import {ConstantActivationStrategy} from "./Strategies/ConstantActivationStrategy";
 import {TypeActivationStrategy} from "./Strategies/TypeActivationStrategy";
-import {ComplexActivationStrategy} from "./Strategies/ComplexActivationStrategy";
 import {CallbackActivationStrategy} from "./Strategies/CallbackActivationStrategy";
 import {TransientScope} from "./Scopes/TransientScope";
 import {Binding} from "./Binding";

@@ -2,8 +2,7 @@
  *  Copyright (c) 2008-2017 Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Conventions} from "/Source/DependencyInversion/Conventions/Conventions";
-import {NoConventionCanResolve} from "/Source/DependencyInversion/Conventions/NoConventionCanResolve";
+import {NoConventionCanResolve} from "../NoConventionCanResolve";
 import * as Context from "./given/a_convention_not_able_to_resolve_anything";
 
 describe("when resolving and a convention can not resolve", () => {

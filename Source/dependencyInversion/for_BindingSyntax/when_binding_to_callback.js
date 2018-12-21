@@ -4,11 +4,10 @@
  *--------------------------------------------------------------------------------------------*/
 import * as Context from "./given/a_bound_service";
 
-import {BindingSyntax} from "/Source/DependencyInversion/BindingSyntax";
-import {CallbackActivationStrategy} from "/Source/DependencyInversion/Strategies/CallbackActivationStrategy";
-import {ScopeSyntax} from "/Source/DependencyInversion/ScopeSyntax";
-import {TransientScope} from "/Source/DependencyInversion/Scopes/TransientScope";
-import {Binding} from "/Source/DependencyInversion/Binding";
+import {CallbackActivationStrategy} from "../Strategies/CallbackActivationStrategy";
+import {ScopeSyntax} from "../ScopeSyntax";
+import {TransientScope} from "../Scopes/TransientScope";
+import {Binding} from "../Binding";
 
 describe("when binding to callback", () => {
     const type = "Some Constant";

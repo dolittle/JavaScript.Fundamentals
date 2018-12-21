@@ -3,7 +3,7 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import * as Context from "./given/an_empty_container";
-import {Binding} from "/Source/DependencyInversion/Binding";
+import {Binding} from "../Binding";
 
 describe("when adding a binding", () => {
     let context = null;
