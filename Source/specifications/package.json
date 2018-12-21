@@ -1,26 +1,25 @@
 {
-  "name": "dolittle-specifications",
-  "description": "Implementations of the Specification pattern",
+  "name": "@dolittle/specifications",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "node_modules/karma/bin/karma start"
+    "transpile": "rm -rf dist && PACKAGE_DISTRIBUTION=true npx babel . --ignore node_modules,**/for_* -d dist --config-file ../../.babelrc",
+    "prepublish": "yarn run transpile"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dolittle/javascript.core.git"
+    "url": "git+https://github.com/dolittle/JavaScript.Fundamentals.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dolittle/javascript.core/issues"
+    "url": "https://github.com/dolittle/JavaScript.Fundamentals/issues"
   },
-  "homepage": "http://www.dolittle.io",
-  "jspm": {
-    "name": "specifications",
-    "main": "specifications.js",
-    "devDependencies": {
-      "plugin-babel": "npm:systemjs-plugin-babel@^0.0.21"
-    }
+  "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@dolittle/build": "^2.0.0"    
   }
 }

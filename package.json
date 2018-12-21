@@ -4,7 +4,7 @@
   "description": "Fundamental Libraries for JavaScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npx karma start"
   },
   "repository": {
     "type": "git",
@@ -15,8 +15,9 @@
   "bugs": {
     "url": "https://github.com/dolittle/JavaScript.Fundamentals/issues"
   },
+  "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme",
   "devDependencies": {
-    "@dolittle/build": "^2.0.0"
-  },
-  "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme"
+    "@dolittle/build": "^2.0.0",
+    "@babel/cli": "^7.2.0"
+  }
 }
