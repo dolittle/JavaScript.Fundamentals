@@ -1,6 +1,6 @@
-import * as OriginalSpecification from "./Specification";
-import {And} from "./And";
-import {Or} from "./Or";
+import * as OriginalSpecification from './Specification';
+import {And} from './And';
+import {Or} from './Or';
 
 let Spec = OriginalSpecification.default.Specification;
 

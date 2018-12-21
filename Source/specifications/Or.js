@@ -2,7 +2,7 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Specification} from "./Specification";
+import {Specification} from './Specification';
 
 const _leftHandSide = new WeakMap();
 const _rightHandSide = new WeakMap();

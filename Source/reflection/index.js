@@ -1,1 +1,1 @@
-export * from "./TypeInfo";
+export * from './TypeInfo';

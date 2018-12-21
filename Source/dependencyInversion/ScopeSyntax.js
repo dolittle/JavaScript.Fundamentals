@@ -2,8 +2,8 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {Scope} from "./Scopes/Scope";
-import {SingletonScope} from "./Scopes/SingletonScope";
+import {Scope} from './Scopes/Scope';
+import {SingletonScope} from './Scopes/SingletonScope';
 
 const _singletonScope = new SingletonScope();
 const _bindingSyntax = new WeakMap();

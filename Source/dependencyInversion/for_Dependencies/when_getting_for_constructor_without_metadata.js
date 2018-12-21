@@ -2,7 +2,7 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import * as Context from "./given/a_dependencies_instance";
+import * as Context from './given/a_dependencies_instance';
 
 class SomeClass
 {
@@ -11,7 +11,7 @@ class SomeClass
     }
 }
 
-describe("when getting for constructor without metadata", () => {
+describe('when getting for constructor without metadata', () => {
     let context = null;
     let constructorDependencies = null;
 
@@ -23,6 +23,6 @@ describe("when getting for constructor without metadata", () => {
         })();
     });
 
-    it("should have the first dependency as the first element", () => constructorDependencies[0].should.equal("first"));
-    it("should have the second dependency as the second element", () => constructorDependencies[1].should.equal("second"));
+    it('should have the first dependency as the first element', () => constructorDependencies[0].should.equal('first'));
+    it('should have the second dependency as the second element', () => constructorDependencies[1].should.equal('second'));
 });

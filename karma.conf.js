@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 const base = require('@dolittle/build/karma.conf.js');
 module.exports = (config) => {
     base(config);

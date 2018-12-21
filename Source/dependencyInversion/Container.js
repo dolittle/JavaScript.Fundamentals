@@ -2,10 +2,10 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {BindingSyntax} from "./BindingSyntax";
-import {Module} from "./Module";
-import {BindingForServiceAlreadyExists} from "./BindingForServiceAlreadyExists";
-import {MissingBindingForService} from "./MissingBindingForService";
+import {BindingSyntax} from './BindingSyntax';
+import {Module} from './Module';
+import {BindingForServiceAlreadyExists} from './BindingForServiceAlreadyExists';
+import {MissingBindingForService} from './MissingBindingForService';
 
 const _bindings = new WeakMap();
 

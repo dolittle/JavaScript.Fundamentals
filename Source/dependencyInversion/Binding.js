@@ -2,8 +2,8 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {ActivationStrategy} from "./Strategies/ActivationStrategy";
-import {Scope} from "./Scopes/Scope";
+import {ActivationStrategy} from './Strategies/ActivationStrategy';
+import {Scope} from './Scopes/Scope';
 
 const _service = new WeakMap();
 const _strategy = new WeakMap();

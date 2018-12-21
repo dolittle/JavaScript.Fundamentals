@@ -2,9 +2,9 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {TypeInfo} from "../TypeInfo";
+import {TypeInfo} from '../TypeInfo';
 
-describe("when getting typeinfo from object", () => {
+describe('when getting typeinfo from object', () => {
     let obj = {};
     let typeInfo = null;
 
@@ -14,6 +14,6 @@ describe("when getting typeinfo from object", () => {
         })();
     });
 
-    it("should return a typeinfo", () => typeInfo.should.not.be.undefined);
-    it("should have object as name", () => typeInfo.name.should.equal("Object"));
+    it('should return a typeinfo', () => typeInfo.should.not.be.undefined);
+    it('should have object as name', () => typeInfo.name.should.equal('Object'));
 })

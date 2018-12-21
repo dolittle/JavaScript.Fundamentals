@@ -2,8 +2,8 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {ScopeSyntax} from "../../ScopeSyntax";
-import {Scope} from "../../Scopes/Scope";
+import {ScopeSyntax} from '../../ScopeSyntax';
+import {Scope} from '../../Scopes/Scope';
 
 export default class 
 {
@@ -19,8 +19,8 @@ export default class
             binding: {
                 scope: scope
             },
-            service: { "some": "service"},
-            strategy: { "some": "strategy" },
+            service: { 'some': 'service'},
+            strategy: { 'some': 'strategy' },
         };
         this.scopeSyntax = new ScopeSyntax(this.bindingSyntax); 
     }

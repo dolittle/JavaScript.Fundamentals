@@ -2,16 +2,16 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import * as Context from "./given/an_empty_container";
+import * as Context from './given/an_empty_container';
 
-describe("when getting binding for bound service", () => {
-    const service = "Some service";
+describe('when getting binding for bound service', () => {
+    const service = 'Some service';
     let context = null;
     let result = null;
     const binding = {
         service: service,
-        strategy: "Some strategy",
-        scope: "Some scope"
+        strategy: 'Some strategy',
+        scope: 'Some scope'
     };
 
     beforeEach(() => {
@@ -23,5 +23,5 @@ describe("when getting binding for bound service", () => {
         })();
     });
 
-    it("should get the binding for the service", () => result.should.equal(binding));
+    it('should get the binding for the service', () => result.should.equal(binding));
 });

@@ -2,7 +2,7 @@
  *  Copyright (c) Einar Ingebrigtsen. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {TypeInfo} from "dolittle-reflection";
+import {TypeInfo} from 'dolittle-reflection';
 
 const _message = new WeakMap();
 
@@ -24,7 +24,7 @@ export class Exception
      */
     get message() {
         if( _message.get(this) ) return _message.get(this);
-        return "";
+        return '';
     }
 
     /**

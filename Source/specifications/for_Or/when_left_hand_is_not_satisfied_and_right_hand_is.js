@@ -2,10 +2,10 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { Specification } from "../Specification";
-import { Or } from "../Or";
+import { Specification } from '../Specification';
+import { Or } from '../Or';
 
-describe("when left hand is not satisfied and right hand is", () => {
+describe('when left hand is not satisfied and right hand is', () => {
     
     let leftHandSideEvaluator = sinon.stub().returns(false);
     let leftHandSide = new Specification(leftHandSideEvaluator);
@@ -17,5 +17,5 @@ describe("when left hand is not satisfied and right hand is", () => {
     let rule = new Or(leftHandSide, rightHandSide);
     rule.evaluate(instance);
 
-    it("should be considered satisfied", () => rule.isSatisfied.should.be.true);
+    it('should be considered satisfied', () => rule.isSatisfied.should.be.true);
 });

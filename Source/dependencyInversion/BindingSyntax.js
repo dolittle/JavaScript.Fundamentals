@@ -2,13 +2,13 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {ScopeSyntax} from "./ScopeSyntax";
-import {ConstantActivationStrategy} from "./Strategies/ConstantActivationStrategy";
-import {TypeActivationStrategy} from "./Strategies/TypeActivationStrategy";
-import {CallbackActivationStrategy} from "./Strategies/CallbackActivationStrategy";
-import {TransientScope} from "./Scopes/TransientScope";
-import {Binding} from "./Binding";
-import {BindingTargetIsNotBasedOnFunction} from "./BindingTargetIsNotBasedOnFunction";
+import {ScopeSyntax} from './ScopeSyntax';
+import {ConstantActivationStrategy} from './Strategies/ConstantActivationStrategy';
+import {TypeActivationStrategy} from './Strategies/TypeActivationStrategy';
+import {CallbackActivationStrategy} from './Strategies/CallbackActivationStrategy';
+import {TransientScope} from './Scopes/TransientScope';
+import {Binding} from './Binding';
+import {BindingTargetIsNotBasedOnFunction} from './BindingTargetIsNotBasedOnFunction';
 
 const _container = new WeakMap();
 const _service = new WeakMap();
@@ -29,7 +29,7 @@ const handleStrategyAndScope = function (strategy) {
 }
 
 function throwIfNotFunction(type) {
-    if( typeof type !== "function") BindingTargetIsNotBasedOnFunction.throw(type); 
+    if( typeof type !== 'function') BindingTargetIsNotBasedOnFunction.throw(type); 
 }
 
 /**

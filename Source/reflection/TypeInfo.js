@@ -12,7 +12,7 @@ const _name = new WeakMap();
 let setName = (owner) => {
     let funcNameRegex = /function (.{1,})\(/;
     let results = (funcNameRegex).exec((owner).constructor.toString());
-    let name = (results && results.length > 1) ? results[1] : "";
+    let name = (results && results.length > 1) ? results[1] : '';
     _name.set(owner, name);
 }
 
@@ -32,7 +32,7 @@ export class TypeInfo {
 }
 
 if (!Object.prototype.typeInfo) {
-    Object.defineProperty(Object.prototype, "typeInfo", {
+    Object.defineProperty(Object.prototype, 'typeInfo', {
         get: function() {
             if (this._typeInfo) return this._typeInfo;
             let typeInfo = new TypeInfo(this);
@@ -49,14 +49,14 @@ if (!Object.prototype.typeInfo) {
 Object.prototype.getConstructorName = function () {
    var str = (this.prototype ? this.prototype.constructor : this.constructor).toString();
    var cname = str.match(/function\s(\w*)/)[1];
-   var aliases = ["", "anonymous", "Anonymous"];
-   return aliases.indexOf(cname) > -1 ? "Function" : cname;
+   var aliases = ['', 'anonymous', 'Anonymous'];
+   return aliases.indexOf(cname) > -1 ? 'Function' : cname;
 }
 
 Object.prototype.getName = function() { 
    var funcNameRegex = /function (.{1,})\(/;
    var results = (funcNameRegex).exec((this).constructor.toString());
-   return (results && results.length > 1) ? results[1] : "";
+   return (results && results.length > 1) ? results[1] : '';
 };
 
 
@@ -68,10 +68,10 @@ if (!Object.prototype.getClassName) {
 
 function isInstance(obj, type) {
     var ret = false,
-    isTypeAString = getType(type) == "String",
+    isTypeAString = getType(type) == 'String',
     functionConstructor, i, l, typeArray, context;
-    if (!isTypeAString && getType(type) != "Function") {
-        throw new TypeError("type argument must be a string or function");
+    if (!isTypeAString && getType(type) != 'Function') {
+        throw new TypeError('type argument must be a string or function');
     }
     if (obj !== undefined && obj !== null && obj.constructor) {
         //get the Function constructor
@@ -80,11 +80,11 @@ function isInstance(obj, type) {
             functionConstructor = functionConstructor.constructor;
         }
         //get the object's window
-        context = functionConstructor == Function ? self : functionConstructor("return window")();
+        context = functionConstructor == Function ? self : functionConstructor('return window')();
         //get the constructor for the type
         if (isTypeAString) {
             //type is a string so we'll build the context (window.Array or window.some.Type)
-            for (typeArray = type.split("."), i = 0, l = typeArray.length; i < l && context; i++) {
+            for (typeArray = type.split('.'), i = 0, l = typeArray.length; i < l && context; i++) {
                 context = context[typeArray[i]];
             }
         } else {
@@ -95,7 +95,7 @@ function isInstance(obj, type) {
         //check if the object is an instance of the constructor
         if (context) {
             ret = obj instanceof context;
-            if (!ret && (type == "Number" || type == "String" || type == "Boolean")) {
+            if (!ret && (type == 'Number' || type == 'String' || type == 'Boolean')) {
                 ret = obj.constructor == context
             }
         }
