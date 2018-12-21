@@ -1,93 +1,22 @@
 {
-  "name": "javascript.core",
+  "name": "javascript.fundemntals",
   "version": "1.0.0",
-  "description": "The Core JavaScript project",
-  "main": "gulpfile.js",
+  "description": "Fundamental Libraries for JavaScript",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dolittle/javascript.core.git"
+    "url": "git+https://github.com/dolittle/JavaScript.Fundamentals.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dolittle/javascript.core/issues"
+    "url": "https://github.com/dolittle/JavaScript.Fundamentals/issues"
   },
-  "homepage": "https://github.com/dolittle/javascript.core#readme",
-  "dependencies": {},
   "devDependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-plugin-transform-decorators": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1",
-    "chai": "^3.5.0",
-    "electron": "^1.6.8",
-    "eslint": "^3.19.0",
-    "express-cachebust": "^0.0.1",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-express": "^0.3.5",
-    "gulp-jspm": "^0.5.13",
-    "gulp-less": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-requirejs": "^1.0.0-rc2",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-watch": "^4.3.11",
-    "jspm": "^0.17.0-beta.24",
-    "jspm-github": "^0.14.13",
-    "jspm-npm": "^0.30.2",
-    "jspm-registry": "^0.4.4",
-    "karma": "^1.7.0",
-    "karma-babel-preprocessor": "^6.0.1",
-    "karma-chai-plugins": "^0.9.0",
-    "karma-chrome-launcher": "^2.1.1",
-    "karma-jspm": "^2.2.3",
-    "karma-mocha": "^1.3.0",
-    "karma-phantomjs-launcher": "^1.0.4",
-    "mocha": "^3.4.1",
-    "multimatch": "^2.1.0",
-    "phantomjs-prebuilt": "^2.1.14",
-    "require-dir": "^0.3.1",
-    "run-sequence": "^1.2.2"
+    "@dolittle/build": "^2.0.0"
   },
-  "jspm": {
-    "name": "javascript.core",
-    "main": "javascript.core.js",
-    "dependencies": {
-      "systemjs": "npm:systemjs@^0.20.12"
-    },
-    "devDependencies": {},
-    "peerDependencies": {
-      "assert": "npm:jspm-nodelibs-assert@^0.2.0",
-      "buffer": "npm:jspm-nodelibs-buffer@^0.2.0",
-      "constants": "npm:jspm-nodelibs-constants@^0.2.0",
-      "crypto": "npm:jspm-nodelibs-crypto@^0.2.0",
-      "events": "npm:jspm-nodelibs-events@^0.2.0",
-      "fs": "npm:jspm-nodelibs-fs@^0.2.0",
-      "os": "npm:jspm-nodelibs-os@^0.2.0",
-      "path": "npm:jspm-nodelibs-path@^0.2.0",
-      "process": "npm:jspm-nodelibs-process@^0.2.0",
-      "stream": "npm:jspm-nodelibs-stream@^0.2.0",
-      "string_decoder": "npm:jspm-nodelibs-string_decoder@^0.2.0",
-      "util": "npm:jspm-nodelibs-util@^0.2.0",
-      "vm": "npm:jspm-nodelibs-vm@^0.2.0"
-    },
-    "overrides": {
-      "npm:inherits@2.0.3": {
-        "ignore": [
-          "test.js"
-        ]
-      },
-      "npm:pbkdf2@3.0.12": {
-        "main": "browser.js"
-      },
-      "npm:safe-buffer@5.0.1": {
-        "browser": "index.js"
-      }
-    }
-  }
+  "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme"
 }

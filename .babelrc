@@ -1,5 +1,5 @@
 {
-  "presets": ["es2015"],
-  "plugins": ["transform-decorators"],
-  "sourceMap": "inline"
+  "presets": [
+    "./node_modules/@dolittle/build/.babelrc.js"
+  ]
 }
