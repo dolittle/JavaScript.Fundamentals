@@ -1,5 +1,9 @@
 {
   "presets": [
     "./node_modules/@dolittle/build/.babelrc.js"
+  ],
+  "ignore": [
+    "*/Source/**/for_*/*.js",
+    "**/node_modules/**/*.js"
   ]
 }

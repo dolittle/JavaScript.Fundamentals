@@ -1,23 +1,17 @@
 {
-  "name": "javascript.fundemntals",
-  "version": "1.0.0",
-  "description": "Fundamental Libraries for JavaScript",
-  "main": "index.js",
-  "scripts": {
-    "test": "npx karma start"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dolittle/JavaScript.Fundamentals.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dolittle/JavaScript.Fundamentals/issues"
-  },
-  "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme",
-  "devDependencies": {
-    "@dolittle/build": "^2.0.0",
-    "@babel/cli": "^7.2.0"
-  }
+    "private": true,
+    "workspaces": [
+        "Source/booting",
+        "Source/reflection",
+        "Source/exceptions",
+        "Source/specifications",
+        "Source/dependencyInversion"
+    ],
+    "devDependencies": {
+        "@babel/cli": "^7.2.0",
+        "@dolittle/build": "^2.0.0",
+        "@babel/plugin-transform-modules-systemjs": "^7.2.0",
+        "systemjs": "^2.1.1"
+        
+    }
 }
