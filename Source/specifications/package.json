@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "transpile": "rm -rf dist && PACKAGE_DISTRIBUTION=true npx babel . --ignore node_modules,**/for_* -d dist --config-file ../../.babelrc",
+    "transpile": "rm -rf dist && PACKAGE_DISTRIBUTION=true npx babel . -d dist --config-file ../../.babelrc",
     "prepublish": "yarn run transpile"
   },
   "repository": {
@@ -20,6 +20,5 @@
   "dependencies": {
   },
   "devDependencies": {
-    "@dolittle/build": "^2.0.0"    
   }
 }
