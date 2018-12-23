@@ -25,6 +25,9 @@ export class TypeInfo {
         setName(owner);
     }
 
+    /**
+     * Get the name of the type1 as {string}
+     */
     get name() {
         let owner = _owner.get(this);
         return _name.get(owner);
