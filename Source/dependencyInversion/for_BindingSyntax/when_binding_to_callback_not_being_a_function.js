@@ -2,7 +2,7 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import {BindingTargetIsNotBasedOnFunction} from '../../BindingTargetIsNotBasedOnFunction';
+import {BindingTargetIsNotBasedOnFunction} from '../BindingTargetIsNotBasedOnFunction';
 import * as Context from './given/a_bound_service';
 
 describe('when binding to callback not being a function', () => {
