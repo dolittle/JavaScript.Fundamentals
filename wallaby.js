@@ -125,8 +125,10 @@ module.exports = function (wallaby) {
             });
         },
 
+        testFramework: "jasmine",
+
         setup: () => {
-            //wallaby.delayStart();
+            wallaby.delayStart();
 
             window.expect = chai.expect;
             var should = chai.should();
@@ -134,7 +136,8 @@ module.exports = function (wallaby) {
             var promises = [];
 
             wallaby.tests.forEach(test => {
-                promises.push(System.import(`./${test}`));
+                var moduleName = `/${test}`;
+                promises.push(System.import(moduleName));
             });
 
             Promise.all(promises).then(function () {
