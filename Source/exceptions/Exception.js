@@ -22,6 +22,7 @@ export class Exception
      */
     get message() {
         if( _message.get(this) ) return _message.get(this);
+
         return '';
     }
 
