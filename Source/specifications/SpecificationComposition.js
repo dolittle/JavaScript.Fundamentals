@@ -4,8 +4,6 @@ import {Or} from './Or';
 
 let Spec = OriginalSpecification.default.Specification;
 
-
-
 /**
  * Takes this rule and appends another rule with a logical AND operand
  * 
