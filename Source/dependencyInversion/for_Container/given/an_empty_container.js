@@ -6,6 +6,7 @@ import {Container} from '../../Container';
 
 export default class {
     constructor() {
+        
         this.container = new Container();
     }
 }
