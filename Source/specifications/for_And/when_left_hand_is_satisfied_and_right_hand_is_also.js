@@ -7,6 +7,7 @@ import {And} from '../And';
 
 describe('when left hand is satisfied and right hand is also', () => {
     
+    
     let leftHandSideEvaluator = sinon.stub().returns(true);
     let leftHandSide = new Specification(leftHandSideEvaluator);
 

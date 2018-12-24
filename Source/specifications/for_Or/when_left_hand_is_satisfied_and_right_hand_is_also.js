@@ -5,6 +5,7 @@
 import { Specification } from '../Specification';
 import { Or } from '../Or';
 
+
 describe('when left hand is satisfied and right hand is also', () => {
     
     let leftHandSideEvaluator = sinon.stub().returns(true);

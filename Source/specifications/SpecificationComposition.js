@@ -2,7 +2,7 @@ import * as OriginalSpecification from './Specification';
 import {And} from './And';
 import {Or} from './Or';
 
-let Spec = OriginalSpecification.default.Specification;
+let Spec = OriginalSpecification.Specification;
 
 /**
  * Takes this rule and appends another rule with a logical AND operand
