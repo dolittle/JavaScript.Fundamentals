@@ -55,7 +55,7 @@ export class Container
      */
     add(binding) {
         throwIfBindingForServiceAlreadyExists(this, binding);
-        //this.bindings[binding.service] = binding;
+        this.bindings[binding.service] = binding;
     }
     
     /**
