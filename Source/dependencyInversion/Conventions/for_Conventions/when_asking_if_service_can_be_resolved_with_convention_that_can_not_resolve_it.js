@@ -13,5 +13,5 @@ describe('when asking if service can be resolved with convention that can not re
         result = context.conventions.canResolve({}, 'something');
     });
 
-    it('should not be able to resolve', () => result.should.be.true);
+    it('should not be able to resolve', () => result.should.be.false);
 });
