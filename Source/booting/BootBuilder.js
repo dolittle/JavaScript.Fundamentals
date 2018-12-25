@@ -20,4 +20,7 @@ export class BootBuilder {
     get Procedures() {
         
     }
+
+    build() {
+    }
 }
