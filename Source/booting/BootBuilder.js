@@ -9,7 +9,7 @@ import { BootProcedures } from './BootProcedures';
  * Represents a builder for boot - typically used during configuration
  */
 export class BootBuilder {
-    #BootProcedures;
+    #bootProcedures;
 
     /**
      * Initializes a new instance of {BootBuilder}
