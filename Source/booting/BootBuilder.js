@@ -3,17 +3,26 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { Boot } from './Boot';
+import { BootProcedures } from './BootProcedures';
 
 /**
  * Represents a builder for boot - typically used during configuration
  */
 export class BootBuilder {
+    #BootProcedures;
 
     /**
      * Initializes a new instance of {BootBuilder}
      */
     constructor() {
+        this.#bootProcedures = new BootProcedures();
     }
+
+    /**
+     * Get the {BootProcedures}
+     * @returns {BootProcedures} for the {Boot}
+     */
+    get procedures() { return this.#bootProcedures; }
 
     /**
      * Build a {Boot} instance

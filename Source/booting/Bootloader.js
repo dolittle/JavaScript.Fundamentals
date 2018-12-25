@@ -10,14 +10,14 @@ import { Boot } from './Boot';
  * Represents the boot loader that boots everything Dolittle
  */
 export class Bootloader {
+    #boot;
 
     /**
      * Initializes a new instance of {Bootloader}
      * @param {Boot} boot 
-     * @param {BootProcedures} bootProcedures
      */
-    constructor(boot, bootProcedures) {
-
+    constructor(boot) {
+        this.#boot = boot;
     }
 
     /**
