@@ -130,7 +130,6 @@ module.exports = function (wallaby) {
         testFramework: "jasmine",
 
         setup: (w) => {
-            console.log('Setup');
             window.runPostfix = new Date().toISOString();
             
             wallaby.delayStart();
