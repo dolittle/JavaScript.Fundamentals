@@ -78,6 +78,9 @@ module.exports = function (wallaby) {
         - folders with @ in front are organizations - get sub folders from these
     - Watch node_modules folder for new things and recreate package.json file
 
+    - Caching - middleware, invalidate changed files so we don't have to append date in the defaultExtensions thingy
+    - Ignore for_* when doing dist build
+
     */
 
     let wallabyConfig = {
@@ -109,7 +112,6 @@ module.exports = function (wallaby) {
             kind: 'electron'
         },
 
-
         compilers: {
             '**/*.js': wallaby.compilers.babel(babelConfig)
         },
@@ -127,7 +129,10 @@ module.exports = function (wallaby) {
 
         testFramework: "jasmine",
 
-        setup: () => {
+        setup: (w) => {
+            console.log('Setup');
+            window.runPostfix = new Date().toISOString();
+            
             wallaby.delayStart();
 
             window.expect = chai.expect;
