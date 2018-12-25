@@ -7,8 +7,6 @@ import {Module} from './Module';
 import {BindingForServiceAlreadyExists} from './BindingForServiceAlreadyExists';
 import {MissingBindingForService} from './MissingBindingForService';
 
-const _bindings = new WeakMap();
-
 function throwIfBindingForServiceAlreadyExists(container, binding) {
     if( container.bindings.hasOwnProperty(binding.service)) BindingForServiceAlreadyExists.throw(binding.service);
 }
@@ -22,13 +20,15 @@ function throwIfMissingBindingForService(container,service) {
  */
 export class Container
 {
+    #bindings;
+
     /**
      * Initializes a new instance of {Container}
      * @constructor
      * @param {Module[]} modules Any modules that will be loaded
      */
     constructor(modules=null) {
-        _bindings.set(this, {});
+        this.#bindings = {};
     }
     
     /**
@@ -36,7 +36,7 @@ export class Container
      * @property {Binding[]}
      */
     get bindings() {
-        return _bindings.get(this);
+        return this.#bindings;
     }
 
     /**
@@ -46,7 +46,7 @@ export class Container
      */
     getBindingFor(service) {
         throwIfMissingBindingForService(this, service);
-        return this.bindings[service];
+        return this.#bindings[service];
     } 
 
     /**
@@ -55,7 +55,7 @@ export class Container
      */
     add(binding) {
         throwIfBindingForServiceAlreadyExists(this, binding);
-        this.bindings[binding.service] = binding;
+        this.#bindings[binding.service] = binding;
     }
     
     /**
@@ -76,11 +76,11 @@ export class Container
     get(service) {
         throwIfMissingBindingForService(this, service);
         
-        var binding = this.getBindingFor(service);
+        let binding = this.getBindingFor(service);
 
         // Create a new activationContext
 
-        var promise = new Promise((resolve, reject) => {
+        let promise = new Promise((resolve, reject) => {
 
             // Check if we have it in scope
             // If we have it in the scope, resolve with instance in scope

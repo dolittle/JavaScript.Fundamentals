@@ -4,7 +4,7 @@
  *--------------------------------------------------------------------------------------------*/
 
  /**
-  * Represents the configured boot
+  * Represents the configured boot1
   */
  export class Boot {
 

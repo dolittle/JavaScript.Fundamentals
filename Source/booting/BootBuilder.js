@@ -5,18 +5,16 @@
 import { BootProcedure } from './BootProcedure';
 import { BootProcedures } from './BootProcedures';
 
-const _bootProcedures = new WeakMap();
-
 /**
  * Represents a builder for boot - typically used during configuration
  */
 export class BootBuilder {
+    #BootProcedures;
 
     /**
      * Initializes a new instance of {BootBuilder}
      */
     constructor() {
-        _bootProcedures.set(this, new BootProcedures());
     }
 
     get Procedures() {

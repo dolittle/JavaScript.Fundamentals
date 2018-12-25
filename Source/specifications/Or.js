@@ -4,13 +4,12 @@
  *--------------------------------------------------------------------------------------------*/
 import {Specification} from './Specification';
 
-const _leftHandSide = new WeakMap();
-const _rightHandSide = new WeakMap();
-
 /**
  * Represents an implementation of And operator in an expression of a specification
  */
 export class Or extends Specification {
+    #leftHandSide;
+    #rightHandSide;
 
     /**
      * Initializes a new instance of {And}
@@ -20,8 +19,8 @@ export class Or extends Specification {
      */
     constructor(leftHandSide, rightHandSide) {
         super(null);
-        _leftHandSide.set(this, leftHandSide);
-        _rightHandSide.set(this, rightHandSide);
+        this.#leftHandSide = leftHandSide;
+        this.#rightHandSide = rightHandSide;
     }
 
     /**
@@ -30,7 +29,7 @@ export class Or extends Specification {
      * @return {Specification} instance for the left rule
      */
     get left() {
-        return _leftHandSide.get(this);
+        return this.#leftHandSide;
     }
 
     /**
@@ -39,22 +38,22 @@ export class Or extends Specification {
      * @return {Specification} instance for the right rule
      */
     get right() {
-        return _rightHandSide.get(this);
+        return this.#rightHandSide;
     }
 
     /**
      * Get wether or not the {And} operator is satisfied
      */
     get isSatisfied() {
-        return  _leftHandSide.get(this).isSatisfied || 
-                _rightHandSide.get(this).isSatisfied;
+        return  this.#leftHandSide.isSatisfied || 
+                this.#rightHandSide.isSatisfied;
     }
 
     /**
      * Evaluate an instance
      */
     evaluate(instance) {
-        _leftHandSide.get(this).evaluate(instance);
-        _rightHandSide.get(this).evaluate(instance);
+        this.#leftHandSide.evaluate(instance);
+        this.#rightHandSide.evaluate(instance);
     }
 }

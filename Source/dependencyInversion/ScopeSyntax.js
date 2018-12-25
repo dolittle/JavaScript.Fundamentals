@@ -6,18 +6,18 @@ import {Scope} from './Scopes/Scope';
 import {SingletonScope} from './Scopes/SingletonScope';
 
 const _singletonScope = new SingletonScope();
-const _bindingSyntax = new WeakMap();
 
 /**
  * Represents the syntax configuration for a {Scope}
  */
 export class ScopeSyntax {
+    #bindingSyntax;
 
     /**
      * Initializes a new instance of {ScopeSyntax}
      */
     constructor(bindingSyntax) {
-        _bindingSyntax.set(this, bindingSyntax);
+        this.#bindingSyntax = bindingSyntax;
     }
 
     /**
@@ -26,7 +26,7 @@ export class ScopeSyntax {
      * @property {BindingSyntax}
      */
     get bindingSyntax() {
-        return _bindingSyntax.get(this);
+        return this.#bindingSyntax;
     }
 
     /**
@@ -35,7 +35,7 @@ export class ScopeSyntax {
      * @property {Scope}
      */
     get scope() {
-        return this.bindingSyntax.binding.scope;
+        return this.#bindingSyntax.binding.scope;
     }
 
     /**
@@ -44,7 +44,7 @@ export class ScopeSyntax {
      * @property {Scope}
      */
     set scope(scope) {
-        this.bindingSyntax.binding.scope = scope;
+        this.#bindingSyntax.binding.scope = scope;
     }
 
     /**

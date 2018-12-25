@@ -10,8 +10,6 @@ import {TransientScope} from './Scopes/TransientScope';
 import {Binding} from './Binding';
 import {BindingTargetIsNotBasedOnFunction} from './BindingTargetIsNotBasedOnFunction';
 
-const _container = new WeakMap();
-const _service = new WeakMap();
 const _strategy = new WeakMap();
 const _scopeSyntax = new WeakMap();
 
@@ -36,6 +34,10 @@ function throwIfNotFunction(type) {
  * Represents the syntax for defining a {Binding} in the container 
  */
 export class BindingSyntax {
+    #container;
+    #service;
+    #strategy;
+    #scopeSyntax;
     
     /**
      * Initializes a new instance of {BindingSyntax}
@@ -43,8 +45,8 @@ export class BindingSyntax {
      * @param {Object} service Representation of the service - often the name of service in string form 
      */
     constructor(container, service) {
-        _container.set(this, container);
-        _service.set(this, service);
+        this.#container = container;
+        this.#service = service;
     }
 
     /**
@@ -52,7 +54,7 @@ export class BindingSyntax {
      * @property {Container}
      */
     get container() {
-        return _container.get(this);
+        return this.#container;
     }
 
     /**
@@ -60,7 +62,7 @@ export class BindingSyntax {
      * @property {Object}
      */
     get service() {
-        return _service.get(this);
+        return this.#service;
     }
 
     /**

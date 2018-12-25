@@ -5,15 +5,17 @@
 import {ActivationStrategy} from './Strategies/ActivationStrategy';
 import {Scope} from './Scopes/Scope';
 
-const _service = new WeakMap();
-const _strategy = new WeakMap();
-const _scope = new WeakMap();
+// Jani - 453 70 857
 
 /**
  * Represents a binding for a specific service
  */
 export class Binding
 {
+    #service;
+    #strategy;
+    #scope;
+
     /**
      * Initializes a new instance of {Binding}
      * 
@@ -23,9 +25,9 @@ export class Binding
      * @param {scope} scope The scope in which the binding lives - controls the lifecycle
      */
     constructor(service, strategy, scope) {
-        _service.set(this, service);
-        _strategy.set(this, strategy);
-        _scope.set(this, scope);
+        this.#service = service;
+        this.#strategy = strategy;
+        this.#scope = scope;
     }
     
     /**
@@ -35,7 +37,7 @@ export class Binding
      * @return {function}
      */
     get service() {
-        return _service.get(this);
+        return this.#service;
     }
     
     /**
@@ -45,7 +47,7 @@ export class Binding
      * @return {ActivationStrategy}
      */
     get strategy() {
-        return _strategy.get(this);        
+        return this.#strategy;
     }
     
     /**
@@ -55,7 +57,7 @@ export class Binding
      * @return {Scope}
      */
     get scope() {
-        return _scope.get(this);
+        return this.#scope;
     }
 
     /**
@@ -64,6 +66,6 @@ export class Binding
      * @property {Scope}
      */
     set scope(scope) {
-        _scope.set(this, scope);
+        this.#scope = scope;
     }
 }

@@ -2,8 +2,6 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-const _evaluator = new WeakMap();
-const _currentInstance = new WeakMap();
 
 /**
  * Represents a rule based on the specification pattern
@@ -11,12 +9,14 @@ const _currentInstance = new WeakMap();
  * @property {boolean} isSatisfied - Returns true if satisfied, false if not* 
  */
 export class Specification {
+    #evaluator;
+    #currentInstance;
 
     /**
      * Initializes new instance of {Specification}
      */
     constructor(evaluator) {
-        _evaluator.set(this, evaluator);
+        this.#evaluator = evaluator;
     }
 
     /**
@@ -25,7 +25,7 @@ export class Specification {
      * @property {function} evaluator - Instance of the function that performs evaluation
      */
     get evaluator() {
-        return _evaluator.get(this);
+        return this.#evaluator;
     }
 
     /**
@@ -34,8 +34,8 @@ export class Specification {
      * @property {boolean} isSatisfied - Returns true if satisfied, false if not
      */
     get isSatisfied() {
-        let instance = _currentInstance.get(this);
-        let evaluator = _evaluator.get(this);
+        let instance = this.#currentInstance;
+        let evaluator = this.#evaluator;
         if( instance && evaluator ) {
             return evaluator(instance);
         }
@@ -48,7 +48,7 @@ export class Specification {
      * @param {object} instance - The instance to evaluate against
      */
     evaluate(instance) {
-        _currentInstance.set(this, instance);
+        this.#currentInstance = instance;
         return this.isSatisfied;
     }
 }
