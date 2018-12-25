@@ -6,11 +6,14 @@ import { Bootloader } from '../Bootloader';
 
 describe('when configuring', () => {
     let callback = sinon.stub();
+    let result = null;
+
     beforeEach(() => {
         (becauseOf => {            
-            Bootloader.configure(callback);
+            result = Bootloader.configure(callback);
         })();
     });
 
-    it("should call the callback", () => callback.called.should.be.true);
+    it('should call the callback', () => callback.called.should.be.true);
+    it('should return a boot loader', () => result.should.be.instanceof(Bootloader));
 });
