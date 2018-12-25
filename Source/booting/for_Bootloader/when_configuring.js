@@ -13,7 +13,7 @@ describe('when configuring', () => {
         (becauseOf => {
             callback = sinon.stub();
            result = Bootloader.configure(callback);
-´        })();
+        })();
     });
 
     it('should call the callback', () => callback.called.should.be.true);
