@@ -5,6 +5,10 @@
         "**/node_modules": true,
         "**/.git": true,
         "**/.svn": true,
-        "**/.DS_Store": true
-    }
+        "**/.DS_Store": true,
+        "**/dist/**": true
+    },
+    "eslint.enable": true,
+    "typescript.validate.enable": false,
+    "typescript.format.enable": false
 }
