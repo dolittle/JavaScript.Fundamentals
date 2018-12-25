@@ -11,7 +11,7 @@
         "@babel/cli": "^7.2.0",
         "@dolittle/build": "^2.0.0",
         "@babel/plugin-transform-modules-systemjs": "^7.2.0",
+        "babel-eslint": "^10.0.1",
         "systemjs": "^2.1.1"
-        
     }
 }
