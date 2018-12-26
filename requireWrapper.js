@@ -2,6 +2,13 @@
     var prototype = System.constructor.prototype;
     var transform = prototype.transform;
     prototype.transform = function (url, source) {
+        if( url.indexOf("node_modules") < 0 ) {
+            return Promise.resolve(transform.call(this, url, source))
+            .then(function (_source) {
+                return _source;
+            });
+        }
+
         var context = { imports: [], exports: [] };
 
         if (url.indexOf('node_modules/@dolittle/') > 0) {
