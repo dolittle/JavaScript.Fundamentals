@@ -4,17 +4,21 @@
  *--------------------------------------------------------------------------------------------*/
 import { BootBuilder } from "../BootBuilder";
 import { Boot } from "../Boot";
+import { BootProcedure } from "../BootProcedure";
 
 
- describe('when building', () => {
+describe('when building', () => {
+    let builder = null;
     let result = null;
 
-     beforeEach(() => {
-         let builder = new BootBuilder();
-         (becauseOf => {
-             result = builder.build();
-         })();
-     })
+    beforeEach(() => {
+        builder = new BootBuilder();
+        builder.procedures.add(new BootProcedure());
+        (becauseOf => {
+            result = builder.build();
+        })();
+    })
 
-     it('should return a boot instance', () => result.should.be.instanceof(Boot));
- });
+    it('should return a boot instance', () => result.should.be.instanceof(Boot));
+    it('should pass along the boot procedures', () => result.procedures.should.equal(builder.procedures));
+});

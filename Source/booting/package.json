@@ -7,13 +7,19 @@
     "transpile": "rm -rf dist && PACKAGE_DISTRIBUTION=true npx babel . -d dist --config-file ../../.babelrc",
     "prepublish": "yarn run transpile"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolittle/JavaScript.Fundamentals.git"
+  },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dolittle/JavaScript.Fundamentals/issues"
+  },
+  "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme",
   "dependencies": {
-    "@dolittle/core": "1.0.3",
-    "rxjs": "^6.3.3"
+    "@dolittle/dependencyinversion": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.2.0"
   }
 }

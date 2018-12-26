@@ -9,27 +9,27 @@ import { BootProcedures } from './BootProcedures';
  * Represents a builder for boot - typically used during configuration
  */
 export class BootBuilder {
-    #bootProcedures;
+    #procedures;
 
     /**
      * Initializes a new instance of {BootBuilder}
      */
     constructor() {
-        this.#bootProcedures = new BootProcedures();
+        this.#procedures = new BootProcedures();
     }
 
     /**
      * Get the {BootProcedures}
      * @returns {BootProcedures} for the {Boot}
      */
-    get procedures() { return this.#bootProcedures; }
+    get procedures() { return this.#procedures; }
 
     /**
      * Build a {Boot} instance
      * @returns {Boot} Configured instance
      */
     build() {
-        let boot = new Boot();
+        let boot = new Boot(this.#procedures);
         return boot;
     }
 }
