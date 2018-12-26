@@ -76,11 +76,17 @@ module.exports = function (wallaby) {
     - Generate packages file into project cache dir
         - Node_modules - point to whatever is set in main in the package.json file
         - folders with @ in front are organizations - get sub folders from these
+
     - Watch node_modules folder for new things and recreate package.json file
 
     - Caching - middleware, invalidate changed files so we don't have to append date in the defaultExtensions thingy
+
     - Ignore for_* when doing dist build
+
+    - Use common .babelrc file and just add the needed things for Wallaby / SystemJS
+
     - Look at module definition in defaultExtensions - is it needed? 
+    - Only do the require wrapper if it is from node_modules that aren't in the workspaces
 
     */
 
