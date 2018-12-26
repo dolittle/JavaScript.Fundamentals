@@ -80,6 +80,7 @@ module.exports = function (wallaby) {
 
     - Caching - middleware, invalidate changed files so we don't have to append date in the defaultExtensions thingy
     - Ignore for_* when doing dist build
+    - Look at module definition in defaultExtensions - is it needed? 
 
     */
 
