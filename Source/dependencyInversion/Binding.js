@@ -5,8 +5,6 @@
 import {ActivationStrategy} from './Strategies/ActivationStrategy';
 import {Scope} from './Scopes/Scope';
 
-// Jani - 453 70 857
-
 /**
  * Represents a binding for a specific service
  */
