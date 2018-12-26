@@ -14,7 +14,8 @@ export class BootProcedures {
      * Perform all the {BootProcedure} 
      */
     perform() {
-
+        let procedures = this.#procedures.filter(procedure => procedure.canPerform());
+        procedures.forEach(procedure => procedure.perform());
     }
 
     /**
