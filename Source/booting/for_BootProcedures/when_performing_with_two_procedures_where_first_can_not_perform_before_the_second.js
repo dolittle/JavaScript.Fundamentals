@@ -5,23 +5,35 @@
 import { BootProcedures } from '../BootProcedures';
 import { BootProcedure } from '../BootProcedure';
 
-describe('when performing with two procedures that can perform', () => {
+describe('when performing with two procedures that can not perform before the second', () => {
     let procedures = null;
     let first_procedure = null;
     let second_procedure = null;
-
+    let call_count = 0;
+    let performers = [];
+    
 
     beforeEach(() => {
+        call_count = 0;
+
         procedures = new BootProcedures();
 
         first_procedure = new BootProcedure();
-        first_procedure.canPerform = () => true;
-        first_procedure.perform = sinon.stub();
+        first_procedure.canPerform = () => {
+            let canPerform = call_count > 0;
+            call_count++;
+            return canPerform;
+        };
+        first_procedure.perform = () => {
+            performers.push(0);
+        };
         procedures.add(first_procedure);
 
         second_procedure = new BootProcedure();
         second_procedure.canPerform = () => true;
-        second_procedure.perform = sinon.stub();
+        second_procedure.perform = () => {
+            performers.push(1);
+        };
         procedures.add(second_procedure);
 
         (becauseOf => {
@@ -29,6 +41,5 @@ describe('when performing with two procedures that can perform', () => {
         })();
     })
 
-    it('should call perform on first procedure', () => first_procedure.perform.called.should.be.true);
-    it('should call perform on second procedure', () => first_procedure.perform.called.should.be.true);
+    it('should perform in correct order', () => performers.should.have.same.members([1,0]));
 });

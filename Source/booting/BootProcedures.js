@@ -14,8 +14,17 @@ export class BootProcedures {
      * Perform all the {BootProcedure} 
      */
     perform() {
-        let procedures = this.#procedures.filter(procedure => procedure.canPerform());
-        procedures.forEach(procedure => procedure.perform());
+        let procedures = [];
+        
+        this.#procedures.forEach(procedure => procedures.push(procedure));
+        do {
+            var procedure = procedures.shift();
+            if( procedure.canPerform() ) {
+                procedure.perform();
+            } else {
+                procedures.push(procedure);
+            }
+        } while(procedures.length > 0);
     }
 
     /**
