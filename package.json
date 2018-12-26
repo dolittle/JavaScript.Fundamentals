@@ -2,10 +2,10 @@
     "private": true,
     "workspaces": [
         "Source/booting",
-        "Source/reflection",
+        "Source/dependencyInversion",
         "Source/exceptions",
-        "Source/specifications",
-        "Source/dependencyInversion"
+        "Source/reflection",
+        "Source/specifications"
     ],
     "devDependencies": {
         "@babel/cli": "^7.2.0",
