@@ -7,16 +7,17 @@ if (false) {
 
 const babelConfig = {
     'plugins': [
-        "@babel/plugin-transform-modules-systemjs",
-        "@babel/plugin-proposal-class-properties",
-        ["@babel/plugin-proposal-decorators", { "legacy": true }],
+        '@babel/plugin-transform-modules-systemjs',
+        '@babel/plugin-proposal-class-properties',
+        '@babel/plugin-proposal-private-methods',
+        ['@babel/plugin-proposal-decorators', { 'legacy': true }],
 
-        ["@babel/plugin-transform-runtime",
+        ['@babel/plugin-transform-runtime',
             {
-                "corejs": false,
-                "helpers": false,
-                "regenerator": true,
-                "useESModules": false
+                'corejs': false,
+                'helpers': false,
+                'regenerator': true,
+                'useESModules': false
             }
         ]
     ],
@@ -100,15 +101,15 @@ module.exports = function (wallaby) {
 
             { pattern: 'node_modules/chai/chai.js', instrument: false },
             { pattern: 'node_modules/chai-as-promised/lib/chai-as-promised.js', instrument: false },
-            { pattern: "node_modules/sinon/pkg/sinon.js", instrument: false },
-            { pattern: "node_modules/sinon-chai/lib/sinon-chai.js", instrument: false },
-            { pattern: "node_modules/systemjs/dist/system.js", instrument: false },
-            { pattern: "node_modules/systemjs/dist/extras/transform.js", instrument: false },
+            { pattern: 'node_modules/sinon/pkg/sinon.js', instrument: false },
+            { pattern: 'node_modules/sinon-chai/lib/sinon-chai.js', instrument: false },
+            { pattern: 'node_modules/systemjs/dist/system.js', instrument: false },
+            { pattern: 'node_modules/systemjs/dist/extras/transform.js', instrument: false },
 
-            { pattern: "defaultExtensions.js", instrument: false },
-            { pattern: "requireWrapper.js", instrument: false },
-            { pattern: "json.js", instrument: false },
-            { pattern: "package.json", instrument: false, load: false },
+            { pattern: 'defaultExtensions.js', instrument: false },
+            { pattern: 'requireWrapper.js', instrument: false },
+            { pattern: 'json.js', instrument: false },
+            { pattern: 'package.json', instrument: false, load: false },
             { pattern: 'Source/**/dist/**/*.js', ignore: true },
             { pattern: 'Source/**/dist/**/for_*/*.js', ignore: true },
             { pattern: 'Source/**/for_*/*.js', ignore: true },
@@ -137,7 +138,7 @@ module.exports = function (wallaby) {
             });
         },
 
-        testFramework: "jasmine",
+        testFramework: 'jasmine',
 
         setup: (w) => {
             window.runPostfix = new Date().toISOString();

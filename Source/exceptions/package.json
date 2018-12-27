@@ -17,8 +17,6 @@
     "url": "https://github.com/dolittle/JavaScript.Fundamentals/issues"
   },
   "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme",
-  "dependencies": {
-  },
-  "devDependencies": {
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }

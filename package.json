@@ -8,9 +8,20 @@
         "Source/specifications"
     ],
     "devDependencies": {
-        "@babel/cli": "^7.2.0",
         "@dolittle/build": "^2.0.0",
-        "@babel/plugin-transform-modules-systemjs": "^7.2.0",
+        "@babel/cli": "^7.2.0",
+        "@babel/register": "^7.0.0",
+        "@babel/plugin-proposal-private-methods": "^7.2.0",
+        "@babel/plugin-transform-modules-commonjs":"^7.2.0",
+        "@babel/plugin-transform-modules-amd":"^7.2.0",
+        "@babel/plugin-transform-modules-umd":"^7.2.0",
+        "@babel/plugin-transform-modules-systemjs":"^7.2.0",
+        "require-dir": "^1.0.0",
+        "yargs": "^12.0.5",
+        "gulp-cli": "~2.0.0",
+        "gulp": "^4.0.0",
+        "gulp-debug":"^4.0.0",
+        "gulp-babel":"^8.0.0",
         "babel-eslint": "^10.0.1",
         "systemjs": "^2.1.1"
     }
