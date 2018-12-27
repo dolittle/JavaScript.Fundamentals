@@ -3,13 +3,14 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { BootStage } from './BootStage';
-import { BindingSyntax } from '../dependencyInversion/BindingSyntax';
+import { MissingAssociation } from './MissingAssociation';
+import { BootStageResult } from './BootStageResult';
 
 /**
  * Represents a builder for a {BootStage}
  */
 export class BootStageBuilder {
-
+    #associations = {};
 
     /**
      * Associate a key with a value
@@ -17,7 +18,7 @@ export class BootStageBuilder {
      * @param {*} value 
      */
     associate(key, value) {
-
+        this.#associations[key] = value;
     }
 
     /**
@@ -25,7 +26,8 @@ export class BootStageBuilder {
      * @param {*} key 
      */
     getAssociation(key) {
-
+        this.#throwIfMissingAssociation(key);
+        return this.#associations[key];
     }
 
     /**
@@ -33,6 +35,11 @@ export class BootStageBuilder {
      * @returns {BootStageResult}
      */
     build() {
+        let result = new BootStageResult(this.#associations);
+        return result;
+    }
 
+    #throwIfMissingAssociation(key) {
+        if (!this.#associations.hasOwnProperty(key)) MissingAssociation.throw(key);
     }
 }

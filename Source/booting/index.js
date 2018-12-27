@@ -11,3 +11,5 @@ export * from './BootProcedures';
 export * from './BootStage';
 export * from './BootStagePerformer';
 export * from './BootStages'
+
+import * as bpe from './stages/08-BootProcedures/BootProceduresBootBuilderExtensions';

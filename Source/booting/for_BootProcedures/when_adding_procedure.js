@@ -2,8 +2,8 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { BootProcedures } from "../BootProcedures";
-import { BootProcedure } from "../BootProcedure";
+import { BootProcedures } from '../BootProcedures';
+import { BootProcedure } from '../BootProcedure';
 
 class MyProcedure extends BootProcedure {}
 

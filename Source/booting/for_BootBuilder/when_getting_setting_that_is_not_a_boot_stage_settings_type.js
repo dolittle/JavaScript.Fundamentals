@@ -3,22 +3,25 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { BootBuilder } from '../BootBuilder';
-import { Boot } from '../Boot';
-import { BootProcedure } from '../BootProcedure';
+import { IncorrectBootStageSettingsType } from '../IncorrectBootStageSettingsType';
 
+class MySettings {}
 
-describe('when building', () => {
+describe('when getting settings that is not a boot stage settings type', () => {
     let builder = null;
     let result = null;
 
     beforeEach(() => {
         builder = new BootBuilder();
-        builder.procedures.add(new BootProcedure());
-        (becauseOf => {
-            result = builder.build();
-        })();
-    })
 
-    it('should return a boot instance', () => result.should.be.instanceof(Boot));
-    it('should pass along the boot procedures', () => result.procedures.should.equal(builder.procedures));
+        (becauseOf => {
+            try {
+                builder.getBootStageSettings(MySettings);
+            } catch(e) {
+                result = e;
+            }
+        })();
+    });
+
+    it('should throw incorrect boot stage settings type', () => result.should.be.instanceof(IncorrectBootStageSettingsType));
 });

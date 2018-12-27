@@ -3,22 +3,23 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import { BootBuilder } from '../BootBuilder';
-import { Boot } from '../Boot';
-import { BootProcedure } from '../BootProcedure';
+import { BootStageSettings } from '../BootStageSettings';
 
+class MySettings extends BootStageSettings {}
 
-describe('when building', () => {
+describe('when getting same settings twice', () => {
     let builder = null;
-    let result = null;
+    let first_settings = null;
+    let second_settings = null;
 
     beforeEach(() => {
         builder = new BootBuilder();
-        builder.procedures.add(new BootProcedure());
-        (becauseOf => {
-            result = builder.build();
-        })();
-    })
 
-    it('should return a boot instance', () => result.should.be.instanceof(Boot));
-    it('should pass along the boot procedures', () => result.procedures.should.equal(builder.procedures));
+        (becauseOf => {
+            first_settings = builder.getBootStageSettings(MySettings);
+            second_settings = builder.getBootStageSettings(MySettings);
+        })();
+    });
+
+    it('should return same instance', () => first_settings.should.equal(second_settings));
 });

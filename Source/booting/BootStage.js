@@ -9,6 +9,11 @@
  export const BootStage = {
 
     /**
+     * Unknown stage - is not allowed
+     */
+    Unknown: 0,
+
+    /**
      * Basics stage - fixed
      * This stage is defined by the system and can't be swapped out.
      */

@@ -2,23 +2,22 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-import { BootBuilder } from '../BootBuilder';
-import { Boot } from '../Boot';
-import { BootProcedure } from '../BootProcedure';
-
+import { BootStageBuilder } from '../BootStageBuilder';
+import { BootStageResult } from '../BootStageResult';
 
 describe('when building', () => {
-    let builder = null;
+    const key = 'some key';
+    const value = 'some value';
     let result = null;
 
     beforeEach(() => {
-        builder = new BootBuilder();
-        builder.procedures.add(new BootProcedure());
+        let builder = new BootStageBuilder();
+        builder.associate(key, value);
         (becauseOf => {
             result = builder.build();
         })();
-    })
+    });
 
-    it('should return a boot instance', () => result.should.be.instanceof(Boot));
-    it('should pass along the boot procedures', () => result.procedures.should.equal(builder.procedures));
+    it('should return a boot stage result', () => result.should.be.instanceof(BootStageResult));
+    it('should pass along assoications', () => result.associations[key].should.equal(value));
 });

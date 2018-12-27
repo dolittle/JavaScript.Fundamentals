@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme",
   "dependencies": {
-    "@dolittle/dependencyinversion": "^1.0.0"
+    "@dolittle/dependencyinversion": "^1.0.0",
+    "@dolittle/exceptions": "^1.0.0"
   },
   "devDependencies": {
   }

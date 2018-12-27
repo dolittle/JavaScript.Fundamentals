@@ -14,6 +14,7 @@ export class Bootloader {
     /**
      * Initializes a new instance of {Bootloader}
      * @param {Boot} boot 
+     * @param {BootStages} bootStages
      */
     constructor(boot) {
         this.#boot = boot;
@@ -24,7 +25,7 @@ export class Bootloader {
      * @returns {Promise} - Resolve will be called with {BootloaderResult}
      */
     start() {
-
+        this.#boot.bootStages.perform(this.#boot);
     }
 
     /**
