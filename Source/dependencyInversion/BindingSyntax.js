@@ -10,25 +10,7 @@ import {TransientScope} from './Scopes/TransientScope';
 import {Binding} from './Binding';
 import {BindingTargetIsNotBasedOnFunction} from './BindingTargetIsNotBasedOnFunction';
 
-const _strategy = new WeakMap();
-const _scopeSyntax = new WeakMap();
-
 const _transientScope = new TransientScope();
-
-const handleStrategyAndScope = function (strategy) {
-    var binding = new Binding(this.service, strategy, _transientScope);
-    this.container.add(binding);
-
-    _strategy.set(this, strategy);
-
-    var scopeSyntax = new ScopeSyntax();
-    _scopeSyntax.set(this, scopeSyntax);
-    return scopeSyntax;
-}
-
-function throwIfNotFunction(type) {
-    if( typeof type !== 'function') BindingTargetIsNotBasedOnFunction.throw(type); 
-}
 
 /**
  * Represents the syntax for defining a {Binding} in the container 
@@ -70,7 +52,7 @@ export class BindingSyntax {
      * @property {ActivationStrategy}
      */
     get strategy() {
-        return _strategy.get(this);
+        return this.#strategy;
     }
 
     /**
@@ -78,7 +60,7 @@ export class BindingSyntax {
      * @property {ScopeSyntax}
      */
     get scopeSyntax() {
-        return _scopeSyntax.get(this);
+        return this.#scopeSyntax;
     }
 
     /**
@@ -87,7 +69,7 @@ export class BindingSyntax {
      */
     toConstant(constant) {
         let strategy = new ConstantActivationStrategy()
-        let scopeSyntax = handleStrategyAndScope.call(this, strategy);
+        let scopeSyntax = this.#handleStrategyAndScope(strategy);
         return scopeSyntax;
     }
 
@@ -96,9 +78,9 @@ export class BindingSyntax {
      * @param {function} type A type the service is bound to
      */
     to(type) {
-        throwIfNotFunction(type);
+        this.#throwIfNotFunction(type);
         var strategy = new TypeActivationStrategy()
-        let scopeSyntax = handleStrategyAndScope.call(this, strategy);
+        let scopeSyntax = this.#handleStrategyAndScope(strategy);
         return scopeSyntax;
     }
 
@@ -107,9 +89,25 @@ export class BindingSyntax {
      * @param {function} fn Function that will be called
      */
     toCallback(fn) {
-        throwIfNotFunction(fn);
+        this.#throwIfNotFunction(fn);
         var strategy = new CallbackActivationStrategy()
-        let scopeSyntax = handleStrategyAndScope.call(this, strategy);
+        let scopeSyntax = this.#handleStrategyAndScope(strategy);
         return scopeSyntax;
     }
+
+
+    #handleStrategyAndScope(strategy) {
+        var binding = new Binding(this.service, strategy, _transientScope);
+        this.container.add(binding);
+    
+        this.#strategy = strategy;
+    
+        var scopeSyntax = new ScopeSyntax();
+        this.#scopeSyntax = scopeSyntax;
+        return scopeSyntax;
+    }
+
+    #throwIfNotFunction(type) {
+        if( typeof type !== 'function') BindingTargetIsNotBasedOnFunction.throw(type); 
+    }    
 }
