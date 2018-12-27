@@ -6,40 +6,42 @@
 // Based on information from: http://stackoverflow.com/questions/332422/how-do-i-get-the-name-of-an-objects-type-in-javascript
 // Checking types : http://tobyho.com/2011/01/28/checking-types-in-javascript/
 
-const _owner = new WeakMap();
-const _name = new WeakMap();
-
-let setName = (owner) => {
-    let funcNameRegex = /function (.{1,})\(/;
-    let results = (funcNameRegex).exec((owner).constructor.toString());
-    let name = (results && results.length > 1) ? results[1] : '';
-    _name.set(owner, name);
-}
+const _typeInfo = new WeakMap();
 
 /**
  * Represents information about a type
  */
 export class TypeInfo {
+    #owner;
+    #name;
+
     constructor(owner) {
-        _owner.set(this, owner);
-        setName(owner);
+        this.#owner = owner;
+        this.#setName(owner);
     }
 
     /**
-     * Get the name of the type1 as {string}
+     * Get the name of the type as {string}
      */
     get name() {
-        let owner = _owner.get(this);
-        return _name.get(owner);
+        return this.#name;
     }
+
+    #setName(owner) {
+        let funcNameRegex = /function (.{1,})\(/;
+        let results = (funcNameRegex).exec((owner).constructor.toString());
+        let name = (results && results.length > 1) ? results[1] : '';
+        this.#name = name;
+    }    
 }
 
 if (!Object.prototype.typeInfo) {
     Object.defineProperty(Object.prototype, 'typeInfo', {
         get: function() {
-            if (this._typeInfo) return this._typeInfo;
-            let typeInfo = new TypeInfo(this);
-            this._typeInfo = typeInfo;
+            let typeInfo = _typeInfo.get(this);           
+            if (typeInfo) return typeInfo;
+            typeInfo = new TypeInfo(this);
+            _typeInfo.set(this, typeInfo);
             return typeInfo;
         },
         configurable: false
