@@ -63,7 +63,7 @@ let getBuildTasks = () => {
     moduleTypes.forEach(module => {
         let destination = `${root}/dist/${module}`;
         //console.log(`Destination : ${destination}`);
-        buildTasks.push((icb) => {
+        let task = (icb) => {
 
             sourceForTranspilation()
                 .pipe(babel(getConfigFor(module)))
@@ -72,12 +72,14 @@ let getBuildTasks = () => {
                     sourcemaps: true 
                 }));
             icb();
-        });
+        };
+
+        task.displayName = `build:${module}`;
+        buildTasks.push(task);
     });
 
     return buildTasks;
 }
 
 
-let tasks = [].concat(moduleTypes.map((module) => `build-babel-${module}`));
 gulp.task('build', gulp.parallel(getBuildTasks()));
