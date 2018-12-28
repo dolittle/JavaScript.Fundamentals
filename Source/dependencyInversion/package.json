@@ -16,7 +16,7 @@
     }
   },
   "scripts": {
-    "build": "gulp build --root ./Source/reflection",
+    "build": "gulp build --root ./Source/dependencyInversion",
     "prepublish": "yarn run build"
   },
   "repository": {
