@@ -15,3 +15,4 @@ use of.
 
 https://github.com/nodejs/node-eps/blob/4217dca299d89c8c18ac44c878b5fe9581974ef3/002-es6-modules.md#51-determining-if-source-is-an-es-module
 
+Document main, module, jspm
