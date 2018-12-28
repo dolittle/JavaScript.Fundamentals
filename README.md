@@ -26,3 +26,8 @@ Document how this work
 ## Build All
 
 Document how this work
+
+## Working effectively across repositories
+
+yarn link.. 
+
