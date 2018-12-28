@@ -7,6 +7,9 @@
         "Source/reflection",
         "Source/specifications"
     ],
+    "scripts": {
+        "build": "gulp build_all"
+    },
     "devDependencies": {
         "@dolittle/build": "^2.0.0",
         "@babel/cli": "^7.2.0",

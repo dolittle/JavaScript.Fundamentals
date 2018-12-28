@@ -3,13 +3,15 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import rimraf from 'rimraf';
-import config from '../config';
+import { Config } from '../Config';
 
-const clean = (done) => {
-    rimraf(config.distFolder, () => {
-        done();
-    });
-};
-clean.displayName = 'clean';
-
-export default clean;
+export function getCleanTask(root) {
+    let task = (done) => {
+        let config = new Config(root);
+        rimraf(config.distFolder, () => {
+            done();
+        });
+    }
+    task.displayName = 'clean';
+    return task;
+}

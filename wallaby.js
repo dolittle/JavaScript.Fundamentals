@@ -48,7 +48,27 @@ function collectPackages(pathPrefix, source, packages) {
 
                 if (fs.existsSync(packageFile)) {
                     let pkg = JSON.parse(fs.readFileSync(packageFile).toString());
-                    if (pkg.main) {
+                    let found = false;
+                    if (pkg.jspm && pkg.jspm.main && pkg.jspm.directories) {
+                        for( let property in pkg.jspm.directories ) {
+                            let directory = pkg.jspm.directories[property];
+                            let fullPath = path.join(packageBasePath, directory);
+                            let basePath = path.join(packageDirectory, directory);
+                            let mainFile = `${pkg.jspm.main}.js`;
+                            let filePath = path.join(fullPath, mainFile);
+                            console.log(`Checking : ${filePath}`)
+                            if (fs.existsSync(filePath)) {
+                                packages[packageDirectory] = {
+                                    main: mainFile,
+                                    path: basePath
+                                }
+
+                                found = true;
+                            }
+                        }
+                    }
+
+                    if (pkg.main && found == false) {
                         let mainFile = path.basename(pkg.main);
                         let mainDirectory = path.dirname(pkg.main);
                         let basePath = path.join(packageDirectory, mainDirectory);
@@ -92,8 +112,8 @@ module.exports = function (wallaby) {
     */
 
     let wallabyConfig = {
-        //debug: true,
-        //reportConsoleErrorAsError: true,
+        debug: true,
+        reportConsoleErrorAsError: true,
         files: [
             { pattern: 'wallaby.js', ignore: true },
             { pattern: 'karma.conf.js', ignore: true },
@@ -142,7 +162,7 @@ module.exports = function (wallaby) {
 
         setup: (w) => {
             window.runPostfix = new Date().toISOString();
-            
+
             wallaby.delayStart();
 
             window.expect = chai.expect;

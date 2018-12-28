@@ -18,3 +18,11 @@ https://github.com/nodejs/node-eps/blob/4217dca299d89c8c18ac44c878b5fe9581974ef3
 Document main, module, jspm
 
 Document dependencies in JSPM -> Package.json
+
+## Build
+
+Document how this work
+
+## Build All
+
+Document how this work

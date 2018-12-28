@@ -7,9 +7,10 @@
   "jspm": {
     "registry": "npm",
     "jspmPackage": true,
-    "format": "amd",
+    "format": "esm",
+    "main": "index",
     "directories": {
-      "dist": "dist/amd"
+      "dist": "dist/systemjs"
     },
     "dependencies": {
       "@dolittle/exceptions": "^1.0.0" 

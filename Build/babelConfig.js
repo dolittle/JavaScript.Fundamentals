@@ -4,9 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 import path from 'path';
 import fs from 'fs';
-import config from './config';
 
-function loadConfig() {
+function loadConfig(config) {
     let configFilenames = [
         '.babelrc',
         '.babelrc.js'
@@ -48,39 +47,18 @@ function loadConfig() {
 }
 
 
-
-let moduleConfigurations = {
-    commonjs: (config) => {
-
-    },
-    amd: (config) => {
-
-    },
-    umd: (config) => {
-
-    },
-    systemjs: (config) => {
-
-    }
-}
-
-let projectConfig = null;
-
-
 export class babelConfig {
 
-    constructor() {
-        if( projectConfig == null ) {
-            projectConfig = loadConfig();
-        }
+    constructor(config) {
+        let projectConfig = loadConfig(config);
         this.plugins = [];
         this.presets = [];
         Object.assign(this, projectConfig);
     }
 
-    static getConfigForModuleFormat(moduleFormat) {
-        let config = new babelConfig();
-        config.plugins.push(`@babel/plugin-transform-modules-${moduleFormat}`);
-        return config;
+    static getConfigForModuleFormat(config, moduleFormat) {
+        let instance = new babelConfig(config);
+        instance.plugins.push(`@babel/plugin-transform-modules-${moduleFormat}`);
+        return instance;
     }
 }

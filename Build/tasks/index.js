@@ -2,6 +2,4 @@
  *  Copyright (c) Dolittle. All rights reserved.
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
-require('@babel/register');
-var tasks = require('./Build/tasks/index');
-for( var task in tasks ) exports[task] = tasks[task];
+export * from './build';
