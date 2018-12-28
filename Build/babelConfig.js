@@ -47,7 +47,7 @@ function loadConfig() {
     }
 }
 
-let projectConfig = loadConfig();
+
 
 let moduleConfigurations = {
     commonjs: (config) => {
@@ -64,10 +64,15 @@ let moduleConfigurations = {
     }
 }
 
+let projectConfig = null;
+
 
 export class babelConfig {
 
     constructor() {
+        if( projectConfig == null ) {
+            projectConfig = loadConfig();
+        }
         this.plugins = [];
         this.presets = [];
         Object.assign(this, projectConfig);
