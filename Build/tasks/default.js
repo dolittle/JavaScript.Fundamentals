@@ -5,4 +5,6 @@
 import gulp from 'gulp';
 
 gulp.task('default', () => {
+    console.info('There is no default task');
+    process.exit();
 });
