@@ -1,6 +1,6 @@
 {
     "files.exclude": {
-        ".vscode": true,
+        
         "**/jspm_packages": true,
         "**/node_modules": true,
         "**/.git": true,
