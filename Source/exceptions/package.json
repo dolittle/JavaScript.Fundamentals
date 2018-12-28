@@ -13,8 +13,8 @@
     }
   },
   "scripts": {
-    "transpile": "rm -rf dist && PACKAGE_DISTRIBUTION=true npx babel . -d dist --config-file ../../.babelrc",
-    "prepublish": "yarn run transpile"
+    "build": "gulp build --root ./Source/reflection",
+    "prepublish": "yarn run build"
   },
   "repository": {
     "type": "git",
