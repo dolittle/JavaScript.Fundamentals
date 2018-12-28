@@ -2,7 +2,16 @@
   "name": "@dolittle/exceptions",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/commonjs/index.js",
+  "module": "dist/esmodule/index.js",
+  "jspm": {
+    "registry": "npm",
+    "jspmPackage": true,
+    "format": "amd",
+    "directories": {
+      "dist": "dist/amd"
+    }
+  },
   "scripts": {
     "transpile": "rm -rf dist && PACKAGE_DISTRIBUTION=true npx babel . -d dist --config-file ../../.babelrc",
     "prepublish": "yarn run transpile"

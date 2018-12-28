@@ -10,3 +10,8 @@ from the local representation.
 
 Once set up, all you need to do is run the `yarn run transpile` task to get new `dist` files for the other packages to make
 use of.
+
+## Modules
+
+https://github.com/nodejs/node-eps/blob/4217dca299d89c8c18ac44c878b5fe9581974ef3/002-es6-modules.md#51-determining-if-source-is-an-es-module
+

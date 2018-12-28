@@ -3,29 +3,13 @@
  *  Licensed under the MIT License. See LICENSE in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
 import gulp from 'gulp';
-import yargs from 'yargs';
 import babel from 'gulp-babel';
-import debug from 'gulp-debug';
-import path from 'path';
+import config from '../config';
+import clean from './clean';
 
-const babelConfig = {
-    'sourceMap': 'true',
-    'plugins': [
-        '@babel/plugin-proposal-class-properties',
-        '@babel/plugin-proposal-private-methods',
-        ['@babel/plugin-proposal-decorators', { 'legacy': true }],
+import sourcemaps from 'gulp-sourcemaps'
 
-        ['@babel/plugin-transform-runtime',
-            {
-                'corejs': false,
-                'helpers': false,
-                'regenerator': true,
-                'useESModules': false
-            }
-        ]
-    ],
-    'presets': ['@babel/preset-env']
-};
+import { babelConfig } from '../babelConfig';
 
 let moduleTypes = [
     'commonjs',
@@ -34,42 +18,37 @@ let moduleTypes = [
     'systemjs'
 ];
 
-
-
 let getBuildTasks = () => {
     let buildTasks = [];
-    let root = path.resolve(yargs.argv.root);
-    console.log('Root : ' + root);
-
-
-    let getConfigFor = (moduleFormat) => {
-        var config = JSON.parse(JSON.stringify(babelConfig));
-        config.plugins.push(`@babel/plugin-transform-modules-${moduleFormat}`);
-        return config;
-    }
 
     let sourceForTranspilation = () => {
         let stream = gulp.src([
-            `${root}/**/*.js`,
-            `!${root}/**/for_*/*.js`,
-            `!${root}/dist/**/*.js`,
-            `!${root}/**/node_modules/**/*.js`
+            `${config.rootFolder}/**/*.js`,
+            `!${config.rootFolder}/**/for_*/*.js`,
+            `!${config.rootFolder}/dist/**/*.js`,
+            `!${config.rootFolder}/**/node_modules/**/*.js`
         ], {
-                sourcemaps: true
+                base: config.rootFolder
             });
         return stream;
     }
 
     moduleTypes.forEach(module => {
-        let destination = `${root}/dist/${module}`;
-        //console.log(`Destination : ${destination}`);
+        let destination = `${config.distFolder}/${module}`;
         let task = (icb) => {
 
             sourceForTranspilation()
-                .pipe(babel(getConfigFor(module)))
-                .pipe(gulp.dest(destination, { 
+                .pipe(sourcemaps.init())
+                .pipe(babel(babelConfig.getConfigForModuleFormat(module)))
+                .pipe(sourcemaps.mapSources((sourcePath, file) => {
+                    return `../esmodules/${sourcePath}`
+                }))
+                .pipe(sourcemaps.write('.', {
+                    includeContent: true,
+                    overwrite: true
+                }))
+                .pipe(gulp.dest(destination, {
                     overwrite: true,
-                    sourcemaps: true 
                 }));
             icb();
         };
@@ -78,8 +57,18 @@ let getBuildTasks = () => {
         buildTasks.push(task);
     });
 
+    let task = (cb) => {
+        let destination = `${config.rootFolder}/dist/esmodule`;
+        sourceForTranspilation()
+            .pipe(gulp.dest(destination), {
+                overwrite: true
+            });
+        cb();
+    };
+    task.displayName = 'build:esmodules';
+    buildTasks.push(task);
+
     return buildTasks;
 }
 
-
-gulp.task('build', gulp.parallel(getBuildTasks()));
+gulp.task('build', gulp.series(clean,gulp.parallel(getBuildTasks())));
