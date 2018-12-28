@@ -41,7 +41,7 @@ export class transpile {
         let moduleTranspiler = new transpile(module);
 
         let task = (done) => {
-            let config = new Config(root);
+            let config = Config.get(root);
             moduleTranspiler.task(config, done);
         };
         task.displayName = `build:${module}`;

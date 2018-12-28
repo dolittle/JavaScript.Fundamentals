@@ -12,7 +12,7 @@ import { Config } from '../Config';
  */
 export function getEsmodulesTask(root) {
     let task = (done) => {
-        let config = new Config(root);
+        let config = Config.get(root);
         let destination = `${config.distFolder}/esmodule`;
         sources.javaScript(config)
             .pipe(gulp.dest(destination), {

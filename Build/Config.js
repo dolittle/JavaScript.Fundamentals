@@ -36,6 +36,16 @@ export class Config {
         return `${this.rootFolder}/dist`;
     }
 
+
+    /**
+     * Get {Config} - if not root is specified, it will try to resolve it from CLI arguments
+     * @param {string|undefined|null} [root] Optional root
+     */
+    static get(root) {
+        if( !root ) return Config.fromArguments();
+        else return new Config(root);
+    }
+
     /**
      * Create an instance of {Config} based on CLI arguments
      */

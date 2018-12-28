@@ -32,8 +32,33 @@ function getAllBuildTasksFor(root) {
 }
 
 function getBuildTasksForAllWorkspaces() {
+    let dirname = process.cwd();
+    let gulpfile = null;
+
+    while (true) {
+        let fullpath = path.join(dirname, "gulpfile.js")
+        if (fs.existsSync(fullpath)) {
+            gulpfile = fullpath;
+            
+            return true;
+        }
+
+        if (found) break;
+
+        const nextDir = path.dirname(dirname);
+        if (dirname === nextDir) break;
+        dirname = nextDir;
+    }
+
+    if( gulpfile == null ) {
+        console.info(`Couldn't locate a gulpfile.js in your repository`);
+        process.exit();
+    }
+
     let workspaces = [];
-    let workspacePackage = `${process.cwd()}/package.json`;
+    console.log(`Found gulpfile : '${gulpfile}'`);
+    let rootDir = path.dirname(gulpfile);
+    let workspacePackage = `${rootDir}/package.json`;
     
     if( fs.existsSync(workspacePackage) ) {
         
@@ -56,4 +81,3 @@ function getBuildTasksForAllWorkspaces() {
 
 export const build = getAllBuildTasksFor(null);
 export const build_all = getBuildTasksForAllWorkspaces();
-build_all.displayName = "build:all";

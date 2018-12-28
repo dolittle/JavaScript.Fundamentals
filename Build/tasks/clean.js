@@ -7,7 +7,7 @@ import { Config } from '../Config';
 
 export function getCleanTask(root) {
     let task = (done) => {
-        let config = new Config(root);
+        let config = Config.get(root);
         rimraf(config.distFolder, () => {
             done();
         });
