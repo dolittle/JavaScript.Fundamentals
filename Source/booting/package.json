@@ -1,25 +1,28 @@
 {
   "name": "@dolittle/booting",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/commonjs/index.js",
   "module": "dist/esmodule/index.js",
   "jspm": {
     "registry": "npm",
     "jspmPackage": true,
-    "format": "esm",
+    "format": "amd",
     "main": "index",
     "directories": {
       "dist": "dist/systemjs"
     },
     "dependencies": {
       "@dolittle/dependencyinversion": "^1.0.0",
-      "@dolittle/exceptions": "^1.0.0" 
+      "@dolittle/exceptions": "^1.0.0"
     }
   },
   "scripts": {
-    "build": "gulp build --root ./Source/booting",
-    "prepublish": "yarn run build"
+    "build": "gulp build",
+    "prepublish": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -35,6 +38,8 @@
     "@dolittle/dependencyinversion": "^1.0.0",
     "@dolittle/exceptions": "^1.0.0"
   },
-  "devDependencies": {
-  }
+  "devDependencies": {},
+  "files": [
+    "dist"
+  ]
 }
