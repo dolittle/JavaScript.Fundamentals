@@ -1,0 +1,33 @@
+{
+  "name": "@dolittle/protobuf.build",
+  "version": "1.0.4",
+  "description": "",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bin": {
+    "dolittle_proto_build": "./build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolittle/JavaScript.Fundamentals.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dolittle/JavaScript.Fundamentals/issues"
+  },
+  "homepage": "https://github.com/dolittle/JavaScript.Fundamentals#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "12.0.0",
+    "@types/google-protobuf": "^3.7.1",
+    "typescript": "^3.4.5",
+    "grpc": "^1.23.2",
+    "grpc-tools": "^1.8.0",
+    "ts-protoc-gen": "^0.11.0",
+    "del-cli": "^2.0.0",
+    "glob": "^7.1.4"
+  }
+}
