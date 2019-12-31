@@ -11,7 +11,7 @@ class Rule implements IRule {
 describe('when evaluation with broken rules', () => {
     let ruleSet = new RuleSet();
     let brokenRules = [];
-    brokenRules.push(new BrokenRule(new Rule(), null, new RuleContext(), []));
+    brokenRules.push(new BrokenRule(new Rule(), null, new RuleContext({})));
     let evaluation = new RuleSetEvaluation(ruleSet, brokenRules);
 
     it('should be considered failed', () => evaluation.isSuccess.should.be.false);

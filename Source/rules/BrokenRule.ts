@@ -10,20 +10,18 @@ export class BrokenRule {
     private _rule:IRule;
     private _instance:any;
     private _context:IRuleContext;
-    private _causes:ReadonlyArray<Cause>
+    private _causes:Array<Cause> = [];
 
     /**
      * Initializes a new instance of the {BrokenRule} class.
      * @param {IRule} rule - The rule that is broken.
      * @param {*} instance - Instance as part of the evaluation.
      * @param {IRuleContext} context - Context evaluated in.
-     * @param {Array<Cause>} causes - Causes for the broken rule.
      */
-    constructor(rule: IRule, instance: any, context: IRuleContext, causes: Array<Cause>) {
+    constructor(rule: IRule, instance: any, context: IRuleContext) {
         this._rule = rule;
         this._instance = instance;
         this._context = context;
-        this._causes = causes;
     }
 
     /**
@@ -56,5 +54,13 @@ export class BrokenRule {
      */
     get causes(): ReadonlyArray<Cause> {
         return this._causes;
+    }
+
+    /**
+     * Adds a cause of the broken rule
+     * @param {Cause} cause - Cause to add
+     */
+    addCause(cause: Cause) {
+        this._causes.push(cause);
     }
 }
