@@ -8,4 +8,5 @@ describe('when evaluation does not have any broken rules', () => {
     let evaluation = new RuleSetEvaluation(ruleSet, []);
 
     it('should be considered successful', () => evaluation.isSuccess.should.be.true);
+    it('should have no broken rules', () => evaluation.brokenRules.should.be.empty);
 });
