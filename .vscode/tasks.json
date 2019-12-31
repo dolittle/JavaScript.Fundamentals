@@ -4,7 +4,7 @@
         {
             "label": "build",
             "type": "shell",
-            "command": "yarn run build",
+            "command": "yarn build",
             "options": {
                 "cwd": "${fileDirname}"
             },

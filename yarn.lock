@@ -2,17 +2,10 @@
 # yarn lockfile v1
 
 
-"@dolittle/dependencyinversion@^1.0.0":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@dolittle/dependencyinversion/-/dependencyinversion-1.0.2.tgz#f158ca48f9b9e82404deff39726d6619dd826f33"
-  integrity sha512-1zloUoEBZzhbBlpMfLy96t/Krw80IxZBs342ZB7PzEeCj0hY/gcGM1gdBP6hassjUYBa2ARF+ETDdgijeuG5pg==
-  dependencies:
-    "@dolittle/exceptions" "^1.0.0"
-
-"@dolittle/exceptions@^1.0.0":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@dolittle/exceptions/-/exceptions-1.0.1.tgz#a753bffd7c53b74d7c969a2615f5905deb3f7813"
-  integrity sha512-C6PUd9R2xVaKt4wKuF2mmhpjn42kz1BBxevmgwXLsP5ACWvcgUMVhlpJX9HIPV2nXHI/QAyge25ROKottznP+Q==
+"@dolittle/core@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@dolittle/core/-/core-2.0.0.tgz#58fec130fcb6b5bb0e0590df6ed3c3c7889b71e0"
+  integrity sha512-VomdGZq2C/ZZ/t6Q+mFPOHFpCK5ZEdIe/gZ3kzyXRe8K0daxU8bDYmxMfkVQ5tYYK/0pDQxGN/wllJqgRimEIA==
 
 "@dolittle/typescript.build@^5.0.0":
   version "5.1.2"
