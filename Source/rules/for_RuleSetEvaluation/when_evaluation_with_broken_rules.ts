@@ -1,14 +1,11 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleContext, RuleSetEvaluation, BrokenRule, RuleSet } from '../index';
+import { IRule, IRuleContext, RuleContext, RuleSetEvaluation, BrokenRule, RuleSet } from '../index';
 
 class Rule implements IRule {
     evaluate(context: IRuleContext, instance: any): void {
     }
-}
-
-class RuleContext implements IRuleContext {
 }
 
 describe('when evaluation with broken rules', () => {

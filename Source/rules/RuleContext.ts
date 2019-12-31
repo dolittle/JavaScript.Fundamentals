@@ -1,9 +1,11 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { IRuleContext } from './index';
+
 /**
- * Defines the context in which a rule is evaluated in.
+ * Represents the implementation of {IRuleContext}
  */
-export interface IRuleContext {
-    
+export class RuleContext implements IRuleContext {
+
 }

@@ -3,6 +3,7 @@
 
 export * from './IRule';
 export * from './IRuleContext';
+export * from './RuleContext';
 export * from './Reason';
 export * from './Cause';
 export * from './IRuleSetBuilder';
