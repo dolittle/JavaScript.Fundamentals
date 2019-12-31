@@ -15,8 +15,9 @@ describe('when creating with two arguments and title and description_using them'
 
     let cause = reason.withArguments({ Answer: answer, Question: question});
 
+    it('should pass the reason to the cause', () => cause.reason.should.equal(reason));
     it('should have the correct interpolated title', () => cause.title.should.equal(expected_title));
     it('should have the correct interpolated description', () => cause.description.should.equal(expected_description));
-    it('should the answer key and value', () => cause.arguments['Answer'].should.equal(answer));
-    it('should the question key and value', () => cause.arguments['Question'].should.equal(question));
+    it('should hold the answer key and value', () => cause.arguments.get('Answer').should.equal(answer));
+    it('should hold the question key and value', () => cause.arguments.get('Question').should.equal(question));
 });

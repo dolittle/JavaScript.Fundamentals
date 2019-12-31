@@ -8,7 +8,7 @@ import { Reason } from './Reason';
  */
 export class Cause {
     private _reason: Reason;
-    private _args: any;
+    private _args: Map<string, any> = new Map<string, any>();
     private _title: string;
     private _description: string;
 
@@ -19,7 +19,11 @@ export class Cause {
      */
     constructor(reason: Reason, args: any) {
         this._reason = reason;
-        this._args = args;
+
+        for( let key in args ) {
+            this._args.set(key, args[key]);
+        }
+        
         this._title = this.interpolateString(reason.title);
         this._description = this.interpolateString(reason.description);
     }
@@ -52,7 +56,7 @@ export class Cause {
      * Gets any arguments passed to the {Cause}
      * @returns {any}
      */
-    get arguments(): any {
+    get arguments(): ReadonlyMap<string, any> {
         return this._args;
     }
 
@@ -63,8 +67,10 @@ export class Cause {
             let toReplace = match;
             let key = toReplace.substr(1, toReplace.length - 2);
 
-            if (this._args.hasOwnProperty(key)) {
-                result = result.split(toReplace).join(this._args[key]);
+            if (this._args.has(key)) {
+                let value = this._args.get(key);
+                console.log(value);
+                result = result.split(toReplace).join(value);
             }
         });
 
