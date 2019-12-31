@@ -69,7 +69,6 @@ export class Cause {
 
             if (this._args.has(key)) {
                 let value = this._args.get(key);
-                console.log(value);
                 result = result.split(toReplace).join(value);
             }
         });
