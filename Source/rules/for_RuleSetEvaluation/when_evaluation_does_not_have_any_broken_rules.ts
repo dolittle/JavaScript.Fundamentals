@@ -5,7 +5,7 @@ import { RuleSetEvaluation, BrokenRule, RuleSet } from '../index';
 
 describe('when evaluation does not have any broken rules', () => {
     let ruleSet = new RuleSet();
-    let evaluation = new RuleSetEvaluation(ruleSet, []);
+    let evaluation = new RuleSetEvaluation(ruleSet);
 
     it('should be considered successful', () => evaluation.isSuccess.should.be.true);
     it('should have no broken rules', () => evaluation.brokenRules.should.be.empty);
