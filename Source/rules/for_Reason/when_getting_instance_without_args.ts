@@ -3,8 +3,8 @@
 
 import { Reason } from '../index';
 
-describe('when getting instance with args', () => {
-    const id = '30613772-136c-4f8a-af31-920816933795';
+describe('when getting instance without args', () => {
+    const id = 'f1bbfeb4-de16-4a4a-8733-0b1402b1476a';
     const title = 'Some title';
     const description = 'Some description';
     const first_argument = "Forty two";
@@ -12,13 +12,10 @@ describe('when getting instance with args', () => {
 
     let reason = Reason.create(id, title, description);
 
-    let args = { FirstArgument: first_argument, SecondArgument: second_argument};
-
-    let cause = reason.withArguments(args);
+    let cause = reason.noArguments();
 
     it('should return a cause', () => cause.should.not.be.undefined);
-    it('should hold the first argument in the cause', () => cause.arguments.get('FirstArgument').should.equal(first_argument));
-    it('should hold the second argument in the cause', () => cause.arguments.get('SecondArgument').should.equal(second_argument));
+    it('should hove no arguments', () => cause.arguments.values.length.should.equal(0));
     it('should hold the title in the cause', () => cause.title.should.equal(title));
     it('should hold the description in the cause', () => cause.description.should.equal(description));
 });
