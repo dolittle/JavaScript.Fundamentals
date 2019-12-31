@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, Cause } from './index';
+import { IRule, BrokenRule, Cause } from './index';
 
 /**
  * Defines the context in which a rule is evaluated in.
@@ -13,6 +13,12 @@ export interface IRuleContext {
      * @returns {*}
      */
     readonly target: any;
+
+    /**
+     * Gets any broken rules
+     * @returns {Array<BrokenRule>}
+     */
+    readonly brokenRules: Array<BrokenRule>;
 
     /**
      * 
