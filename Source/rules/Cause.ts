@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Reason } from './Reason';
+import { Reason } from './Reason';
 
 /**
  * Represents the actual cause and instance of a {Reason}
@@ -54,9 +54,20 @@ export class Cause {
      */
     get arguments(): any {
         return this._args;
-    }    
+    }
 
     private interpolateString(input: string): string {
-        return '';
+        let result = input;
+        let regex = new RegExp('{(.*?)}', '\g');
+        input.match(regex)?.forEach(match => {
+            let toReplace = match;
+            let key = toReplace.substr(1, toReplace.length - 2);
+
+            if (this._args.hasOwnProperty(key)) {
+                result = result.split(toReplace).join(this._args[key]);
+            }
+        });
+
+        return result;
     }
 }
