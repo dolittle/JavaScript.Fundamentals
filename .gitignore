@@ -1,3 +1,4 @@
+Source/**/Distribution
 # Logs
 logs
 *.log
@@ -57,9 +58,6 @@ typings/
 # dotenv environment variables file
 .env
 
-.DS_Store
-
-package-lock.json
 yarn.lock
-
 dist
+package-lock.json

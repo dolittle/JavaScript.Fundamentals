@@ -1,0 +1,21 @@
+﻿// Copyright (c) Dolittle. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
+
+import sinon from 'sinon';
+import { Or, Specification } from '../../specifications/Specification';
+
+
+describe('when left hand is satisfied and right hand is also', () => {
+    
+    let leftHandSideEvaluator = sinon.stub().returns(true);
+    let leftHandSide = new Specification(leftHandSideEvaluator);
+
+    let rightHandSideEvaluator = sinon.stub().returns(true);
+    let rightHandSide = new Specification(rightHandSideEvaluator);
+
+    let instance = { something: 42 };
+    let rule = new Or(leftHandSide, rightHandSide);
+    let result = rule.isSatisfiedBy(instance);
+
+    it('should be considered satisfied', result.should.be.true);
+});

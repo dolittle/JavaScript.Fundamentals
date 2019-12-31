@@ -1,5 +1,5 @@
 {
-  "name": "@dolittle/specifications",
+  "name": "@dolittle/booting",
   "version": "2.0.0",
   "description": "",
   "author": "",
@@ -32,5 +32,7 @@
       "prepublishOnly": "yarn build && yarn test:run && yarn test:clean"
   },
   "dependencies": {
+    "@dolittle/dependencyinversion": "^1.0.0",
+    "@dolittle/exceptions": "^1.0.0"
   }
 }

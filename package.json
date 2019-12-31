@@ -1,38 +1,20 @@
 {
     "private": true,
     "workspaces": [
-        "Source/booting",
-        "Source/dependencyInversion",
-        "Source/exceptions",
-        "Source/reflection",
-        "Source/specifications"
+      "Source/*"
     ],
     "scripts": {
-        "build": "gulp build_all"
+      "tasks": "gulp --tasks --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+      "clean": "gulp clean --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+      "build": "gulp build --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+      "test": "gulp test --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+      "test:run": "gulp test-run --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+      "test:clean": "gulp test-clean --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js"
     },
     "devDependencies": {
-        "@dolittle/build": "^2.0.0",
-        "@babel/cli": "^7.2.0",
-        "@babel/register": "^7.0.0",
-        "@babel/core":"^7.2.0",
-        "@babel/plugin-proposal-private-methods": "^7.2.0",
-        "@babel/plugin-transform-modules-commonjs":"^7.2.0",
-        "@babel/plugin-transform-modules-amd":"^7.2.0",
-        "@babel/plugin-transform-modules-umd":"^7.2.0",
-        "@babel/plugin-transform-modules-systemjs":"^7.2.0",
-        "typescript":"^3.2.2",
-        "babel-dts-generator":"^0.6.3",
-        "require-dir": "^1.0.0",
-        "yargs": "^12.0.5",
-        "gulp-cli": "~2.0.0",
-        "gulp": "^4.0.0",
-        "gulp-debug":"^4.0.0",
-        "gulp-babel":"^8.0.0",
-        "gulp-typescript":"^5.0.0",
-        "gulp-sourcemaps":"^2.6.4",
-        "gulp-rename":"^1.4.0",
-        "rimraf": "^2.6.2",
-        "babel-eslint": "^10.0.1",
-        "systemjs": "^2.1.1"
+      "@dolittle/typescript.build": "^5.0.0",
+      "fs-extra": "^8.1.0",
+      "glob": "^7.1.6"
     }
-}
+  }
+  
