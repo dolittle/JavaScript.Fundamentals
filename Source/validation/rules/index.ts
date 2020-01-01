@@ -6,3 +6,4 @@ export * from './Email';
 export * from './GreaterThan';
 export * from './GreaterThanOrEqual';
 export * from './LessThan';
+export * from './LessThanOrEqual';
