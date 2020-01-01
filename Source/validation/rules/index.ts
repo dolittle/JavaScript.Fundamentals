@@ -7,3 +7,4 @@ export * from './GreaterThan';
 export * from './GreaterThanOrEqual';
 export * from './LessThan';
 export * from './LessThanOrEqual';
+export * from './MaxLength';
