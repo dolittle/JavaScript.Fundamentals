@@ -8,3 +8,4 @@ export * from './GreaterThanOrEqual';
 export * from './LessThan';
 export * from './LessThanOrEqual';
 export * from './MaxLength';
+export * from './Required';
