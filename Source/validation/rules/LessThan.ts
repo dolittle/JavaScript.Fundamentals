@@ -12,7 +12,7 @@ export class LessThan extends ValueRule {
     private _value: any;
 
     /**
-     * Initializes a new instance of the {GreaterThan} class.
+     * Initializes a new instance of the {LessThan} class.
      * @param value - Value that the input value must be greater than.
      */
     constructor(value: any) {
