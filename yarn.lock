@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@dolittle/core@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@dolittle/core/-/core-2.0.0.tgz#58fec130fcb6b5bb0e0590df6ed3c3c7889b71e0"
-  integrity sha512-VomdGZq2C/ZZ/t6Q+mFPOHFpCK5ZEdIe/gZ3kzyXRe8K0daxU8bDYmxMfkVQ5tYYK/0pDQxGN/wllJqgRimEIA==
-
 "@dolittle/typescript.build@^5.0.0":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@dolittle/typescript.build/-/typescript.build-5.1.2.tgz#cb1982950f777aaa4c866ba51164b49cc0804dc6"
