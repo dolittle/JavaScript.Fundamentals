@@ -3,7 +3,7 @@
 
 import { Reason } from '../index';
 
-describe('when getting instance without args', () => {
+describe('when getting cause without args', () => {
     const id = 'f1bbfeb4-de16-4a4a-8733-0b1402b1476a';
     const title = 'Some title';
     const description = 'Some description';

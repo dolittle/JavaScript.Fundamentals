@@ -36,11 +36,11 @@ export class RuleSetEvaluation {
 
     /**
      * Evaluates all rules in the rule set
-     * @param {*} instance 
+     * @param {*} source - Source to evaluate
      */
-    evaluate(instance: any) {
-        let context = new RuleContext(instance);
-        this._ruleSet.rules.forEach(_ => _.evaluate(context, instance));
+    evaluate(source: any) {
+        let context = new RuleContext(source);
+        this._ruleSet.rules.forEach(_ => _.evaluate(context, source));
         this._brokenRules = context.brokenRules;
     }
 }

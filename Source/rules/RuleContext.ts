@@ -7,20 +7,20 @@ import { BrokenRule, Cause, IRule, IRuleContext } from './index';
  * Represents the implementation of {IRuleContext}
  */
 export class RuleContext implements IRuleContext {
-    private _target: any;
+    private _owner: any;
     private _brokenRules: Map<IRule, BrokenRule> = new Map<IRule, BrokenRule>();
 
     /**
      * Initializes a new instance of the {RuleContext} class.
-     * @param target 
+     * @param owner 
      */
-    constructor(target: any) {
-        this._target = target;
+    constructor(owner: any) {
+        this._owner = owner;
     }
 
     /** @inheritdoc */
-    get target(): any {
-        return this._target;
+    get owner(): any {
+        return this._owner;
     }
 
     /** @inheritdoc */
@@ -31,9 +31,9 @@ export class RuleContext implements IRuleContext {
     }
 
     /** @inheritdoc */
-    fail(rule: IRule, instance: any, cause: Cause): void {
+    fail(rule: IRule, source: any, cause: Cause): void {
         let brokenRule: BrokenRule;
-        brokenRule = this._brokenRules.get(rule) ?? new BrokenRule(rule, instance, this);
+        brokenRule = this._brokenRules.get(rule) ?? new BrokenRule(rule, source, this);
         if( !this._brokenRules.has(rule)) this._brokenRules.set(rule, brokenRule);
         brokenRule.addCause(cause);
     }

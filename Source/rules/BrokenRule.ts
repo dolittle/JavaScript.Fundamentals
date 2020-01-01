@@ -8,19 +8,19 @@ import { IRule, IRuleContext, Cause } from './index';
  */
 export class BrokenRule {
     private _rule:IRule;
-    private _instance:any;
+    private _source:any;
     private _context:IRuleContext;
     private _causes:Array<Cause> = [];
 
     /**
      * Initializes a new instance of the {BrokenRule} class.
      * @param {IRule} rule - The rule that is broken.
-     * @param {*} instance - Instance as part of the evaluation.
+     * @param {*} source - Source that was evaluated.
      * @param {IRuleContext} context - Context evaluated in.
      */
-    constructor(rule: IRule, instance: any, context: IRuleContext) {
+    constructor(rule: IRule, source: any, context: IRuleContext) {
         this._rule = rule;
-        this._instance = instance;
+        this._source = source;
         this._context = context;
     }
 
@@ -33,11 +33,11 @@ export class BrokenRule {
     }
 
     /**
-     * Gets the instance that was part of the evaluation.
+     * Gets the source that was part of the evaluation.
      * @returns {*}
      */
-    get instance(): any {
-        return this._instance;
+    get source(): any {
+        return this._source;
     }
 
     /**

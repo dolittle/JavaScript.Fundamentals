@@ -6,8 +6,8 @@ import { IRule, IRuleContext, RuleSetEvaluation, Reason, RuleSet } from '../inde
 class Rule implements IRule {
     static reason = Reason.create('b06b2dcc-5c4c-4a62-bd3d-95909b131a46', 'My Reason');
 
-    evaluate(context: IRuleContext, instance: any): void {
-        context.fail(this, instance, Rule.reason.noArguments())
+    evaluate(context: IRuleContext, source: any): void {
+        context.fail(this, source, Rule.reason.noArguments())
     }
 }
 

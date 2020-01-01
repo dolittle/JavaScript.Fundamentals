@@ -4,7 +4,7 @@
 import { IRule, IRuleContext, RuleContext, Reason} from '../index';
 
 class Rule implements IRule {
-    evaluate(context: IRuleContext, instance: any): void {
+    evaluate(context: IRuleContext, source: any): void {
     }
 }
 

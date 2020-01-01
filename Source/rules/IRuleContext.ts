@@ -9,10 +9,10 @@ import { IRule, BrokenRule, Cause } from './index';
 export interface IRuleContext {
 
     /**
-     * Gets the target for the context
+     * Gets the owner for the context
      * @returns {*}
      */
-    readonly target: any;
+    readonly owner: any;
 
     /**
      * Gets any broken rules

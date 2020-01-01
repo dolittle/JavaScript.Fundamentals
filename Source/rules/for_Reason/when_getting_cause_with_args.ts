@@ -3,7 +3,7 @@
 
 import { Reason } from '../index';
 
-describe('when getting instance with args', () => {
+describe('when getting cause with args', () => {
     const id = '30613772-136c-4f8a-af31-920816933795';
     const title = 'Some title';
     const description = 'Some description';

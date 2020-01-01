@@ -4,14 +4,14 @@
 import { IRuleContext } from './index';
 
 /**
- * Defines the basis of a rule
+ * Defines the basis of a rule.
  */
 export interface IRule {
 
     /**
-     * Evaluate the rule in a given context and with a given instance
-     * @param {IRuleContext} context - Context the rule will be evaluated in
-     * @param {*} instance - The instance to evaluate
+     * Evaluate the rule in a given context and with a given instance.
+     * @param {IRuleContext} context - Context the rule will be evaluated in.
+     * @param {*} source - The source to evaluate.
      */
-    evaluate(context: IRuleContext, instance:any): void;
+    evaluate(context: IRuleContext, source:any): void;
 }
