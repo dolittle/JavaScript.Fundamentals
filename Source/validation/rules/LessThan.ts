@@ -9,15 +9,12 @@ import { IRuleContext, Reason } from '@dolittle/rules';
  * Represents a {ValueRule} for less than - any value must be less than a given value.
  */
 export class LessThan extends ValueRule {
-    private _value: any;
-
     /**
      * Initializes a new instance of the {LessThan} class.
-     * @param value - Value that the input value must be greater than.
+     * @param {*} _value - Value that the input value must be greater than.
      */
-    constructor(value: any) {
+    constructor(private _value: any) {
         super();
-        this._value = value;
     }
 
     /**

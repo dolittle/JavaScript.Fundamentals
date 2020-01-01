@@ -8,15 +8,12 @@ import { IRuleContext } from '@dolittle/rules';
  * Represents a {ValueRule} for max length - any value can't exceed the given maximum length
  */
 export class MaxLength extends ValueRule {
-    private _length: Number;
-
     /**
      * Initializes a new instance of the {LessThanOrEqual} class.
-     * @param length - Value that the input value must be greater than.
+     * @param {Number} _length - Value that the input value must be greater than.
      */
-    constructor(length: Number) {
+    constructor(private _length: Number) {
         super();
-        this._length = length;
     }
 
     /**
