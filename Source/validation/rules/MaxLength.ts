@@ -5,7 +5,7 @@ import { ValueRule, Reasons } from '../index'
 import { IRuleContext } from '@dolittle/rules';
 
 /**
- * Represents a {ValueRule} for email - any value must be a valid email
+ * Represents a {ValueRule} for max length - any value can't exceed the given maximum length
  */
 export class MaxLength extends ValueRule {
     private _length: Number;
