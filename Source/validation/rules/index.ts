@@ -4,4 +4,5 @@
 export * from './Reasons';
 export * from './Email';
 export * from './GreaterThan';
+export * from './GreaterThanOrEqual';
 export * from './LessThan';
