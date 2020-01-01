@@ -23,7 +23,7 @@ chai.Assertion.addMethod('failWith', function (rule: IRule, source: any, reason:
 chai.Assertion.addMethod('notFail', function () {
     new chai.Assertion(this._obj).to.be.instanceOf(RuleContext);
     let ruleContext = <IRuleContext>this._obj;
-
+    
     this.assert(
         ruleContext.brokenRules.length == 0,
         ``,
