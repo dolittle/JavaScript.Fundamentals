@@ -8,7 +8,7 @@ import '@dolittle/rules.testing';
 describe('when checking null', () => {
     let rule = new Required();
     let context = new RuleContext(null);
-    let value = null;
+    let value:any = null;
 
     rule.evaluate(context, value);
 

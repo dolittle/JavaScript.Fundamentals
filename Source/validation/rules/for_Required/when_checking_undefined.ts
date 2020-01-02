@@ -8,7 +8,7 @@ import '@dolittle/rules.testing';
 describe('when checking undefined', () => {
     let rule = new Required();
     let context = new RuleContext(null);
-    let value = undefined;
+    let value: any = undefined;
 
     rule.evaluate(context, value);
 
