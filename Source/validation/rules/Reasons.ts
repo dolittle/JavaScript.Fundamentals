@@ -3,7 +3,12 @@
 
 import { Reason } from '@dolittle/rules';
 
-export class Reasons {   
+export class Reasons {
+    /**
+     * When a value is null, this is the reason given.
+     */
+    static ValueIsNull: Reason = Reason.create("712D26C6-A40F-4A3D-8C69-1475E761A1CF", "Value is null");
+
     /**
      * When a value is equal and it is not not allowed to be equal, this is the reason given.
      */

@@ -1,18 +1,13 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { ValueRule } from '../index'
+import { ValueRule, Reasons } from '../index'
 import { IRuleContext, Reason } from '@dolittle/rules';
 
 /**
  * Represents a {ValueRule} for required - any value must be a valid existing value
  */
 export class Required extends ValueRule {
-
-    /**
-     * When a value is null, this is the reason given.
-     */
-    static ValueIsNull: Reason = Reason.create("712D26C6-A40F-4A3D-8C69-1475E761A1CF", "Value is null");
 
     /**
      * When a value is not specified, this is the reason given.
@@ -27,7 +22,7 @@ export class Required extends ValueRule {
     /** @inheritdoc */
     evaluate(context: IRuleContext, source: any): void {
         if (source == null) {
-            context.fail(this, source, Required.ValueIsNull.noArguments());
+            context.fail(this, source, Reasons.ValueIsNull.noArguments());
             return;
         }
         if (source.constructor == Number && (<Number>source) == 0) {
