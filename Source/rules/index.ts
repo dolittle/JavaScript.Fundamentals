@@ -10,3 +10,5 @@ export * from './IRuleSetBuilder';
 export * from './RuleSet';
 export * from './BrokenRule';
 export * from './RuleSetEvaluation';
+export * from './ISubjectProvider';
+export * from './ObjectValueSubjectProvider';
