@@ -17,5 +17,5 @@ describe('when left hand is satisfied and right hand is also', () => {
     let rule = new Or(leftHandSide, rightHandSide);
     let result = rule.isSatisfiedBy(instance);
 
-    it('should be considered satisfied', result.should.be.true);
+    it('should be considered satisfied', () => result.should.be.true);
 });

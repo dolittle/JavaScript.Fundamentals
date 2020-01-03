@@ -10,5 +10,5 @@ describe('when evaluating specification returning true', () => {
 
     let result = negative.isSatisfiedBy({});
 
-    it('should be considered false', result.should.be.false);
+    it('should be considered false', () => result.should.be.false);
 });
