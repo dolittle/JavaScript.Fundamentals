@@ -7,21 +7,15 @@ import { IRule, IRuleContext, Cause } from './index';
  * Represents a broken rule.
  */
 export class BrokenRule {
-    private _rule:IRule;
-    private _subject:any;
-    private _context:IRuleContext;
     private _causes:Array<Cause> = [];
 
     /**
      * Initializes a new instance of the {BrokenRule} class.
-     * @param {IRule} rule - The rule that is broken.
-     * @param {*} subject - Subject that was evaluated.
-     * @param {IRuleContext} context - Context evaluated in.
+     * @param {IRule} _rule - The rule that is broken.
+     * @param {*} _subject - Subject that was evaluated.
+     * @param {IRuleContext} _context - Context evaluated in.
      */
-    constructor(rule: IRule, subject: any, context: IRuleContext) {
-        this._rule = rule;
-        this._subject = subject;
-        this._context = context;
+    constructor(private _rule: IRule, private _subject: any, private _context: IRuleContext) {
     }
 
     /**

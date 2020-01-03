@@ -7,10 +7,6 @@ import { Cause } from './index';
  * Defines the reason a rule is broken.
  */
 export class Reason {
-    private _id: string;
-    private _title: string;
-    private _description: string;
-
     /**
      * Gets the unique identifier for the {Reason}.
      * @returns {string}
@@ -35,10 +31,7 @@ export class Reason {
         return this._description;
     }
 
-    private constructor(id: string, title: string, description: string) {
-        this._id = id;
-        this._title = title;
-        this._description = description;
+    private constructor(private _id: string, private _title: string, private _description: string) {
     }
 
     /**

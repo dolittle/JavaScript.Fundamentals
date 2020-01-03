@@ -7,15 +7,13 @@ import { BrokenRule, Cause, IRule, IRuleContext } from './index';
  * Represents the implementation of {IRuleContext}
  */
 export class RuleContext implements IRuleContext {
-    private _owner: any;
     private _brokenRules: Map<IRule, BrokenRule> = new Map<IRule, BrokenRule>();
 
     /**
      * Initializes a new instance of the {RuleContext} class.
-     * @param owner 
+     * @param {*} _owner - The owner of any subjects being evaluated in the context.
      */
-    constructor(owner: any) {
-        this._owner = owner;
+    constructor(private _owner: any) {
     }
 
     /** @inheritdoc */

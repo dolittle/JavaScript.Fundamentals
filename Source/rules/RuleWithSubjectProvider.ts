@@ -10,8 +10,8 @@ export class RuleWithSubjectProvider {
 
     /**
      * Initializes a new instance of the {RuleWithSubjectProvider} class.
-     * @param {IRule} rule - The rule
-     * @param subjectProvider 
+     * @param {IRule} _rule - The rule
+     * @param {ISubjectProvider} _subjectProvider - The subject provider
      */
     constructor(private _rule: IRule, private _subjectProvider: ISubjectProvider) {
     }

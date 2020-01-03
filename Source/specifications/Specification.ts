@@ -2,7 +2,6 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 type Predicate<T> = (instance: T) => boolean;
-type Merge<T> = (left: Predicate<T>, right: Predicate<T>) => Predicate<T>;
 
 /**
  * Represents specifications for building rules.
@@ -10,14 +9,11 @@ type Merge<T> = (left: Predicate<T>, right: Predicate<T>) => Predicate<T>;
  */
 export class Specification<T>
 {
-    private _predicate: Predicate<T>;
-
     /**
      * Initializes a new instance of the {Specification<T>} class.
-     * @param {Predicate<T>} predicate The predicate that will be used for evaluation.
+     * @param {Predicate<T>} _predicate The predicate that will be used for evaluation.
      */
-    constructor(predicate: Predicate<T>) {
-        this._predicate = predicate;
+    constructor(private _predicate: Predicate<T>) {
     }
 
     /**

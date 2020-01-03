@@ -7,25 +7,22 @@ import { Reason } from './Reason';
  * Represents the actual cause and instance of a {Reason}
  */
 export class Cause {
-    private _reason: Reason;
     private _args: Map<string, any> = new Map<string, any>();
     private _title: string;
     private _description: string;
 
     /**
      * Initializes a new instance of the {Cause} class.
-     * @param {Reason} reason - The reason the cause is for.
+     * @param {Reason} _reason - The reason the cause is for.
      * @param {*} args - The arguments for the cause.
      */
-    constructor(reason: Reason, args: any) {
-        this._reason = reason;
-
+    constructor(private _reason: Reason, args: any) {
         for( let key in args ) {
             this._args.set(key, args[key]);
         }
         
-        this._title = this.interpolateString(reason.title);
-        this._description = this.interpolateString(reason.description);
+        this._title = this.interpolateString(_reason.title);
+        this._description = this.interpolateString(_reason.description);
     }
 
     /**
