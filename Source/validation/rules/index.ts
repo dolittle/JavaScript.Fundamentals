@@ -12,4 +12,4 @@ export * from './NotNull';
 export * from './Regex';
 export * from './Required';
 
-import './GreaterThanBuilderExtensions';
+import './PropertyRuleSetExtensions';

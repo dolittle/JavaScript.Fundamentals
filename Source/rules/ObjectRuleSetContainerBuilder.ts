@@ -14,7 +14,7 @@ export class ObjectRuleSetContainerBuilder<TObject extends object> extends RuleS
      * @param {PropertyAccessor<TObject>} accessor - For describing the property to start building a rule for.
      * @returns {PropertyRuleSetBuilder}
      */
-    rulesFor(accessor: PropertyAccessor<TObject>): RuleSetBuilder {
+    rulesFor(accessor: PropertyAccessor<TObject>): PropertyRuleSetBuilder {
         let handler = new PropertyPathResolverProxyHandler()
         let proxy = new Proxy<TObject>(<TObject>{}, handler);
         accessor(proxy);
