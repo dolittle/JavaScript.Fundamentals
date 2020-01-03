@@ -4,17 +4,16 @@
 import { RuleSet, BrokenRule, RuleContext } from './index';
 
 /**
- * Represents the result of an evaluation of {RuleSet}.
+ * Represents evaluation of a {RuleSet}.
  */
 export class RuleSetEvaluation {
     private _brokenRules: Array<BrokenRule> = new Array<BrokenRule>();
 
     /**
      * Initializes a new instance of the {RuleSet} class.
-     * @param {*} _owner - The owner that is under evaluation.
      * @param {RuleSet} _ruleSet - RuleSet the evaluation is for.
      */
-    constructor(private _owner: any, private _ruleSet: RuleSet) {
+    constructor(private _ruleSet: RuleSet) {
     }
 
     /**
@@ -35,10 +34,10 @@ export class RuleSetEvaluation {
 
     /**
      * Evaluates all rules in the rule set.
-     * @param {*} subject - Subject to evaluate.
+     * @param {*} owner - Owning container.
      */
-    evaluate() {
-        let context = new RuleContext(this._owner);
+    evaluate(owner: any) {
+        let context = new RuleContext(owner);
         this._ruleSet.rules.forEach(_ => {
             let subject = _.subjectProvider.provide(context);
             _.rule.evaluate(context, subject);

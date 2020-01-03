@@ -26,8 +26,8 @@ class SubjectProvider implements ISubjectProvider {
 describe('when evaluation does not have any broken rules', () => {
     let owner = { something: 42 };
     let ruleSet = new RuleSet(new RuleWithSubjectProvider(new Rule(), new SubjectProvider()));
-    let evaluation = new RuleSetEvaluation(owner, ruleSet);
-    evaluation.evaluate();
+    let evaluation = new RuleSetEvaluation(ruleSet);
+    evaluation.evaluate(owner);
 
     it('should pass the owner in the rule context to the rule', () => Rule.ruleContextPassedIn.owner.should.equal(owner));
     it('should pass the subject to the rule', () => Rule.subjectPassedIn.should.equal(SubjectProvider.subject));

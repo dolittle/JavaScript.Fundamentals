@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleContext, ISubjectProvider, RuleSetEvaluation, RuleWithSubjectProvider, Reason, RuleSet } from '../index';
+import { IRule, IRuleContext, ISubjectProvider, RuleSetContainer, RuleSetContainerEvaluation, RuleWithSubjectProvider, Reason, RuleSet } from '../index';
 
 class Rule implements IRule {
     static reason = Reason.create('b06b2dcc-5c4c-4a62-bd3d-95909b131a46', 'My Reason');
@@ -27,7 +27,8 @@ class SubjectProvider implements ISubjectProvider {
 describe('when evaluation with broken rules', () => {
     let owner = { something: 42 };
     let ruleSet = new RuleSet(new RuleWithSubjectProvider(new Rule(), new SubjectProvider()));
-    let evaluation = new RuleSetEvaluation(ruleSet);
+    let ruleSetContainer = new RuleSetContainer(ruleSet);
+    let evaluation = new RuleSetContainerEvaluation(ruleSetContainer);
     evaluation.evaluate(owner);
 
     it('should pass the owner in the rule context to the rule', () => Rule.ruleContextPassedIn.owner.should.equal(owner));

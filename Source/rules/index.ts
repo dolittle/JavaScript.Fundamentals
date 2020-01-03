@@ -18,6 +18,7 @@ export * from './ValueRule';
 export * from './RuleSetContainer';
 export * from './RuleSetContainerBuilder';
 export * from './ObjectRuleSetContainerBuilder';
+export * from './RuleSetContainerEvaluation';
 export * from './PropertyAccessor';
 export * from './PropertyDescriptor';
 export * from './PropertyPathResolverProxyHandler';
