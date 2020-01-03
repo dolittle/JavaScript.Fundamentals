@@ -1,17 +1,26 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRuleBuilder, IRuleSetBuilder, RuleSet, RuleWithSubjectProvider } from './index';
+import { RuleBuilder, RuleSet, RuleWithSubjectProvider } from './index';
 
-export class RuleSetBuilder implements IRuleSetBuilder {
-    _ruleBuilders:IRuleBuilder[] = [];
+/**
+ * Represents a builder of rule sets
+ */
+export class RuleSetBuilder {
+    _ruleBuilders:RuleBuilder[] = [];
 
-    /** @inheritdoc */
-    addRuleBuilder(ruleBuilder: IRuleBuilder): void {
+    /**
+     * Add a rule to the builder.
+     * @param {IRuleBuilder} ruleBuilder - A builder for a rule to include in the rule set.
+     */
+    addRuleBuilder(ruleBuilder: RuleBuilder): void {
         this._ruleBuilders.push(ruleBuilder);
     }
     
-    /** @inheritdoc */
+    /**
+     * Build a {RuleSet}.
+     * @returns build 
+     */
     build(): RuleSet {
         let rulesWithSubjectProviders:RuleWithSubjectProvider[] = [];       
         this._ruleBuilders.forEach(_ => rulesWithSubjectProviders.push(_.build()));

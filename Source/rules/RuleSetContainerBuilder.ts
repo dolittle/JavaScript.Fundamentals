@@ -1,20 +1,26 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRuleSetContainerBuilder, IRuleSetBuilder, RuleSet, RuleSetContainer } from './index';
+import { RuleSetBuilder, RuleSet, RuleSetContainer } from './index';
 
 /**
- * Represents an implementation of {IRuleSetContainerBuilder}
+ * Represents an builder for building {RuleSetContainer}
  */
-export class RuleSetContainerBuilder implements IRuleSetContainerBuilder {
-    _ruleSets: Array<IRuleSetBuilder> = [];
+export class RuleSetContainerBuilder {
+    _ruleSets: Array<RuleSetBuilder> = [];
 
-    /** @inheritdoc */
-    addRuleSetBuilder(ruleSetBuilder: IRuleSetBuilder): void {
+    /**
+     * Add a {RuleSet} to the container
+     * @param {RuleSetBuilder} ruleSetBuilder - RuleSet to add
+     */
+    addRuleSetBuilder(ruleSetBuilder: RuleSetBuilder): void {
         this._ruleSets.push(ruleSetBuilder);
     }
 
-    /** @inheritdoc */
+    /**
+     * Build the instance
+     * @returns {RuleSetContainer} 
+     */
     build(): RuleSetContainer {
         let ruleSets: RuleSet[] = [];
         this._ruleSets.forEach(_ => ruleSets.push(_.build()));

@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRuleSetBuilder, PropertyPathResolverProxyHandler, PropertyAccessor, PropertyDescriptor, PropertyRuleSetBuilder, RuleSetContainerBuilder } from './index';
+import { RuleSetBuilder, PropertyPathResolverProxyHandler, PropertyAccessor, PropertyDescriptor, PropertyRuleSetBuilder, RuleSetContainerBuilder } from './index';
 
 /**
  * Represents a specific {RuleSetContainerBuilder} for building rules for objects.
@@ -14,7 +14,7 @@ export class ObjectRuleSetContainerBuilder<TObject extends object> extends RuleS
      * @param {PropertyAccessor<TObject>} accessor - For describing the property to start building a rule for.
      * @returns {PropertyRuleSetBuilder}
      */
-    rulesFor(accessor: PropertyAccessor<TObject>): IRuleSetBuilder {
+    rulesFor(accessor: PropertyAccessor<TObject>): RuleSetBuilder {
         let handler = new PropertyPathResolverProxyHandler()
         let proxy = new Proxy<TObject>(<TObject>{}, handler);
         accessor(proxy);

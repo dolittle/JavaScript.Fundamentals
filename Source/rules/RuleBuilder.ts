@@ -1,13 +1,13 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleBuilder, RuleWithSubjectProvider } from './index';
+import { IRule, RuleWithSubjectProvider } from './index';
 
 /**
- * Represents the base class for a {IRuleBuilder}
+ * Represents the base class for any {RuleBuilder}
  * @template T 
  */
-export abstract class RuleBuilder<T extends IRule = any> implements IRuleBuilder<T> {
+export abstract class RuleBuilder<T extends IRule = any> {
 
     /**
      * Rule should have specific message
