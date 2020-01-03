@@ -17,7 +17,6 @@
   "homepage": "https://github.com/dolittle-interaction/Javascript.Client#readme",
   "files": [
       "Distribution",
-      "!Distribution/for_*/**",
       "package.json",
       "**/*.ts"
   ],
