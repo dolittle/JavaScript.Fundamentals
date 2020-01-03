@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import sinon from 'sinon';
-import { Or, Specification } from '../../specifications/Specification';
+import { Or, Specification } from '../Specification';
 
 
 describe('when left hand is satisfied and right hand is also', () => {
