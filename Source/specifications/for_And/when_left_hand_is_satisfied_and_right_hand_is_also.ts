@@ -5,17 +5,15 @@ import sinon from 'sinon';
 import { And, Specification } from '../Specification';
 
 describe('when left hand is satisfied and right hand is also', () => {
+    const leftHandSideEvaluator = sinon.stub().returns(true);
+    const leftHandSide = new Specification(leftHandSideEvaluator);
 
+    const rightHandSideEvaluator = sinon.stub().returns(true);
+    const rightHandSide = new Specification(rightHandSideEvaluator);
 
-    let leftHandSideEvaluator = sinon.stub().returns(true);
-    let leftHandSide = new Specification(leftHandSideEvaluator);
-
-    let rightHandSideEvaluator = sinon.stub().returns(true);
-    let rightHandSide = new Specification(rightHandSideEvaluator);
-
-    let instance = { something: 42 };
-    let rule = new And(leftHandSide, rightHandSide);
-    let result = rule.isSatisfiedBy(instance);
+    const instance = { something: 42 };
+    const rule = new And(leftHandSide, rightHandSide);
+    const result = rule.isSatisfiedBy(instance);
 
     it('should be considered satisfied', () => result.should.be.true);
 });

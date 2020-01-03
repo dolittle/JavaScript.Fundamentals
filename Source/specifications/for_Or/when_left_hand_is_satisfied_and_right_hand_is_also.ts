@@ -6,16 +6,16 @@ import { Or, Specification } from '../Specification';
 
 
 describe('when left hand is satisfied and right hand is also', () => {
-    
-    let leftHandSideEvaluator = sinon.stub().returns(true);
-    let leftHandSide = new Specification(leftHandSideEvaluator);
 
-    let rightHandSideEvaluator = sinon.stub().returns(true);
-    let rightHandSide = new Specification(rightHandSideEvaluator);
+    const leftHandSideEvaluator = sinon.stub().returns(true);
+    const leftHandSide = new Specification(leftHandSideEvaluator);
 
-    let instance = { something: 42 };
-    let rule = new Or(leftHandSide, rightHandSide);
-    let result = rule.isSatisfiedBy(instance);
+    const rightHandSideEvaluator = sinon.stub().returns(true);
+    const rightHandSide = new Specification(rightHandSideEvaluator);
+
+    const instance = { something: 42 };
+    const rule = new Or(leftHandSide, rightHandSide);
+    const result = rule.isSatisfiedBy(instance);
 
     it('should be considered satisfied', () => result.should.be.true);
 });

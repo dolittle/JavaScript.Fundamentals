@@ -6,16 +6,16 @@ import { And, Specification } from '../Specification';
 
 describe('when left hand is not satisfied and right hand is', () => {
 
-    let leftHandSideEvaluator = sinon.stub().returns(false);
-    let leftHandSide = new Specification(leftHandSideEvaluator);
+    const leftHandSideEvaluator = sinon.stub().returns(false);
+    const leftHandSide = new Specification(leftHandSideEvaluator);
 
-    let rightHandSideEvaluator = sinon.stub().returns(true);
-    let rightHandSide = new Specification(rightHandSideEvaluator);
+    const rightHandSideEvaluator = sinon.stub().returns(true);
+    const rightHandSide = new Specification(rightHandSideEvaluator);
 
-    let instance = { something: 42 };
-    let rule = new And(leftHandSide, rightHandSide);
+    const instance = { something: 42 };
+    const rule = new And(leftHandSide, rightHandSide);
 
-    let result = rule.isSatisfiedBy(instance);
+    const result = rule.isSatisfiedBy(instance);
 
     it('should not be considered satisfied', () => result.should.be.false);
 });

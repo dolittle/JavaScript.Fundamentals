@@ -5,10 +5,10 @@ import sinon from 'sinon';
 import { Negative, Specification } from '../Specification';
 
 describe('when evaluating specification returning true', () => {
-    let predicate = sinon.stub().returns(true);
-    let negative = new Negative(new Specification(predicate));
+    const predicate = sinon.stub().returns(true);
+    const negative = new Negative(new Specification(predicate));
 
-    let result = negative.isSatisfiedBy({});
+    const result = negative.isSatisfiedBy({});
 
     it('should be considered false', () => result.should.be.false);
 });

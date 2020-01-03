@@ -5,12 +5,12 @@ import sinon from 'sinon';
 import { Specification, Or } from '../Specification';
 
 describe('when evaluating two specifications ored together both being true', () => {
-    let instance = 'something';
-    let left_predicate = sinon.stub().returns(true);
-    let right_predicate = sinon.stub().returns(true);
-    let specification = Specification.when(left_predicate).or(new Specification<any>(right_predicate));
+    const instance = 'something';
+    const left_predicate = sinon.stub().returns(true);
+    const right_predicate = sinon.stub().returns(true);
+    const specification = Specification.when(left_predicate).or(new Specification<any>(right_predicate));
 
-    let result = specification.isSatisfiedBy(instance);
+    const result = specification.isSatisfiedBy(instance);
 
     it('should ask the left predicate', () => left_predicate.calledWith(instance).should.be.true);
     it('should not ask the right predicate', () => right_predicate.calledWith(instance).should.be.false);

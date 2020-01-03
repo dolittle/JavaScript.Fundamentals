@@ -5,11 +5,11 @@ import sinon from 'sinon';
 import { Specification, Or } from '../Specification';
 
 describe('when chaining specification with and', () => {
-    let first_predicate = sinon.stub();
-    let second_predicate = sinon.stub();
-    let first_specification = Specification.when(first_predicate);
+    const first_predicate = sinon.stub();
+    const second_predicate = sinon.stub();
+    const first_specification = Specification.when(first_predicate);
 
-    let result = first_specification.or(new Specification<any>(second_predicate));
+    const result = first_specification.or(new Specification<any>(second_predicate));
 
     it('should return an and operator', () => result instanceof Or);
 });

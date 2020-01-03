@@ -17,7 +17,7 @@ export class Specification<T>
     }
 
     /**
-     * Gets the predicate
+     * Gets the predicate.
      * @return {Predicate<T>}
      */
     get predicate(): Predicate<T> {
@@ -25,17 +25,17 @@ export class Specification<T>
     }
 
     /**
-     * Determines whether or not the specification will be satisfied by a given instance
-     * @param {T} instance Instance to evaluate
-     * @returns true if satisfied by the instance, false if not
+     * Determines whether or not the specification will be satisfied by a given instance.
+     * @param {T} instance Instance to evaluate.
+     * @returns true if satisfied by the instance, false if not.
      */
     isSatisfiedBy(instance: T): boolean {
         return this._predicate(instance);
     }
 
     /**
-     * Ands specification with another
-     * @param {Specification<T>} specification Specification to and together with this
+     * Ands specification with another.
+     * @param {Specification<T>} specification Specification to and together with this.
      * @returns {Specification<T>}
      */
     and(specification: Specification<T>): Specification<T> {
@@ -43,8 +43,8 @@ export class Specification<T>
     }
 
     /**
-     * Ands specification with the negation of another 
-     * @param {Specification<T>} specification Specification to and together with this
+     * Ands specification with the negation of another.
+     * @param {Specification<T>} specification Specification to and together with this.
      * @returns {Specification<T>}
      */
     andNot(specification: Specification<T>): Specification<T> {
@@ -52,8 +52,8 @@ export class Specification<T>
     }
 
     /**
-     * Ors specification with another
-     * @param {Specification<T>} specification Specification to or together with this
+     * Ors specification with another.
+     * @param {Specification<T>} specification Specification to or together with this.
      * @returns {Specification<T>}
      */
     or(specification: Specification<T>): Specification<T> {
@@ -61,8 +61,8 @@ export class Specification<T>
     }
 
     /**
-     * Or specification with the negation of another 
-     * @param {Specification<T>} specification Specification to or together with this
+     * Or specification with the negation of another.
+     * @param {Specification<T>} specification Specification to or together with this.
      * @returns {Specification<T>}
      */
     orNot(specification: Specification<T>): Specification<T> {
@@ -70,9 +70,9 @@ export class Specification<T>
     }
 
     /**
-     * Starts a specification
+     * Starts a specification.
      * @template T Type of instance the specification is evaluating.
-     * @param {Predicate<T>} predicate to start with
+     * @param {Predicate<T>} predicate to start with.
      * @returns {Specification<T>}
      */
     static when<T>(predicate: Predicate<T>): Specification<T> {
@@ -82,7 +82,7 @@ export class Specification<T>
 
 
 /**
- * Negative {Specification<T>} - represents the negative of the given specification
+ * Negative {Specification<T>} - represents the negative of the given specification.
  * @template T Type of instance the specification is evaluating.
  */
 export class Negative<T> extends Specification<T> {
@@ -92,7 +92,7 @@ export class Negative<T> extends Specification<T> {
 }
 
 /**
- * And {Specification<T>} - represents the logical and of two specifications
+ * And {Specification<T>} - represents the logical and of two specifications.
  * @template T Type of instance the specification is evaluating.
  */
 export class And<T> extends Specification<T> {
@@ -102,7 +102,7 @@ export class And<T> extends Specification<T> {
 }
 
 /**
- * Or {Specification<T>} - represents the logical or of two specifications
+ * Or {Specification<T>} - represents the logical or of two specifications.
  * @template T Type of instance the specification is evaluating.
  */
 export class Or<T> extends Specification<T> {
