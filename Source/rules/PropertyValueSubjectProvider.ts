@@ -1,22 +1,22 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRuleContext, ISubjectProvider } from './index';
+import { IRuleContext, ISubjectProvider, PropertyDescriptor } from './index';
 
 /**
  * Represents an implementation of {ISubjectProvider} for providing values from an owning object from the {IRuleContext}.
  */
-export class ObjectValueSubjectProvider implements ISubjectProvider {
+export class PropertyValueSubjectProvider implements ISubjectProvider {
 
     /**
      * Creates an instance of object value subject provider.
-     * @param {string} _key - Key representing the value / property in the object.
+     * @param {PropertyDescriptor} _propertyDescriptor - The actual property descriptor.
      */
-    constructor(private _key: string) {
+    constructor(private _propertyDescriptor: PropertyDescriptor) {
     }
 
     /** @inheritdoc */
     provide(ruleContext: IRuleContext) {
-        return {};
+        return this._propertyDescriptor.accessor(ruleContext.owner);
     }
 }

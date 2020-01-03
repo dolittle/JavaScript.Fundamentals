@@ -11,9 +11,9 @@ export class RuleSet {
 
     /**
      * Initializes a new instance of the {RuleSet} class.
-     * @param {...Array<RuleWithSubjectProvider>} rules - Rules for the RuleSet.
+     * @param {...RuleWithSubjectProvider[]} rules - Rules for the RuleSet.
      */
-    constructor(...rules:Array<RuleWithSubjectProvider>) {
+    constructor(...rules:RuleWithSubjectProvider[]) {
         this._rules = rules;
     }
 

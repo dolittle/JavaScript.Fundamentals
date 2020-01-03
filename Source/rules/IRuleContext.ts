@@ -21,7 +21,7 @@ export interface IRuleContext {
     readonly brokenRules: Array<BrokenRule>;
 
     /**
-     * 
+     * Fail for a specific rule, subject and a cause of failure.
      * @param {IRule} rule - Rule to fail
      * @param {*} subject - Subject that failed
      * @param {Cause} cause - Cause of failure
