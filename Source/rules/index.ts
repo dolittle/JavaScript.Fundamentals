@@ -13,3 +13,4 @@ export * from './RuleSetEvaluation';
 export * from './ISubjectProvider';
 export * from './ObjectValueSubjectProvider';
 export * from './RuleWithSubjectProvider';
+export * from './ValueRule';

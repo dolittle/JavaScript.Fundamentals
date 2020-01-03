@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleContext, Reason } from '@dolittle/rules'
+import { IRule, IRuleContext, Reason } from './index'
 
 export abstract class ValueRule implements IRule {
 

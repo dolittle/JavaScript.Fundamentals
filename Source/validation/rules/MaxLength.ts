@@ -1,8 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { ValueRule, Reasons } from '../index'
-import { IRuleContext } from '@dolittle/rules';
+import { Reasons } from '../index'
+import { IRuleContext, ValueRule } from '@dolittle/rules';
 
 /**
  * Represents a {ValueRule} for max length - any value can't exceed the given maximum length

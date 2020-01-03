@@ -1,8 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { ValueRule } from '../index';
-import { IRule, IRuleContext, Cause } from '@dolittle/rules'
+import { IRule, IRuleContext, Cause, ValueRule } from '../index';
 
 class MyRule extends ValueRule {
     evaluate(context: IRuleContext, subject: any): void {
