@@ -5,30 +5,30 @@ import { ValueRule } from '../index';
 import { IRule, IRuleContext, Cause } from '@dolittle/rules'
 
 class MyRule extends ValueRule {
-    evaluate(context: IRuleContext, source: any): void {
-        this.failIfValueTypeMismatch(context, source, String);
+    evaluate(context: IRuleContext, subject: any): void {
+        this.failIfValueTypeMismatch(context, subject, String);
     }
 }
 
 describe('when asking to fail if value type mismatch and it mismatches', () => {
-    let source = 42;
+    let subject = 42;
     let causePassed: Cause;
     let rulePassed: IRule;
-    let sourcePassed: any;
+    let subjectPassed: any;
     let rule: IRule;
 
     beforeEach(() => {
         let context = <IRuleContext>{};
-        context.fail = (rule: IRule, source: any, cause: Cause) => {
+        context.fail = (rule: IRule, subject: any, cause: Cause) => {
             rulePassed = rule;
-            sourcePassed = source;
+            subjectPassed = subject;
             causePassed = cause;
         };
         rule = new MyRule();
-        rule.evaluate(context, source);
+        rule.evaluate(context, subject);
     });
 
     it('should fail with rule passed', () => rulePassed.should.equal(rule));
-    it('should fail with source passed', () => sourcePassed.should.equal(source));
+    it('should fail with subject passed', () => subjectPassed.should.equal(subject));
     it('should fail with value type mismatch as reason', () => causePassed.reason.should.equal(ValueRule.ValueTypeMismatch));
 });

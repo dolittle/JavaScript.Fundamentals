@@ -23,8 +23,8 @@ export interface IRuleContext {
     /**
      * 
      * @param {IRule} rule - Rule to fail
-     * @param {*} source - Source that failed
+     * @param {*} subject - Subject that failed
      * @param {Cause} cause - Cause of failure
      */
-    fail(rule: IRule, source: any, cause: Cause): void;
+    fail(rule: IRule, subject: any, cause: Cause): void;
 }

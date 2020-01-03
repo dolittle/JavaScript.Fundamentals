@@ -28,10 +28,10 @@ export class Regex extends ValueRule {
     }
 
     /** @inheritdoc */
-    evaluate(context: IRuleContext, source: any): void {
-        if (this.failIfValueTypeMismatch(context, source, String)) {
-            if (!(<String>source).match(this._regExp)) {
-                context.fail(this, source, Regex.NotConformingToExpression.withArguments({ value: source }));
+    evaluate(context: IRuleContext, subject: any): void {
+        if (this.failIfValueTypeMismatch(context, subject, String)) {
+            if (!(<String>subject).match(this._regExp)) {
+                context.fail(this, subject, Regex.NotConformingToExpression.withArguments({ value: subject }));
             }
         }
     }

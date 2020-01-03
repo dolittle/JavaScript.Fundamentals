@@ -31,9 +31,9 @@ export class RuleContext implements IRuleContext {
     }
 
     /** @inheritdoc */
-    fail(rule: IRule, source: any, cause: Cause): void {
+    fail(rule: IRule, subject: any, cause: Cause): void {
         let brokenRule: BrokenRule;
-        brokenRule = this._brokenRules.get(rule) ?? new BrokenRule(rule, source, this);
+        brokenRule = this._brokenRules.get(rule) ?? new BrokenRule(rule, subject, this);
         if( !this._brokenRules.has(rule)) this._brokenRules.set(rule, brokenRule);
         brokenRule.addCause(cause);
     }

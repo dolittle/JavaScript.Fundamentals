@@ -6,12 +6,12 @@ import { IRule, IRuleContext, RuleSetEvaluation, Reason, RuleSet } from '../inde
 class Rule implements IRule {
     static reason = Reason.create('b06b2dcc-5c4c-4a62-bd3d-95909b131a46', 'My Reason');
     static ruleContextPassedIn: IRuleContext;
-    static sourcePassedIn: any;
+    static subjectPassedIn: any;
 
-    evaluate(context: IRuleContext, source: any): void {
+    evaluate(context: IRuleContext, subject: any): void {
         Rule.ruleContextPassedIn = context;
-        Rule.sourcePassedIn = source;
-        context.fail(this, source, Rule.reason.noArguments())
+        Rule.subjectPassedIn = subject;
+        context.fail(this, subject, Rule.reason.noArguments())
     }
 }
 
@@ -19,10 +19,10 @@ describe('when evaluation with broken rules', () => {
     let owner = { something: 42 };
     let ruleSet = new RuleSet(new Rule());
     let evaluation = new RuleSetEvaluation(owner, ruleSet);
-    let source = 42;
-    evaluation.evaluate(source);
+    let subject = 42;
+    evaluation.evaluate(subject);
 
     it('should pass the owner in the rule context to the rule', () => Rule.ruleContextPassedIn.owner.should.equal(owner));
-    it('should pass the source to the rule', () => Rule.sourcePassedIn.should.equal(source));
+    it('should pass the subject to the rule', () => Rule.subjectPassedIn.should.equal(subject));
     it('should be considered failed', () => evaluation.isSuccess.should.be.false);
 });

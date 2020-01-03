@@ -4,20 +4,20 @@
 import { BrokenRule, IRule, IRuleContext, RuleContext } from '../index';
 
 class Rule implements IRule {
-    evaluate(context: IRuleContext, source: any): void {
+    evaluate(context: IRuleContext, subject: any): void {
     }
 }
 
 describe('when creating', () => {
 
     let owner = { something: 42 };
-    let source = owner.something;
+    let subject = owner.something;
     let rule = new Rule();
     let ruleContext = new RuleContext(owner);
-    let brokenRule = new BrokenRule(rule, source, ruleContext);
+    let brokenRule = new BrokenRule(rule, subject, ruleContext);
 
     it('should hold the rule', () => brokenRule.rule.should.equal(rule));
-    it('should hold the source', () => brokenRule.source.should.equal(source));
+    it('should hold the subject', () => brokenRule.subject.should.equal(subject));
     it('should hold the rule context', () => brokenRule.context.should.equal(ruleContext));
     it('should have no causes', () => brokenRule.causes.should.be.empty);
 });

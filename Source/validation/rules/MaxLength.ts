@@ -25,11 +25,11 @@ export class MaxLength extends ValueRule {
     }
 
     /** @inheritdoc */
-    evaluate(context: IRuleContext, source: any): void {
-        if (this.failIfValueTypeMismatch(context, source, String)) {
-            let length = (<String>source).length;
+    evaluate(context: IRuleContext, subject: any): void {
+        if (this.failIfValueTypeMismatch(context, subject, String)) {
+            let length = (<String>subject).length;
             if (length > this._length) {
-                context.fail(this, source, Reasons.LengthIsTooLong.withArguments({ length: length }));
+                context.fail(this, subject, Reasons.LengthIsTooLong.withArguments({ length: length }));
             }
         }
     }

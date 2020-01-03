@@ -20,17 +20,17 @@ export class Required extends ValueRule {
     static ValueNotSpecified: Reason = Reason.create("5F790FC3-5C7D-4F3A-B1E9-8F85FAF7176D", "Value not specified");
 
     /** @inheritdoc */
-    evaluate(context: IRuleContext, source: any): void {
-        if (source == null) {
-            context.fail(this, source, Reasons.ValueIsNull.noArguments());
+    evaluate(context: IRuleContext, subject: any): void {
+        if (subject == null) {
+            context.fail(this, subject, Reasons.ValueIsNull.noArguments());
             return;
         }
-        if (source.constructor == Number && (<Number>source) == 0) {
-            context.fail(this, source, Required.ValueNotSpecified.noArguments());
+        if (subject.constructor == Number && (<Number>subject) == 0) {
+            context.fail(this, subject, Required.ValueNotSpecified.noArguments());
             return;
         }
-        if (source.constructor == String && (<String>source).length == 0) {
-            context.fail(this, source, Required.StringIsEmpty.noArguments());
+        if (subject.constructor == String && (<String>subject).length == 0) {
+            context.fail(this, subject, Required.StringIsEmpty.noArguments());
             return;
         }
     }

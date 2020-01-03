@@ -4,13 +4,13 @@
 import { RuleContext, Reason, IRule } from '@dolittle/rules';
 import { Assertion } from 'chai';
 
-Assertion.addMethod('failWith', function (rule: IRule, source: any, reason: Reason) {
+Assertion.addMethod('failWith', function (rule: IRule, subject: any, reason: Reason) {
     new Assertion(this._obj).to.be.instanceOf(RuleContext);
     let ruleContext = <RuleContext>this._obj;
 
     let brokenRule = ruleContext.brokenRules.filter(_ =>
         _.rule == rule &&
-        _.source == source &&
+        _.subject == subject &&
         _.causes.some(c => c.reason == reason));
 
     this.assert(

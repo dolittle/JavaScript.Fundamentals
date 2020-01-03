@@ -10,9 +10,9 @@ import { IRuleContext } from '@dolittle/rules';
 export class NotNull extends ValueRule {
 
     /** @inheritdoc */
-    evaluate(context: IRuleContext, source: any): void {
-        if (source == null) {
-            context.fail(this, source, Reasons.ValueIsNull.noArguments());
+    evaluate(context: IRuleContext, subject: any): void {
+        if (subject == null) {
+            context.fail(this, subject, Reasons.ValueIsNull.noArguments());
             return;
         }
     }

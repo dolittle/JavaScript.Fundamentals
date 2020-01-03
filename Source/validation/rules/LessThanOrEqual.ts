@@ -26,9 +26,9 @@ export class LessThanOrEqual extends ValueRule {
     }
 
     /** @inheritdoc */
-    evaluate(context: IRuleContext, source: any): void {
-        if (this.failIfValueTypeMismatch(context, source, this._value.constructor)) {
-            if( source > this._value ) context.fail(this, source, Reasons.ValueIsGreaterThan.withArguments({leftHand:source, rightHand:this._value}) )
+    evaluate(context: IRuleContext, subject: any): void {
+        if (this.failIfValueTypeMismatch(context, subject, this._value.constructor)) {
+            if( subject > this._value ) context.fail(this, subject, Reasons.ValueIsGreaterThan.withArguments({leftHand:subject, rightHand:this._value}) )
         }
     }
 }

@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { RuleContext } from '@dolittle/rules';
-import { Required } from '../index';
+import { Required, Reasons } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking undefined', () => {
@@ -12,5 +12,5 @@ describe('when checking undefined', () => {
 
     rule.evaluate(context, value);
 
-    it('should fail', () => context.should.failWith(rule, value, Required.ValueIsNull));
+    it('should fail', () => context.should.failWith(rule, value, Reasons.ValueIsNull));
 });

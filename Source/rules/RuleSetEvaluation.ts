@@ -4,7 +4,7 @@
 import { RuleSet, BrokenRule, RuleContext } from './index';
 
 /**
- * Represents the result of an evaluation of {RuleSet}
+ * Represents the result of an evaluation of {RuleSet}.
  */
 export class RuleSetEvaluation {
     private _brokenRules: Array<BrokenRule> = new Array<BrokenRule>();
@@ -26,7 +26,7 @@ export class RuleSetEvaluation {
     }
 
     /**
-     * Gets any broken rules
+     * Gets any broken rules.
      * @returns {ReadonlyArray<BrokenRule>}
      */
     get brokenRules(): ReadonlyArray<BrokenRule> {
@@ -34,12 +34,12 @@ export class RuleSetEvaluation {
     }
 
     /**
-     * Evaluates all rules in the rule set
-     * @param {*} source - Source to evaluate
+     * Evaluates all rules in the rule set.
+     * @param {*} subject - Subject to evaluate.
      */
-    evaluate(source: any) {
+    evaluate(subject: any) {
         let context = new RuleContext(this._owner);
-        this._ruleSet.rules.forEach(_ => _.evaluate(context, source));
+        this._ruleSet.rules.forEach(_ => _.evaluate(context, subject));
         this._brokenRules = context.brokenRules;
     }
 }
