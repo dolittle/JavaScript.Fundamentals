@@ -12,3 +12,4 @@ export * from './BrokenRule';
 export * from './RuleSetEvaluation';
 export * from './ISubjectProvider';
 export * from './ObjectValueSubjectProvider';
+export * from './RuleWithSubjectProvider';

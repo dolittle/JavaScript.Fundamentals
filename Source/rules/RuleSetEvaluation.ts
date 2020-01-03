@@ -37,9 +37,12 @@ export class RuleSetEvaluation {
      * Evaluates all rules in the rule set.
      * @param {*} subject - Subject to evaluate.
      */
-    evaluate(subject: any) {
+    evaluate() {
         let context = new RuleContext(this._owner);
-        this._ruleSet.rules.forEach(_ => _.evaluate(context, subject));
+        this._ruleSet.rules.forEach(_ => {
+            let subject = _.subjectProvider.provide(context);
+            _.rule.evaluate(context, subject);
+        });
         this._brokenRules = context.brokenRules;
     }
 }

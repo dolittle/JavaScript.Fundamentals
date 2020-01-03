@@ -1,27 +1,27 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule } from './index';
+import {RuleWithSubjectProvider } from './index';
 
 /**
  * Represents a set of {IRule} - rules. This type is immutable.
  */
 export class RuleSet {
-    private _rules: ReadonlyArray<IRule>
+    private _rules: ReadonlyArray<RuleWithSubjectProvider>
 
     /**
      * Initializes a new instance of the {RuleSet} class.
-     * @param {...Array<IRule>} rules - Rules for the RuleSet.
+     * @param {...Array<RuleWithSubjectProvider>} rules - Rules for the RuleSet.
      */
-    constructor(...rules:Array<IRule>) {
+    constructor(...rules:Array<RuleWithSubjectProvider>) {
         this._rules = rules;
     }
 
     /**
      * Gets the rules in the {RuleSet}.
-     * @returns {ReadonlyArray<IRule>}
+     * @returns {ReadonlyArray<RuleWithSubjectProvider>}
      */
-    get rules(): ReadonlyArray<IRule> {
+    get rules(): ReadonlyArray<RuleWithSubjectProvider> {
         return this._rules;
     }
 }
