@@ -12,7 +12,7 @@ export class RuleSetContainerEvaluation {
 
     /**
      * Initializes a new instance of the {RuleSetContainerEvaluation} class.
-     * @param _ruleSetContainer 
+     * @param _ruleSetContainer
      */
     constructor(private _ruleSetContainer: RuleSetContainer) {
         this._ruleSetEvaluations = _ruleSetContainer.ruleSets.map(_ => new RuleSetEvaluation(_));

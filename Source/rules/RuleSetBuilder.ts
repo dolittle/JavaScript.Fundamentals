@@ -19,10 +19,10 @@ export class RuleSetBuilder {
 
     /**
      * Build a {RuleSet}.
-     * @returns build 
+     * @returns build
      */
     build(): RuleSet {
-        let rulesWithSubjectProviders: RuleWithSubjectProvider[] = [];
+        const rulesWithSubjectProviders: RuleWithSubjectProvider[] = [];
         this._ruleBuilders.forEach(_ => rulesWithSubjectProviders.push(_.build()));
         return new RuleSet(...rulesWithSubjectProviders);
     }

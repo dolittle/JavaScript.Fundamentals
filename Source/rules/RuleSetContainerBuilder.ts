@@ -19,10 +19,10 @@ export class RuleSetContainerBuilder {
 
     /**
      * Build the instance
-     * @returns {RuleSetContainer} 
+     * @returns {RuleSetContainer}
      */
     build(): RuleSetContainer {
-        let ruleSets: RuleSet[] = [];
+        const ruleSets: RuleSet[] = [];
         this._ruleSets.forEach(_ => ruleSets.push(_.build()));
         return new RuleSetContainer(...ruleSets);
     }

@@ -11,7 +11,7 @@ export interface ISubjectProvider {
     /**
      * Provide a the subject in a given context.
      * @param {IRuleContext} ruleContext - The context in which to provide the subject for.
-     * @returns {*} 
+     * @returns {*}
      */
     provide(ruleContext: IRuleContext): any;
 }

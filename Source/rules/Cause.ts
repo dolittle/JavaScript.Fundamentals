@@ -17,7 +17,7 @@ export class Cause {
      * @param {*} args - The arguments for the cause.
      */
     constructor(private _reason: Reason, args: any) {
-        for (let key in args) {
+        for (const key in args) {
             this._args.set(key, args[key]);
         }
 
@@ -61,11 +61,11 @@ export class Cause {
         const regex = new RegExp('{(.*?)}', '\g');
         let result = input;
         input.match(regex)?.forEach(match => {
-            let toReplace = match;
-            let key = toReplace.substr(1, toReplace.length - 2);
+            const toReplace = match;
+            const key = toReplace.substr(1, toReplace.length - 2);
 
             if (this._args.has(key)) {
-                let value = this._args.get(key);
+                const value = this._args.get(key);
                 result = result.split(toReplace).join(value);
             }
         });

@@ -12,5 +12,5 @@ export interface IRule {
      * @param {IRuleContext} context - Context the rule will be evaluated in.
      * @param {*} subject - The subject to evaluate.
      */
-    evaluate(context: IRuleContext, subject:any): void;
+    evaluate(context: IRuleContext, subject: any): void;
 }

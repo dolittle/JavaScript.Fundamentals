@@ -37,9 +37,9 @@ export class RuleSetEvaluation {
      * @param {*} owner - Owning container.
      */
     evaluate(owner: any) {
-        let context = new RuleContext(owner);
+        const context = new RuleContext(owner);
         this._ruleSet.rules.forEach(_ => {
-            let subject = _.subjectProvider.provide(context);
+            const subject = _.subjectProvider.provide(context);
             _.rule.evaluate(context, subject);
         });
         this._brokenRules = context.brokenRules;

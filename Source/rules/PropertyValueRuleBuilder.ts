@@ -7,13 +7,13 @@ type RuleCreator<TRule extends IRule> = () => IRule;
 
 export class PropertyValueRuleBuilder<TRule extends IRule = any> extends RuleBuilder<TRule> {
 
-    constructor(private _propertyDescriptor: PropertyDescriptor, private _createRuleInstance:RuleCreator<TRule>) {
+    constructor(private _propertyDescriptor: PropertyDescriptor, private _createRuleInstance: RuleCreator<TRule>) {
         super();
     }
 
 
     build(): RuleWithSubjectProvider {
-        let rule = this._createRuleInstance();
+        const rule = this._createRuleInstance();
         return new RuleWithSubjectProvider(rule, new PropertyValueSubjectProvider(this._propertyDescriptor));
     }
 }

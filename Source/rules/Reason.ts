@@ -39,7 +39,7 @@ export class Reason {
      * @param id - Unique identifier of the {Reason} - in the Guid format: 00000000-0000-0000-0000-000000000000.
      * @param title - Title of the {Reason}.
      * @param [description] - Optional description of the {Reason}.
-     * @returns {Reason} 
+     * @returns {Reason}
      */
     static create(id: string, title: string, description: string = ''): Reason {
         return new Reason(id, title, description);
@@ -47,7 +47,7 @@ export class Reason {
 
     /**
      * Create a {Cause} with no arguments.
-     * @returns {Cause} 
+     * @returns {Cause}
      */
     noArguments(): Cause {
         return this.withArguments({});
@@ -56,7 +56,7 @@ export class Reason {
     /**
      * Create a {Cause} with given arguments that will be typically used in titles and descriptions.
      * @param {*} args - Arguments to use.
-     * @returns {Cause} 
+     * @returns {Cause}
      */
     withArguments(args: any): Cause {
         return new Cause(this, args);

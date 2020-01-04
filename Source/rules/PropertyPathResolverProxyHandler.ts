@@ -3,11 +3,11 @@
 
 /**
  * Object proxy handler
- * @template TObject 
+ * @template TObject
  */
 export class PropertyPathResolverProxyHandler implements ProxyHandler<any> {
-    _property:string = '';
-    _segments:Array<string> = [];
+    _property: string = '';
+    _segments: Array<string> = [];
 
     constructor(private _root?: PropertyPathResolverProxyHandler) {
     }
@@ -30,12 +30,12 @@ export class PropertyPathResolverProxyHandler implements ProxyHandler<any> {
 
     /** @inheritdoc */
     get(target: any, p: PropertyKey, receiver: any): any {
-        let root = this._root || this;
+        const root = this._root || this;
 
-        let childProperty = new Proxy({}, new PropertyPathResolverProxyHandler(root));
+        const childProperty = new Proxy({}, new PropertyPathResolverProxyHandler(root));
         this._property = p.toString();
         root.addSegment(this._property);
-        
+
         return childProperty;
     }
 }

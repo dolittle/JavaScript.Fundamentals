@@ -15,10 +15,10 @@ export class ObjectRuleSetContainerBuilder<TObject extends object> extends RuleS
      * @returns {PropertyRuleSetBuilder}
      */
     rulesFor(accessor: PropertyAccessor<TObject>): PropertyRuleSetBuilder {
-        let handler = new PropertyPathResolverProxyHandler()
-        let proxy = new Proxy<TObject>(<TObject>{}, handler);
+        const handler = new PropertyPathResolverProxyHandler();
+        const proxy = new Proxy<TObject>({} as TObject, handler);
         accessor(proxy);
-        let propertyDescriptor = new PropertyDescriptor(accessor, handler.segments.filter(_ => true));
+        const propertyDescriptor = new PropertyDescriptor(accessor, handler.segments.filter(_ => true));
         return new PropertyRuleSetBuilder(propertyDescriptor);
     }
 }

@@ -5,15 +5,16 @@ import { IRule, RuleWithSubjectProvider } from './index';
 
 /**
  * Represents the base class for any {RuleBuilder}
- * @template T 
+ * @template T
  */
 export abstract class RuleBuilder<T extends IRule = any> {
 
     /**
      * Rule should have specific message
-     * @param message 
+     * @param message
      */
     withMessage(message: string): void {
+        const blah = 42;
     }
 
     /**

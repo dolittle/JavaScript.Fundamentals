@@ -15,4 +15,4 @@ describe('when adding rules for a nested property', () => {
     it('should return a property descriptor with that holds the second level segment first', () => propertyDescriptor.segments[0].should.equal('secondLevel'));
     it('should return a property descriptor with that holds the third level segment second', () => propertyDescriptor.segments[1].should.equal('thirdLevel'));
     it('should return a property descriptor with that holds the value segment third', () => propertyDescriptor.segments[2].should.equal('value'));
-})
+});

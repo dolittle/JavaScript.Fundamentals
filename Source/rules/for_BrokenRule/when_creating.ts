@@ -5,16 +5,17 @@ import { BrokenRule, IRule, IRuleContext, RuleContext } from '../index';
 
 class Rule implements IRule {
     evaluate(context: IRuleContext, subject: any): void {
+        const blah = 42;
     }
 }
 
 describe('when creating', () => {
 
-    let owner = { something: 42 };
-    let subject = owner.something;
-    let rule = new Rule();
-    let ruleContext = new RuleContext(owner);
-    let brokenRule = new BrokenRule(rule, subject, ruleContext);
+    const owner = { something: 42 };
+    const subject = owner.something;
+    const rule = new Rule();
+    const ruleContext = new RuleContext(owner);
+    const brokenRule = new BrokenRule(rule, subject, ruleContext);
 
     it('should hold the rule', () => brokenRule.rule.should.equal(rule));
     it('should hold the subject', () => brokenRule.subject.should.equal(subject));

@@ -17,8 +17,8 @@ describe('when building with two rule builders added', () => {
         build: sinon.stub().returns(secondRuleWithSubjectProvider)
     };
 
-    builder.addRuleBuilder(firstRuleBuilder as unknown as RuleSetBuilder);
-    builder.addRuleBuilder(secondRuleBuilder as unknown as RuleSetBuilder);
+    builder.addRuleBuilder(firstRuleBuilder as unknown as RuleBuilder);
+    builder.addRuleBuilder(secondRuleBuilder as unknown as RuleBuilder);
 
     const ruleSet = builder.build();
 

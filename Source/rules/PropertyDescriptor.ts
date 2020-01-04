@@ -13,7 +13,7 @@ export class PropertyDescriptor {
      * @param {PropertyAccessor} _accessor - The actual accessor for accessing the property.
      * @param {Array<string>} _segments - The segments representing the path of the property accessor within an instance.
      */
-    constructor(private _accessor: PropertyAccessor, private _segments:Array<string>) {
+    constructor(private _accessor: PropertyAccessor, private _segments: Array<string>) {
     }
 
     /**
