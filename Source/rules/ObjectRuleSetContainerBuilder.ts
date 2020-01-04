@@ -19,6 +19,8 @@ export class ObjectRuleSetContainerBuilder<TObject extends object> extends RuleS
         const proxy = new Proxy<TObject>({} as TObject, handler);
         accessor(proxy);
         const propertyDescriptor = new PropertyDescriptor(accessor, handler.segments.filter(_ => true));
-        return new PropertyRuleSetBuilder(propertyDescriptor);
+        const ruleSetBuilder = new PropertyRuleSetBuilder(propertyDescriptor);
+        this.addRuleSetBuilder(ruleSetBuilder);
+        return ruleSetBuilder;
     }
 }
