@@ -8,6 +8,7 @@ declare module '@dolittle/rules'
 {
     class PropertyRuleSetBuilder {
         readonly propertyDescriptor: PropertyDescriptor;
+        addRuleBuilder(ruleBuilder: RuleBuilder): void;
 
         /**
          * Defines an email address rule for the property. See {Email}.
@@ -72,38 +73,56 @@ declare module '@dolittle/rules'
 }
 
 PropertyRuleSetBuilder.prototype.emailAddress = function() {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Email());
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Email());
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
 
 PropertyRuleSetBuilder.prototype.greaterThan = function(value: any) {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThan(value));
+    const ruleBuilder =  new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThan(value));
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
 
 PropertyRuleSetBuilder.prototype.greaterThanOrEqual = function(value: any) {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThanOrEqual(value));
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThanOrEqual(value));
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
 
 PropertyRuleSetBuilder.prototype.lessThan = function(value: any) {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new LessThan(value));
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new LessThan(value));
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
 
 PropertyRuleSetBuilder.prototype.lessThanOrEqual = function(value: any) {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new LessThanOrEqual(value));
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new LessThanOrEqual(value));
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
 
 PropertyRuleSetBuilder.prototype.maxLength = function(length: number) {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new MaxLength(length));
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new MaxLength(length));
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
 
 PropertyRuleSetBuilder.prototype.notNull = function() {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new NotNull());
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new NotNull());
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
 
 
 PropertyRuleSetBuilder.prototype.regex = function(expression: string) {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Regex(expression));
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Regex(expression));
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
 
 PropertyRuleSetBuilder.prototype.required = function() {
-    return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Required());
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Required());
+    this.addRuleBuilder(ruleBuilder);
+    return ruleBuilder;
 };
