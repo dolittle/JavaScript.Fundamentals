@@ -12,9 +12,9 @@ describe('when building less than', () => {
             return expectedValue;
         }
     }
-    
-    let ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).lessThan(expectedValue).build();   
-    
+
+    const ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).lessThan(expectedValue).build();
+
     it('should be a less than rule instance', () => ruleWithSourceProvider.rule.should.be.instanceof(LessThan));
-    it('should pass the value', () => (<LessThan>ruleWithSourceProvider.rule).value.should.equal(expectedValue));
+    it('should pass the value', () => (ruleWithSourceProvider.rule as LessThan).value.should.equal(expectedValue));
  });

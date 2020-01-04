@@ -6,9 +6,9 @@ import { Regex } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value that is missing at sign', () => {
-    let rule = new Regex('\\w');
-    let context = new RuleContext(null);
-    let value = '';
+    const rule = new Regex('\\w');
+    const context = new RuleContext(null);
+    const value = '';
 
     rule.evaluate(context, value);
 

@@ -6,9 +6,9 @@ import { NotNull } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking empty string', () => {
-    let rule = new NotNull();
-    let context = new RuleContext(null);
-    let value = '';
+    const rule = new NotNull();
+    const context = new RuleContext(null);
+    const value = '';
 
     rule.evaluate(context, value);
 

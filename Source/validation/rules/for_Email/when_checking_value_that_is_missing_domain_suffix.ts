@@ -6,9 +6,9 @@ import { Email } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value that is missing domain suffix', () => {
-    let rule = new Email();
-    let context = new RuleContext(null);
-    let value = 'something@someplace';
+    const rule = new Email();
+    const context = new RuleContext(null);
+    const value = 'something@someplace';
 
     rule.evaluate(context, value);
 

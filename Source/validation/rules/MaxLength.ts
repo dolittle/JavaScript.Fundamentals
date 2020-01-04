@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Reasons } from '../index'
+import { Reasons } from '../index';
 import { IRuleContext, ValueRule } from '@dolittle/rules';
 
 /**
@@ -27,7 +27,7 @@ export class MaxLength extends ValueRule {
     /** @inheritdoc */
     evaluate(context: IRuleContext, subject: any): void {
         if (this.failIfValueTypeMismatch(context, subject, String)) {
-            let length = (<String>subject).length;
+            const length = (subject as String).length;
             if (length > this._length) {
                 context.fail(this, subject, Reasons.LengthIsTooLong.withArguments({ length: length }));
             }

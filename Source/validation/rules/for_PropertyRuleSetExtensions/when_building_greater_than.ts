@@ -12,9 +12,9 @@ describe('when building greater than', () => {
             return expectedValue;
         }
     }
-    
-    let ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).greaterThan(expectedValue).build();   
-    
+
+    const ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).greaterThan(expectedValue).build();
+
     it('should be a greater than rule instance', () => ruleWithSourceProvider.rule.should.be.instanceof(GreaterThan));
-    it('should pass the value', () => (<GreaterThan>ruleWithSourceProvider.rule).value.should.equal(expectedValue));
+    it('should pass the value', () => (ruleWithSourceProvider.rule as GreaterThan).value.should.equal(expectedValue));
  });

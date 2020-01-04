@@ -7,7 +7,7 @@ import { RuleBuilder, PropertyValueRuleBuilder, PropertyRuleSetBuilder, Property
 declare module '@dolittle/rules'
 {
     class PropertyRuleSetBuilder {
-        readonly propertyDescriptor:PropertyDescriptor;
+        readonly propertyDescriptor: PropertyDescriptor;
 
         /**
          * Defines an email address rule for the property. See {Email}.
@@ -33,7 +33,7 @@ declare module '@dolittle/rules'
          * Defines a less than comparer rule for the property. See {LessThan}.
          * @param {*} value - The value that the property has to be less than.
          * @returns {PropertyValueRuleBuilder<LessThan>}
-         */       
+         */
         lessThan(value: any): PropertyValueRuleBuilder<LessThan>;
 
         /**
@@ -73,37 +73,37 @@ declare module '@dolittle/rules'
 
 PropertyRuleSetBuilder.prototype.emailAddress = function() {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Email());
-}
+};
 
 PropertyRuleSetBuilder.prototype.greaterThan = function(value: any) {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThan(value));
-}
+};
 
 PropertyRuleSetBuilder.prototype.greaterThanOrEqual = function(value: any) {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThanOrEqual(value));
-}
+};
 
 PropertyRuleSetBuilder.prototype.lessThan = function(value: any) {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new LessThan(value));
-}
+};
 
 PropertyRuleSetBuilder.prototype.lessThanOrEqual = function(value: any) {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new LessThanOrEqual(value));
-}
+};
 
 PropertyRuleSetBuilder.prototype.maxLength = function(length: number) {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new MaxLength(length));
-}
+};
 
 PropertyRuleSetBuilder.prototype.notNull = function() {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new NotNull());
-}
+};
 
 
 PropertyRuleSetBuilder.prototype.regex = function(expression: string) {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Regex(expression));
-}
+};
 
 PropertyRuleSetBuilder.prototype.required = function() {
     return new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Required());
-}
+};

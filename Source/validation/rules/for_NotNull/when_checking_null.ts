@@ -6,9 +6,9 @@ import { NotNull, Reasons } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking null', () => {
-    let rule = new NotNull();
-    let context = new RuleContext(null);
-    let value:any = null;
+    const rule = new NotNull();
+    const context = new RuleContext(null);
+    const value: any = null;
 
     rule.evaluate(context, value);
 

@@ -12,9 +12,9 @@ describe('when building max length', () => {
             return expectedValue;
         }
     }
-    
-    let ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).maxLength(expectedValue).build();   
-    
+
+    const ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).maxLength(expectedValue).build();
+
     it('should be a max length rule instance', () => ruleWithSourceProvider.rule.should.be.instanceof(MaxLength));
-    it('should pass the value', () => (<MaxLength>ruleWithSourceProvider.rule).length.should.equal(expectedValue));
+    it('should pass the value', () => (ruleWithSourceProvider.rule as MaxLength).length.should.equal(expectedValue));
  });

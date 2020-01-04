@@ -12,8 +12,8 @@ describe('when building email address', () => {
             return expectedValue;
         }
     }
-    
-    let ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).emailAddress().build();   
-    
+
+    const ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).emailAddress().build();
+
     it('should be a email rule instance', () => ruleWithSourceProvider.rule.should.be.instanceof(Email));
  });

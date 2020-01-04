@@ -6,11 +6,11 @@ import { Reasons, GreaterThan } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value that is equal to', () => {
-    let rule = new GreaterThan(42);
-    let context = new RuleContext(null);
-    let value = 42;
+    const rule = new GreaterThan(42);
+    const context = new RuleContext(null);
+    const value = 42;
 
     rule.evaluate(context, value);
-    
+
     it('should fail', () => context.should.failWith(rule, value, Reasons.ValueIsEqual));
 });

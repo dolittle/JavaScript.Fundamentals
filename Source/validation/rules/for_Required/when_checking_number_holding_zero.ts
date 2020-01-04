@@ -6,9 +6,9 @@ import { Required } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value holding zero', () => {
-    let rule = new Required();
-    let context = new RuleContext(null);
-    let value = 0;
+    const rule = new Required();
+    const context = new RuleContext(null);
+    const value = 0;
 
     rule.evaluate(context, value);
 

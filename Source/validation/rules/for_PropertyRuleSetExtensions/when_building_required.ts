@@ -12,8 +12,8 @@ describe('when building not null', () => {
             return expectedValue;
         }
     }
-    
-    let ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).required().build();   
-    
+
+    const ruleWithSourceProvider = new ObjectRuleSetContainerBuilder<MyObject>().rulesFor(_ => _.stuff).required().build();
+
     it('should be a required rule instance', () => ruleWithSourceProvider.rule.should.be.instanceof(Required));
  });

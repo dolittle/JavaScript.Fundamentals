@@ -6,9 +6,9 @@ import { NotNull, Reasons } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking undefined', () => {
-    let rule = new NotNull();
-    let context = new RuleContext(null);
-    let value: any = undefined;
+    const rule = new NotNull();
+    const context = new RuleContext(null);
+    const value: any = undefined;
 
     rule.evaluate(context, value);
 

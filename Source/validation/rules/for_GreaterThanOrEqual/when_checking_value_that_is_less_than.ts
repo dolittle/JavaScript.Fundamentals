@@ -6,9 +6,9 @@ import { Reasons, GreaterThanOrEqual } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value that is less than', () => {
-    let rule = new GreaterThanOrEqual(42);
-    let context = new RuleContext(null);
-    let value = 41;
+    const rule = new GreaterThanOrEqual(42);
+    const context = new RuleContext(null);
+    const value = 41;
 
     rule.evaluate(context, value);
 

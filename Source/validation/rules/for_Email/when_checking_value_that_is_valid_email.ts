@@ -6,11 +6,11 @@ import { Email } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value that is valid email', () => {
-    let rule = new Email();
-    let context = new RuleContext(null);
-    let value = 'something@someplace.com';
+    const rule = new Email();
+    const context = new RuleContext(null);
+    const value = 'something@someplace.com';
 
     rule.evaluate(context, value);
 
-    it('should fail', () => context.should.notFail())
+    it('should fail', () => context.should.notFail());
 });

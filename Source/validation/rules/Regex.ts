@@ -7,12 +7,12 @@ import { IRuleContext, Reason, ValueRule } from '@dolittle/rules';
  * Represents a {ValueRule} for specific regular expression - any value must conform to a regular expression
  */
 export class Regex extends ValueRule {
-    static NotConformingToExpression: Reason = Reason.create("BE58A125-40DB-47EA-B260-37F7AF4455C5", "Value '{value}' does not conform to regular expression");
+    static NotConformingToExpression: Reason = Reason.create('BE58A125-40DB-47EA-B260-37F7AF4455C5', "Value '{value}' does not conform to regular expression");
     private _regExp: RegExp;
 
     /**
      * Initializes a new instance of the {Regex} class.
-     * @param _expression 
+     * @param _expression
      */
     constructor(private _expression: string) {
         super();
@@ -29,7 +29,7 @@ export class Regex extends ValueRule {
     /** @inheritdoc */
     evaluate(context: IRuleContext, subject: any): void {
         if (this.failIfValueTypeMismatch(context, subject, String)) {
-            if (!(<String>subject).match(this._regExp)) {
+            if (!(subject as String).match(this._regExp)) {
                 context.fail(this, subject, Regex.NotConformingToExpression.withArguments({ value: subject }));
             }
         }

@@ -6,9 +6,9 @@ import { Regex } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value that is missing at sign', () => {
-    let rule = new Regex('[a-z]*');
-    let context = new RuleContext(null);
-    let value = 'something';
+    const rule = new Regex('[a-z]*');
+    const context = new RuleContext(null);
+    const value = 'something';
 
     rule.evaluate(context, value);
 

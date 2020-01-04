@@ -6,9 +6,9 @@ import { MaxLength, Reasons } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value that is shorter', () => {
-    let rule = new MaxLength(4);
-    let context = new RuleContext(null);
-    let value = '123';
+    const rule = new MaxLength(4);
+    const context = new RuleContext(null);
+    const value = '123';
 
     rule.evaluate(context, value);
 

@@ -6,9 +6,9 @@ import { Email } from '../index';
 import '@dolittle/rules.testing';
 
 describe('when checking value that is missing at sign', () => {
-    let rule = new Email();
-    let context = new RuleContext(null);
-    let value = 'somethingsomeplace.com';
+    const rule = new Email();
+    const context = new RuleContext(null);
+    const value = 'somethingsomeplace.com';
 
     rule.evaluate(context, value);
 
