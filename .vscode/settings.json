@@ -6,8 +6,5 @@
         "**/.git": true,
         "**/.svn": true,
         "**/.DS_Store": true
-    },
-    "eslint.enable": true,
-    "typescript.validate.enable": true,
-    "typescript.format.enable": true
+    }
 }
