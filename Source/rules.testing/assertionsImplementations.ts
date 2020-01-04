@@ -6,15 +6,15 @@ import { Assertion } from 'chai';
 
 Assertion.addMethod('failWith', function (rule: IRule, subject: any, reason: Reason) {
     new Assertion(this._obj).to.be.instanceOf(RuleContext);
-    let ruleContext = <RuleContext>this._obj;
+    const ruleContext = this._obj as RuleContext;
 
-    let brokenRule = ruleContext.brokenRules.filter(_ =>
-        _.rule == rule &&
-        _.subject == subject &&
-        _.causes.some(c => c.reason == reason));
+    const brokenRule = ruleContext.brokenRules.filter(_ =>
+        _.rule === rule &&
+        _.subject === subject &&
+        _.causes.some(c => c.reason === reason));
 
     this.assert(
-        brokenRule.length == 1,
+        brokenRule.length === 1,
         `Expected to fail with reason '${reason.id}'`,
         '',
         rule);
@@ -22,11 +22,11 @@ Assertion.addMethod('failWith', function (rule: IRule, subject: any, reason: Rea
 
 Assertion.addMethod('notFail', function () {
     new Assertion(this._obj).to.be.instanceOf(RuleContext);
-    let ruleContext = <RuleContext>this._obj;
+    const ruleContext = this._obj as RuleContext;
 
     this.assert(
-        ruleContext.brokenRules.length == 0,
-        ``,
+        ruleContext.brokenRules.length === 0,
+        '',
         '',
         ruleContext);
 });

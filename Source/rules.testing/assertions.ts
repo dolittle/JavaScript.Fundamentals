@@ -1,7 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-declare module Chai {
+// tslint:disable
+
+declare namespace Chai {
     export interface Assertion {
         /**
          * Extension to assertions to verify that `IRuleContext` failed for a rule with a subject and reason.
