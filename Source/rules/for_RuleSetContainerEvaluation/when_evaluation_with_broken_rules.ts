@@ -11,7 +11,7 @@ class Rule implements IRule {
     evaluate(context: IRuleContext, subject: any): void {
         Rule.ruleContextPassedIn = context;
         Rule.subjectPassedIn = subject;
-        context.fail(this, subject, Rule.reason.noArguments())
+        context.fail(this, subject, Rule.reason.noArguments());
     }
 }
 
@@ -25,10 +25,10 @@ class SubjectProvider implements ISubjectProvider {
 
 
 describe('when evaluation with broken rules', () => {
-    let owner = { something: 42 };
-    let ruleSet = new RuleSet(new RuleWithSubjectProvider(new Rule(), new SubjectProvider()));
-    let ruleSetContainer = new RuleSetContainer(ruleSet);
-    let evaluation = new RuleSetContainerEvaluation(ruleSetContainer);
+    const owner = { something: 42 };
+    const ruleSet = new RuleSet(new RuleWithSubjectProvider(new Rule(), new SubjectProvider()));
+    const ruleSetContainer = new RuleSetContainer(ruleSet);
+    const evaluation = new RuleSetContainerEvaluation(ruleSetContainer);
     evaluation.evaluate(owner);
 
     it('should pass the owner in the rule context to the rule', () => Rule.ruleContextPassedIn.owner.should.equal(owner));

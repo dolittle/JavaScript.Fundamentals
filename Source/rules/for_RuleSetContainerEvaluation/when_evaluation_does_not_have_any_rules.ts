@@ -4,10 +4,10 @@
 import { RuleSetContainer, RuleSetContainerEvaluation, RuleSet } from '../index';
 
 describe('when evaluation does not have any rules', () => {
-    let owner = { something: 42 };
-    let ruleSet = new RuleSet();
-    let ruleSetContainer = new RuleSetContainer(ruleSet);
-    let evaluation = new RuleSetContainerEvaluation(ruleSetContainer);
+    const owner = { something: 42 };
+    const ruleSet = new RuleSet();
+    const ruleSetContainer = new RuleSetContainer(ruleSet);
+    const evaluation = new RuleSetContainerEvaluation(ruleSetContainer);
     evaluation.evaluate(owner);
 
     it('should be considered successful', () => evaluation.isSuccess.should.be.true);

@@ -10,14 +10,14 @@ class MyRule extends ValueRule {
 }
 
 describe('when asking to fail if value type mismatch and it mismatches', () => {
-    let subject = 42;
+    const subject = 42;
     let causePassed: Cause;
     let rulePassed: IRule;
     let subjectPassed: any;
     let rule: IRule;
 
     beforeEach(() => {
-        let context = <IRuleContext>{};
+        const context = {} as IRuleContext;
         context.fail = (rule: IRule, subject: any, cause: Cause) => {
             rulePassed = rule;
             subjectPassed = subject;

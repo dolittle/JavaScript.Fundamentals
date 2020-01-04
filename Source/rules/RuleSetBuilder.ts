@@ -7,7 +7,7 @@ import { RuleBuilder, RuleSet, RuleWithSubjectProvider } from './index';
  * Represents a builder of rule sets
  */
 export class RuleSetBuilder {
-    _ruleBuilders:RuleBuilder[] = [];
+    _ruleBuilders: RuleBuilder[] = [];
 
     /**
      * Add a rule to the builder.
@@ -16,13 +16,13 @@ export class RuleSetBuilder {
     addRuleBuilder(ruleBuilder: RuleBuilder): void {
         this._ruleBuilders.push(ruleBuilder);
     }
-    
+
     /**
      * Build a {RuleSet}.
      * @returns build 
      */
     build(): RuleSet {
-        let rulesWithSubjectProviders:RuleWithSubjectProvider[] = [];       
+        let rulesWithSubjectProviders: RuleWithSubjectProvider[] = [];
         this._ruleBuilders.forEach(_ => rulesWithSubjectProviders.push(_.build()));
         return new RuleSet(...rulesWithSubjectProviders);
     }

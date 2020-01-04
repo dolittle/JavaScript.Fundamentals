@@ -23,7 +23,7 @@ export class RuleContext implements IRuleContext {
 
     /** @inheritdoc */
     get brokenRules(): Array<BrokenRule> {
-        let array = new Array<BrokenRule>();
+        const array = new Array<BrokenRule>();
         this._brokenRules.forEach(brokenRule => array.push(brokenRule));
         return array;
     }
@@ -32,7 +32,7 @@ export class RuleContext implements IRuleContext {
     fail(rule: IRule, subject: any, cause: Cause): void {
         let brokenRule: BrokenRule;
         brokenRule = this._brokenRules.get(rule) ?? new BrokenRule(rule, subject, this);
-        if( !this._brokenRules.has(rule)) this._brokenRules.set(rule, brokenRule);
+        if (!this._brokenRules.has(rule)) this._brokenRules.set(rule, brokenRule);
         brokenRule.addCause(cause);
     }
 }

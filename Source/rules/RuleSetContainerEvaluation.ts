@@ -23,7 +23,7 @@ export class RuleSetContainerEvaluation {
      * @returns {boolean}
      */
     get isSuccess(): boolean {
-        return this._brokenRules.length == 0;
+        return this._brokenRules.length === 0;
     }
 
     /**

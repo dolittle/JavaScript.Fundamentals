@@ -10,7 +10,7 @@ class ThirdLevelType {
 }
 
 class SecondLevelType {
-    get thirdLevel()  {
+    get thirdLevel() {
         return new ThirdLevelType();
     }
 }
@@ -25,15 +25,15 @@ class TopLevelType {
 
 
 describe('when accessing a nested property', () => {
-    let accessor = (_:TopLevelType) => _.secondLevel.thirdLevel.value;
-    let propertyDescriptor = new PropertyDescriptor(accessor,['secondLevel', 'thirdLevel', 'value']);
-    let instance = new TopLevelType();
+    const accessor = (_: TopLevelType) => _.secondLevel.thirdLevel.value;
+    const propertyDescriptor = new PropertyDescriptor(accessor, ['secondLevel', 'thirdLevel', 'value']);
+    const instance = new TopLevelType();
 
-    let provider = new PropertyValueSubjectProvider(propertyDescriptor);
+    const provider = new PropertyValueSubjectProvider(propertyDescriptor);
 
-    let ruleContext = new RuleContext(instance);
+    const ruleContext = new RuleContext(instance);
 
-    let result = provider.provide(ruleContext);
+    const result = provider.provide(ruleContext);
 
     it('should get the value from the inner property', () => result.should.equal(42));
 });

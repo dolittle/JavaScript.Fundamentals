@@ -8,7 +8,7 @@ describe('when creating', () => {
     const title = 'Some title';
     const description = 'Some description';
 
-    let reason = Reason.create(id, title, description);
+    const reason = Reason.create(id, title, description);
 
     it('should have the id set', () => reason.id.should.equal(id));
     it('should have the title set', () => reason.title.should.equal(title));

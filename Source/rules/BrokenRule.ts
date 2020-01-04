@@ -7,7 +7,7 @@ import { IRule, IRuleContext, Cause } from './index';
  * Represents a broken rule.
  */
 export class BrokenRule {
-    private _causes:Array<Cause> = [];
+    private _causes: Array<Cause> = [];
 
     /**
      * Initializes a new instance of the {BrokenRule} class.

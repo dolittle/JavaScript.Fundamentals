@@ -5,22 +5,22 @@ import { RuleSetBuilder, RuleSetContainerBuilder } from '../index';
 import sinon from 'sinon';
 
 describe('when building with two rule set builders added', () => {
-    let builder = new RuleSetContainerBuilder();
-    let firstRuleSet = {};
-    let secondRuleSet = {};
+    const builder = new RuleSetContainerBuilder();
+    const firstRuleSet = {};
+    const secondRuleSet = {};
 
-    let firstRuleSetBuilder = {
+    const firstRuleSetBuilder = {
         build: sinon.stub().returns(firstRuleSet)
     };
-    
-    let secondRuleSetBuilder = {
+
+    const secondRuleSetBuilder = {
         build: sinon.stub().returns(secondRuleSet)
     };
 
-    builder.addRuleSetBuilder(<RuleSetBuilder><any>firstRuleSetBuilder);
-    builder.addRuleSetBuilder(<RuleSetBuilder><any>secondRuleSetBuilder);
+    builder.addRuleSetBuilder(firstRuleSetBuilder as unknown as RuleSetBuilder);
+    builder.addRuleSetBuilder(secondRuleSetBuilder  as unknown as RuleSetBuilder);
 
-    let ruleSetContainer = builder.build();
+    const ruleSetContainer = builder.build();
 
     it('should call build on first rule builder', () => firstRuleSetBuilder.build.calledOnce);
     it('should call build on first rule builder', () => secondRuleSetBuilder.build.calledOnce);

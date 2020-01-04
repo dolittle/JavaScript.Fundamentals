@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { ObjectRuleSetContainerBuilder } from '../../index'
+import { ObjectRuleSetContainerBuilder } from '../../index';
 
 class ThirdLevelType {
     get value(): number {
@@ -10,7 +10,7 @@ class ThirdLevelType {
 }
 
 class SecondLevelType {
-    get thirdLevel()  {
+    get thirdLevel() {
         return new ThirdLevelType();
     }
 }
@@ -24,5 +24,5 @@ class TopLevelType {
 }
 
 export class an_object_with_nested_properties {
-    builder:ObjectRuleSetContainerBuilder<TopLevelType> = new ObjectRuleSetContainerBuilder<TopLevelType>();
+    builder: ObjectRuleSetContainerBuilder<TopLevelType> = new ObjectRuleSetContainerBuilder<TopLevelType>();
 }

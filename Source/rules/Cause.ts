@@ -17,10 +17,10 @@ export class Cause {
      * @param {*} args - The arguments for the cause.
      */
     constructor(private _reason: Reason, args: any) {
-        for( let key in args ) {
+        for (let key in args) {
             this._args.set(key, args[key]);
         }
-        
+
         this._title = this.interpolateString(_reason.title);
         this._description = this.interpolateString(_reason.description);
     }
@@ -58,8 +58,8 @@ export class Cause {
     }
 
     private interpolateString(input: string): string {
+        const regex = new RegExp('{(.*?)}', '\g');
         let result = input;
-        let regex = new RegExp('{(.*?)}', '\g');
         input.match(regex)?.forEach(match => {
             let toReplace = match;
             let key = toReplace.substr(1, toReplace.length - 2);

@@ -10,9 +10,9 @@ class MyType {
 }
 
 describe('when accessing property three levels down', () => {
-    let handler = new PropertyPathResolverProxyHandler();
-    let proxy = new Proxy({}, handler)
-    let accessor = (_: MyType) => _.value;
+    const handler = new PropertyPathResolverProxyHandler();
+    const proxy = new Proxy({}, handler);
+    const accessor = (_: MyType) => _.value;
     accessor(proxy);
 
     it('should hold the entry property for the second level', () => handler.property.should.equal('value'));

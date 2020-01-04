@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyPathResolverProxyHandler } from '../PropertyPathResolverProxyHandler';
+import { PropertyPathResolverProxyHandler } from '../PropertyPathResolverProxyHandler';
 
 class ThirdLevelType {
     get value(): number {
@@ -10,7 +10,7 @@ class ThirdLevelType {
 }
 
 class SecondLevelType {
-    get thirdLevel()  {
+    get thirdLevel() {
         return new ThirdLevelType();
     }
 }
@@ -23,10 +23,10 @@ class TopLevelType {
     }
 }
 
-describe('when accessing property three levels down', () => {   
-    let handler = new PropertyPathResolverProxyHandler();
-    let proxy = new Proxy({}, handler)
-    let accessor = (_:TopLevelType) => _.secondLevel.thirdLevel.value;
+describe('when accessing property three levels down', () => {
+    const handler = new PropertyPathResolverProxyHandler();
+    const proxy = new Proxy({}, handler);
+    const accessor = (_: TopLevelType) => _.secondLevel.thirdLevel.value;
     accessor(proxy);
 
     it('should hold the entry property for the second level', () => handler.property.should.equal('secondLevel'));
