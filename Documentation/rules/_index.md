@@ -20,13 +20,30 @@ All of this then gives you an object model that enables you to reason about the
 cause of invalid system state. It also represents an opportunity for a system
 to present violations to a user in a user friendly way.
 
+## Getting started
+
+To get started you'll need a reference to the `@dolittle/rules` package.
+
+```shell
+$ npm i @dolittle/rules
+```
+
+Or with yarn:
+
+```shell
+$ yarn add @dolittle/rules
+```
+
 ## Concepts
 
 Below are the concepts to get familiar with in the rule engine.
 
-* Rule
-* ValueRule
-* BrokenRule
-* Reason
-* Cause
-* RuleContext
+* [Subject](./subject.md)
+* [Rule](./rule.md)
+* [ValueRule](./value_rule.md)
+* [SubjectProvider](./subject_provider.md)
+* [RuleSet](./rule_sets.md)
+* [BrokenRule](./broken_rule.md)
+* [Reason](./reason.md)
+* [Cause](./cause.md)
+* [RuleContext](./rule_context.md)
