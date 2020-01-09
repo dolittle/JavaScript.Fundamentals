@@ -75,7 +75,7 @@ export class Specification<T>
      * @param {Predicate<T>} predicate to start with.
      * @returns {Specification<T>}
      */
-    static when<T>(predicate: Predicate<T>): Specification<T> {
+    static when<T = any>(predicate: Predicate<T>): Specification<T> {
         return new Specification<T>(predicate);
     }
 }
