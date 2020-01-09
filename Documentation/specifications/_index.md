@@ -2,7 +2,6 @@
 title: Specifications
 description: How to work with specifications
 keywords: fundamentals, javascript, building blocks
-repository: https://github.com/dolittle-fundamentals/JavaScript.Fundamentals
 ---
 In software you typically have code paths, these paths are built from decisions in
 the software and is typically a consequence of conditions or state that decides
