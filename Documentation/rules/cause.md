@@ -6,7 +6,7 @@ keywords: fundamentals, javascript, building blocks
 A cause is an instance of a [reason]({{< relref reason >}}). It holds the properties that describe the
 reason for failing with the context of the actual cause.
 
-| Property | type | Description |
+| Property | Type | Description |
 | -------- | ---- | ----------- |
 | reason   | Reason | The [reason]({{< relref reason >}}) that represents the unique reason for failure |
 | title    | string | The title that could be used as a string to present to users, this is string interpolated with any arguments |
