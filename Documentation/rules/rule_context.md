@@ -3,13 +3,13 @@ title: Rule Context
 description: What is a rule context
 keywords: fundamentals, javascript, building blocks
 ---
-The context in which a [rule](./rule.md) or [rule set](./rule_set.md) gets
+The context in which a [rule]({{< relref rule >}}) or [rule set]({{< relref rule_set >}}) gets
 evaluated is called a **rule context**. This object holds information about
 the owning instance in which the context is for - typically an object that
 might have a value there are rules for. This is flexible and represents what
 you consider the owner of the context.
 
-More importantly, the **rule context** holds any [broken rules](./broken_rule.md)
+More importantly, the **rule context** holds any [broken rules]({{< relref broken_rule >}})
 as a consequence of the `fail()` method being called on the context.
 
 The fail method has the following signature:
@@ -18,7 +18,7 @@ The fail method has the following signature:
 fail(rule: IRule, subject: any, cause: Cause): void;
 ```
 
-Used in a rule with a concrete [reason](./reason.md) to get a [cause](./cause.md)
+Used in a rule with a concrete [reason]({{< relref reason >}}) to get a [cause]({{< relref cause >}})
 from:
 
 ```typescript

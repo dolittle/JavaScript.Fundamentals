@@ -6,7 +6,7 @@ keywords: fundamentals, javascript, building blocks
 A reason represents the actual reason for failing in a rule. The reason should be
 uniquely identifiable, for instance through a GUID as the identifier.
 
-The reason can then be used to create a specific instance called a [cause](./cause.md),
+The reason can then be used to create a specific instance called a [cause]({{< relref cause >}}),
 which holds more information about the actual cause of a failure.
 
 ```typescript

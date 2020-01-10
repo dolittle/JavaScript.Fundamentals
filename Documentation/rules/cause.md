@@ -3,12 +3,12 @@ title: Cause
 description: What is a cause
 keywords: fundamentals, javascript, building blocks
 ---
-A cause is an instance of a [reason](./reason.md). It holds the properties that describe the
+A cause is an instance of a [reason]({{< relref reason >}}). It holds the properties that describe the
 reason for failing with the context of the actual cause.
 
 | Property | type | Description |
 | -------- | ---- | ----------- |
-| reason   | Reason | The [reason](./reason.md) that represents the unique reason for failure |
+| reason   | Reason | The [reason]({{< relref reason >}}) that represents the unique reason for failure |
 | title    | string | The title that could be used as a string to present to users, this is string interpolated with any arguments |
 | description | string | The description that could be used as a string to present to users, this is string interpolated with any arguments |
 | arguments | object | A key / value of any arguments for the cause, typically accessible in string interpolation |

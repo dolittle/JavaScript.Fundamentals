@@ -3,8 +3,8 @@ title: Subject Provider
 description: What are subject providers
 keywords: fundamentals, javascript, building blocks
 ---
-During evaluation of rules, the [subject](./subject.md) needs to be provided
-in the [context](./rule_context.md) in which it is being evaluated in.
+During evaluation of rules, the [subject]({{< relref subject >}}) needs to be provided
+in the [context]({{< relref rule_context >}}) in which it is being evaluated in.
 This is an extensibility feature that allows the resolving of subjects from
 anything. The typical use case is to provide a value on an object as a subject
 and therefor there is a built in type called `PropertyValueSubjectProvider` that

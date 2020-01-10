@@ -3,8 +3,8 @@ title: Rule
 description: How to create rules
 keywords: fundamentals, javascript, building blocks
 ---
-A rule is the type that gets called to evaluate a specific [subject](./subject.md) in
-given [context](./rule_context.md). The subject can be anything; a complex object, a
+A rule is the type that gets called to evaluate a specific [subject]({{< relref subject >}}) in
+given [context]({{< relref rule_context >}}). The subject can be anything; a complex object, a
 primitive type like a number or string; you decide.
 
 Creating a rule means implementing the interface called `IRule`, which is defined
@@ -33,8 +33,8 @@ class MyRule implements IRule {
 ```
 
 If a rule is not violated, it does not really do anything. But if there is a condition
-that gets violated, it typically would use the [context](./rule_context.md) to fail with a
-specific [reason](./reason.md).
+that gets violated, it typically would use the [context]({{< relref rule_context >}}) to fail with a
+specific [reason]({{< relref reason >}}).
 
 Lets take a rule that checks if a subject, assumed to be a number holds a specific value.
 
@@ -54,5 +54,5 @@ class MyRule implements IRule {
 }
 ```
 
-The above sample uses a [reason](./reason.md) and from it creates a concrete instance, called
-a [cause](./cause.md). This is then handed into the context as part of the failure.
+The above sample uses a [reason]({{< relref reason >}}) and from it creates a concrete instance, called
+a [cause]({{< relref cause >}}). This is then handed into the context as part of the failure.

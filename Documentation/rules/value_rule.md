@@ -3,7 +3,7 @@ title: Value Rule
 description: How to work with value rules
 keywords: fundamentals, javascript, building blocks
 ---
-A value rule is a concrete implementation of a [rule](./rule.md). Its use case is
+A value rule is a concrete implementation of a [rule]({{< relref rule >}}). Its use case is
 linked to typically single values like **Numbers**, **Strings**, **Date** and similar.
 
 Part of the implementation `ValueRule` you get a method to make sure it is the correct

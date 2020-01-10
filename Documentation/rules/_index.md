@@ -38,12 +38,12 @@ $ yarn add @dolittle/rules
 
 Below are the concepts to get familiar with in the rule engine.
 
-* [Subject](./subject.md)
-* [Rule](./rule.md)
-* [ValueRule](./value_rule.md)
-* [SubjectProvider](./subject_provider.md)
-* [RuleSet](./rule_sets.md)
-* [BrokenRule](./broken_rule.md)
-* [Reason](./reason.md)
-* [Cause](./cause.md)
-* [RuleContext](./rule_context.md)
+* [Subject]({{< relref subject >}})
+* [Rule]({{< rule >}})
+* [ValueRule]({{< value_rule >}})
+* [SubjectProvider]({{< subject_provider >}})
+* [RuleSet]({{< rule_sets >}})
+* [BrokenRule]({{< broken_rule >}})
+* [Reason]({{< reason >}})
+* [Cause]({{< cause >}})
+* [RuleContext]({{< rule_context >}})
