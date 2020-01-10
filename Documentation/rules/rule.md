@@ -21,7 +21,7 @@ class MyRule {
 }
 ```
 
-For TypeScript you get the typesafety and do it as follows:
+For TypeScript you get the type safety and do it as follows:
 
 ```javascript
 import { IRule, IRuleContext } from '@dolittle/rules';
