@@ -32,5 +32,5 @@ ruleSetContainerBuilder.ruleFor(_ => _.email).emailAddress();
 ## Reasons for failing
 
 | Reason | Id | Description | Arguments |
-| -------| ---| ----------- | --------- |
+| ------ | -- | ----------- | --------- |
 | InvalidEmail | A62F369F-9C92-4A06-96C3-654AB0E15119 | The email is not in a valid state | value |

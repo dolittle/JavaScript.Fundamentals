@@ -32,5 +32,5 @@ ruleSetContainerBuilder.ruleFor(_ => _.email).notNull();
 ## Reasons for failing
 
 | Reason | Id | Description | Arguments |
-| -------| ---| ----------- | --------- |
+| ------ | -- | ----------- | --------- |
 | ValueIsNull | 712D26C6-A40F-4A3D-8C69-1475E761A1CF | The value is null | |
