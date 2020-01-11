@@ -2,12 +2,14 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { Reasons } from '../index';
-import { IRuleContext, ValueRule } from '@dolittle/rules';
+import { IRuleContext, Reason, ValueRule } from '@dolittle/rules';
 
 /**
  * Represents a {ValueRule} for max length - any value can't exceed the given maximum length
  */
 export class MaxLength extends ValueRule {
+    static LengthPropertyMissing = Reason.create('305b86ad-53ea-4f9e-bd05-2af9a48fd378', 'Length property is missing');
+
     /**
      * Initializes a new instance of the {LessThanOrEqual} class.
      * @param {Number} _length - Value that the input value must be greater than.
@@ -26,11 +28,13 @@ export class MaxLength extends ValueRule {
 
     /** @inheritdoc */
     evaluate(context: IRuleContext, subject: any): void {
-        if (this.failIfValueTypeMismatch(context, subject, String)) {
-            const length = (subject as String).length;
-            if (length > this._length) {
-                context.fail(this, subject, Reasons.LengthIsTooLong.withArguments({ length: length }));
-            }
+        if (!subject.hasOwnProperty('length')) {
+            context.fail(this, subject, MaxLength.LengthPropertyMissing.noArguments());
+            return;
+        }
+        const length = subject.length;
+        if (length > this._length) {
+            context.fail(this, subject, Reasons.LengthIsTooLong.withArguments({ length: length }));
         }
     }
 }

@@ -12,17 +12,17 @@ export class Reasons {
     /**
      * When a value is equal and it is not not allowed to be equal, this is the reason given.
      */
-    static ValueIsEqual: Reason = Reason.create('CEFA9147-5F13-4C82-B609-C64582EC33AB', 'Value {leftHand} is equal {RightHand}');
+    static ValueIsEqual: Reason = Reason.create('CEFA9147-5F13-4C82-B609-C64582EC33AB', 'Value {leftHand} is equal {rightHand}');
 
     /**
      * When a value is less than the specified greater than value, this is the reason given.
      */
-    static ValueIsLessThan: Reason = Reason.create('8CFB5B51-55E6-41A6-A01A-33F83E141CF2', 'Value {leftHand} is less than {RightHand}');
+    static ValueIsLessThan: Reason = Reason.create('8CFB5B51-55E6-41A6-A01A-33F83E141CF2', 'Value {leftHand} is less than {rightHand}');
 
     /**
      * When a value was greater than the specified less than value, this is the reason given.
      */
-    static ValueIsGreaterThan: Reason = Reason.create('6C489DB3-DE0A-45BA-A547-5A6E3AD3F303', 'Value {leftHand} is greater than {RightHand}');
+    static ValueIsGreaterThan: Reason = Reason.create('6C489DB3-DE0A-45BA-A547-5A6E3AD3F303', 'Value {leftHand} is greater than {rightHand}');
 
     /**
      * When something is longer than it should, this is the reason given.

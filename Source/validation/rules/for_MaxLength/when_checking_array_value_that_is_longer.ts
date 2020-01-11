@@ -5,12 +5,12 @@ import { RuleContext } from '@dolittle/rules';
 import { MaxLength, Reasons } from '../index';
 import '@dolittle/rules.testing';
 
-describe('when checking value that is same length', () => {
+describe('when checking array value that is longer', () => {
     const rule = new MaxLength(4);
     const context = new RuleContext(null);
-    const value = '1234';
+    const value = [1,2,3,4,5];
 
     rule.evaluate(context, value);
 
-    it('should not fail', () => context.should.notFail());
+    it('should fail', () => context.should.failWith(rule, value, Reasons.LengthIsTooLong));
 });
