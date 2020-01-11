@@ -56,12 +56,12 @@ Evaluating this would be leveraging the same evaluation found in the rule engine
 
 ## Built-in rules
 
-* [Email]({{< relref email >}}
-* [Greater than]({{< relref greater_than >}}
-* [Greater than or equal]({{< relref greater_than_or_equal >}}
-* [Less than]({{< relref less_than >}}
-* [Less than or equal]({{< relref less_than_or_equal >}}
-* [MaxLength]({{< relref max_length >}}
-* [NotNull]({{< relref not_null >}}
-* [Regex]({{< relref regex >}}
-* [Required]({{< relref required >}}
+* [Email]({{< relref email >}})
+* [Greater than]({{< relref greater_than >}})
+* [Greater than or equal]({{< relref greater_than_or_equal >}})
+* [Less than]({{< relref less_than >}})
+* [Less than or equal]({{< relref less_than_or_equal >}})
+* [MaxLength]({{< relref max_length >}})
+* [NotNull]({{< relref not_null >}})
+* [Regex]({{< relref regex >}})
+* [Required]({{< relref required >}})
