@@ -7,7 +7,7 @@ import { RuleSetBuilder, PropertyPathResolverProxyHandler, PropertyAccessor, Pro
  * Represents a specific {RuleSetContainerBuilder} for building rules for objects.
  * @template TObject - Type of object to build for.
  */
-export class ObjectRuleSetContainerBuilder<TObject extends object> extends RuleSetContainerBuilder {
+export class ObjectRuleSetContainerBuilder<TObject extends object = any> extends RuleSetContainerBuilder {
 
     /**
      * Rules for a specific property within the object.
