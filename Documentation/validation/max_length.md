@@ -33,7 +33,7 @@ ruleSetContainerBuilder.ruleFor(_ => _.email).maxLength(42);
 
 ## Reasons for failing
 
-| Reason | Id | Description | Arguments |
-| ------ | -- | ----------- | --------- |
+| Reason | Id | Description | Arguments |
+| -------| ---| ----------- | --------- |
 | LengthPropertyMissing | 305b86ad-53ea-4f9e-bd05-2af9a48fd378 | The value does not have a length property |  |
 | LengthIsTooLong | D9675214-A6A4-439F-8D8E-AF0A48BD1BF0 | The value has a length that is too long | length |

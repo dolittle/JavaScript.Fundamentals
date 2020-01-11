@@ -31,6 +31,6 @@ ruleSetContainerBuilder.ruleFor(_ => _.email).regex('\w');
 
 ## Reasons for failing
 
-| Reason | Id | Description | Arguments |
-| ------ | -- | ----------- | --------- |
+| Reason | Id | Description | Arguments |
+| -------| ---| ----------- | --------- |
 | NotConformingToExpression | BE58A125-40DB-47EA-B260-37F7AF4455C5 | The value is not conforming to expression | value |
