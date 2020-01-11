@@ -32,6 +32,6 @@ ruleSetContainerBuilder.ruleFor(_ => _.someNumber).greaterThan(42);
 ## Reasons for failing
 
 | Reason | Id | Description | Arguments |
-| ------ | -- | ----------- | --------- |
+| ------ | --- | ----------- | --------- |
 | ValueIsEqual | CEFA9147-5F13-4C82-B609-C64582EC33AB | The value is equal to expected value | leftHand, rightHand |
 | ValueIsLessThan | 8CFB5B51-55E6-41A6-A01A-33F83E141CF2 | The value is less than expected value | leftHand |
