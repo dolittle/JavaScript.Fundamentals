@@ -34,6 +34,9 @@ Or with yarn:
 $ yarn add @dolittle/rules
 ```
 
+For an example of how it all fits together, go to the [RuleSetContainer]({{< relref rule_set_container >}})
+topic.
+
 ## Concepts
 
 Below are the concepts to get familiar with in the rule engine.
