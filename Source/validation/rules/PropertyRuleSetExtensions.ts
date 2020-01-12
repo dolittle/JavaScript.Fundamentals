@@ -2,12 +2,17 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { Email, GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual, MaxLength, NotNull, Regex, Required } from './index';
-import { RuleBuilder, PropertyValueRuleBuilder, PropertyRuleSetBuilder, PropertyDescriptor } from '@dolittle/rules';
+import { RuleBuilder, RuleSetBuilder, PropertyValueRuleBuilder, PropertyRuleSetBuilder, PropertyDescriptor } from '@dolittle/rules';
 
 declare module '@dolittle/rules'
 {
-    class PropertyRuleSetBuilder {
+    class PropertyRuleSetBuilder extends RuleSetBuilder {
         readonly propertyDescriptor: PropertyDescriptor;
+
+        /** @inheritdoc */
+        constructor(propertyDescriptor: PropertyDescriptor);
+
+        /** @inheritdoc */
         addRuleBuilder(ruleBuilder: RuleBuilder): void;
 
         /**
@@ -72,56 +77,56 @@ declare module '@dolittle/rules'
     }
 }
 
-PropertyRuleSetBuilder.prototype.emailAddress = function() {
+PropertyRuleSetBuilder.prototype.emailAddress = function () {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Email());
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
 
-PropertyRuleSetBuilder.prototype.greaterThan = function(value: any) {
-    const ruleBuilder =  new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThan(value));
+PropertyRuleSetBuilder.prototype.greaterThan = function (value: any) {
+    const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThan(value));
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
 
-PropertyRuleSetBuilder.prototype.greaterThanOrEqual = function(value: any) {
+PropertyRuleSetBuilder.prototype.greaterThanOrEqual = function (value: any) {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new GreaterThanOrEqual(value));
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
 
-PropertyRuleSetBuilder.prototype.lessThan = function(value: any) {
+PropertyRuleSetBuilder.prototype.lessThan = function (value: any) {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new LessThan(value));
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
 
-PropertyRuleSetBuilder.prototype.lessThanOrEqual = function(value: any) {
+PropertyRuleSetBuilder.prototype.lessThanOrEqual = function (value: any) {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new LessThanOrEqual(value));
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
 
-PropertyRuleSetBuilder.prototype.maxLength = function(length: number) {
+PropertyRuleSetBuilder.prototype.maxLength = function (length: number) {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new MaxLength(length));
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
 
-PropertyRuleSetBuilder.prototype.notNull = function() {
+PropertyRuleSetBuilder.prototype.notNull = function () {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new NotNull());
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
 
 
-PropertyRuleSetBuilder.prototype.regex = function(expression: string) {
+PropertyRuleSetBuilder.prototype.regex = function (expression: string) {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Regex(expression));
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
 
-PropertyRuleSetBuilder.prototype.required = function() {
+PropertyRuleSetBuilder.prototype.required = function () {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Required());
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
