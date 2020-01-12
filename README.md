@@ -1,33 +1,31 @@
-# JavaScript.Fundamentals
+# JavaScript Fundamentals
 
-## Local Development
+[![Build Status](https://dolittle.visualstudio.com/Dolittle%20open-source%20repositories/_apis/build/status/dolittle-fundamentals.JavaScript.Fundamentals?branchName=master)](https://dolittle.visualstudio.com/Dolittle%20open-source%20repositories/_build/latest?definitionId=61&branchName=master)
 
-This repository leverages [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/). In the `Source` folder, you'll
-find a `package.json` which holds information about all the different modules, known as workspaces.
-This enables quicker and more reliable local development instead of using `npm link` or `yarn link`.
-All you have to do is then do a `yarn install` in the folder that uses one of the other dependencies and it will resolve it
-from the local representation.
+The repository holds fundamental building blocks, helpers and utilities.
 
-Once set up, all you need to do is run the `yarn run transpile` task to get new `dist` files for the other packages to make
-use of.
+## Requirements
 
-## Modules
+This project relies on [NodeJS](https://nodejs.org/en/) and leverages [Yarn](http://yarnpkg.com/).
+The code is written using [TypeScript](http://www.typescriptlang.org) and transpiles
+to JavaScript as part of its building.
 
-https://github.com/nodejs/node-eps/blob/4217dca299d89c8c18ac44c878b5fe9581974ef3/002-es6-modules.md#51-determining-if-source-is-an-es-module
+## Building
 
-Document main, module, jspm
+At the root level of the repository, to restore all node modules, run the following:
 
-Document dependencies in JSPM -> Package.json
+```shell
+$ yarn
+```
 
-## Build
+To build, run the following at the root level of the repository:
 
-Document how this work
+```shell
+$ yarn build
+```
 
-## Build All
+To run the test harness:
 
-Document how this work
-
-## Working effectively across repositories
-
-yarn link.. 
-
+```shell
+$ yarn test
+```
