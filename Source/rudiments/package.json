@@ -1,6 +1,6 @@
 {
     "name": "@dolittle/rudiments",
-    "version": "2.0.5",
+    "version": "2.0.6",
     "description": "",
     "author": "",
     "license": "MIT",
@@ -32,6 +32,5 @@
         "lint-fix": "gulp lint-fix --gulpfile ../../node_modules/@dolittle/typescript.build/Gulpfile.js",
         "prepublishOnly": "yarn build && yarn test:run && yarn test:clean"
     },
-    "dependencies": {
-    }
+    "dependencies": {}
 }
