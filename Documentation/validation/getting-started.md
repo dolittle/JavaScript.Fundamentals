@@ -1,6 +1,5 @@
 ---
 title: Getting started
-url: /fundamentals/javascript-fundamentals/validation/
 description: How to work with validation
 keywords: fundamentals, javascript, building blocks
 weight: 1

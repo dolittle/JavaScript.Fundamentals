@@ -1,12 +1,8 @@
 ---
 title: Overview
-url: /fundamentals/javascript-fundamentals/
 description: Fundamental building blocks used in dolittle
 keywords: fundamentals, javascript, building blocks
 weight: 1
-repository: https://github.com/dolittle-fundamentals/JavaScript.Fundamentals
-aliases:
-    - /fundamentals/javascript-fundamentals/overview/
 ---
 The JavaScript Fundamentals consists of a set of packages that provide a set of
 common utilities, building blocks and helpers. Each package very specifically

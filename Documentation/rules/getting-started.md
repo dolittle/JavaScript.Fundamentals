@@ -1,6 +1,5 @@
 ---
 title: Getting started
-url: /fundamentals/javascript-fundamentals/rules/
 description: How to work with rules
 keywords: fundamentals, javascript, building blocks
 weight: 1
