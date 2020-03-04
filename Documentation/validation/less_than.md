@@ -2,6 +2,8 @@
 title: Less than rule
 description: How to work with the less than rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/less_than/
 ---
 The less than rule looks for a value to be less than a given value.
 

@@ -2,6 +2,8 @@
 title: Specifications
 description: How to work with specifications
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/specifications/
 ---
 In software you typically have code paths, these paths are built from decisions in
 the software and is typically a consequence of conditions or state that decides

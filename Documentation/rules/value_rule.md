@@ -2,6 +2,8 @@
 title: Value Rule
 description: How to work with value rules
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/rules/value_reason/
 ---
 A value rule is a concrete implementation of a [rule]({{< relref rule >}}). Its use case is
 linked to typically single values like **Numbers**, **Strings**, **Date** and similar.

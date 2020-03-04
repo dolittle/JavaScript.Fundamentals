@@ -2,6 +2,8 @@
 title: Less than or equal rule
 description: How to work with the less than or equal rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/less_tran_or_equal/
 ---
 The less than or equal rule looks for a value to be less than or equal to a given value.
 

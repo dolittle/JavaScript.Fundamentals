@@ -2,6 +2,8 @@
 title: Email rule
 description: How to work with the email rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/email/
 ---
 The email rule looks for a value to be a valid email.
 
