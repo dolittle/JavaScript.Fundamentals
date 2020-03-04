@@ -2,6 +2,8 @@
 title: Reason
 description: What is a reason
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/rules/reason/
 ---
 A reason represents the actual reason for failing in a rule. The reason should be
 uniquely identifiable, for instance through a GUID as the identifier.

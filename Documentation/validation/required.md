@@ -2,6 +2,8 @@
 title: Required rule
 description: How to work with the required rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/required/
 ---
 The required rule looks for a value and with different conditions requires it
 to be something. The following conditions are looked at:

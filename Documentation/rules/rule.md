@@ -2,6 +2,8 @@
 title: Rule
 description: How to create rules
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/rules/rule/
 ---
 A rule is the type that gets called to evaluate a specific [subject]({{< relref subject >}}) in
 given [context]({{< relref rule_context >}}). The subject can be anything; a complex object, a

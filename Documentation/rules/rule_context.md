@@ -2,6 +2,8 @@
 title: Rule Context
 description: What is a rule context
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/rules/rule_context/
 ---
 The context in which a [rule]({{< relref rule >}}) or [rule set]({{< relref rule_set >}}) gets
 evaluated is called a **rule context**. This object holds information about

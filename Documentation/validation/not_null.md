@@ -2,6 +2,8 @@
 title: Not null rule
 description: How to work with the not null rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/not_null/
 ---
 The not null rule looks for a value and requiring it to not be null.
 

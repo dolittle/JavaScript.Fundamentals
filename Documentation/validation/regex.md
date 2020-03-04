@@ -2,6 +2,8 @@
 title: Regex rule
 description: How to work with the regex rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/refex/
 ---
 The regex rule uses regular expressions to validate the value.
 

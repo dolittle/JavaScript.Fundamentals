@@ -2,6 +2,8 @@
 title: Cause
 description: What is a cause
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/rules/cause/
 ---
 A cause is an instance of a [reason]({{< relref reason >}}). It holds the properties that describe the
 reason for failing with the context of the actual cause.

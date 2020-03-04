@@ -2,6 +2,8 @@
 title: Max length rule
 description: How to work with the max length rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/max_length/
 ---
 The max length rule looks for a value with a length property to be of a max length.
 The rule can used with any value that has a `.length` property, e.g. `String` or any

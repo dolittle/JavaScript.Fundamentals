@@ -2,7 +2,10 @@
 title: Broken Rule
 description: What are broken rules
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/rules/broken_rule/
 ---
+
 A broken rule is the consequence of a `fail` happening on a [rule context]({{< relref rule_context >}}).
 It encapsulates all the information related to what was violated.
 

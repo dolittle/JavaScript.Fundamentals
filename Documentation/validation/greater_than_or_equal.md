@@ -2,6 +2,8 @@
 title: Greater than or equal rule
 description: How to work with the greater than or equal rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/greater_than_or_equal/
 ---
 The greater than or equal rule looks for a value to be greater than or equal to a given value.
 
