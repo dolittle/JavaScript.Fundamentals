@@ -80,7 +80,7 @@ export class Guid {
         const bytes: number[] = [];
         guid.split('-').map((number, index) => {
             const bytesInChar = number.match(/.{1,2}/g);
-            bytesInChar.map((byte) => { bytes.push(parseInt(byte, 16)); });
+            bytesInChar?.map((byte) => { bytes.push(parseInt(byte, 16)); });
         });
         return new Guid(bytes);
     }
