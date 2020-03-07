@@ -19,7 +19,7 @@ export class Guid {
     /**
      * Gets an empty {Guid}
      */
-    static readonly empty = new Guid([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+    static readonly empty = new Guid([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
     private _stringVersion: string = '';
 
@@ -70,6 +70,19 @@ export class Guid {
         ];
 
         return new Guid(bytes.map(_ => parseInt(`0x${_}`, 16)));
+    }
+
+    /**
+     * Parses a string and turns it into a {Guid}.
+     * @param {string} guid String representation of guid.
+     */
+    static parse(guid: string): Guid {
+        const bytes: number[] = [];
+        guid.split('-').map((number, index) => {
+            const bytesInChar = number.match(/.{1,2}/g);
+            bytesInChar.map((byte) => { bytes.push(parseInt(byte, 16)); });
+        });
+        return new Guid(bytes);
     }
 
     /**
