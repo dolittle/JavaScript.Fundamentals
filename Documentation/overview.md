@@ -3,6 +3,8 @@ title: Overview
 description: Fundamental building blocks used in dolittle
 keywords: fundamentals, javascript, building blocks
 weight: 1
+aliases:
+    - /fundamentals/javascript-fundamentals/overview/
 ---
 The JavaScript Fundamentals consists of a set of packages that provide a set of
 common utilities, building blocks and helpers. Each package very specifically

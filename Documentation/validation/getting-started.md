@@ -5,6 +5,7 @@ keywords: fundamentals, javascript, building blocks
 weight: 1
 aliases:
     - /fundamentals/javascript-fundamentals/validation/getting_started/
+    - /fundamentals/javascript-fundamentals/validation/getting-started/
 ---
 
 ## Overview

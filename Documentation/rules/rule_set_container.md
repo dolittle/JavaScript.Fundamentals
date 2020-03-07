@@ -2,6 +2,8 @@
 title: Rule Set Container
 description: What is a rule set container
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/rules/rule_set_container/
 ---
 While a [rule set]({{< relref rule_set >}}) is a collection of rules for a
 specific [subject]({{< relref subject >}}),

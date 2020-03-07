@@ -5,6 +5,7 @@ keywords: fundamentals, javascript, building blocks
 weight: 1
 aliases:
     - /fundamentals/javascript-fundamentals/rules/getting_started/
+    - /fundamentals/javascript-fundamentals/rules/getting-started/
 ---
 
 ## Overview

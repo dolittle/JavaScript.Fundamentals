@@ -2,6 +2,8 @@
 title: Greater than rule
 description: How to work with the greater than rule
 keywords: fundamentals, javascript, building blocks
+aliases:
+    - /fundamentals/javascript-fundamentals/validation/greater_than/
 ---
 The greater than rule looks for a value to be greater than a given value.
 
