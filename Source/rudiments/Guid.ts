@@ -29,11 +29,11 @@ export class Guid {
      */
     constructor(readonly bytes: number[]) {
         this._stringVersion = '' +
-            bytes[0].toString(16) + bytes[1].toString(16) + bytes[2].toString(16) + bytes[3].toString(16) +
+            bytes[3].toString(16) + bytes[2].toString(16) + bytes[1].toString(16) + bytes[0].toString(16) +
             '-' +
-            bytes[4].toString(16) + bytes[5].toString(16) +
+            bytes[5].toString(16) + bytes[4].toString(16) +
             '-' +
-            bytes[6].toString(16) + bytes[7].toString(16) +
+            bytes[7].toString(16) + bytes[6].toString(16) +
             '-' +
             bytes[8].toString(16) + bytes[9].toString(16) +
             '-' +
@@ -79,11 +79,13 @@ export class Guid {
     static parse(guid: string): Guid {
         const bytes: number[] = [];
         guid.split('-').map((number, index) => {
-            const bytesInChar = number.match(/.{1,2}/g);
+            const bytesInChar = index < 3 ? number.match(/.{1,2}/g)?.reverse() :  number.match(/.{1,2}/g);
             bytesInChar?.map((byte) => { bytes.push(parseInt(byte, 16)); });
         });
+
         return new Guid(bytes);
     }
+
 
     /**
      * Return a string representation of the {Guid} in the format: 00000000-0000-0000-0000-000000000000
