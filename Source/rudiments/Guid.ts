@@ -25,9 +25,9 @@ export class Guid {
 
     /**
      * Initializes a new instance of the {Guid} class.
-     * @param {number[]} bytes - The 16 bytes that represents a {Guid}.
+     * @param {number[]|Uint8Array} bytes - The 16 bytes that represents a {Guid}.
      */
-    constructor(readonly bytes: number[]) {
+    constructor(readonly bytes: number[] | Uint8Array) {
         this._stringVersion = '' +
             bytes[3].toString(16) + bytes[2].toString(16) + bytes[1].toString(16) + bytes[0].toString(16) +
             '-' +
