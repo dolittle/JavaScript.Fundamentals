@@ -8,6 +8,10 @@ const lookUpTable: string[] = [];
     }
 })();
 
+const getString = (num: number) => {
+    return num.toString(16).padStart(2, '0');
+};
+
 /**
  * Represents a Guid according to the http://www.ietf.org/rfc/rfc4122.txt
  *
@@ -23,21 +27,22 @@ export class Guid {
 
     private _stringVersion: string = '';
 
+
     /**
      * Initializes a new instance of the {Guid} class.
      * @param {number[]|Uint8Array} bytes - The 16 bytes that represents a {Guid}.
      */
     constructor(readonly bytes: number[] | Uint8Array) {
         this._stringVersion = '' +
-            bytes[3].toString(16) + bytes[2].toString(16) + bytes[1].toString(16) + bytes[0].toString(16) +
+            getString(bytes[3]) + getString(bytes[2]) + getString(bytes[1]) + getString(bytes[0]) +
             '-' +
-            bytes[5].toString(16) + bytes[4].toString(16) +
+            getString(bytes[5]) + getString(bytes[4]) +
             '-' +
-            bytes[7].toString(16) + bytes[6].toString(16) +
+            getString(bytes[7]) + getString(bytes[6]) +
             '-' +
-            bytes[8].toString(16) + bytes[9].toString(16) +
+            getString(bytes[8]) + getString(bytes[9]) +
             '-' +
-            bytes[10].toString(16) + bytes[11].toString(16) + bytes[12].toString(16) + bytes[13].toString(16) + bytes[14].toString(16) + bytes[15].toString(16);
+            getString(bytes[10]) + getString(bytes[11]) + getString(bytes[12]) + getString(bytes[13]) + getString(bytes[14]) + getString(bytes[15]);
     }
 
     /**
@@ -79,7 +84,7 @@ export class Guid {
     static parse(guid: string): Guid {
         const bytes: number[] = [];
         guid.split('-').map((number, index) => {
-            const bytesInChar = index < 3 ? number.match(/.{1,2}/g)?.reverse() :  number.match(/.{1,2}/g);
+            const bytesInChar = index < 3 ? number.match(/.{1,2}/g)?.reverse() : number.match(/.{1,2}/g);
             bytesInChar?.map((byte) => { bytes.push(parseInt(byte, 16)); });
         });
 
