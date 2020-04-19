@@ -10,7 +10,7 @@ import { IRuleContext, ValueRule } from '@dolittle/rules';
 export class NotNull extends ValueRule {
 
     /** @inheritdoc */
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         if (subject == null) {
             context.fail(this, subject, Reasons.ValueIsNull.noArguments());
             return;

@@ -29,7 +29,7 @@ For TypeScript you get the type safety and do it as follows:
 import { IRule, IRuleContext } from '@dolittle/rules';
 
 class MyRule implements IRule {
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
     }
 }
 ```
@@ -46,7 +46,7 @@ import { IRule, IRuleContext, Reason } from '@dolittle/rules';
 class MyRule implements IRule {
     static Reason ValueIsNotFortyTwo = Reason.create('4b99af88-09c0-4342-8876-24c42a48d728', 'Value should be forty two');
 
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         const value = subject as Number;
 
         if (value != 42) {

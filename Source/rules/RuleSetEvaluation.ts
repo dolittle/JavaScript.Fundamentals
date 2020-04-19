@@ -35,8 +35,9 @@ export class RuleSetEvaluation {
     /**
      * Evaluates all rules in the rule set.
      * @param {*} owner - Owning container.
+     * @returns {Promise<void>}
      */
-    evaluate(owner: any) {
+    async evaluate(owner: any): Promise<any> {
         const context = new RuleContext(owner);
         this._ruleSet.rules.forEach(_ => {
             const subject = _.subjectProvider.provide(context);

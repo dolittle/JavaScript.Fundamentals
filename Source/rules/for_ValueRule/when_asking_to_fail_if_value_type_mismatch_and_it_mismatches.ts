@@ -4,7 +4,7 @@
 import { IRule, IRuleContext, Cause, ValueRule } from '../index';
 
 class MyRule extends ValueRule {
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         this.failIfValueTypeMismatch(context, subject, String);
     }
 }
@@ -16,7 +16,7 @@ describe('when asking to fail if value type mismatch and it mismatches', () => {
     let subjectPassed: any;
     let rule: IRule;
 
-    beforeEach(() => {
+    beforeEach(async () => {
         const context = {} as IRuleContext;
         context.fail = (rule: IRule, subject: any, cause: Cause) => {
             rulePassed = rule;
@@ -24,7 +24,7 @@ describe('when asking to fail if value type mismatch and it mismatches', () => {
             causePassed = cause;
         };
         rule = new MyRule();
-        rule.evaluate(context, subject);
+        await rule.evaluate(context, subject);
     });
 
     it('should fail with rule passed', () => rulePassed.should.equal(rule));

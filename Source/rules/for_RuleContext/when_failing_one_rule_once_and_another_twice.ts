@@ -4,7 +4,7 @@
 import { IRule, IRuleContext, RuleContext, Reason } from '../index';
 
 class Rule implements IRule {
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         const i = 42;
     }
 }

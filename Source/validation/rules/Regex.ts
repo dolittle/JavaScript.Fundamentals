@@ -27,7 +27,7 @@ export class Regex extends ValueRule {
     }
 
     /** @inheritdoc */
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         if (this.failIfValueTypeMismatch(context, subject, String)) {
             if (!(subject as String).match(this._regExp)) {
                 context.fail(this, subject, Regex.NotConformingToExpression.withArguments({ value: subject }));

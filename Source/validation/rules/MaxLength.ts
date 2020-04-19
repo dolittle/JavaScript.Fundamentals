@@ -27,7 +27,7 @@ export class MaxLength extends ValueRule {
     }
 
     /** @inheritdoc */
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         if (!subject.hasOwnProperty('length')) {
             context.fail(this, subject, MaxLength.LengthPropertyMissing.noArguments());
             return;

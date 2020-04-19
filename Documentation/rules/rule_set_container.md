@@ -55,7 +55,7 @@ import { IRule, IRuleContext, ObjectRuleSetContainerBuilder, Reason, RuleSetCont
 class MyRule implements IRule {
     static Reason ValueIsNotFortyTwo = Reason.create('4b99af88-09c0-4342-8876-24c42a48d728', 'Value should be forty two');
 
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         const value = subject as Number;
 
         if (value != 42) {
@@ -76,7 +76,10 @@ const ruleSetContainer = ruleSetContainerBuilder.build();
 
 const ruleSetContainerEvaluation = new RuleSetContainerEvaluation(ruleSetContainer);
 const instanceToEvaluate = new MyType();
-ruleSetContainerEvaluation.evaluate(instanceToEvaluate);
+
+(async () => {
+    await ruleSetContainerEvaluation.evaluate(instanceToEvaluate);
+})();
 
 console.log(ruleSetContainerEvaluation.isSuccess); // false
 ```

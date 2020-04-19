@@ -37,13 +37,14 @@ export class RuleSetContainerEvaluation {
     /**
      * Evaluates all rules in all rule sets.
      * @param {*} owner - Owning container.
+     * @returns {Promise<void>}
      */
-    evaluate(owner: any) {
+    async evaluate(owner: any): Promise<void> {
         this._brokenRules = new Array<BrokenRule>();
 
-        this._ruleSetEvaluations.forEach(ruleSetEvaluation => {
-            ruleSetEvaluation.evaluate(owner);
+        for (const ruleSetEvaluation of this._ruleSetEvaluations) {
+            await ruleSetEvaluation.evaluate(owner);
             ruleSetEvaluation.brokenRules.forEach(_ => this._brokenRules.push(_));
-        });
+        }
     }
 }

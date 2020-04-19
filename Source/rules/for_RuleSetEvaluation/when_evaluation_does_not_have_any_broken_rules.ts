@@ -8,7 +8,7 @@ class Rule implements IRule {
     static ruleContextPassedIn: IRuleContext;
     static subjectPassedIn: any;
 
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         Rule.ruleContextPassedIn = context;
         Rule.subjectPassedIn = subject;
     }
@@ -23,11 +23,12 @@ class SubjectProvider implements ISubjectProvider {
 }
 
 
-describe('when evaluation does not have any broken rules', () => {
+describe('when evaluation does not have any broken rules', async () => {
     const owner = { something: 42 };
     const ruleSet = new RuleSet(new RuleWithSubjectProvider(new Rule(), new SubjectProvider()));
     const evaluation = new RuleSetEvaluation(ruleSet);
-    evaluation.evaluate(owner);
+
+    before(async () => evaluation.evaluate(owner));
 
     it('should pass the owner in the rule context to the rule', () => Rule.ruleContextPassedIn.owner.should.equal(owner));
     it('should pass the subject to the rule', () => Rule.subjectPassedIn.should.equal(SubjectProvider.subject));

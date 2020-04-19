@@ -57,5 +57,3 @@ Below are the concepts to get familiar with in the rule engine.
 * [Reason]({{< relref reason >}})
 * [Cause]({{< relref cause >}})
 * [RuleContext]({{< relref rule_context >}})
-*
-

@@ -21,7 +21,7 @@ import { ValueRule, IRuleContext, Reason } from '@dolittle/rules';
 class MyRule extends ValueRule {
     static Reason ValueIsNotFortyTwo = Reason.create('4b99af88-09c0-4342-8876-24c42a48d728', 'Value should be forty two');
 
-    evaluate(context: IRuleContext, subject: any): void {
+    async evaluate(context: IRuleContext, subject: any) {
         if (this.failIfValueTypeMismatch(context, subject, Number)) {
             const value = subject as Number;
 
@@ -29,7 +29,6 @@ class MyRule extends ValueRule {
                 context.fail(this, subject, MyRule.ValueIsNotFortyTwo.noArguments());
             }
         }
-
     }
 }
 ```
