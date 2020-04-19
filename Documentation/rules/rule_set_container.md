@@ -53,7 +53,7 @@ instances.
 import { IRule, IRuleContext, ObjectRuleSetContainerBuilder, Reason, RuleSetContainerEvaluation } from '@dolittle/rules';
 
 class MyRule implements IRule {
-    static Reason ValueIsNotFortyTwo = Reason.create('4b99af88-09c0-4342-8876-24c42a48d728', 'Value should be forty two');
+    static ValueIsNotFortyTwo: Reason = Reason.create('4b99af88-09c0-4342-8876-24c42a48d728', 'Value should be forty two');
 
     async evaluate(context: IRuleContext, subject: any) {
         const value = subject as Number;
