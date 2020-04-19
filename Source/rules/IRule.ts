@@ -6,12 +6,12 @@ import { IRuleContext } from './index';
 /**
  * Defines the basis of a rule.
  */
-export interface IRule {
+export interface IRule<TSubject = any> {
     /**
      * Evaluate the rule in a given context and with a given instance.
      * @param {IRuleContext} context - Context the rule will be evaluated in.
      * @param {*} subject - The subject to evaluate.
      * @returns {Promise<void>}
      */
-    evaluate(context: IRuleContext, subject: any): Promise<void>;
+    evaluate(context: IRuleContext, subject: TSubject): Promise<void>;
 }
