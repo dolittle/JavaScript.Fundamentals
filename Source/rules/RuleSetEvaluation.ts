@@ -39,10 +39,10 @@ export class RuleSetEvaluation {
      */
     async evaluate(owner: any): Promise<any> {
         const context = new RuleContext(owner);
-        this._ruleSet.rules.forEach(_ => {
-            const subject = _.subjectProvider.provide(context);
-            _.rule.evaluate(context, subject);
-        });
+        for (const ruleWithSubjectProvider of this._ruleSet.rules) {
+            const subject = ruleWithSubjectProvider.subjectProvider.provide(context);
+            await ruleWithSubjectProvider.rule.evaluate(context, subject);
+        }
         this._brokenRules = context.brokenRules;
     }
 }
