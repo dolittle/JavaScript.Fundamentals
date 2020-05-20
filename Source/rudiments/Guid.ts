@@ -91,6 +91,18 @@ export class Guid {
         return new Guid(bytes);
     }
 
+    /**
+     * Parses if the type is a string parse, otherwise pass through the input as desired output type.
+     * @template T Type to handle for
+     * @param {string|T} input String or the generic type.
+     * @returns identifier Parsed or passed through
+     */
+    static as<T extends Guid>(input: string | T) {
+        if (typeof input === 'string') {
+            return Guid.parse(input) as T;
+        }
+        return input as T;
+    }
 
     /**
      * Return a string representation of the {Guid} in the format: 00000000-0000-0000-0000-000000000000
