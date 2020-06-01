@@ -3,3 +3,6 @@
 
 export { Guid } from './Guid';
 export { Constructor } from './Constructor';
+export { PropertyAccessor } from './PropertyAccessor';
+export { PropertyDescriptor } from './PropertyDescriptor';
+export { PropertyPathResolverProxyHandler } from './PropertyPathResolverProxyHandler';

@@ -1,7 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyPathResolverProxyHandler, PropertyAccessor, PropertyDescriptor, PropertyRuleSetBuilder, RuleSetContainerBuilder } from './index';
+import { PropertyRuleSetBuilder, RuleSetContainerBuilder } from './index';
+import { PropertyPathResolverProxyHandler, PropertyAccessor, PropertyDescriptor } from '@dolittle/rudiments';
 
 /**
  * Represents a specific {RuleSetContainerBuilder} for building rules for objects.

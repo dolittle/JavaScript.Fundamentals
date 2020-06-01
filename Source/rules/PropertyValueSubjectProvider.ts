@@ -1,7 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRuleContext, ISubjectProvider, PropertyDescriptor } from './index';
+import { IRuleContext, ISubjectProvider } from './index';
+import { PropertyDescriptor } from '@dolittle/rudiments';
 
 /**
  * Represents an implementation of {ISubjectProvider} for providing values from an owning object from the {IRuleContext}.

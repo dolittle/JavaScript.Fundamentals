@@ -1,7 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyDescriptor, PropertyValueSubjectProvider, RuleContext } from '../index';
+import { PropertyValueSubjectProvider, RuleContext } from '../index';
+import { PropertyDescriptor } from '@dolittle/rudiments';
+
 
 class ThirdLevelType {
     get value(): number {

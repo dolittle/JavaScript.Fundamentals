@@ -1,7 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyDescriptor, RuleSetBuilder } from './index';
+import { RuleSetBuilder } from './index';
+import { PropertyDescriptor } from '@dolittle/rudiments';
+
 
 /**
  * Represents a specific {RuleSetBuilder} for building rules for properties.

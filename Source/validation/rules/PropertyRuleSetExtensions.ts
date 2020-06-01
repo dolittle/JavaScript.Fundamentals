@@ -2,7 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { Email, GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual, MaxLength, NotNull, Regex, Required } from './index';
-import { RuleBuilder, RuleSetBuilder, PropertyValueRuleBuilder, PropertyRuleSetBuilder, PropertyDescriptor } from '@dolittle/rules';
+import { RuleBuilder, RuleSetBuilder, PropertyValueRuleBuilder, PropertyRuleSetBuilder } from '@dolittle/rules';
+import { PropertyDescriptor } from '@dolittle/rudiments';
 
 declare module '@dolittle/rules'
 {
