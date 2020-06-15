@@ -2,10 +2,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { IRule, IRuleContext, Reason, Cause } from './index';
+import { Guid } from '@dolittle/rudiments';
 
 export abstract class ValueRule implements IRule {
 
-    static ValueTypeMismatch: Reason = Reason.create('150757B0-8118-42FB-A8C4-2D49E7AC3AFD', "Value type mismatch for value of type '{type}'");
+    static ValueTypeMismatch: Reason = Reason.create(Guid.parse('150757B0-8118-42FB-A8C4-2D49E7AC3AFD'), "Value type mismatch for value of type '{type}'");
 
     /** @inheritdoc */
     abstract evaluate(context: IRuleContext, subject: any): Promise<void>;

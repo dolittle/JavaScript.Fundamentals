@@ -1,13 +1,15 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { Guid } from '@dolittle/rudiments';
+
 /**
  * Represents the reason for why a rule is broken.
  */
 export class Reason {
 
 
-    private constructor(private readonly _id: string, private readonly _title: string, private readonly _description: string) {
+    private constructor(private readonly _id: Guid, private readonly _title: string, private readonly _description: string) {
     }
 
     /**
@@ -17,15 +19,15 @@ export class Reason {
      * @param [description] - Optional description of the {Reason}.
      * @returns {Reason}
      */
-    static create(id: string, title: string, description: string = ''): Reason {
+    static create(id: Guid, title: string, description: string = ''): Reason {
         return new Reason(id, title, description);
     }
 
     /**
      * Gets the unique identifier for the {Reason}.
-     * @returns {string}
+     * @returns {Guid}
      */
-    get id(): string {
+    get id(): Guid {
         return this._id;
     }
 

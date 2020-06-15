@@ -8,10 +8,11 @@ import { ISubjectProvider } from '../ISubjectProvider';
 import { RuleSet } from '../RuleSet';
 import { RuleWithSubjectProvider } from '../RuleWithSubjectProvider';
 import { RuleSetEvaluation } from '../RuleSetEvaluation';
+import { Guid } from '@dolittle/rudiments';
 
 
 class Rule implements IRule {
-    static reason = Reason.create('b06b2dcc-5c4c-4a62-bd3d-95909b131a46', 'My Reason');
+    static reason = Reason.create(Guid.parse('b06b2dcc-5c4c-4a62-bd3d-95909b131a46'), 'My Reason');
     static ruleContextPassedIn: IRuleContext;
     static subjectPassedIn: any;
 

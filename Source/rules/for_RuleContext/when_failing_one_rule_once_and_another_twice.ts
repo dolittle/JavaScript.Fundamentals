@@ -6,6 +6,7 @@ import { IRuleContext } from '../IRuleContext';
 import { Reason } from '../Reason';
 import { RuleContext } from '../RuleContext';
 import { Cause } from '../Cause';
+import { Guid } from '@dolittle/rudiments';
 
 class Rule implements IRule {
     async evaluate(context: IRuleContext, subject: any) {
@@ -18,8 +19,8 @@ describe('when failing one rule once and another twice', () => {
     const first_rule = new Rule();
     const second_rule = new Rule();
 
-    const first_reason = Reason.create('ff8f27cf-5ce5-43bc-881d-964fb0e2dc85', 'First reason');
-    const second_reason = Reason.create('46f6323d-a0ad-4083-82d5-da3a3960a662', 'Second reason');
+    const first_reason = Reason.create(Guid.parse('ff8f27cf-5ce5-43bc-881d-964fb0e2dc85'), 'First reason');
+    const second_reason = Reason.create(Guid.parse('46f6323d-a0ad-4083-82d5-da3a3960a662'), 'Second reason');
 
     const context = new RuleContext(target);
 

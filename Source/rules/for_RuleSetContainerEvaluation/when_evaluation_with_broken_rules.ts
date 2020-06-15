@@ -10,9 +10,10 @@ import { RuleSet } from '../RuleSet';
 import { RuleSetContainer } from '../RuleSetContainer';
 import { RuleSetContainerEvaluation } from '../RuleSetContainerEvaluation';
 import { Cause } from '../Cause';
+import { Guid } from '@dolittle/rudiments';
 
 class Rule implements IRule {
-    static reason = Reason.create('b06b2dcc-5c4c-4a62-bd3d-95909b131a46', 'My Reason');
+    static reason = Reason.create(Guid.parse('b06b2dcc-5c4c-4a62-bd3d-95909b131a46'), 'My Reason');
     static ruleContextPassedIn: IRuleContext;
     static subjectPassedIn: any;
 
