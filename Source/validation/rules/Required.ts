@@ -2,7 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { Reasons } from '../index';
-import { IRuleContext, Reason, ValueRule } from '@dolittle/rules';
+import { IRuleContext, Reason, ValueRule, Cause } from '@dolittle/rules';
+import { Guid } from '@dolittle/rudiments';
 
 /**
  * Represents a {ValueRule} for required - any value must be a valid existing value
@@ -12,25 +13,25 @@ export class Required extends ValueRule {
     /**
      * When a value is not specified, this is the reason given.
      */
-    static StringIsEmpty: Reason = Reason.create('6DE903D6-014C-4B07-B5D3-C3F28677C1A6', 'String is empty');
+    static StringIsEmpty: Reason = Reason.create(Guid.parse('6DE903D6-014C-4B07-B5D3-C3F28677C1A6'), 'String is empty');
 
     /**
      * When a value is not specified, this is the reason given.
      */
-    static ValueNotSpecified: Reason = Reason.create('5F790FC3-5C7D-4F3A-B1E9-8F85FAF7176D', 'Value not specified');
+    static ValueNotSpecified: Reason = Reason.create(Guid.parse('5F790FC3-5C7D-4F3A-B1E9-8F85FAF7176D'), 'Value not specified');
 
     /** @inheritdoc */
     async evaluate(context: IRuleContext, subject: any) {
         if (subject == null) {
-            context.fail(this, subject, Reasons.ValueIsNull.noArguments());
+            context.fail(this, subject, Cause.fromReason(Reasons.ValueIsNull));
             return;
         }
         if (subject.constructor === Number && (subject as Number) === 0) {
-            context.fail(this, subject, Required.ValueNotSpecified.noArguments());
+            context.fail(this, subject, Cause.fromReason(Required.ValueNotSpecified));
             return;
         }
         if (subject.constructor === String && (subject as String).length === 0) {
-            context.fail(this, subject, Required.StringIsEmpty.noArguments());
+            context.fail(this, subject, Cause.fromReason(Required.StringIsEmpty));
             return;
         }
     }

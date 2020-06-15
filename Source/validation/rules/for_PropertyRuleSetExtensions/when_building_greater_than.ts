@@ -3,7 +3,7 @@
 
 import { ObjectRuleSetContainerBuilder, ValueRule } from '@dolittle/rules';
 import '../index';
-import { GreaterThan } from '../index';
+import { GreaterThan } from '../GreaterThan';
 
 describe('when building greater than', () => {
     const expectedValue: number = 42;

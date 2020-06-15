@@ -2,8 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { RuleContext } from '@dolittle/rules';
-import { MaxLength, Reasons } from '../index';
 import '@dolittle/rules.testing';
+import { MaxLength } from '../MaxLength';
 
 describe('when checking array value that is shorter', () => {
     const rule = new MaxLength(4);

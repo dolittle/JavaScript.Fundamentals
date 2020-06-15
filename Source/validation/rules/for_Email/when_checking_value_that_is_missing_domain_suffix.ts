@@ -2,8 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { RuleContext } from '@dolittle/rules';
-import { Email } from '../index';
 import '@dolittle/rules.testing';
+import { Email } from '../Email';
 
 describe('when checking value that is missing domain suffix', () => {
     const rule = new Email();

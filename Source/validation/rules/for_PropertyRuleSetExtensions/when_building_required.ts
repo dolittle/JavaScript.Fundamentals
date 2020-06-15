@@ -3,7 +3,7 @@
 
 import { ObjectRuleSetContainerBuilder, ValueRule } from '@dolittle/rules';
 import '../index';
-import { Required } from '../index';
+import { Required } from '../Required';
 
 describe('when building not null', () => {
     const expectedValue: number = 42;

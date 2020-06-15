@@ -3,7 +3,7 @@
 
 import { ObjectRuleSetContainerBuilder, ValueRule } from '@dolittle/rules';
 import '../index';
-import { Regex } from '../index';
+import { Regex } from '../Regex';
 
 describe('when building regex', () => {
     const expectedValue: string = '42';
