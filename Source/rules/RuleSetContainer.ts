@@ -7,7 +7,7 @@ import { RuleSet } from './index';
  * Represents a container of different {RuleSet} - sets of rules
  */
 export class RuleSetContainer {
-    private _ruleSets: ReadonlyArray<RuleSet>;
+    private readonly _ruleSets: ReadonlyArray<RuleSet>;
 
     /**
      * Initializes a new instance of the {RuleSetContainer} class.

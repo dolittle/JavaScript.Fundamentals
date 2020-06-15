@@ -1,7 +1,11 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleContext, RuleContext, Reason } from '../index';
+import { IRule } from '../IRule';
+import { IRuleContext } from '../IRuleContext';
+import { Reason } from '../Reason';
+import { RuleContext } from '../RuleContext';
+import { Cause } from '../Cause';
 
 class Rule implements IRule {
     async evaluate(context: IRuleContext, subject: any) {
@@ -19,9 +23,9 @@ describe('when failing one rule once and another twice', () => {
 
     const context = new RuleContext(target);
 
-    context.fail(first_rule, {}, first_reason.noArguments());
-    context.fail(second_rule, {}, first_reason.noArguments());
-    context.fail(second_rule, {}, second_reason.noArguments());
+    context.fail(first_rule, {}, Cause.fromReason(first_reason));
+    context.fail(second_rule, {}, Cause.fromReason(first_reason));
+    context.fail(second_rule, {}, Cause.fromReason(second_reason));
 
     const brokenRules = context.brokenRules;
 

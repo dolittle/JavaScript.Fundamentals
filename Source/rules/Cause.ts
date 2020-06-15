@@ -1,28 +1,33 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Reason } from './Reason';
+import { Reason } from './index';
 
 /**
  * Represents the actual cause and instance of a {Reason}
  */
 export class Cause {
-    private _args: Map<string, any> = new Map<string, any>();
-    private _title: string;
-    private _description: string;
+    private readonly _args: Map<string, any> = new Map<string, any>();
+    private readonly _title: string;
+    private readonly _description: string;
 
     /**
      * Initializes a new instance of the {Cause} class.
      * @param {Reason} _reason - The reason the cause is for.
      * @param {*} args - The arguments for the cause.
      */
-    constructor(private _reason: Reason, args: any) {
+    constructor(private readonly _reason: Reason, args: any) {
+        args = args ?? {};
         for (const key in args) {
             this._args.set(key, args[key]);
         }
 
         this._title = this.interpolateString(_reason.title);
         this._description = this.interpolateString(_reason.description);
+    }
+
+    static fromReason(reason: Reason, args: any = {}): Cause {
+        return new Cause(reason, args);
     }
 
     /**

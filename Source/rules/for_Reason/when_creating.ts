@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Reason } from '../index';
+import { Reason } from '../Reason';
 
 describe('when creating', () => {
     const id = 'f1bbfeb4-de16-4a4a-8733-0b1402b1476a';

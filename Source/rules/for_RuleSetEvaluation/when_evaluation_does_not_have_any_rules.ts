@@ -1,7 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { RuleSetEvaluation, RuleSet } from '../index';
+import { RuleSet } from '../RuleSet';
+import { RuleSetEvaluation } from '../RuleSetEvaluation';
 
 describe('when evaluation does not have any rules', async () => {
     const owner = { something: 42 };

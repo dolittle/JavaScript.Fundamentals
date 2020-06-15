@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleContext, Reason } from './index';
+import { IRule, IRuleContext, Reason, Cause } from './index';
 
 export abstract class ValueRule implements IRule {
 
@@ -19,7 +19,7 @@ export abstract class ValueRule implements IRule {
      */
     protected failIfValueTypeMismatch(context: IRuleContext, value: any, desiredType: any): boolean {
         if (value.constructor === desiredType) return true;
-        context.fail(this, value, ValueRule.ValueTypeMismatch.withArguments({ type: typeof value }));
+        context.fail(this, value, Cause.fromReason(ValueRule.ValueTypeMismatch, { type: typeof value }));
         return false;
     }
 }

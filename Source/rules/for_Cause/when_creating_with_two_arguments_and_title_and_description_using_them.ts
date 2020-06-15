@@ -1,7 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Reason, Cause } from '../index';
+import { Reason } from '../Reason';
+import { Cause } from '../Cause';
 
 describe('when creating with two arguments and title and description_using them', () => {
     const answer = 'forty two';
@@ -13,7 +14,7 @@ describe('when creating with two arguments and title and description_using them'
 
     const reason = Reason.create('b384c649-efa3-40fd-826c-edd44f666ff4', title, description);
 
-    const cause = reason.withArguments({ Answer: answer, Question: question});
+    const cause = Cause.fromReason(reason, { Answer: answer, Question: question});
 
     it('should pass the reason to the cause', () => cause.reason.should.equal(reason));
     it('should have the correct interpolated title', () => cause.title.should.equal(expected_title));

@@ -1,8 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { RuleSetBuilder, RuleSetContainerBuilder } from '../index';
 import sinon from 'sinon';
+import { RuleSetContainerBuilder } from '../RuleSetContainerBuilder';
+import { RuleSetBuilder } from '../RuleSetBuilder';
 
 describe('when building with two rule set builders added', () => {
     const builder = new RuleSetContainerBuilder();

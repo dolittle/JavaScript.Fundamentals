@@ -13,7 +13,7 @@ export class RuleContext implements IRuleContext {
      * Initializes a new instance of the {RuleContext} class.
      * @param {*} _owner - The owner of any subjects being evaluated in the context.
      */
-    constructor(private _owner: any) {
+    constructor(private readonly _owner: any) {
     }
 
     /** @inheritdoc */

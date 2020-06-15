@@ -1,8 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { RuleSetBuilder } from './index';
 import { PropertyDescriptor } from '@dolittle/rudiments';
+import { RuleSetBuilder } from './index';
 
 
 /**
@@ -14,7 +14,7 @@ export class PropertyRuleSetBuilder extends RuleSetBuilder {
      * Initializes a new instance of the {PropertyRuleSetBuilder} class.
      * @param {PropertyDescriptor} _propertyDescriptor - The descriptor for the property.
      */
-    constructor(private _propertyDescriptor: PropertyDescriptor) {
+    constructor(private readonly _propertyDescriptor: PropertyDescriptor) {
         super();
     }
 

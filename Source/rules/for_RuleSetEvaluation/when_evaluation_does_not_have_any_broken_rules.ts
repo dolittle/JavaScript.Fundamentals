@@ -1,7 +1,14 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleContext, ISubjectProvider, RuleSetEvaluation, RuleWithSubjectProvider, Reason, RuleSet } from '../index';
+import { IRule } from '../IRule';
+import { Reason } from '../Reason';
+import { IRuleContext } from '../IRuleContext';
+import { ISubjectProvider } from '../ISubjectProvider';
+import { RuleSet } from '../RuleSet';
+import { RuleWithSubjectProvider } from '../RuleWithSubjectProvider';
+import { RuleSetEvaluation } from '../RuleSetEvaluation';
+
 
 class Rule implements IRule {
     static reason = Reason.create('b06b2dcc-5c4c-4a62-bd3d-95909b131a46', 'My Reason');
