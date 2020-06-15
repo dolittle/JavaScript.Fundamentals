@@ -1,9 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyValueRuleBuilder } from '@dolittle/rules';
-import { PropertyAccessorDescriptor } from '@dolittle/rudiments';
-import { Email, GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual, MaxLength, NotNull, Regex, Required, PropertyRuleSetBuilder } from './index';
+import { PropertyValueRuleBuilder, PropertyRuleSetBuilder } from '@dolittle/rules';
+import { Email, GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual, MaxLength, NotNull, Regex, Required } from './index';
 
 declare module './index'
 {
