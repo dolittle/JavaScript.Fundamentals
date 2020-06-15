@@ -6,10 +6,10 @@ import { PropertyAccessor } from './index';
 /**
  * Represents the descriptor of a specific property accessor
  */
-export class PropertyDescriptor {
+export class PropertyAccessorDescriptor {
 
     /**
-     * Creates an instance of property accessor descriptor.
+     * Creates an instance of {PropertyAccessorDescriptor}.
      * @param {PropertyAccessor} _accessor - The actual accessor for accessing the property.
      * @param {Array<string>} _segments - The segments representing the path of the property accessor within an instance.
      */
