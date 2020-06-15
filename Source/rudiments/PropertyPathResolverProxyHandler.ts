@@ -9,7 +9,7 @@ export class PropertyPathResolverProxyHandler implements ProxyHandler<any> {
     _property: string = '';
     _segments: Array<string> = [];
 
-    constructor(private _root?: PropertyPathResolverProxyHandler) {
+    constructor(private readonly _root?: PropertyPathResolverProxyHandler) {
     }
 
     get property(): string {

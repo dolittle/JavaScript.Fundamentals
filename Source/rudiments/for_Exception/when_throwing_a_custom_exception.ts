@@ -3,7 +3,7 @@
 *  Licensed under the MIT License. See LICENSE in the project root for license information.
 *--------------------------------------------------------------------------------------------*/
 import { a_custom_exception } from './given/a_custom_exception';
-import { Exception } from '../';
+import { Exception } from '../Exception';
 import { expect } from 'chai';
 
 describe('when throwing a custom exception', () => {

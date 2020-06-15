@@ -3,7 +3,7 @@
 *  Licensed under the MIT License. See LICENSE in the project root for license information.
 *--------------------------------------------------------------------------------------------*/
 import { expect } from 'chai';
-import { Exception } from '../';
+import { Exception } from '../Exception';
 
 describe('when throwing an exception', () => {
     const message = 'message';
