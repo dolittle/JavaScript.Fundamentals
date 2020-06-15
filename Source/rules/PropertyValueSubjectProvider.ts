@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyDescriptor } from '@dolittle/rudiments';
+import { PropertyAccessorDescriptor } from '@dolittle/rudiments';
 import { IRuleContext, ISubjectProvider } from './index';
 
 /**
@@ -11,9 +11,9 @@ export class PropertyValueSubjectProvider implements ISubjectProvider {
 
     /**
      * Creates an instance of object value subject provider.
-     * @param {PropertyDescriptor} _propertyDescriptor - The actual property descriptor.
+     * @param {PropertyAccessorDescriptor} _propertyDescriptor - The actual property descriptor.
      */
-    constructor(private readonly _propertyDescriptor: PropertyDescriptor) {
+    constructor(private readonly _propertyDescriptor: PropertyAccessorDescriptor) {
     }
 
     /** @inheritdoc */
