@@ -6,7 +6,7 @@ import { an_object_with_nested_properties } from './given/an_object_with_nested_
 describe('when building with one property added', () => {
     const given: an_object_with_nested_properties = new an_object_with_nested_properties();
 
-    given.builder.rulesFor((_: any) => _.secondLevel);
+    given.builder.rulesFor(_ => _.secondLevel);
     const ruleSetContainer = given.builder.build();
 
     it('should have a single rule set', () => ruleSetContainer.ruleSets.should.be.lengthOf(1));
