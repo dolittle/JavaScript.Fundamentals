@@ -97,7 +97,7 @@ export class Guid {
      * @param {string|T} input String or the generic type.
      * @returns identifier Parsed or passed through
      */
-    static as<T extends Guid = Guid>(input: string | T) {
+    static as<T extends Guid = Guid>(input: string | T): T {
         if (typeof input === 'string') {
             return Guid.parse(input) as T;
         }
