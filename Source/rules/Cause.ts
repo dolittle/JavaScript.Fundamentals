@@ -26,10 +26,6 @@ export class Cause {
         this._description = this.interpolateString(_reason.description);
     }
 
-    static fromReason(reason: Reason, args: any = {}): Cause {
-        return new Cause(reason, args);
-    }
-
     /**
      * Gets the reason the cause is for
      * @returns {Reason}

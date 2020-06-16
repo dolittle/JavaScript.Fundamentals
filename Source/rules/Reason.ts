@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Guid } from '@dolittle/rudiments';
+import { Cause, ReasonId } from './index';
 
 /**
  * Represents the reason for why a rule is broken.
@@ -9,7 +9,7 @@ import { Guid } from '@dolittle/rudiments';
 export class Reason {
 
 
-    private constructor(private readonly _id: Guid, private readonly _title: string, private readonly _description: string) {
+    private constructor(private readonly _id: ReasonId, private readonly _title: string, private readonly _description: string) {
     }
 
     /**
@@ -19,15 +19,15 @@ export class Reason {
      * @param [description] - Optional description of the {Reason}.
      * @returns {Reason}
      */
-    static create(id: Guid, title: string, description: string = ''): Reason {
+    static create(id: ReasonId, title: string, description: string = ''): Reason {
         return new Reason(id, title, description);
     }
 
     /**
      * Gets the unique identifier for the {Reason}.
-     * @returns {Guid}
+     * @returns {ReasonId}
      */
-    get id(): Guid {
+    get id(): ReasonId {
         return this._id;
     }
 
@@ -45,5 +45,13 @@ export class Reason {
      */
     get description(): string {
         return this._description;
+    }
+
+    justBecause() {
+        return this.becauseOf({});
+    }
+
+    becauseOf(args: any) {
+        return new Cause(this, args);
     }
 }

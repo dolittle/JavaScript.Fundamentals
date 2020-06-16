@@ -27,8 +27,8 @@ export class LessThan extends ValueRule {
     /** @inheritdoc */
     async evaluate(context: IRuleContext, subject: any) {
         if (this.failIfValueTypeMismatch(context, subject, this._value.constructor)) {
-            if ( subject === this._value ) context.fail(this, subject, Cause.fromReason(Reasons.ValueIsEqual, { leftHand:subject, rightHand:this._value }) );
-            if ( subject > this._value ) context.fail(this, subject, Cause.fromReason(Reasons.ValueIsGreaterThan, { leftHand:subject, rightHand:this._value }));
+            if ( subject === this._value ) context.fail(this, subject, Reasons.ValueIsEqual.becauseOf({ leftHand:subject, rightHand:this._value }) );
+            if ( subject > this._value ) context.fail(this, subject, Reasons.ValueIsGreaterThan.becauseOf({ leftHand:subject, rightHand:this._value }));
         }
     }
 }

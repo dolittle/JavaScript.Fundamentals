@@ -20,7 +20,7 @@ class Rule implements IRule {
     async evaluate(context: IRuleContext, subject: any) {
         Rule.ruleContextPassedIn = context;
         Rule.subjectPassedIn = subject;
-        context.fail(this, subject, Cause.fromReason(Rule.reason));
+        context.fail(this, subject, Rule.reason.justBecause());
     }
 }
 

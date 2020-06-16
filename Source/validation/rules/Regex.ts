@@ -31,7 +31,7 @@ export class Regex extends ValueRule {
     async evaluate(context: IRuleContext, subject: any) {
         if (this.failIfValueTypeMismatch(context, subject, String)) {
             if (!(subject as String).match(this._regExp)) {
-                context.fail(this, subject, Cause.fromReason(Regex.NotConformingToExpression, { value: subject }));
+                context.fail(this, subject, Regex.NotConformingToExpression.becauseOf({ value: subject }));
             }
         }
     }

@@ -23,15 +23,15 @@ export class Required extends ValueRule {
     /** @inheritdoc */
     async evaluate(context: IRuleContext, subject: any) {
         if (subject == null) {
-            context.fail(this, subject, Cause.fromReason(Reasons.ValueIsNull));
+            context.fail(this, subject, Reasons.ValueIsNull.justBecause());
             return;
         }
         if (subject.constructor === Number && (subject as Number) === 0) {
-            context.fail(this, subject, Cause.fromReason(Required.ValueNotSpecified));
+            context.fail(this, subject, Required.ValueNotSpecified.justBecause());
             return;
         }
         if (subject.constructor === String && (subject as String).length === 0) {
-            context.fail(this, subject, Cause.fromReason(Required.StringIsEmpty));
+            context.fail(this, subject, Required.StringIsEmpty.justBecause());
             return;
         }
     }

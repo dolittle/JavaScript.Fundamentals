@@ -15,7 +15,7 @@ export class Email extends ValueRule {
     async evaluate(context: IRuleContext, subject: any) {
         if (this.failIfValueTypeMismatch(context, subject, String)) {
             if ( !(subject as String).match(Email.expression) ) {
-                context.fail(this, subject, Cause.fromReason(Email.InvalidEmail, { value: subject }));
+                context.fail(this, subject, Email.InvalidEmail.becauseOf({ value: subject }));
             }
         }
     }

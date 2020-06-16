@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Reason } from '../Reason';
+import { Reason } from '../index';
 import { Guid } from '@dolittle/rudiments';
 
 describe('when creating', () => {

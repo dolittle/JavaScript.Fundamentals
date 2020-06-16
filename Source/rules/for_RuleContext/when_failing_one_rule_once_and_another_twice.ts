@@ -5,7 +5,6 @@ import { IRule } from '../IRule';
 import { IRuleContext } from '../IRuleContext';
 import { Reason } from '../Reason';
 import { RuleContext } from '../RuleContext';
-import { Cause } from '../Cause';
 import { Guid } from '@dolittle/rudiments';
 
 class Rule implements IRule {
@@ -24,9 +23,9 @@ describe('when failing one rule once and another twice', () => {
 
     const context = new RuleContext(target);
 
-    context.fail(first_rule, {}, Cause.fromReason(first_reason));
-    context.fail(second_rule, {}, Cause.fromReason(first_reason));
-    context.fail(second_rule, {}, Cause.fromReason(second_reason));
+    context.fail(first_rule, {}, first_reason.justBecause());
+    context.fail(second_rule, {}, first_reason.justBecause());
+    context.fail(second_rule, {}, second_reason.justBecause());
 
     const brokenRules = context.brokenRules;
 

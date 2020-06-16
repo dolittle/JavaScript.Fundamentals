@@ -8,7 +8,6 @@ import { ISubjectProvider } from '../ISubjectProvider';
 import { RuleWithSubjectProvider } from '../RuleWithSubjectProvider';
 import { RuleSet } from '../RuleSet';
 import { RuleSetEvaluation } from '../RuleSetEvaluation';
-import { Cause } from '../Cause';
 import { Guid } from '@dolittle/rudiments';
 
 class Rule implements IRule {
@@ -19,7 +18,7 @@ class Rule implements IRule {
     async evaluate(context: IRuleContext, subject: any) {
         Rule.ruleContextPassedIn = context;
         Rule.subjectPassedIn = subject;
-        context.fail(this, subject, Cause.fromReason(Rule.reason));
+        context.fail(this, subject, Rule.reason.justBecause());
     }
 }
 

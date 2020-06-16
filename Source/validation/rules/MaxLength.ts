@@ -30,12 +30,12 @@ export class MaxLength extends ValueRule {
     /** @inheritdoc */
     async evaluate(context: IRuleContext, subject: any) {
         if (!subject.hasOwnProperty('length')) {
-            context.fail(this, subject, Cause.fromReason(MaxLength.LengthPropertyMissing));
+            context.fail(this, subject, MaxLength.LengthPropertyMissing.justBecause());
             return;
         }
         const length = subject.length;
         if (length > this._length) {
-            context.fail(this, subject, Cause.fromReason(Reasons.LengthIsTooLong, { length: length }));
+            context.fail(this, subject, Reasons.LengthIsTooLong.becauseOf({ length: length }));
         }
     }
 }
