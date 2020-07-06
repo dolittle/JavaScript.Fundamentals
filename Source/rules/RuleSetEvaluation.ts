@@ -13,7 +13,7 @@ export class RuleSetEvaluation {
      * Initializes a new instance of the {RuleSet} class.
      * @param {RuleSet} _ruleSet - RuleSet the evaluation is for.
      */
-    constructor(private _ruleSet: RuleSet) {
+    constructor(private readonly _ruleSet: RuleSet) {
     }
 
     /**

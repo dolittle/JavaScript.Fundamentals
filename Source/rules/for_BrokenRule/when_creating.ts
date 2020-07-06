@@ -1,7 +1,10 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { BrokenRule, IRule, IRuleContext, RuleContext } from '../index';
+import { RuleContext } from '../RuleContext';
+import { IRuleContext } from '../IRuleContext';
+import { IRule } from '../IRule';
+import { BrokenRule } from '../BrokenRule';
 
 class Rule implements IRule {
     async evaluate(context: IRuleContext, subject: any) {

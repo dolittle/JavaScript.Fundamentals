@@ -2,8 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { RuleContext } from '@dolittle/rules';
-import { Regex } from '../index';
 import '@dolittle/rules.testing';
+import { Regex } from '../Regex';
 
 describe('when checking value that is missing at sign', () => {
     const rule = new Regex('\\w');

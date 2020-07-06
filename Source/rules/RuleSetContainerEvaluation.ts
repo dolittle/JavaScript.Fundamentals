@@ -8,7 +8,7 @@ import { BrokenRule, RuleSetContainer, RuleSetEvaluation } from './index';
  */
 export class RuleSetContainerEvaluation {
     private _brokenRules: Array<BrokenRule> = new Array<BrokenRule>();
-    private _ruleSetEvaluations: Array<RuleSetEvaluation> = new Array<RuleSetEvaluation>();
+    private readonly _ruleSetEvaluations: Array<RuleSetEvaluation> = new Array<RuleSetEvaluation>();
 
     /**
      * Initializes a new instance of the {RuleSetContainerEvaluation} class.

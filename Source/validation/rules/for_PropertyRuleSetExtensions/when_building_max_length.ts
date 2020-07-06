@@ -3,7 +3,7 @@
 
 import { ObjectRuleSetContainerBuilder, ValueRule } from '@dolittle/rules';
 import '../index';
-import { MaxLength } from '../index';
+import { MaxLength } from '../MaxLength';
 
 describe('when building max length', () => {
     const expectedValue: number = 42;

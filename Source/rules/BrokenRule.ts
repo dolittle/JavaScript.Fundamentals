@@ -15,7 +15,7 @@ export class BrokenRule {
      * @param {*} _subject - Subject that was evaluated.
      * @param {IRuleContext} _context - Context evaluated in.
      */
-    constructor(private _rule: IRule, private _subject: any, private _context: IRuleContext) {
+    constructor(private readonly _rule: IRule, private readonly _subject: any, private readonly _context: IRuleContext) {
     }
 
     /**

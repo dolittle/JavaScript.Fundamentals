@@ -13,7 +13,7 @@ export class Specification<T>
      * Initializes a new instance of the {Specification<T>} class.
      * @param {Predicate<T>} _predicate The predicate that will be used for evaluation.
      */
-    constructor(private _predicate: Predicate<T>) {
+    constructor(private readonly _predicate: Predicate<T>) {
     }
 
     /**

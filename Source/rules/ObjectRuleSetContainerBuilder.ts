@@ -1,8 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { PropertyPathResolverProxyHandler, PropertyAccessor, PropertyAccessorDescriptor } from '@dolittle/rudiments';
 import { PropertyRuleSetBuilder, RuleSetContainerBuilder } from './index';
-import { PropertyPathResolverProxyHandler, PropertyAccessor, PropertyDescriptor } from '@dolittle/rudiments';
 
 /**
  * Represents a specific {RuleSetContainerBuilder} for building rules for objects.
@@ -19,7 +19,7 @@ export class ObjectRuleSetContainerBuilder<TObject extends object = any> extends
         const handler = new PropertyPathResolverProxyHandler();
         const proxy = new Proxy<TObject>({} as TObject, handler);
         accessor(proxy);
-        const propertyDescriptor = new PropertyDescriptor(accessor, handler.segments.filter(_ => true));
+        const propertyDescriptor = new PropertyAccessorDescriptor(accessor, handler.segments.filter(_ => true));
         const ruleSetBuilder = new PropertyRuleSetBuilder(propertyDescriptor);
         this.addRuleSetBuilder(ruleSetBuilder);
         return ruleSetBuilder;

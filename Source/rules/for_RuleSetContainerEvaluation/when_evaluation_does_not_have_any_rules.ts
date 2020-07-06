@@ -1,7 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { RuleSetContainer, RuleSetContainerEvaluation, RuleSet } from '../index';
+import { RuleSet } from '../RuleSet';
+import { RuleSetContainer } from '../RuleSetContainer';
+import { RuleSetContainerEvaluation } from '../RuleSetContainerEvaluation';
 
 describe('when evaluation does not have any rules', async () => {
     const owner = { something: 42 };

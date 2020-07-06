@@ -1,21 +1,13 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { PropertyValueRuleBuilder, PropertyRuleSetBuilder } from '@dolittle/rules';
 import { Email, GreaterThan, GreaterThanOrEqual, LessThan, LessThanOrEqual, MaxLength, NotNull, Regex, Required } from './index';
-import { RuleBuilder, RuleSetBuilder, PropertyValueRuleBuilder, PropertyRuleSetBuilder } from '@dolittle/rules';
-import { PropertyDescriptor } from '@dolittle/rudiments';
 
-declare module '@dolittle/rules'
+declare module './index'
 {
-    class PropertyRuleSetBuilder extends RuleSetBuilder {
-        readonly propertyDescriptor: PropertyDescriptor;
-
-        /** @inheritdoc */
-        constructor(propertyDescriptor: PropertyDescriptor);
-
-        /** @inheritdoc */
-        addRuleBuilder(ruleBuilder: RuleBuilder): void;
-
+    // tslint:disable-next-line: interface-name
+    interface PropertyRuleSetBuilder {
         /**
          * Defines an email address rule for the property. See {Email}.
          * @returns {PropertyValueRuleBuilder<Email>}
@@ -77,7 +69,6 @@ declare module '@dolittle/rules'
         required(): PropertyValueRuleBuilder<Required>;
     }
 }
-
 PropertyRuleSetBuilder.prototype.emailAddress = function () {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Email());
     this.addRuleBuilder(ruleBuilder);

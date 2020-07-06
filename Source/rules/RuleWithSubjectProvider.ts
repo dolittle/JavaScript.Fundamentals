@@ -13,7 +13,7 @@ export class RuleWithSubjectProvider {
      * @param {IRule} _rule - The rule
      * @param {ISubjectProvider} _subjectProvider - The subject provider
      */
-    constructor(private _rule: IRule, private _subjectProvider: ISubjectProvider) {
+    constructor(private readonly _rule: IRule, private readonly _subjectProvider: ISubjectProvider) {
     }
 
     /**

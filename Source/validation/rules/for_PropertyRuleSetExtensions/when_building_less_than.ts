@@ -3,7 +3,7 @@
 
 import { ObjectRuleSetContainerBuilder, ValueRule } from '@dolittle/rules';
 import '../index';
-import { LessThan } from '../index';
+import { LessThan } from '../LessThan';
 
 describe('when building less than', () => {
     const expectedValue: number = 42;

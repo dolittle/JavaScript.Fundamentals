@@ -1,8 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyValueSubjectProvider, RuleContext } from '../index';
-import { PropertyDescriptor } from '@dolittle/rudiments';
+import { PropertyAccessorDescriptor } from '@dolittle/rudiments';
+import { PropertyValueSubjectProvider } from '../PropertyValueSubjectProvider';
+import { RuleContext } from '../RuleContext';
 
 
 class ThirdLevelType {
@@ -28,7 +29,7 @@ class TopLevelType {
 
 describe('when accessing a nested property', () => {
     const accessor = (_: TopLevelType) => _.secondLevel.thirdLevel.value;
-    const propertyDescriptor = new PropertyDescriptor(accessor, ['secondLevel', 'thirdLevel', 'value']);
+    const propertyDescriptor = new PropertyAccessorDescriptor(accessor, ['secondLevel', 'thirdLevel', 'value']);
     const instance = new TopLevelType();
 
     const provider = new PropertyValueSubjectProvider(propertyDescriptor);

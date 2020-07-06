@@ -7,7 +7,7 @@ import { RuleBuilder, RuleSet, RuleWithSubjectProvider } from './index';
  * Represents a builder of rule sets
  */
 export class RuleSetBuilder {
-    _ruleBuilders: RuleBuilder[] = [];
+    private readonly _ruleBuilders: RuleBuilder[] = [];
 
     /**
      * Add a rule to the builder.

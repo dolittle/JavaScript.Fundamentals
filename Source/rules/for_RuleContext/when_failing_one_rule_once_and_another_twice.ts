@@ -1,7 +1,11 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleContext, RuleContext, Reason } from '../index';
+import { IRule } from '../IRule';
+import { IRuleContext } from '../IRuleContext';
+import { Reason } from '../Reason';
+import { RuleContext } from '../RuleContext';
+import { Guid } from '@dolittle/rudiments';
 
 class Rule implements IRule {
     async evaluate(context: IRuleContext, subject: any) {
@@ -14,14 +18,14 @@ describe('when failing one rule once and another twice', () => {
     const first_rule = new Rule();
     const second_rule = new Rule();
 
-    const first_reason = Reason.create('ff8f27cf-5ce5-43bc-881d-964fb0e2dc85', 'First reason');
-    const second_reason = Reason.create('46f6323d-a0ad-4083-82d5-da3a3960a662', 'Second reason');
+    const first_reason = Reason.create(Guid.parse('ff8f27cf-5ce5-43bc-881d-964fb0e2dc85'), 'First reason');
+    const second_reason = Reason.create(Guid.parse('46f6323d-a0ad-4083-82d5-da3a3960a662'), 'Second reason');
 
     const context = new RuleContext(target);
 
-    context.fail(first_rule, {}, first_reason.noArguments());
-    context.fail(second_rule, {}, first_reason.noArguments());
-    context.fail(second_rule, {}, second_reason.noArguments());
+    context.fail(first_rule, {}, first_reason.justBecause());
+    context.fail(second_rule, {}, first_reason.justBecause());
+    context.fail(second_rule, {}, second_reason.justBecause());
 
     const brokenRules = context.brokenRules;
 

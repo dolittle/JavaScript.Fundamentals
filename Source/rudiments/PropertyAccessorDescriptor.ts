@@ -1,19 +1,19 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyAccessor } from '@dolittle/rudiments';
+import { PropertyAccessor } from './index';
 
 /**
  * Represents the descriptor of a specific property accessor
  */
-export class PropertyDescriptor {
+export class PropertyAccessorDescriptor {
 
     /**
-     * Creates an instance of property accessor descriptor.
+     * Creates an instance of {PropertyAccessorDescriptor}.
      * @param {PropertyAccessor} _accessor - The actual accessor for accessing the property.
      * @param {Array<string>} _segments - The segments representing the path of the property accessor within an instance.
      */
-    constructor(private _accessor: PropertyAccessor, private _segments: Array<string>) {
+    constructor(private readonly _accessor: PropertyAccessor, private readonly _segments: Array<string>) {
     }
 
     /**

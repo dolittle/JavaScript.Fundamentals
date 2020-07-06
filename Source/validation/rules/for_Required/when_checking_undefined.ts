@@ -2,8 +2,9 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { RuleContext } from '@dolittle/rules';
-import { Required, Reasons } from '../index';
 import '@dolittle/rules.testing';
+import { Required } from '../Required';
+import { Reasons } from '../Reasons';
 
 describe('when checking undefined', () => {
     const rule = new Required();

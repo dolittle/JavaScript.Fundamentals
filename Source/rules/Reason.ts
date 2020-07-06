@@ -1,17 +1,33 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Cause } from './index';
+import { Cause, ReasonId } from './index';
 
 /**
- * Defines the reason a rule is broken.
+ * Represents the reason for why a rule is broken.
  */
 export class Reason {
+
+
+    private constructor(private readonly _id: ReasonId, private readonly _title: string, private readonly _description: string) {
+    }
+
+    /**
+     * Creates a new instance of {Reason} with a unique identifier.
+     * @param id - Unique identifier of the {Reason} - in the Guid format: 00000000-0000-0000-0000-000000000000.
+     * @param title - Title of the {Reason}.
+     * @param [description] - Optional description of the {Reason}.
+     * @returns {Reason}
+     */
+    static create(id: ReasonId, title: string, description: string = ''): Reason {
+        return new Reason(id, title, description);
+    }
+
     /**
      * Gets the unique identifier for the {Reason}.
-     * @returns {string}
+     * @returns {ReasonId}
      */
-    get id(): string {
+    get id(): ReasonId {
         return this._id;
     }
 
@@ -31,34 +47,11 @@ export class Reason {
         return this._description;
     }
 
-    private constructor(private _id: string, private _title: string, private _description: string) {
+    justBecause() {
+        return this.becauseOf({});
     }
 
-    /**
-     * Creates a new instance of {Reason} with a unique identifier.
-     * @param id - Unique identifier of the {Reason} - in the Guid format: 00000000-0000-0000-0000-000000000000.
-     * @param title - Title of the {Reason}.
-     * @param [description] - Optional description of the {Reason}.
-     * @returns {Reason}
-     */
-    static create(id: string, title: string, description: string = ''): Reason {
-        return new Reason(id, title, description);
-    }
-
-    /**
-     * Create a {Cause} with no arguments.
-     * @returns {Cause}
-     */
-    noArguments(): Cause {
-        return this.withArguments({});
-    }
-
-    /**
-     * Create a {Cause} with given arguments that will be typically used in titles and descriptions.
-     * @param {*} args - Arguments to use.
-     * @returns {Cause}
-     */
-    withArguments(args: any): Cause {
+    becauseOf(args: any) {
         return new Cause(this, args);
     }
 }
