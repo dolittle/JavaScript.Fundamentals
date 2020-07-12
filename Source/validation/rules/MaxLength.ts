@@ -35,7 +35,7 @@ export class MaxLength extends ValueRule {
         }
         const length = subject.length;
         if (length > this._length) {
-            context.fail(this, subject, Reasons.LengthIsTooLong.becauseOf({ length: length }));
+            context.fail(this, subject, Reasons.LengthIsTooLong.becauseOf({ length }));
         }
     }
 }

@@ -22,7 +22,7 @@ export class RuleSetContainerBuilder {
      * @returns {RuleSetContainer}
      */
     build(): RuleSetContainer {
-        const ruleSets: RuleSet[] = [];
+        const ruleSets: Array<RuleSet> = [];
         this._ruleSetBuilders.forEach(_ => {
             const ruleSet = _.build();
             ruleSets.push(ruleSet);

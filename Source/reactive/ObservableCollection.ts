@@ -7,30 +7,30 @@ import { ObservableCollectionIterator } from './ObservableCollectionIterator';
 /**
  * Represents a collection of items that can be observed for changes.
  */
-export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Iterable<T> {
-    private readonly _added: Subject<T[]>;
-    private readonly _removed: Subject<T[]>;
+export class ObservableCollection<T> extends BehaviorSubject<Array<T>> implements Iterable<T> {
+    private readonly _added: Subject<Array<T>>;
+    private readonly _removed: Subject<Array<T>>;
 
     /**
      * Initializes a new instance of the {ObservableCollection<T>} class.
      */
     constructor() {
         super([]);
-        this._added = new Subject<T[]>();
-        this._removed = new Subject<T[]>();
+        this._added = new Subject<Array<T>>();
+        this._removed = new Subject<Array<T>>();
     }
 
     /**
      * Gets the added {Subject<T>}.
      */
-    get added(): Subject<T[]> {
+    get added(): Subject<Array<T>> {
         return this._added;
     }
 
     /**
      * Gets the removed {Subject<T>}.
      */
-    get removed(): Subject<T[]> {
+    get removed(): Subject<Array<T>> {
         return this._removed;
     }
 
@@ -61,13 +61,13 @@ export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Ite
      * @param {T[]} items - Rest of items.
      * @returns {number} - Number of items in the collection after push.
      */
-    push(...items: T[]): number {
+    push(...items: Array<T>): number {
         const result = this.value.push(...items);
         this.added.next(items);
         return result;
     }
 
-    remove(...items: T[]): number {
+    remove(...items: Array<T>): number {
         let current = this.value;
         items.forEach(item => {
             current = current.filter(_ => _ !== item);

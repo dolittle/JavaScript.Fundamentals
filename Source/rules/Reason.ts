@@ -19,7 +19,7 @@ export class Reason {
      * @param [description] - Optional description of the {Reason}.
      * @returns {Reason}
      */
-    static create(id: ReasonId, title: string, description: string = ''): Reason {
+    static create(id: ReasonId, title: string, description = ''): Reason {
         return new Reason(id, title, description);
     }
 

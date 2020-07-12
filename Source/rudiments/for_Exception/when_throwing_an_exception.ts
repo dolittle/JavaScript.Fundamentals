@@ -1,7 +1,5 @@
-/*---------------------------------------------------------------------------------------------
-*  Copyright (c) Dolittle. All rights reserved.
-*  Licensed under the MIT License. See LICENSE in the project root for license information.
-*--------------------------------------------------------------------------------------------*/
+// Copyright (c) Dolittle. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
 import { expect } from 'chai';
 import { Exception } from '../Exception';
 
@@ -11,7 +9,8 @@ describe('when throwing an exception', () => {
 
     try {
         throw new Exception(message);
-    } catch (error) {
+    }
+ catch (error) {
         exception = error;
     }
     it('should throw an exception', () => expect(exception).to.not.be.null);

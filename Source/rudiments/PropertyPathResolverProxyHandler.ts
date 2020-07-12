@@ -6,7 +6,7 @@
  * @template TObject
  */
 export class PropertyPathResolverProxyHandler implements ProxyHandler<any> {
-    _property: string = '';
+    _property = '';
     _segments: Array<string> = [];
 
     constructor(private readonly _root?: PropertyPathResolverProxyHandler) {

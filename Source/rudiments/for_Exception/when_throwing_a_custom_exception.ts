@@ -1,7 +1,5 @@
-/*---------------------------------------------------------------------------------------------
-*  Copyright (c) Dolittle. All rights reserved.
-*  Licensed under the MIT License. See LICENSE in the project root for license information.
-*--------------------------------------------------------------------------------------------*/
+// Copyright (c) Dolittle. All rights reserved.
+// Licensed under the MIT license. See LICENSE file in the project root for full license information.
 import { a_custom_exception } from './given/a_custom_exception';
 import { Exception } from '../Exception';
 import { expect } from 'chai';
@@ -11,7 +9,8 @@ describe('when throwing a custom exception', () => {
     let exception: Exception;
     try {
         throw new a_custom_exception(message);
-    } catch (error) {
+    }
+ catch (error) {
         exception = error;
     }
     it('should throw an exception', () => expect(exception).to.not.be.null);

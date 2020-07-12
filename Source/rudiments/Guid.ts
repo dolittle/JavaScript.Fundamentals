@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-const lookUpTable: string[] = [];
+const lookUpTable: Array<string> = [];
 (() => {
     for (let i = 0; i < 256; i += 1) {
         lookUpTable[i] = (i < 16 ? '0' : '') + (i).toString(16);
@@ -25,14 +25,14 @@ export class Guid {
      */
     static readonly empty = new Guid([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
-    private _stringVersion: string = '';
+    private _stringVersion = '';
 
 
     /**
      * Initializes a new instance of the {Guid} class.
      * @param {number[]|Uint8Array} bytes - The 16 bytes that represents a {Guid}.
      */
-    constructor(readonly bytes: number[] | Uint8Array) {
+    constructor(readonly bytes: Array<number> | Uint8Array) {
         this._stringVersion = '' +
             getString(bytes[3]) + getString(bytes[2]) + getString(bytes[1]) + getString(bytes[0]) +
             '-' +
@@ -82,7 +82,7 @@ export class Guid {
      * @param {string} guid String representation of guid.
      */
     static parse(guid: string): Guid {
-        const bytes: number[] = [];
+        const bytes: Array<number> = [];
         guid.split('-').map((number, index) => {
             const bytesInChar = index < 3 ? number.match(/.{1,2}/g)?.reverse() : number.match(/.{1,2}/g);
             bytesInChar?.map((byte) => { bytes.push(parseInt(byte, 16)); });

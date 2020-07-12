@@ -5,10 +5,10 @@ import { ObservableCollection } from '../../ObservableCollection';
 
 describe('multiple items', () => {
     const collection = new ObservableCollection<number>();
-    let result: number[];
-    let all: number[];
-    collection.removed.subscribe((items: number[]) => result = items);
-    collection.subscribe((items: number[]) => all = items);
+    let result: Array<number>;
+    let all: Array<number>;
+    collection.removed.subscribe((items: Array<number>) => result = items);
+    collection.subscribe((items: Array<number>) => all = items);
     collection.push(42,43,44,45);
     const numberOfItems = collection.remove(43,44);
 

@@ -13,7 +13,7 @@ export class RuleSetContainer {
      * Initializes a new instance of the {RuleSetContainer} class.
      * @param {...RuleSet[]} ruleSets - RuleSets for the container.
      */
-    constructor(...ruleSets: RuleSet[]) {
+    constructor(...ruleSets: Array<RuleSet>) {
         this._ruleSets = ruleSets;
     }
 
