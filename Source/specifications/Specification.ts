@@ -7,8 +7,7 @@ type Predicate<T> = (instance: T) => boolean;
  * Represents specifications for building rules.
  * @template T Type of instance the specification is evaluating.
  */
-export class Specification<T>
-{
+export class Specification<T> {
     /**
      * Initializes a new instance of the {Specification<T>} class.
      * @param {Predicate<T>} _predicate The predicate that will be used for evaluation.

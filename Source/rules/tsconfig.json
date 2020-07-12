@@ -2,7 +2,13 @@
     "extends": "../../tsconfig.settings.json",
     "compilerOptions": {
         "rootDir": ".",
-        "baseUrl": "./",
-        "sourceRoot": "./"
-    }
+        "sourceRoot": "./",
+        "outDir": "Distribution"
+    },
+    "include": ["**/*.ts"],
+    "exclude": ["node_modules", "Distribution"],
+    "references": [
+        { "path": "../rudiments" },
+        { "path": "../specifications" }
+    ]
 }
