@@ -2,7 +2,7 @@
     "extends": "@dolittle/typescript.config",
     "compilerOptions": {
         "module": "CommonJS",
-        "target": "ES5",
+        "target": "ES2015",
         "downlevelIteration": true
     }
 }
