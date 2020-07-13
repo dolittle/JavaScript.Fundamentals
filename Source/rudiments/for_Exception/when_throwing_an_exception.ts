@@ -9,8 +9,7 @@ describe('when throwing an exception', () => {
 
     try {
         throw new Exception(message);
-    }
- catch (error) {
+    } catch (error) {
         exception = error;
     }
     it('should throw an exception', () => expect(exception).to.not.be.null);

@@ -7,8 +7,7 @@ describe('when throwing an exception without a message', () => {
     let exception: Error;
     try {
         throw new Exception();
-    }
- catch (error) {
+    } catch (error) {
         exception = error;
     }
     it('should throw an exception', () => expect(exception).to.not.be.undefined);

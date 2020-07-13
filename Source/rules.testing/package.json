@@ -33,6 +33,6 @@
     },
     "dependencies": {
         "@dolittle/rules": "3.0.0",
-        "chai": "^4.2.0"
+        "chai": "4.2.0"
     }
 }

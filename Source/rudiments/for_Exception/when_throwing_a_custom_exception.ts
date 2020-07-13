@@ -9,8 +9,7 @@ describe('when throwing a custom exception', () => {
     let exception: Exception;
     try {
         throw new a_custom_exception(message);
-    }
- catch (error) {
+    } catch (error) {
         exception = error;
     }
     it('should throw an exception', () => expect(exception).to.not.be.null);
