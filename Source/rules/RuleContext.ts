@@ -22,7 +22,7 @@ export class RuleContext implements IRuleContext {
     }
 
     /** @inheritdoc */
-    get brokenRules(): Array<BrokenRule> {
+    get brokenRules(): BrokenRule[] {
         const array = new Array<BrokenRule>();
         this._brokenRules.forEach(brokenRule => array.push(brokenRule));
         return array;

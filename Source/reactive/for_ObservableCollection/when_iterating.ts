@@ -5,7 +5,7 @@ import { ObservableCollection } from '../ObservableCollection';
 
 describe('when iterating', () => {
     const collection = new ObservableCollection<number>();
-    const items: Array<number> = [];
+    const items: number[] = [];
     collection.push(42, 43);
 
     for (const item of collection) {

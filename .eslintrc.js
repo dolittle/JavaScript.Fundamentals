@@ -9,9 +9,6 @@ module.exports = {
         sourceType: 'module',
         tsconfigRootDir: __dirname,
     },
-    rules: {
-        '@typescript-eslint/array-type': ['error', { default:'generic' }]
-    },
     overrides: [
         {
             files: ['**/for_*/**'],

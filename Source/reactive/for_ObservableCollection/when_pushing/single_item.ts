@@ -5,10 +5,10 @@ import { ObservableCollection } from '../../ObservableCollection';
 
 describe('single item', () => {
     const collection = new ObservableCollection<number>();
-    let result: Array<number>;
-    let all: Array<number>;
-    collection.added.subscribe((items: Array<number>) => result = items);
-    collection.subscribe((items: Array<number>) => all = items);
+    let result: number[];
+    let all: number[];
+    collection.added.subscribe((items: number[]) => result = items);
+    collection.subscribe((items: number[]) => all = items);
     const numberOfItems = collection.push(42);
 
     it('should have length of one', () => collection.length.should.equal(1));

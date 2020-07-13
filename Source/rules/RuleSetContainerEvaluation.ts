@@ -7,8 +7,8 @@ import { BrokenRule, RuleSetContainer, RuleSetEvaluation } from './index';
  * Represents the evaluation of {RuleSetContainer}
  */
 export class RuleSetContainerEvaluation {
-    private _brokenRules: Array<BrokenRule> = new Array<BrokenRule>();
-    private readonly _ruleSetEvaluations: Array<RuleSetEvaluation> = new Array<RuleSetEvaluation>();
+    private _brokenRules: BrokenRule[] = new Array<BrokenRule>();
+    private readonly _ruleSetEvaluations: RuleSetEvaluation[] = new Array<RuleSetEvaluation>();
 
     /**
      * Initializes a new instance of the {RuleSetContainerEvaluation} class.
@@ -30,7 +30,7 @@ export class RuleSetContainerEvaluation {
      * Gets any broken rules.
      * @returns {ReadonlyArray<BrokenRule>}
      */
-    get brokenRules(): ReadonlyArray<BrokenRule> {
+    get brokenRules(): readonly BrokenRule[] {
         return this._brokenRules;
     }
 

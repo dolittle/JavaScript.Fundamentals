@@ -7,7 +7,7 @@ import { RuleSetBuilder, RuleSet, RuleSetContainer } from './index';
  * Represents an builder for building {RuleSetContainer}
  */
 export class RuleSetContainerBuilder {
-    private readonly _ruleSetBuilders: Array<RuleSetBuilder> = [];
+    private readonly _ruleSetBuilders: RuleSetBuilder[] = [];
 
     /**
      * Add a {RuleSet} to the container
@@ -22,7 +22,7 @@ export class RuleSetContainerBuilder {
      * @returns {RuleSetContainer}
      */
     build(): RuleSetContainer {
-        const ruleSets: Array<RuleSet> = [];
+        const ruleSets: RuleSet[] = [];
         this._ruleSetBuilders.forEach(_ => {
             const ruleSet = _.build();
             ruleSets.push(ruleSet);
