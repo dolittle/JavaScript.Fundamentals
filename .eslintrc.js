@@ -7,9 +7,29 @@ module.exports = {
     parserOptions: {
         project: './Sources/*/tsconfig.json',
         sourceType: 'module',
-        tsconfigRootDir: __dirname
+        tsconfigRootDir: __dirname,
     },
     rules: {
-        '@typescript-eslint/array-type': ['error', { default: 'generic'}],
-    }
+        '@typescript-eslint/array-type': ['error', { default:'generic' }]
+    },
+    overrides: [
+        {
+            files: ['**/for_*/**'],
+            rules: {
+                '@typescript-eslint/naming-convention': 'off',
+            },
+        },
+        {
+            files: ['**/for_*/**'],
+            rules: {
+                '@typescript-eslint/no-unused-expressions': 'off',
+            },
+        },
+        {
+            files: ['**/for_*/**'],
+            rules: {
+                'import/no-extraneous-dependencies': 'off',
+            },
+        },
+    ],
 };
