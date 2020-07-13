@@ -6,5 +6,10 @@
         "**/.git": true,
         "**/.svn": true,
         "**/.DS_Store": true
-    }
+    },
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "eslint.alwaysShowStatus": true
 }
