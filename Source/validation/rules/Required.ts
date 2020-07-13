@@ -22,7 +22,7 @@ export class Required extends ValueRule {
 
     /** @inheritdoc */
     async evaluate(context: IRuleContext, subject: any) {
-        if (subject == null) {
+        if (subject === null) {
             context.fail(this, subject, Reasons.ValueIsNull.justBecause());
             return;
         }

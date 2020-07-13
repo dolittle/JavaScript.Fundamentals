@@ -6,7 +6,7 @@ import '../index';
 import { Email } from '../Email';
 
 describe('when building email address', () => {
-    const expectedValue: number = 42;
+    const expectedValue = 42;
     class MyObject {
         get stuff(): number {
             return expectedValue;

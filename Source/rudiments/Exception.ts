@@ -20,7 +20,7 @@ export class Exception extends Error {
     constructor(message?: string) {
         super(message ?? '');
         this.name = this.constructor.name;
-        Error.captureStackTrace && Error.captureStackTrace(this, this.constructor);
+        if (Error.captureStackTrace) Error.captureStackTrace(this, this.constructor);
         Object.defineProperty(Exception.prototype, Symbol.toStringTag, {
             value: 'Error',
             writable: false,

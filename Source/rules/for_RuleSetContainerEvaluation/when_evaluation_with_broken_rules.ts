@@ -39,7 +39,9 @@ describe('when evaluation with broken rules', async () => {
     const ruleSetContainer = new RuleSetContainer(ruleSet);
     const evaluation = new RuleSetContainerEvaluation(ruleSetContainer);
 
-    before(async () => await evaluation.evaluate(owner));
+    before(async () => {
+        await evaluation.evaluate(owner);
+    });
 
     it('should pass the owner in the rule context to the rule', () => Rule.ruleContextPassedIn.owner.should.equal(owner));
     it('should pass the subject to the rule', () => Rule.subjectPassedIn.should.equal(SubjectProvider.subject));
