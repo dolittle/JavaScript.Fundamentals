@@ -3,5 +3,4 @@
 
 import { PrimitiveTypeMap } from './';
 
-export type PrimitiveOrConstructor = (new (...args: any[]) => any) |
-    keyof PrimitiveTypeMap;
+export type PrimitiveOrConstructor = (new (...args: any[]) => any) | keyof PrimitiveTypeMap;

@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { typeGuard, PrimitiveOrConstructor, PrimitiveTypeMap} from '@dolittle/types';
+import { typeGuard, PrimitiveOrConstructor, PrimitiveTypeMap, Constructor} from '@dolittle/types';
 export interface IEquatable {
     equals(other: any): boolean
 }
@@ -10,11 +10,14 @@ export interface IEquatableTo<T extends IEquatable> extends IEquatable {
     equals(other: T): boolean
 }
 
-type ConceptBase = keyof PrimitiveTypeMap | IEquatable;
+type ConceptBase = number | string | boolean | IEquatable;
 
-export function isConceptAs<T extends ConceptBase>(concept: ConceptAs<T> | T, className: PrimitiveOrConstructor): concept is ConceptAs<T> {
+export function isConceptAs<T extends ConceptBase, U extends ConceptBase>(
+    concept: ConceptAs<T> | T,
+    className: Constructor<ConceptAs<U>>): concept is ConceptAs<T> {
     return typeGuard(concept, className);
 }
+
 export class ConceptAs<T extends ConceptBase> implements IEquatableTo<ConceptAs<T>>{
     readonly value: T;
 

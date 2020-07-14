@@ -3,7 +3,9 @@
 
 import { PrimitiveOrConstructor, PrimitiveTypeMap } from './';
 
-export type GuardedType<T extends PrimitiveOrConstructor> = T extends new(...args: any[]) => infer U ? U : T extends keyof PrimitiveTypeMap ? PrimitiveTypeMap[T] : never;
+export type GuardedType<T extends PrimitiveOrConstructor> = T extends new(...args: any[]) => infer U ?
+                                                                U
+                                                                : T extends keyof PrimitiveTypeMap ? PrimitiveTypeMap[T] : never;
 
 export function typeGuard<T extends PrimitiveOrConstructor>(o: any, className: T): o is GuardedType<T> {
     const localPrimitiveOrConstructor: PrimitiveOrConstructor = className;
