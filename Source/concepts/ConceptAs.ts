@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { typeGuard, PrimitiveOrConstructor, PrimitiveTypeMap, Constructor} from '@dolittle/types';
+import { typeGuard } from '@dolittle/types';
 export interface IEquatable {
     equals(other: any): boolean
 }
@@ -12,10 +12,9 @@ export interface IEquatableTo<T extends IEquatable> extends IEquatable {
 
 type ConceptBase = number | string | boolean | IEquatable;
 
-export function isConceptAs<T extends ConceptBase, U extends ConceptBase>(
-    concept: ConceptAs<T> | T,
-    className: Constructor<ConceptAs<U>>): concept is ConceptAs<T> {
-    return typeGuard(concept, className);
+export function isConceptAs<T extends ConceptBase>(
+    concept: ConceptAs<T> | T): concept is ConceptAs<T> {
+    return typeGuard(concept, ConceptAs);
 }
 
 export class ConceptAs<T extends ConceptBase> implements IEquatableTo<ConceptAs<T>>{
@@ -33,7 +32,7 @@ export class ConceptAs<T extends ConceptBase> implements IEquatableTo<ConceptAs<
      */
     equals(other: ConceptAs<T> | T): boolean {
         if (other == null) return false;
-        const comparableValue = isConceptAs(other, ConceptAs) ? other.value : other as T;
+        const comparableValue = isConceptAs(other) ? other.value : other as T;
         if (comparableValue == null) return false;
         if (typeof comparableValue === 'string' || typeof comparableValue === 'number') {
             return comparableValue === this.value;

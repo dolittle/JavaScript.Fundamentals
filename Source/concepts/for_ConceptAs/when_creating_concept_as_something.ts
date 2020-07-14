@@ -14,8 +14,5 @@ describe('when creating concept as something', () => {
     it('should not equal to another concept with another something', () => concept.equals(new some_concept(new some_base('some other value', 1))).should.be.false);
     it('should not equal to another concept as a string', () => concept.equals(new number_concept(2) as any).should.be.false);
     it('should not equal to another concept as number', () => concept.equals(new number_concept(2) as any).should.be.false);
-    it('should be a concept', () => isConceptAs(concept, ConceptAs).should.be.true);
-    it('should be a concept as something', () => isConceptAs(concept, some_concept).should.be.true);
-    it('should not be a concept as number', () => isConceptAs(concept, number_concept).should.be.false);
-    it('should not be a concept as string', () => isConceptAs(concept, string_concept).should.be.false);
+    it('should be a concept', () => isConceptAs(concept).should.be.true);
 });
