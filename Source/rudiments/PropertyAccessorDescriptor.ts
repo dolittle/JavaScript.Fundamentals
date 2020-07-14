@@ -13,7 +13,7 @@ export class PropertyAccessorDescriptor {
      * @param {PropertyAccessor} _accessor - The actual accessor for accessing the property.
      * @param {Array<string>} _segments - The segments representing the path of the property accessor within an instance.
      */
-    constructor(private readonly _accessor: PropertyAccessor, private readonly _segments: Array<string>) {
+    constructor(private readonly _accessor: PropertyAccessor, private readonly _segments: string[]) {
     }
 
     /**
@@ -28,7 +28,7 @@ export class PropertyAccessorDescriptor {
      * Gets the segments that constitute the deep path within the object instance for accessing the underlying property.
      * @returns {ReadonlyArray<string>}
      */
-    get segments(): ReadonlyArray<string> {
+    get segments(): readonly string[] {
         return this._segments;
     }
 

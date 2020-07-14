@@ -21,5 +21,5 @@ export abstract class RuleBuilder<T extends IRule = any> {
      * Builds a rule with a specific subject provider
      * @returns {RuleWithSubjectProvider}
      */
-    abstract build(): RuleWithSubjectProvider;
+    abstract build (): RuleWithSubjectProvider;
 }

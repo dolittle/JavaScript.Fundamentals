@@ -6,7 +6,7 @@ import '../index';
 import { LessThan } from '../LessThan';
 
 describe('when building less than', () => {
-    const expectedValue: number = 42;
+    const expectedValue = 42;
     class MyObject {
         get stuff(): number {
             return expectedValue;

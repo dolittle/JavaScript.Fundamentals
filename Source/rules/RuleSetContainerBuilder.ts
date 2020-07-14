@@ -7,7 +7,7 @@ import { RuleSetBuilder, RuleSet, RuleSetContainer } from './index';
  * Represents an builder for building {RuleSetContainer}
  */
 export class RuleSetContainerBuilder {
-    private readonly _ruleSetBuilders: Array<RuleSetBuilder> = [];
+    private readonly _ruleSetBuilders: RuleSetBuilder[] = [];
 
     /**
      * Add a {RuleSet} to the container

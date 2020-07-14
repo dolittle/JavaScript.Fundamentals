@@ -25,7 +25,7 @@ export class Guid {
      */
     static readonly empty = new Guid([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
-    private _stringVersion: string = '';
+    private _stringVersion = '';
 
 
     /**

@@ -11,7 +11,9 @@ describe('when evaluation does not have any rules', async () => {
     const ruleSetContainer = new RuleSetContainer(ruleSet);
     const evaluation = new RuleSetContainerEvaluation(ruleSetContainer);
 
-    before(async () => await evaluation.evaluate(owner));
+    before(async () => {
+        await evaluation.evaluate(owner);
+    });
 
     it('should be considered successful', () => evaluation.isSuccess.should.be.true);
     it('should have no broken rules', () => evaluation.brokenRules.should.be.empty);

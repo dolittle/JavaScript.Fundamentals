@@ -7,7 +7,7 @@ import { RuleWithSubjectProvider } from './index';
  * Represents a set of {IRule} - rules. This type is immutable.
  */
 export class RuleSet {
-    private readonly _rules: ReadonlyArray<RuleWithSubjectProvider>;
+    private readonly _rules: readonly RuleWithSubjectProvider[];
 
     /**
      * Initializes a new instance of the {RuleSet} class.
@@ -21,7 +21,7 @@ export class RuleSet {
      * Gets the rules in the {RuleSet}.
      * @returns {ReadonlyArray<RuleWithSubjectProvider>}
      */
-    get rules(): ReadonlyArray<RuleWithSubjectProvider> {
+    get rules(): readonly RuleWithSubjectProvider[] {
         return this._rules;
     }
 }

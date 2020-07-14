@@ -18,7 +18,7 @@ export interface IRuleContext {
      * Gets any broken rules
      * @returns {Array<BrokenRule>}
      */
-    readonly brokenRules: Array<BrokenRule>;
+    readonly brokenRules: BrokenRule[];
 
     /**
      * Fail for a specific rule, subject and a cause of failure.

@@ -7,7 +7,7 @@ import { IRule, IRuleContext, Cause } from './index';
  * Represents a broken rule.
  */
 export class BrokenRule {
-    private _causes: Array<Cause> = [];
+    private _causes: Cause[] = [];
 
     /**
      * Initializes a new instance of the {BrokenRule} class.
@@ -46,7 +46,7 @@ export class BrokenRule {
      * Gets the causes that caused the broken rule.
      * @returns {ReadonlyArray<Cause>}
      */
-    get causes(): ReadonlyArray<Cause> {
+    get causes(): readonly Cause[] {
         return this._causes;
     }
 

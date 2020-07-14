@@ -6,7 +6,7 @@ import '../index';
 import { GreaterThanOrEqual } from '../GreaterThanOrEqual';
 
 describe('when building greater than or equal', () => {
-    const expectedValue: number = 42;
+    const expectedValue = 42;
     class MyObject {
         get stuff(): number {
             return expectedValue;

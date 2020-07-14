@@ -6,7 +6,7 @@ import '../index';
 import { LessThanOrEqual } from '../LessThanOrEqual';
 
 describe('when building less than or equal', () => {
-    const expectedValue: number = 42;
+    const expectedValue = 42;
     class MyObject {
         get stuff(): number {
             return expectedValue;

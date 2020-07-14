@@ -6,7 +6,7 @@ import '../index';
 import { Regex } from '../Regex';
 
 describe('when building regex', () => {
-    const expectedValue: string = '42';
+    const expectedValue = '42';
     class MyObject {
         get stuff(): string {
             return expectedValue;

@@ -4,16 +4,18 @@
         "Source/*"
     ],
     "scripts": {
-        "tasks": "gulp --tasks --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+        "prebuild": "yarn clean",
+        "postbuild": "yarn lint",
+        "build": "tsc -b Source/tsconfig.json",
         "clean": "gulp clean --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
-        "build": "gulp build --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
-        "test": "gulp test --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
         "test:run": "gulp test-run --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
-        "test:clean": "gulp test-clean --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js"
+        "test:clean": "gulp test-clean --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+        "lint": "gulp lint --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+        "lint:fix": "gulp lint-fix --gulpfile node_modules/@dolittle/typescript.build/Gulpfile.js",
+        "ci": "yarn build && yarn test:run && yarn test:clean"
     },
     "devDependencies": {
-        "@dolittle/typescript.build": "^5.3.6",
-        "fs-extra": "^9.0.1",
-        "glob": "^7.1.6"
+        "@dolittle/typescript.build": "rc",
+        "fs-extra": "^9.0.1"
     }
 }
