@@ -1,6 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { IEquatableTo } from '@dolittle/concepts';
+
 const lookUpTable: string[] = [];
 (() => {
     for (let i = 0; i < 256; i += 1) {
@@ -18,7 +20,7 @@ const getString = (num: number) => {
  * @export
  * @class Guid
  */
-export class Guid {
+export class Guid implements IEquatableTo<Guid>, IEquatableTo<string> {
 
     /**
      * Gets an empty {Guid}
@@ -43,6 +45,12 @@ export class Guid {
             getString(bytes[8]) + getString(bytes[9]) +
             '-' +
             getString(bytes[10]) + getString(bytes[11]) + getString(bytes[12]) + getString(bytes[13]) + getString(bytes[14]) + getString(bytes[15]);
+    }
+    /**
+     * @inheritdoc
+     */
+    equals(other: Guid | string): boolean {
+        return Guid.as(other).toString() === this.toString();
     }
 
     /**

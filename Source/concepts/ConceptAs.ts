@@ -6,7 +6,7 @@ export interface IEquatable {
     equals(other: any): boolean
 }
 
-export interface IEquatableTo<T extends IEquatable> extends IEquatable {
+export interface IEquatableTo<T extends IEquatable | number | string | boolean> extends IEquatable {
     equals(other: T): boolean
 }
 
