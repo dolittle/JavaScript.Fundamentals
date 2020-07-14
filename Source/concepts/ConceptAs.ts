@@ -12,7 +12,7 @@ export interface IEquatableTo<T extends IEquatable> extends IEquatable {
 
 type ConceptBase = number | string | boolean | IEquatable;
 
-export function isConceptAs<T extends ConceptBase>(
+export function isConcept<T extends ConceptBase>(
     concept: ConceptAs<T> | T): concept is ConceptAs<T> {
     return typeGuard(concept, ConceptAs);
 }
@@ -32,7 +32,7 @@ export class ConceptAs<T extends ConceptBase> implements IEquatableTo<ConceptAs<
      */
     equals(other: ConceptAs<T> | T): boolean {
         if (other == null) return false;
-        const comparableValue = isConceptAs(other) ? other.value : other as T;
+        const comparableValue = isConcept(other) ? other.value : other as T;
         if (comparableValue == null) return false;
         if (typeof comparableValue === 'string' || typeof comparableValue === 'number') {
             return comparableValue === this.value;

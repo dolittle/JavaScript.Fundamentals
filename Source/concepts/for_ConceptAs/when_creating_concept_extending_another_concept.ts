@@ -4,7 +4,7 @@
 import { number_concept } from './given/number_concept';
 import { string_concept } from './given/string_concept';
 import { some_concept, some_base } from './given/some_concept';
-import { isConceptAs, ConceptAs } from '../index';
+import { isConcept, ConceptAs } from '../index';
 
 class extended_concept extends string_concept {
     constructor(value: string) {
@@ -20,5 +20,5 @@ describe('when creating concept extending another concept', () => {
     it('should not equal to another concept with another string', () => concept.equals(new string_concept('some other value')).should.be.false);
     it('should not equal to another concept as a string', () => concept.equals(new number_concept(2) as any).should.be.false);
     it('should not equal to another concept as something else', () => concept.equals(new some_concept(new some_base('s', 2)) as any).should.be.false);
-    it('should be a concept', () => isConceptAs(concept).should.be.true);
+    it('should be a concept', () => isConcept(concept).should.be.true);
 });
