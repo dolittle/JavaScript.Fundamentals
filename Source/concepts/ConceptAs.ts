@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { typeGuard } from '@dolittle/types';
+import { typeGuard, Constructor } from '@dolittle/types';
 export interface IEquatable {
     equals(other: any): boolean
 }
@@ -15,6 +15,12 @@ type ConceptBase = number | string | boolean | IEquatable;
 export function isConcept<T extends ConceptBase>(
     concept: ConceptAs<T> | T): concept is ConceptAs<T> {
     return typeGuard(concept, ConceptAs);
+}
+
+export function isConceptAs<T extends ConceptBase>(
+    concept: ConceptAs<T> | any,
+    className: Constructor<ConceptAs<T>>): concept is ConceptAs<T> {
+    return typeGuard(concept, className);
 }
 
 export class ConceptAs<T extends ConceptBase> implements IEquatableTo<ConceptAs<T>>{
