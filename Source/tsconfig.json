@@ -2,11 +2,13 @@
     "files": [],
     "include": [],
     "references": [
+        { "path": "./concepts" },
         { "path": "./reactive" },
         { "path": "./rudiments" },
         { "path": "./rules" },
         { "path": "./rules.testing" },
         { "path": "./specifications" },
+        { "path": "./types" },
         { "path": "./validation" }
     ]
 }
