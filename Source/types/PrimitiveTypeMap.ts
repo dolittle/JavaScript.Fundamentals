@@ -5,4 +5,5 @@ export interface PrimitiveTypeMap {
     string: string;
     number: number;
     boolean: boolean;
+    bigint: bigint
 }

@@ -112,7 +112,7 @@ export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>,
             case 'boolean':
                 return comparableValue === this.value;
             default:
-                return this.value.equals(comparableValue);
+                return (comparableValue as IEquatable).equals(this.value);
         }
     }
 

@@ -12,7 +12,7 @@ import { IEquatable } from './index';
  * @extends {IEquatable}
  * @template T
  */
-export interface IEquatableTo<T extends IEquatable | number | string | boolean> extends IEquatable {
+export interface IEquatableTo<T extends IEquatable | number | bigint | string | boolean> extends IEquatable {
     /**
      * Check whether this is equal to other.
      *
