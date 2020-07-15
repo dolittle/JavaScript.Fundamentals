@@ -51,8 +51,8 @@ export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>,
      * @param {C} [prototype={} as C]
      * @returns {C}
      */
-    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U>(value: T, prototype: C = {} as C): C {
-        return new Concept(value) as C;
+    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U>(value: Concept<T> | T, prototype: C = {} as C): C {
+        return Concept.isConcept(value) ? value as C : new Concept(value) as C;
     }
 
     /**
