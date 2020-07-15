@@ -1,57 +1,127 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { IEquatableTo, IEquatable } from '@dolittle/rudiments';
 import { typeGuard } from '@dolittle/types';
-export interface IEquatable {
-    equals(other: any): boolean
-}
-
-export interface IEquatableTo<T extends IEquatable | number | string | boolean> extends IEquatable {
-    equals(other: T): boolean
-}
 
 type ConceptBase = number | string | boolean | IEquatable;
 
-export function isConcept<T extends ConceptBase>(
-    concept: Concept<T> | T): concept is Concept<T> {
-    return typeGuard(concept, Concept);
-}
 
+/**
+ * Represents a unique concept.
+ */
 export type ConceptAs<T extends ConceptBase, U> = Concept<T> & { __uniqueConceptName: U};
 
-export function createConcept<C extends ConceptAs<T, U>, T extends ConceptBase, U>(value: T, prototype: C = {} as C): C {
-    return new Concept(value) as C;
-}
+/**
+ * Represents a concept of a primitive value or something that is equatable to something.
+ *
+ * @export
+ * @class Concept
+ * @implements {IEquatableTo<Concept<T>>}
+ * @template T
+ */
+export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>, IEquatableTo<T> {
 
-export function conceptFactoryFor<C extends ConceptAs<T, U>, T extends ConceptBase, U>(prototype: C = {} as C): (value: T) => C {
-    return (value: T) => createConcept<C, T, U>(value, prototype);
-}
-
-export function conceptsAreEqual<C extends ConceptAs<T, U>, T extends ConceptBase, U>(left: C, right: C): boolean {
-    if (left == null || right == null) return false;
-    return left.equals(right);
-
-}
-
-export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>{
-
+    /**
+     * Creates an instance of Concept.
+     * @param {T} value
+     */
     constructor(readonly value: T) { }
 
-    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U>(value: T, prototype: C = {} as C): C {
-        return createConcept(value, prototype);
+    /**
+     * A type-guard checking whether the given argument is a Concept.
+     *
+     * @static
+     * @template T
+     * @param {(Concept<T> | T)} concept
+     * @returns {concept is Concept<T>}
+     */
+    static isConcept<T extends ConceptBase>(concept: Concept<T> | T): concept is Concept<T> {
+        return typeGuard(concept, Concept);
     }
 
     /**
-     * Determines whether two object instances are equal.
+     * Gets a ConceptAs for the given value.
      *
-     * @param {Concept<T>} other The other instance.
+     * @static
+     * @template C
+     * @template T
+     * @template U
+     * @param {T} value
+     * @param {C} [prototype={} as C]
+     * @returns {C}
+     */
+    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U>(value: T, prototype: C = {} as C): C {
+        return new Concept(value) as C;
+    }
+
+    /**
+     * Gets a ConceptAs a number.
+     *
+     * @static
+     * @template C
+     * @template U
+     * @param {number} value
+     * @param {C} [prototype={} as C]
+     * @returns {C}
+     */
+    static fromNumber<C extends ConceptAs<number, U>, U>(value: number, prototype: C = {} as C): C {
+        return new Concept(value) as C;
+    }
+
+    /**
+     * Gets a ConceptAs a string.
+     *
+     * @static
+     * @template C
+     * @template U
+     * @param {string} value
+     * @param {C} [prototype={} as C]
+     * @returns {C}
+     */
+    static fromString<C extends ConceptAs<string, U>, U>(value: string, prototype: C = {} as C): C {
+        return new Concept(value) as C;
+    }
+
+    /**
+     * Gets a ConceptAs a boolean.
+     *
+     * @static
+     * @template T
+     * @template C
+     * @template U
+     * @param {boolean} value
+     * @param {C} [prototype={} as C]
+     * @returns {C}
+     */
+    static fromBoolean<T extends boolean, C extends ConceptAs<T, U>, U>(value: boolean, prototype: C = {} as C): C {
+        return new Concept(value) as C;
+    }
+
+    /**
+     * Performs a strongly typed equals on two ConceptAs objects.
+     *
+     * @static
+     * @template C
+     * @template T
+     * @template U
+     * @param {C} left
+     * @param {C} right
      * @returns {boolean}
+     */
+    static strictEquals<C extends ConceptAs<T, U>, T extends ConceptBase, U>(left: C, right: C): boolean {
+        if (left == null || right == null) return false;
+        return left.equals(right);
+    }
+
+    /**
+     * @inheritdoc
      */
     equals(other: Concept<T> | T): boolean {
         if (other == null) return false;
-        const comparableValue = isConcept(other) ? other.value : other as T;
+        const comparableValue = Concept.isConcept(other) ? other.value : other as T;
         if (comparableValue == null) return false;
-        if (typeof comparableValue === 'string' || typeof comparableValue === 'number') {
+        if (typeof comparableValue === 'string' || typeof comparableValue === 'number' || typeof comparableValue === 'boolean') {
             return comparableValue === this.value;
         } else {
             return (other as IEquatable).equals(this.value);
