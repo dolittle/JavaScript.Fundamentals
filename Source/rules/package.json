@@ -33,6 +33,7 @@
     },
     "dependencies": {
         "@dolittle/rudiments": "3.0.0",
-        "@dolittle/specifications": "3.0.0"
+        "@dolittle/specifications": "3.0.0",
+        "@dolittle/types": "3.0.0"
     }
 }

@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyAccessorDescriptor } from '@dolittle/rudiments';
+import { PropertyAccessorDescriptor } from '@dolittle/types';
 import { IRule, PropertyValueSubjectProvider, RuleBuilder, RuleWithSubjectProvider } from './index';
 
 type RuleCreator<TRule extends IRule> = () => IRule;
