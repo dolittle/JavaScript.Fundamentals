@@ -4,7 +4,7 @@
 import { IEquatableTo, IEquatable } from '@dolittle/rudiments';
 import { typeGuard } from '@dolittle/types';
 
-type ConceptBase = number | string | boolean | IEquatable;
+type ConceptBase = number | bigint | string | boolean | IEquatable;
 
 
 /**
