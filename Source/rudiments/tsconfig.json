@@ -6,8 +6,5 @@
         "outDir": "Distribution"
     },
     "include": ["**/*.ts"],
-    "exclude": ["node_modules", "Distribution"],
-    "references": [
-        { "path": "../concepts"}
-    ]
+    "exclude": ["node_modules", "Distribution"]
 }
