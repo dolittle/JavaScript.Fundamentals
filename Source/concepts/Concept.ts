@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { typeGuard, Constructor } from '@dolittle/types';
+import { typeGuard } from '@dolittle/types';
 export interface IEquatable {
     equals(other: any): boolean
 }
@@ -17,17 +17,17 @@ export function isConcept<T extends ConceptBase>(
     return typeGuard(concept, Concept);
 }
 
-export type ConceptAs<T extends ConceptBase> = Concept<T>;
+export type ConceptAs<T extends ConceptBase, U> = Concept<T> & { __uniqueConceptName: U};
 
-export function createConcept<C extends ConceptAs<T>, T extends ConceptBase>(prototype: C, value: T): C {
+export function createConcept<C extends ConceptAs<T, U>, T extends ConceptBase, U>(value: T, prototype: C = {} as C): C {
     return new Concept(value) as C;
 }
 
-export function conceptFactoryFor<C extends ConceptAs<T>, T extends ConceptBase>(prototype: C = {} as C): (value: T) => C {
-    return (value: T) => createConcept<C, T>(prototype, value);
+export function conceptFactoryFor<C extends ConceptAs<T, U>, T extends ConceptBase, U>(prototype: C = {} as C): (value: T) => C {
+    return (value: T) => createConcept<C, T, U>(value, prototype);
 }
 
-export function conceptsAreEqual<C extends ConceptAs<T>, T extends ConceptBase>(left: C, right: C): boolean {
+export function conceptsAreEqual<C extends ConceptAs<T, U>, T extends ConceptBase, U>(left: C, right: C): boolean {
     if (left == null || right == null) return false;
     return left.equals(right);
 
@@ -37,6 +37,10 @@ export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>{
 
     constructor(readonly value: T) { }
 
+    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U>(value: T, prototype: C = {} as C): C {
+        return createConcept(value, prototype);
+    }
+
     /**
      * Determines whether two object instances are equal.
      *
@@ -44,7 +48,6 @@ export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>{
      * @returns {boolean}
      */
     equals(other: Concept<T> | T): boolean {
-        console.log(other);
         if (other == null) return false;
         const comparableValue = isConcept(other) ? other.value : other as T;
         if (comparableValue == null) return false;
