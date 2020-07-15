@@ -13,30 +13,38 @@ export interface IEquatableTo<T extends IEquatable | number | string | boolean>
 type ConceptBase = number | string | boolean | IEquatable;
 
 export function isConcept<T extends ConceptBase>(
-    concept: ConceptAs<T> | T): concept is ConceptAs<T> {
-    return typeGuard(concept, ConceptAs);
+    concept: Concept<T> | T): concept is Concept<T> {
+    return typeGuard(concept, Concept);
 }
 
-export function isConceptAs<T extends ConceptBase>(
-    concept: ConceptAs<T> | any,
-    className: Constructor<ConceptAs<T>>): concept is ConceptAs<T> {
-    return typeGuard(concept, className);
+export type ConceptAs<T extends ConceptBase> = Concept<T>;
+
+export function createConcept<C extends ConceptAs<T>, T extends ConceptBase>(prototype: C, value: T): C {
+    return new Concept(value) as C;
 }
 
-export class ConceptAs<T extends ConceptBase> implements IEquatableTo<ConceptAs<T>>{
-    readonly value: T;
+export function conceptFactoryFor<C extends ConceptAs<T>, T extends ConceptBase>(prototype: C = {} as C): (value: T) => C {
+    return (value: T) => createConcept<C, T>(prototype, value);
+}
 
-    constructor(value: T) {
-        this.value = value;
-    }
+export function conceptsAreEqual<C extends ConceptAs<T>, T extends ConceptBase>(left: C, right: C): boolean {
+    if (left == null || right == null) return false;
+    return left.equals(right);
+
+}
+
+export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>{
+
+    constructor(readonly value: T) { }
 
     /**
      * Determines whether two object instances are equal.
      *
-     * @param {ConceptAs<T>} other The other instance.
+     * @param {Concept<T>} other The other instance.
      * @returns {boolean}
      */
-    equals(other: ConceptAs<T> | T): boolean {
+    equals(other: Concept<T> | T): boolean {
+        console.log(other);
         if (other == null) return false;
         const comparableValue = isConcept(other) ? other.value : other as T;
         if (comparableValue == null) return false;
