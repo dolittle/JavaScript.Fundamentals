@@ -105,10 +105,14 @@ export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>,
         if (other == null) return false;
         const comparableValue = Concept.isConcept(other) ? other.value : other as T;
         if (comparableValue == null) return false;
-        if (typeof comparableValue === 'string' || typeof comparableValue === 'number' || typeof comparableValue === 'boolean') {
-            return comparableValue === this.value;
-        } else {
-            return (other as IEquatable).equals(this.value);
+        switch (typeof comparableValue) {
+            case 'number':
+            case 'bigint':
+            case 'string':
+            case 'boolean':
+                return comparableValue === this.value;
+            default:
+                return this.value.equals(comparableValue);
         }
     }
 
