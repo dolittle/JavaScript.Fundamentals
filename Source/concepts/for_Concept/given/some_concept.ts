@@ -1,7 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IEquatableTo, IEquatable, ConceptAs } from '../../index';
+import { ConceptAs } from '../../index';
+import { IEquatable, IEquatableTo } from '@dolittle/rudiments';
 
 export class some_base implements IEquatableTo<some_base>, IEquatable {
     constructor(public x: string, public y: number) { }
@@ -10,4 +11,4 @@ export class some_base implements IEquatableTo<some_base>, IEquatable {
     }
 }
 
-export class some_concept extends ConceptAs<some_base> { }
+export type some_concept = ConceptAs<some_base, 'some_concept'>;

@@ -99,22 +99,6 @@ export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>,
     }
 
     /**
-     * Performs a strongly typed equals on two ConceptAs objects.
-     *
-     * @static
-     * @template C
-     * @template T
-     * @template U
-     * @param {C} left
-     * @param {C} right
-     * @returns {boolean}
-     */
-    static strictEquals<C extends ConceptAs<T, U>, T extends ConceptBase, U>(left: C, right: C): boolean {
-        if (left == null || right == null) return false;
-        return left.equals(right);
-    }
-
-    /**
      * @inheritdoc
      */
     equals(other: Concept<T> | T): boolean {

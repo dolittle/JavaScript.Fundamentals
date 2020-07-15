@@ -3,8 +3,4 @@
 
 import { ConceptAs } from '../../index';
 
-export class string_concept extends ConceptAs<string> {
-    constructor(value: string) {
-        super(value);
-    }
-}
+export type string_concept = ConceptAs<string, 'string_concept'>;
