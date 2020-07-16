@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IEquatableTo, IEquatable } from '@dolittle/rudiments';
+import { IEquatable } from '@dolittle/rudiments';
 import { typeGuard } from '@dolittle/types';
 
 type ConceptBase = number | bigint | string | boolean | IEquatable;
@@ -17,10 +17,10 @@ export type ConceptAs<T extends ConceptBase, U> = Concept<T> & { __uniqueConcept
  *
  * @export
  * @class Concept
- * @implements {IEquatableTo<Concept<T>>}
+ * @implements {IEquatable}
  * @template T
  */
-export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>, IEquatableTo<T> {
+export class Concept<T extends ConceptBase> implements IEquatable {
 
     /**
      * Creates an instance of Concept.
@@ -101,7 +101,7 @@ export class Concept<T extends ConceptBase> implements IEquatableTo<Concept<T>>,
     /**
      * @inheritdoc
      */
-    equals(other: Concept<T> | T): boolean {
+    equals(other: any): boolean {
         if (other == null) return false;
         const comparableValue = Concept.isConcept(other) ? other.value : other as T;
         if (comparableValue == null) return false;

@@ -1,7 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IEquatableTo } from './index';
+import { typeGuard } from '@dolittle/types';
+import { IEquatable } from './index';
 
 const lookUpTable: string[] = [];
 (() => {
@@ -20,7 +21,7 @@ const getString = (num: number) => {
  * @export
  * @class Guid
  */
-export class Guid implements IEquatableTo<Guid>, IEquatableTo<string> {
+export class Guid implements IEquatable {
 
     /**
      * Gets an empty {Guid}
@@ -45,12 +46,6 @@ export class Guid implements IEquatableTo<Guid>, IEquatableTo<string> {
             getString(bytes[8]) + getString(bytes[9]) +
             '-' +
             getString(bytes[10]) + getString(bytes[11]) + getString(bytes[12]) + getString(bytes[13]) + getString(bytes[14]) + getString(bytes[15]);
-    }
-    /**
-     * @inheritdoc
-     */
-    equals(other: Guid | string): boolean {
-        return Guid.as(other).toString() === this.toString();
     }
 
     /**
@@ -110,6 +105,14 @@ export class Guid implements IEquatableTo<Guid>, IEquatableTo<string> {
             return Guid.parse(input) as T;
         }
         return input as T;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    equals(other: any): boolean {
+        if (typeGuard(other, Guid) || typeGuard(other, 'string')) return Guid.as(other).toString() === this.toString();
+        return false;
     }
 
     /**
