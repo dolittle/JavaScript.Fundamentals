@@ -6,6 +6,7 @@
         { "path": "./rudiments" },
         { "path": "./rules" },
         { "path": "./rules.testing" },
+        { "path": "./serialization.json/tsconfig.json" },
         { "path": "./specifications" },
         { "path": "./validation" }
     ]
