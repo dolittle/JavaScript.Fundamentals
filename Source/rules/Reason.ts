@@ -12,7 +12,7 @@ export class Reason {
     private readonly _id: ReasonId;
 
     private constructor(_id: ReasonId | Guid, private readonly _title: string, private readonly _description: string) {
-        this._id = ConceptAs.from(_id);
+        this._id = ConceptAs.from(_id, 'ReasonId');
     }
 
     /**

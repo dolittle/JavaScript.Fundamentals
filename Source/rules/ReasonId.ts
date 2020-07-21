@@ -8,4 +8,8 @@ import { Guid } from '@dolittle/rudiments';
  * Represents the unique identifier for a Reason.
  */
 
-export type ReasonId = ConceptAs<Guid, 'ReasonId'>;
+export class ReasonId extends ConceptAs<Guid, 'ReasonId'> {
+    constructor(value: Guid) {
+        super(value, 'ReasonId');
+    }
+}
