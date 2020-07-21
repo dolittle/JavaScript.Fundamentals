@@ -22,7 +22,8 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @param {T} value
      */
     // eslint-disable-next-line @typescript-eslint/naming-convention
-    constructor(readonly value: T, protected readonly __uniqueConceptName: U) {
+    constructor(readonly value: T, readonly __uniqueConceptName: U) {
+        if (__uniqueConceptName == null) throw new MissingUniqueConceptName();
     }
 
     /**
@@ -31,7 +32,7 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @static
      * @template T
      * @param {(ConceptAs<T> | T)} concept
-     * @returns {concept is ConceptAs<T>}
+     * @returns {concept is ConceptAs<T, U>}
      */
     static isConcept<T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T): concept is ConceptAs<T, U> {
         return typeGuard(concept, ConceptAs);
@@ -45,11 +46,10 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template T
      * @template U
      * @param {T} concept
-     * @param {C} [prototype={} as C]
      * @returns {C}
      */
-    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T, uniqueConceptName?: U, prototype: C = {} as C): C {
-        if (ConceptAs.isConcept(concept)) return concept as C;
+    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T, uniqueConceptName?: U): C {
+        if (ConceptAs.isConcept(concept)) return new ConceptAs(concept.value, concept.__uniqueConceptName) as C;
         if (uniqueConceptName == null) throw new MissingUniqueConceptName();
         return new ConceptAs(concept, uniqueConceptName) as C;
     }
@@ -61,10 +61,10 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template C
      * @template U
      * @param {number} value
-     * @param {C} [prototype={} as C]
      * @returns {C}
      */
     static fromNumber<C extends ConceptAs<number, U>, U extends string>(value: number, uniqueConceptName: U): C {
+        if (uniqueConceptName == null) throw new MissingUniqueConceptName();
         return new ConceptAs(value, uniqueConceptName) as C;
     }
 
@@ -75,10 +75,10 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template C
      * @template U
      * @param {string} value
-     * @param {C} [prototype={} as C]
      * @returns {C}
      */
     static fromString<C extends ConceptAs<string, U>, U extends string>(value: string, uniqueConceptName: U): C {
+        if (uniqueConceptName == null) throw new MissingUniqueConceptName();
         return new ConceptAs(value, uniqueConceptName) as C;
     }
 
@@ -90,10 +90,10 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template C
      * @template U
      * @param {boolean} value
-     * @param {C} [prototype={} as C]
      * @returns {C}
      */
     static fromBoolean<T extends boolean, C extends ConceptAs<T, U>, U extends string>(value: boolean, uniqueConceptName: U): C {
+        if (uniqueConceptName == null) throw new MissingUniqueConceptName();
         return new ConceptAs(value, uniqueConceptName) as C;
     }
 
