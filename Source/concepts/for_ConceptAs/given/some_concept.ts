@@ -16,4 +16,8 @@ export class some_base implements IEquatable {
     }
 }
 
-export type some_concept = ConceptAs<some_base, 'some_concept'>;
+export class some_concept extends ConceptAs<some_base, 'some_concept'> {
+    constructor(some_base: some_base) {
+        super(some_base, 'some_concept');
+    }
+}

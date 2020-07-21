@@ -3,4 +3,8 @@
 
 import { ConceptAs } from '../../index';
 
-export type number_concept = ConceptAs<number, 'number_concept'>;
+export class number_concept extends ConceptAs<number, 'number_concept'> {
+    constructor(value: number) {
+        super(value, 'number_concept');
+    }
+}

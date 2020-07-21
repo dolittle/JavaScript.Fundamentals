@@ -3,4 +3,9 @@
 
 import { ConceptAs } from '../../index';
 
-export type string_concept = ConceptAs<string, 'string_concept'>;
+export class string_concept extends ConceptAs<string, 'string_concept'> {
+    constructor(value: string) {
+        super(value, 'string_concept');
+    }
+}
+
