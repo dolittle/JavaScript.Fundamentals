@@ -4,7 +4,7 @@
 import { Reason } from '../index';
 import { Guid } from '@dolittle/rudiments';
 import { ReasonId } from '../ReasonId';
-import { Concept } from '@dolittle/concepts';
+import { ConceptAs } from '@dolittle/concepts';
 
 describe('when creating', () => {
     const id = Guid.parse('f1bbfeb4-de16-4a4a-8733-0b1402b1476a');

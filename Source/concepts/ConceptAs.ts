@@ -8,11 +8,6 @@ type ConceptBase = number | bigint | string | boolean | IEquatable;
 
 
 /**
- * Represents a unique concept.
- */
-export type ConceptAs<T extends ConceptBase, U extends string> = Concept<T, U>;
-
-/**
  * Represents a concept of a primitive value or something that is equatable to something.
  *
  * @export
@@ -20,7 +15,7 @@ export type ConceptAs<T extends ConceptBase, U extends string> = Concept<T, U>;
  * @implements {IEquatable}
  * @template T
  */
-export class Concept<T extends ConceptBase, U extends string> implements IEquatable {
+export class ConceptAs<T extends ConceptBase, U extends string> implements IEquatable {
     protected __uniqueConceptName: U;
 
     /**
@@ -36,11 +31,11 @@ export class Concept<T extends ConceptBase, U extends string> implements IEquata
      *
      * @static
      * @template T
-     * @param {(Concept<T> | T)} concept
-     * @returns {concept is Concept<T>}
+     * @param {(ConceptAs<T> | T)} concept
+     * @returns {concept is ConceptAs<T>}
      */
-    static isConcept<T extends ConceptBase, U extends string>(concept: Concept<T, U> | T): concept is Concept<T, U> {
-        return typeGuard(concept, Concept);
+    static isConcept<T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T): concept is ConceptAs<T, U> {
+        return typeGuard(concept, ConceptAs);
     }
 
     /**
@@ -54,8 +49,8 @@ export class Concept<T extends ConceptBase, U extends string> implements IEquata
      * @param {C} [prototype={} as C]
      * @returns {C}
      */
-    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: Concept<T, U> | T, prototype: C = {} as C): C {
-        return Concept.isConcept(concept) ? concept as C : new Concept(concept) as C;
+    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T, prototype: C = {} as C): C {
+        return ConceptAs.isConcept(concept) ? concept as C : new ConceptAs(concept) as C;
     }
 
     /**
@@ -69,7 +64,7 @@ export class Concept<T extends ConceptBase, U extends string> implements IEquata
      * @returns {C}
      */
     static fromNumber<C extends ConceptAs<number, U>, U extends string>(value: number, prototype: C = {} as C): C {
-        return new Concept(value) as C;
+        return new ConceptAs(value) as C;
     }
 
     /**
@@ -83,7 +78,7 @@ export class Concept<T extends ConceptBase, U extends string> implements IEquata
      * @returns {C}
      */
     static fromString<C extends ConceptAs<string, U>, U extends string>(value: string, prototype: C = {} as C): C {
-        return new Concept(value) as C;
+        return new ConceptAs(value) as C;
     }
 
     /**
@@ -98,7 +93,7 @@ export class Concept<T extends ConceptBase, U extends string> implements IEquata
      * @returns {C}
      */
     static fromBoolean<T extends boolean, C extends ConceptAs<T, U>, U extends string>(value: boolean, prototype: C = {} as C): C {
-        return new Concept(value) as C;
+        return new ConceptAs(value) as C;
     }
 
     /**
@@ -106,8 +101,8 @@ export class Concept<T extends ConceptBase, U extends string> implements IEquata
      */
     equals(other: any): boolean {
         if (other == null) return false;
-        if (Concept.isConcept(other) && other.__uniqueConceptName !== this.__uniqueConceptName) return false;
-        const comparableValue = Concept.isConcept(other) ? other.value : other as T;
+        if (ConceptAs.isConcept(other) && other.__uniqueConceptName !== this.__uniqueConceptName) return false;
+        const comparableValue = ConceptAs.isConcept(other) ? other.value : other as T;
         if (comparableValue == null) return false;
         switch (typeof comparableValue) {
             case 'number':

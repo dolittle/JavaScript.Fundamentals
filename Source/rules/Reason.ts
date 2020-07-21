@@ -3,7 +3,7 @@
 
 import { Guid } from '@dolittle/rudiments';
 import { Cause, ReasonId } from './index';
-import { Concept } from '@dolittle/concepts';
+import { ConceptAs } from '@dolittle/concepts';
 
 /**
  * Represents the reason for why a rule is broken.
@@ -12,7 +12,7 @@ export class Reason {
     private readonly _id: ReasonId;
 
     private constructor(_id: ReasonId | Guid, private readonly _title: string, private readonly _description: string) {
-        this._id = Concept.from(_id);
+        this._id = ConceptAs.from(_id);
     }
 
     /**
