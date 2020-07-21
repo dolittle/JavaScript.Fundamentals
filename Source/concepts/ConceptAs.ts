@@ -3,9 +3,9 @@
 
 import { IEquatable } from '@dolittle/rudiments';
 import { typeGuard } from '@dolittle/types';
+import { MissingUniqueConceptName } from './MissingUniqueConceptName';
 
 type ConceptBase = number | bigint | string | boolean | IEquatable;
-
 
 /**
  * Represents a concept of a primitive value or something that is equatable to something.
@@ -48,8 +48,10 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @param {C} [prototype={} as C]
      * @returns {C}
      */
-    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T, uniqueConceptName: U, prototype: C = {} as C): C {
-        return ConceptAs.isConcept(concept) ? concept as C : new ConceptAs(concept, uniqueConceptName) as C;
+    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T, uniqueConceptName?: U, prototype: C = {} as C): C {
+        if (ConceptAs.isConcept(concept)) return concept as C;
+        if (uniqueConceptName == null) throw new MissingUniqueConceptName();
+        return new ConceptAs(concept, uniqueConceptName) as C;
     }
 
     /**
