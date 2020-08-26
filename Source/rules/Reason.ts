@@ -1,15 +1,18 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { Guid } from '@dolittle/rudiments';
 import { Cause, ReasonId } from './index';
+import { ConceptAs } from '@dolittle/concepts';
 
 /**
  * Represents the reason for why a rule is broken.
  */
 export class Reason {
+    private readonly _id: ReasonId;
 
-
-    private constructor(private readonly _id: ReasonId, private readonly _title: string, private readonly _description: string) {
+    private constructor(_id: ReasonId | Guid, private readonly _title: string, private readonly _description: string) {
+        this._id = ConceptAs.from(_id, 'ReasonId');
     }
 
     /**
@@ -19,7 +22,7 @@ export class Reason {
      * @param [description] - Optional description of the {Reason}.
      * @returns {Reason}
      */
-    static create(id: ReasonId, title: string, description = ''): Reason {
+    static create(id: ReasonId | Guid, title: string, description = ''): Reason {
         return new Reason(id, title, description);
     }
 

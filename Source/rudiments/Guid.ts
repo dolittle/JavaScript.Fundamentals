@@ -1,6 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { typeGuard } from '@dolittle/types';
+import { IEquatable } from './index';
+
 const lookUpTable: string[] = [];
 (() => {
     for (let i = 0; i < 256; i += 1) {
@@ -18,7 +21,7 @@ const getString = (num: number) => {
  * @export
  * @class Guid
  */
-export class Guid {
+export class Guid implements IEquatable {
 
     /**
      * Gets an empty {Guid}
@@ -102,6 +105,14 @@ export class Guid {
             return Guid.parse(input) as T;
         }
         return input as T;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    equals(other: any): boolean {
+        if (typeGuard(other, Guid) || typeGuard(other, 'string')) return Guid.as(other).toString() === this.toString();
+        return false;
     }
 
     /**

@@ -2,12 +2,14 @@
     "files": [],
     "include": [],
     "references": [
+        { "path": "./concepts" },
         { "path": "./reactive" },
         { "path": "./rudiments" },
         { "path": "./rules" },
         { "path": "./rules.testing" },
         { "path": "./serialization.json/tsconfig.json" },
         { "path": "./specifications" },
+        { "path": "./types" },
         { "path": "./validation" }
     ]
 }

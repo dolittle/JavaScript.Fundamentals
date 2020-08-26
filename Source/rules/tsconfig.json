@@ -9,6 +9,7 @@
     "exclude": ["node_modules", "Distribution"],
     "references": [
         { "path": "../rudiments" },
-        { "path": "../specifications" }
+        { "path": "../specifications" },
+        { "path": "../types" },
     ]
 }
