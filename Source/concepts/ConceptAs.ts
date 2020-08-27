@@ -46,7 +46,7 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template T
      * @template U
      * @param {T} concept
-     * @deprecated Use
+     * @deprecated
      * @returns {C}
      */
     static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T, uniqueConceptName?: U): C {
@@ -62,6 +62,7 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template C
      * @template U
      * @param {number} value
+     * @deprecated
      * @returns {C}
      */
     static fromNumber<C extends ConceptAs<number, U>, U extends string>(value: number, uniqueConceptName: U): C {
@@ -76,6 +77,7 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template C
      * @template U
      * @param {string} value
+     * @deprecated
      * @returns {C}
      */
     static fromString<C extends ConceptAs<string, U>, U extends string>(value: string, uniqueConceptName: U): C {
@@ -128,9 +130,9 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
     }
 }
 
-export function conceptFrom<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<C>, concept: T): C {
+export function conceptFrom<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<ConceptAs<T, U>>, concept: T): C {
     return new conceptConstructor(concept) as C;
 }
-export function conceptFromFor<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<C>): (concept: T) => C {
-    return (concept: T) => new conceptConstructor(concept) as C;
+export function conceptFromFor<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<ConceptAs<T, U>>): (concept: T) => C {
+    return (concept: T) => conceptFrom(conceptConstructor, concept) as C;
 }

@@ -2,4 +2,4 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 export { MissingUniqueConceptName } from './MissingUniqueConceptName';
-export { ConceptAs, conceptFrom } from './ConceptAs';
+export { ConceptAs, conceptFrom, conceptFromFor } from './ConceptAs';
