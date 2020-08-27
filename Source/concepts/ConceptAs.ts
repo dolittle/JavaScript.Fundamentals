@@ -2,8 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { IEquatable } from '@dolittle/rudiments';
-import { typeGuard } from '@dolittle/types';
-import { MissingUniqueConceptName } from './MissingUniqueConceptName';
+import { typeGuard, Constructor } from '@dolittle/types';
+import { MissingUniqueConceptName } from './index';
 
 type ConceptBase = number | bigint | string | boolean | IEquatable;
 
@@ -46,6 +46,7 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template T
      * @template U
      * @param {T} concept
+     * @deprecated Use
      * @returns {C}
      */
     static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T, uniqueConceptName?: U): C {
@@ -90,6 +91,7 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @template C
      * @template U
      * @param {boolean} value
+     * @deprecated
      * @returns {C}
      */
     static fromBoolean<T extends boolean, C extends ConceptAs<T, U>, U extends string>(value: boolean, uniqueConceptName: U): C {
@@ -124,4 +126,11 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
     toString(): string {
         return this.value.toString();
     }
+}
+
+export function conceptFrom<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<C>, concept: T): C {
+    return new conceptConstructor(concept) as C;
+}
+export function conceptFromFor<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<C>): (concept: T) => C {
+    return (concept: T) => new conceptConstructor(concept) as C;
 }
