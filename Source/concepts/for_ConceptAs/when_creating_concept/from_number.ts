@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { ConceptAs } from '../../ConceptAs';
+import { ConceptAs, conceptFrom } from '../../ConceptAs';
 
 describe('when creating concept from number', () => {
     const value = 2;
