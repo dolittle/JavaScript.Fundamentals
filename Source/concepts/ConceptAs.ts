@@ -39,69 +39,6 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
     }
 
     /**
-     * Gets a ConceptAs for the given value.
-     *
-     * @static
-     * @template C
-     * @template T
-     * @template U
-     * @param {T} concept
-     * @deprecated
-     * @returns {C}
-     */
-    static from<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T, uniqueConceptName?: U): C {
-        if (ConceptAs.isConcept(concept)) return new ConceptAs(concept.value, concept.__uniqueConceptName) as C;
-        if (uniqueConceptName == null) throw new MissingUniqueConceptName();
-        return new ConceptAs(concept, uniqueConceptName) as C;
-    }
-
-    /**
-     * Gets a ConceptAs a number.
-     *
-     * @static
-     * @template C
-     * @template U
-     * @param {number} value
-     * @deprecated
-     * @returns {C}
-     */
-    static fromNumber<C extends ConceptAs<number, U>, U extends string>(value: number, uniqueConceptName: U): C {
-        if (uniqueConceptName == null) throw new MissingUniqueConceptName();
-        return new ConceptAs(value, uniqueConceptName) as C;
-    }
-
-    /**
-     * Gets a ConceptAs a string.
-     *
-     * @static
-     * @template C
-     * @template U
-     * @param {string} value
-     * @deprecated
-     * @returns {C}
-     */
-    static fromString<C extends ConceptAs<string, U>, U extends string>(value: string, uniqueConceptName: U): C {
-        if (uniqueConceptName == null) throw new MissingUniqueConceptName();
-        return new ConceptAs(value, uniqueConceptName) as C;
-    }
-
-    /**
-     * Gets a ConceptAs a boolean.
-     *
-     * @static
-     * @template T
-     * @template C
-     * @template U
-     * @param {boolean} value
-     * @deprecated
-     * @returns {C}
-     */
-    static fromBoolean<T extends boolean, C extends ConceptAs<T, U>, U extends string>(value: boolean, uniqueConceptName: U): C {
-        if (uniqueConceptName == null) throw new MissingUniqueConceptName();
-        return new ConceptAs(value, uniqueConceptName) as C;
-    }
-
-    /**
      * @inheritdoc
      */
     equals(other: any): boolean {
@@ -130,9 +67,8 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
     }
 }
 
-export function conceptFrom<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<ConceptAs<T, U>>, concept: T): C {
+export function conceptFrom<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(
+    conceptConstructor: Constructor<ConceptAs<T, U>>,
+    concept: T): C {
     return new conceptConstructor(concept) as C;
-}
-export function conceptFromFor<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<ConceptAs<T, U>>): (concept: T) => C {
-    return (concept: T) => conceptFrom(conceptConstructor, concept) as C;
 }

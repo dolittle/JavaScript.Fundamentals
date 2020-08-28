@@ -14,6 +14,4 @@ describe('when creating some concept with conceptFrom', () => {
     it('should equal itself', () => concept.equals(concept).should.be.true);
     it('should equal the same concept with the same value', () => concept.equals(new some_concept(value)).should.be.true);
     it('should not equal the same concept with another value', () => concept.equals(new some_concept(new some_base('some other value', 1))).should.be.false);
-    it('should not equal to another concept with the same something', () => concept.equals(ConceptAs.from(value, '')).should.be.false);
-    it('should not equal to another concept with another something', () => concept.equals(ConceptAs.from(new some_base('some other value', 1), '')).should.be.false);
 });
