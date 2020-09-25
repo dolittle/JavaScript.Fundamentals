@@ -3,7 +3,7 @@
 
 import { string_concept } from '../given/string_concept';
 import { some_base } from '../given/some_concept';
-import { ConceptAs } from '../../index';
+import { ConceptAs } from '../../ConceptAs';
 
 describe('when creating concept as string', () => {
     const value = 'value';

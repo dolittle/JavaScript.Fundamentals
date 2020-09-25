@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Serializer } from '../index';
+import { Serializer } from '../Serializer';
 
 describe('when deserializing from json', () => {
     const serializer = new Serializer();

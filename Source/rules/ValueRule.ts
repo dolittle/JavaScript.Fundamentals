@@ -2,7 +2,9 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { Guid } from '@dolittle/rudiments';
-import { IRule, IRuleContext, Reason } from './index';
+import { IRule } from './IRule';
+import { IRuleContext } from './IRuleContext';
+import { Reason } from './Reason';
 
 export abstract class ValueRule implements IRule {
 

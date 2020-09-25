@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { typeGuard } from '../index';
+import { typeGuard } from '../typeGuard';
 
 describe('when type guarding number', () => {
     const value: any = 1;

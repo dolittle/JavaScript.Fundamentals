@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { number_concept } from '../given/number_concept';
-import { ConceptAs } from '../../index';
+import { ConceptAs } from '../../ConceptAs';
 
 
 describe('when creating concept as number', () => {

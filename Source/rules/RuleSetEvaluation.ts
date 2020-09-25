@@ -1,7 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { RuleSet, BrokenRule, RuleContext } from './index';
+import { RuleSet } from './RuleSet';
+import { BrokenRule } from './BrokenRule';
+import { RuleContext } from './RuleContext';
 
 /**
  * Represents evaluation of a {RuleSet}.

@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { typeGuard } from '../index';
+import { typeGuard } from '../typeGuard';
 
 class some_complex_type {
     constructor(readonly x: number) { }

@@ -2,7 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { PropertyAccessorDescriptor } from '@dolittle/types';
-import { IRuleContext, ISubjectProvider } from './index';
+import { IRuleContext } from './IRuleContext';
+import { ISubjectProvider } from './ISubjectProvider';
 
 /**
  * Represents an implementation of {ISubjectProvider} for providing values from an owning object from the {IRuleContext}.

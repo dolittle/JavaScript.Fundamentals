@@ -1,7 +1,8 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, RuleWithSubjectProvider } from './index';
+import { IRule } from './IRule';
+import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
 
 /**
  * Represents the base class for any {RuleBuilder}

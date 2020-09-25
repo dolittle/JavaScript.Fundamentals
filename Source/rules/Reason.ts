@@ -2,7 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { Guid } from '@dolittle/rudiments';
-import { Cause, ReasonId } from './index';
+import { Cause } from './Cause';
+import { ReasonId } from './ReasonId';
 import { ConceptAs } from '@dolittle/concepts';
 
 /**

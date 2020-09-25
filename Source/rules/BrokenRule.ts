@@ -1,7 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRule, IRuleContext, Cause } from './index';
+import { IRule } from './IRule';
+import { IRuleContext } from './IRuleContext';
+import { Cause } from './Cause';
 
 /**
  * Represents a broken rule.

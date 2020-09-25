@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { PropertyAccessorDescriptor } from '@dolittle/types';
-import { RuleSetBuilder } from './index';
+import { RuleSetBuilder } from './RuleSetBuilder';
 
 
 /**
