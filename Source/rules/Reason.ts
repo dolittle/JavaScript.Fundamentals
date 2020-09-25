@@ -10,10 +10,11 @@ import { ConceptAs } from '@dolittle/concepts';
  * Represents the reason for why a rule is broken.
  */
 export class Reason {
-    private readonly _id: ReasonId;
 
-    private constructor(_id: ReasonId | Guid, private readonly _title: string, private readonly _description: string) {
-        this._id = ConceptAs.from(_id, 'ReasonId');
+    private constructor(
+        private readonly _id: ReasonId,
+        private readonly _title: string,
+        private readonly _description: string) {
     }
 
     /**
@@ -23,8 +24,8 @@ export class Reason {
      * @param [description] - Optional description of the {Reason}.
      * @returns {Reason}
      */
-    static create(id: ReasonId | Guid, title: string, description = ''): Reason {
-        return new Reason(id, title, description);
+    static create(id: Guid | string, title: string, description = ''): Reason {
+        return new Reason(ReasonId.from(id), title, description);
     }
 
     /**

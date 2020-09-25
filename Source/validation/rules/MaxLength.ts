@@ -9,7 +9,7 @@ import { Reasons } from './Reasons';
  * Represents a {ValueRule} for max length - any value can't exceed the given maximum length
  */
 export class MaxLength extends ValueRule {
-    static LengthPropertyMissing = Reason.create(Guid.parse('305b86ad-53ea-4f9e-bd05-2af9a48fd378'), 'Length property is missing');
+    static LengthPropertyMissing = Reason.create('305b86ad-53ea-4f9e-bd05-2af9a48fd378', 'Length property is missing');
 
     /**
      * Initializes a new instance of the {LessThanOrEqual} class.

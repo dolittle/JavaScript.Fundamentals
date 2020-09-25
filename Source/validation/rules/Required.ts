@@ -13,12 +13,12 @@ export class Required extends ValueRule {
     /**
      * When a value is not specified, this is the reason given.
      */
-    static StringIsEmpty: Reason = Reason.create(Guid.parse('6DE903D6-014C-4B07-B5D3-C3F28677C1A6'), 'String is empty');
+    static StringIsEmpty: Reason = Reason.create('6DE903D6-014C-4B07-B5D3-C3F28677C1A6', 'String is empty');
 
     /**
      * When a value is not specified, this is the reason given.
      */
-    static ValueNotSpecified: Reason = Reason.create(Guid.parse('5F790FC3-5C7D-4F3A-B1E9-8F85FAF7176D'), 'Value not specified');
+    static ValueNotSpecified: Reason = Reason.create('5F790FC3-5C7D-4F3A-B1E9-8F85FAF7176D', 'Value not specified');
 
     /** @inheritdoc */
     async evaluate(context: IRuleContext, subject: any) {
