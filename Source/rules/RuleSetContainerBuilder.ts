@@ -1,7 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { RuleSetBuilder, RuleSet, RuleSetContainer } from './index';
+import { RuleSetBuilder } from './RuleSetBuilder';
+import { RuleSet } from './RuleSet';
+import { RuleSetContainer } from './RuleSetContainer';
 
 /**
  * Represents an builder for building {RuleSetContainer}

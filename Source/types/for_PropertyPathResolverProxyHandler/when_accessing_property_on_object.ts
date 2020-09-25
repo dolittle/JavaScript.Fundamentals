@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { PropertyPathResolverProxyHandler } from '../index';
+import { PropertyPathResolverProxyHandler } from '../PropertyPathResolverProxyHandler';
 
 class MyType {
     get value(): number {

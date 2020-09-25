@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { number_concept } from '../given/number_concept';
-import { ConceptAs, conceptFrom } from '../../index';
+import { ConceptAs, conceptFrom } from '../../ConceptAs';
 
 class another_number extends ConceptAs<number, 'another_number'> {
     constructor(num: number) {

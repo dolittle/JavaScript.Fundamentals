@@ -1,7 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { BrokenRule, RuleSetContainer, RuleSetEvaluation } from './index';
+import { BrokenRule } from './BrokenRule';
+import { RuleSetContainer } from './RuleSetContainer';
+import { RuleSetEvaluation } from './RuleSetEvaluation';
 
 /**
  * Represents the evaluation of {RuleSetContainer}

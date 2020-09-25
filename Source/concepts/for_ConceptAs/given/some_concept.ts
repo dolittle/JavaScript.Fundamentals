@@ -1,7 +1,7 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { ConceptAs } from '../../index';
+import { ConceptAs } from '../../ConceptAs';
 import { IEquatable } from '@dolittle/rudiments';
 import { typeGuard } from '@dolittle/types';
 

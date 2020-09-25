@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { string_concept } from '../given/string_concept';
-import { ConceptAs, conceptFrom } from '../../index';
+import { ConceptAs, conceptFrom } from '../../ConceptAs';
 
 class another_string extends ConceptAs<string, 'another_string'> {
     constructor(num: string) {

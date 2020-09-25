@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { typeGuard } from '@dolittle/types';
-import { IEquatable } from './index';
+import { IEquatable } from './IEquatable';
 
 const lookUpTable: string[] = [];
 (() => {

@@ -3,7 +3,7 @@
 
 import { IEquatable } from '@dolittle/rudiments';
 import { typeGuard, Constructor } from '@dolittle/types';
-import { MissingUniqueConceptName } from './index';
+import { MissingUniqueConceptName } from './MissingUniqueConceptName';
 
 type ConceptBase = number | bigint | string | boolean | IEquatable;
 

@@ -3,7 +3,7 @@
 
 import { IRuleContext, Reason, ValueRule, Cause } from '@dolittle/rules';
 import { Guid } from '@dolittle/rudiments';
-import { Reasons } from './index';
+import { Reasons } from './Reasons';
 
 /**
  * Represents a {ValueRule} for max length - any value can't exceed the given maximum length
