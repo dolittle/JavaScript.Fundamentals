@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { some_concept, some_base } from '../given/some_concept';
-import { ConceptAs, conceptFrom  } from '../../index';
+import { ConceptAs, conceptFrom  } from '../../ConceptAs';
 
 describe('when creating some concept with conceptFrom', () => {
     const value = new some_base('some_x', 42);
