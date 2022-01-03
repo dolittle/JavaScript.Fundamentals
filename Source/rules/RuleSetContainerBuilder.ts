@@ -2,26 +2,26 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { RuleSetBuilder } from './RuleSetBuilder';
-import { RuleSet } from './RuleSet';
+import { RuleSet } from './RuleSet';
 import { RuleSetContainer } from './RuleSetContainer';
 
 /**
- * Represents an builder for building {RuleSetContainer}
+ * Represents an builder for building {@link RuleSetContainer}.
  */
 export class RuleSetContainerBuilder {
     private readonly _ruleSetBuilders: RuleSetBuilder[] = [];
 
     /**
-     * Add a {RuleSet} to the container
-     * @param {RuleSetBuilder} ruleSetBuilder - RuleSet to add
+     * Add a {@link RuleSet} to the container.
+     * @param {RuleSetBuilder} ruleSetBuilder - RuleSet to add.
      */
     addRuleSetBuilder(ruleSetBuilder: RuleSetBuilder): void {
         this._ruleSetBuilders.push(ruleSetBuilder);
     }
 
     /**
-     * Build the instance
-     * @returns {RuleSetContainer}
+     * Build the instance.
+     * @returns {RuleSetContainer} The built rule set container.
      */
     build(): RuleSetContainer {
         const ruleSets: RuleSet[] = [];

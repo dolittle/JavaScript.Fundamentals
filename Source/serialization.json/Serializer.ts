@@ -3,7 +3,7 @@
 
 import { ISerializer } from './ISerializer';
 
-/**
+/**.
  * Represents an implementation of ISerializer
  *
  * @export
@@ -12,16 +12,12 @@ import { ISerializer } from './ISerializer';
  */
 export class Serializer implements ISerializer {
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     toJSON(input: any, spaces?: number): string {
         return JSON.stringify(input, undefined, spaces);
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     fromJSON(jsonString: string) {
         return JSON.parse(jsonString);
     }

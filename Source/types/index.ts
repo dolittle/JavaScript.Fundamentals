@@ -7,4 +7,3 @@ export * from './PropertyPathResolverProxyHandler';
 export * from './Constructor';
 export * from './PrimitiveTypeMap';
 export * from './PrimitiveOrConstructor';
-export * from './typeGuard';

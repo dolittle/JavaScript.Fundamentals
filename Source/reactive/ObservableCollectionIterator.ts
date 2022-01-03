@@ -4,13 +4,14 @@
 import { ObservableCollection } from './ObservableCollection';
 
 /**
- * Represents an {Iterator<T>} for iterating over an {ObservableCollection<T>}
+ * Represents an {@link Iterator} for iterating over an {@link ObservableCollection}.
+ * @template T The type of the observable values.
  */
 export class ObservableCollectionIterator<T> implements Iterator<T> {
     private _position = 0;
 
     /**
-     * Initializes a new instance of the {ObservableCollectionIterator<T>} class.
+     * Initializes a new instance of the {@link ObservableCollectionIterator} class.
      * @param {ObservableCollection<T>} _collection - Collection the iterator is for.
      */
     constructor(private _collection: ObservableCollection<T>) {

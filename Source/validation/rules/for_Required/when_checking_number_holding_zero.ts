@@ -3,6 +3,7 @@
 
 import { RuleContext } from '@dolittle/rules';
 import '@dolittle/rules.testing';
+
 import { Required } from '../Required';
 
 describe('when checking value holding zero', () => {

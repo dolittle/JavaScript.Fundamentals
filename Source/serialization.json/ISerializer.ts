@@ -3,26 +3,23 @@
 
 /**
  * Defines a serializer for JSON.
- *
- * @export
- * @interface ISerializer
  */
 export interface ISerializer {
 
     /**
      * Serialize the input to JSON.
      *
-     * @param {*} input
+     * @param {any} input
      * @param {number} [spaces]
      * @returns {string}
      */
-    toJSON(input: any, spaces?: number): string
+    toJSON(input: any, spaces?: number): string;
 
     /**
      * Deserialize from JSON.
      *
      * @param {string} jsonString
-     * @returns {*}
+     * @returns {any}
      */
-    fromJSON(jsonString: string): any
+    fromJSON(jsonString: string): any;
 }

@@ -4,7 +4,6 @@
 import sinon from 'sinon';
 import { Or, Specification } from '../Specification';
 
-
 describe('when left hand is satisfied and right hand is also', () => {
 
     const leftHandSideEvaluator = sinon.stub().returns(true);

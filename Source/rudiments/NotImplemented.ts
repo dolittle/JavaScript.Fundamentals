@@ -4,11 +4,11 @@
 import { Exception } from './Exception';
 
 /**
- * Exception that gets thrown if a code path is not implemented
+ * Exception that gets thrown if a code path is not implemented.
  */
 export class NotImplemented extends Exception {
     /**
-     * Initializes a new instance {NotImplemented}
+     * Initializes a new instance {NotImplemented}.
      */
     constructor() {
         super('Not implemented');
