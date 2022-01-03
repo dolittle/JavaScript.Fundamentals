@@ -137,7 +137,7 @@ const isNumberArrayOrUint8Array = (object: any): object is number[] | Uint8Array
 export const isGuid = (object: any): object is Guid => {
     if (object instanceof Guid) return true;
 
-    if (typeof object !== 'object') return false;
+    if (typeof object !== 'object' || object === null) return false;
     const { bytes, _stringVersion, equals, toString } = object;
     if (!isNumberArrayOrUint8Array(bytes)) return false;
     if (typeof _stringVersion !== 'string' || _stringVersion.length !== 36) return false;

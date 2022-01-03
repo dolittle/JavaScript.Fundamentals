@@ -14,7 +14,7 @@ import { ConceptBase } from './ConceptBase';
  * @returns {boolean} True if the object is an {@link ConceptAs}, false if not.
  */
 export const isConcept = (object: any): object is ConceptAs<ConceptBase, string> => {
-    if (typeof object !== 'object') return false;
+    if (typeof object !== 'object' || object === null) return false;
 
     const { __uniqueConceptName, value } = object;
     if (typeof __uniqueConceptName !== 'string') return false;
