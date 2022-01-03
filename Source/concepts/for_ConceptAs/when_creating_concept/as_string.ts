@@ -3,7 +3,9 @@
 
 import { describeThis } from '@dolittle/typescript.testing';
 
-import { ConceptAs, conceptFrom, isConcept } from '../../ConceptAs';
+import { ConceptAs } from '../../ConceptAs';
+import { isConcept } from '../../isConcept';
+import { conceptFrom } from '../../conceptFrom';
 
 import { string_concept } from '../given/string_concept';
 
