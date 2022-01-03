@@ -1,15 +1,19 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { number_concept } from '../given/number_concept';
+import { describeThis } from '@dolittle/typescript.testing';
+
 import { ConceptAs, conceptFrom, isConcept } from '../../ConceptAs';
+
+import { number_concept } from '../given/number_concept';
 
 class another_number extends ConceptAs<number, 'another_number'> {
     constructor(num: number) {
         super(num, 'another_number');
     }
 }
-describe('when creating concept as number', () => {
+
+describeThis(__filename, () => {
     const value = 2;
     const concept = new number_concept(value);
 

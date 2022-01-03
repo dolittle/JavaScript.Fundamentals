@@ -1,15 +1,19 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { some_concept, some_base } from '../given/some_concept';
+import { describeThis } from '@dolittle/typescript.testing';
+
 import { ConceptAs, conceptFrom, isConcept } from '../../ConceptAs';
+
+import { some_concept, some_base } from '../given/some_concept';
 
 class another_something extends ConceptAs<some_base, 'another_something'> {
     constructor(base: some_base) {
         super(base, 'another_something');
     }
 }
-describe('when creating concept as something', () => {
+
+describeThis(__filename, () => {
     const value = new some_base('x', 42);
     const concept = new some_concept(value);
 

@@ -1,10 +1,13 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { some_concept, some_base } from '../given/some_concept';
+import { describeThis } from '@dolittle/typescript.testing';
+
 import { conceptFrom, isConcept } from '../../ConceptAs';
 
-describe('when creating some concept with conceptFrom', () => {
+import { some_concept, some_base } from '../given/some_concept';
+
+describeThis(__filename, () => {
     const value = new some_base('some_x', 42);
     const concept = conceptFrom(some_concept, value);
 

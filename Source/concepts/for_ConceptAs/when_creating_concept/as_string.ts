@@ -1,15 +1,19 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { string_concept } from '../given/string_concept';
+import { describeThis } from '@dolittle/typescript.testing';
+
 import { ConceptAs, conceptFrom, isConcept } from '../../ConceptAs';
+
+import { string_concept } from '../given/string_concept';
 
 class another_string extends ConceptAs<string, 'another_string'> {
     constructor(num: string) {
         super(num, 'another_string');
     }
 }
-describe('when creating concept as string', () => {
+
+describeThis(__filename, () => {
     const value = 'value';
     const concept = new string_concept(value);
 
