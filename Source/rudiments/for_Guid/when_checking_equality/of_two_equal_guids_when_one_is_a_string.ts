@@ -1,9 +1,11 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { describeThis } from '@dolittle/typescript.testing';
+
 import { Guid } from '../../Guid';
 
-describe('when checking equality of two equal guids when one is a string', () => {
+describeThis(__filename, () => {
     const guid1 = Guid.parse('8c9dad7d-7c4e-4d32-ac89-44561b0c3bb1');
     const guid2 = '8c9dad7d-7c4e-4d32-ac89-44561b0c3bb1';
 

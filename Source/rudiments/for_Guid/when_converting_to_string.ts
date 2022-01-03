@@ -1,9 +1,11 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { describeThis } from '@dolittle/typescript.testing';
+
 import { Guid } from '../Guid';
 
-describe('when converting to string', () => {
+describeThis(__filename, () => {
     const guid = Guid.create();
     const regex = new RegExp('^(\{{0,1}([0-9a-fA-F]){8}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){4}-([0-9a-fA-F]){12}\}{0,1})');
 
