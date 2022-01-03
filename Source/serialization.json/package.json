@@ -1,6 +1,6 @@
 {
     "name": "@dolittle/serialization.json",
-    "version": "5.0.1",
+    "version": "6.0.0-gimli.0",
     "description": "Dolittle is a decentralized, distributed, event-driven microservice platform built to harness the power of events.",
     "keywords": [
         "Dolittle",
