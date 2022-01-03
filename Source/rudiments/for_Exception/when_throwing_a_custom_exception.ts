@@ -1,17 +1,20 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
-import { a_custom_exception } from './given/a_custom_exception';
-import { Exception } from '../Exception';
+
 import { expect } from 'chai';
+
+import { a_custom_exception } from './given/a_custom_exception';
 
 describe('when throwing a custom exception', () => {
     const message = 'message';
-    let exception: Exception;
+    let exception: any;
+
     try {
         throw new a_custom_exception(message);
     } catch (error) {
         exception = error;
     }
+
     it('should throw an exception', () => expect(exception).to.not.be.null);
     it('should be an instance of Error', () => exception.should.be.instanceof(Error));
     it('should be an instance of Exception', () => exception.should.be.instanceof(a_custom_exception));
