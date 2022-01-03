@@ -3,4 +3,12 @@
 
 export { ConceptAs } from './ConceptAs';
 export { conceptFrom } from './conceptFrom';
+export {
+    createIsConceptAs,
+    createIsConceptAsString,
+    createIsConceptAsNumber,
+    createIsConceptAsBoolean,
+    createIsConceptAsBigInt,
+    createIsConceptAsGuid,
+} from './createIsConceptAs';
 export { MissingUniqueConceptName } from './MissingUniqueConceptName';

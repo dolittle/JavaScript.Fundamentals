@@ -4,6 +4,7 @@
 import { IEquatable } from '@dolittle/rudiments';
 
 import { ConceptAs } from '../../ConceptAs';
+import { createIsConceptAs } from '../../createIsConceptAs';
 
 export class some_base implements IEquatable {
     constructor(public x: string, public y: number) { }
@@ -21,3 +22,5 @@ export class some_concept extends ConceptAs<some_base, 'some_concept'> {
         super(some_base, 'some_concept');
     }
 }
+
+export const is_some_concept = createIsConceptAs(some_concept, 'some_concept', (o): o is some_base => o instanceof some_base);
