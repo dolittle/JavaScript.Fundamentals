@@ -3,7 +3,7 @@
 
 import { PropertyPathResolverProxyHandler, PropertyAccessor, PropertyAccessorDescriptor } from '@dolittle/types';
 import { PropertyRuleSetBuilder } from './PropertyRuleSetBuilder';
-import { RuleSetContainerBuilder } from './RuleSetContainerBuilder';
+import { RuleSetContainerBuilder } from './RuleSetContainerBuilder';
 
 /**
  * Represents a specific {RuleSetContainerBuilder} for building rules for objects.

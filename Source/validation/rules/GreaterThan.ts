@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { IRuleContext, ValueRule, Cause } from '@dolittle/rules';
-import { Reasons } from './Reasons';
+import { Reasons } from './Reasons';
 
 /**
  * Represents a {ValueRule} for greater than - any value must be greater than a given value.

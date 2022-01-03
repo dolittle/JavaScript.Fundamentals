@@ -3,7 +3,7 @@
 
 import { Guid } from '@dolittle/rudiments';
 import { Cause } from './Cause';
-import { ReasonId } from './ReasonId';
+import { ReasonId } from './ReasonId';
 import { ConceptAs } from '@dolittle/concepts';
 
 /**

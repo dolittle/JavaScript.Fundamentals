@@ -3,7 +3,7 @@
 
 import { IRule } from './IRule';
 import { IRuleContext } from './IRuleContext';
-import { Cause } from './Cause';
+import { Cause } from './Cause';
 
 /**
  * Represents a broken rule.
@@ -13,7 +13,7 @@ export class BrokenRule {
 
     /**
      * Initializes a new instance of the {BrokenRule} class.
-     * @param {IRule} _rule - The rule that is broken.
+     * @param {IRule} _rule - The rule that is broken.
      * @param {*} _subject - Subject that was evaluated.
      * @param {IRuleContext} _context - Context evaluated in.
      */

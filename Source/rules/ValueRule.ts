@@ -3,8 +3,8 @@
 
 import { Guid } from '@dolittle/rudiments';
 import { IRule } from './IRule';
-import { IRuleContext } from './IRuleContext';
-import { Reason } from './Reason';
+import { IRuleContext } from './IRuleContext';
+import { Reason } from './Reason';
 
 export abstract class ValueRule implements IRule {
 

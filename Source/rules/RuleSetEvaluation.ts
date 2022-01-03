@@ -3,7 +3,7 @@
 
 import { RuleSet } from './RuleSet';
 import { BrokenRule } from './BrokenRule';
-import { RuleContext } from './RuleContext';
+import { RuleContext } from './RuleContext';
 
 /**
  * Represents evaluation of a {RuleSet}.

@@ -111,7 +111,7 @@ export class Guid implements IEquatable {
      * @inheritdoc
      */
     equals(other: any): boolean {
-        if (typeGuard(other, Guid) || typeGuard(other, 'string')) return Guid.as(other).toString() === this.toString();
+        if (typeGuard(other, Guid) || typeGuard(other, 'string')) return Guid.as(other).toString() === this.toString();
         return false;
     }
 

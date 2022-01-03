@@ -1,9 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { RuleBuilder } from './RuleBuilder';
+import { RuleBuilder } from './RuleBuilder';
 import { RuleSet } from './RuleSet';
-import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
+import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
 
 /**
  * Represents a builder of rule sets

@@ -2,8 +2,8 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { IRule } from './IRule';
-import { BrokenRule } from './BrokenRule';
-import { Cause } from './Cause';
+import { BrokenRule } from './BrokenRule';
+import { Cause } from './Cause';
 
 /**
  * Defines the context in which a rule is evaluated in.
@@ -24,7 +24,7 @@ export interface IRuleContext {
 
     /**
      * Fail for a specific rule, subject and a cause of failure.
-     * @param {IRule} rule - Rule to fail
+     * @param {IRule} rule - Rule to fail
      * @param {*} subject - Subject that failed
      * @param {Cause} cause - Cause of failure
      */

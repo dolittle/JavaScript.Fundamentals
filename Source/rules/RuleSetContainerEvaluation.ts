@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { BrokenRule } from './BrokenRule';
-import { RuleSetContainer } from './RuleSetContainer';
+import { RuleSetContainer } from './RuleSetContainer';
 import { RuleSetEvaluation } from './RuleSetEvaluation';
 
 /**

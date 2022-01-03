@@ -2,9 +2,9 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { BrokenRule } from './BrokenRule';
-import { Cause } from './Cause';
-import { IRule } from './IRule';
-import { IRuleContext } from './IRuleContext';
+import { Cause } from './Cause';
+import { IRule } from './IRule';
+import { IRuleContext } from './IRuleContext';
 
 /**
  * Represents the implementation of {IRuleContext}

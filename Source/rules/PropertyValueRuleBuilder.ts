@@ -4,8 +4,8 @@
 import { PropertyAccessorDescriptor } from '@dolittle/types';
 import { IRule } from './IRule';
 import { PropertyValueSubjectProvider } from './PropertyValueSubjectProvider';
-import { RuleBuilder } from './RuleBuilder';
-import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
+import { RuleBuilder } from './RuleBuilder';
+import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
 
 type RuleCreator<TRule extends IRule> = () => IRule;
 

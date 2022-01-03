@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { IRule } from './IRule';
-import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
+import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
 
 /**
  * Represents the base class for any {RuleBuilder}

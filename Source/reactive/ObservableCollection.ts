@@ -41,7 +41,7 @@ export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Ite
 
     /**
      * Gets the length of the collection.
-     * @returns {number} Length of the collection.
+     * @returns {number} Length of the collection.
      */
     get length(): number {
         return this.value.length;
@@ -49,7 +49,7 @@ export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Ite
 
     /**
      * Get a specific item at a specific index.
-     * @param {number} index - Index to get.
+     * @param {number} index - Index to get.
      * @returns {T} The item at the index.
      */
     item(index: number): T {

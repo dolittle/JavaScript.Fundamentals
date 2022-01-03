@@ -5,7 +5,7 @@ import { IEquatable } from '@dolittle/rudiments';
 import { typeGuard, Constructor } from '@dolittle/types';
 import { MissingUniqueConceptName } from './MissingUniqueConceptName';
 
-type ConceptBase = number | bigint | string | boolean | IEquatable;
+type ConceptBase = number | bigint | string | boolean | IEquatable;
 
 /**
  * Represents a concept of a primitive value or something that is equatable to something.

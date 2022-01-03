@@ -4,7 +4,7 @@
 import { PropertyValueRuleBuilder, PropertyRuleSetBuilder } from '@dolittle/rules';
 import { Email } from './Email';
 import { GreaterThan } from './GreaterThan';
-import { GreaterThanOrEqual } from './GreaterThanOrEqual';
+import { GreaterThanOrEqual } from './GreaterThanOrEqual';
 import { LessThan } from './LessThan';
 import { LessThanOrEqual } from './LessThanOrEqual';
 import { MaxLength } from './MaxLength';

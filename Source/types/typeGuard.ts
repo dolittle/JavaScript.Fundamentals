@@ -2,7 +2,7 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import { PrimitiveOrConstructor } from './PrimitiveOrConstructor';
-import { PrimitiveTypeMap } from './PrimitiveTypeMap';
+import { PrimitiveTypeMap } from './PrimitiveTypeMap';
 
 export type GuardedType<T extends PrimitiveOrConstructor> = T extends new(...args: any[]) => infer U ?
                                                                 U

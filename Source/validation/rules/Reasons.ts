@@ -33,5 +33,5 @@ export class Reasons {
     /**
      * When something is longer than it should, this is the reason given.
      */
-    static LengthIsTooShort: Reason = Reason.create('E0F8D478-A353-4926-893E-DD367E2F2ACF', 'Length {length} is too short');
+    static LengthIsTooShort: Reason = Reason.create('E0F8D478-A353-4926-893E-DD367E2F2ACF', 'Length {length} is too short');
 }
