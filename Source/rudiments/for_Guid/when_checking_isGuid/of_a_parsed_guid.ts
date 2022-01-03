@@ -3,11 +3,10 @@
 
 import { describeThis } from '@dolittle/typescript.testing';
 
-import { Guid } from '../Guid';
+import { Guid, isGuid } from '../../Guid';
 
 describeThis(__filename, () => {
-    const empty = Guid.empty;
+    const guid = Guid.parse('a910de39-2c67-4976-8b91-32e71674c731');
 
-    it('should return a guid with 16 bytes', () => empty.bytes.should.be.lengthOf(16));
-    it('should return a guid with all zeros', () => empty.bytes.every(_ => _ === 0).should.be.true);
+    it('should be a guid', () => isGuid(guid).should.be.true);
 });
