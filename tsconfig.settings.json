@@ -1,8 +1,12 @@
 {
     "extends": "@dolittle/typescript.config",
     "compilerOptions": {
-        "module": "CommonJS",
         "target": "ES2015",
-        "downlevelIteration": true
+        "downlevelIteration": true,
+        "inlineSourceMap": true,
+        "sourceMap": false,
+        "declarationMap": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
     }
 }
