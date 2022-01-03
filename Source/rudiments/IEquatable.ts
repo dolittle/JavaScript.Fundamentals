@@ -12,3 +12,14 @@ export interface IEquatable {
      */
     equals(other: any): boolean
 }
+
+/**
+ * Checks whether or not an object is an instance of {@link IEquatable}.
+ * @param {any} object - The object to check.
+ * @returns {boolean} True if the object is an {@link IEquatable}, false if not.
+ */
+export const isEquatable = (object: any): object is IEquatable => {
+    if (typeof object !== 'object') return false;
+    if (typeof object.equals !== 'function' || object.equals.length !== 1) return false;
+    return true;
+};

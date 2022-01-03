@@ -1,10 +1,12 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IEquatable } from '@dolittle/rudiments';
-import { typeGuard, Constructor } from '@dolittle/types';
+import { IEquatable, isEquatable } from '@dolittle/rudiments';
+import { Constructor } from '@dolittle/types';
 
 import { MissingUniqueConceptName } from './MissingUniqueConceptName';
+
+/* eslint-disable @typescript-eslint/naming-convention */
 
 type ConceptBase = number | bigint | string | boolean | IEquatable;
 
@@ -20,37 +22,33 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
      * @param {T} value - The underlying concept value.
      * @param {U} __uniqueConceptName - The unique concept name to use for distinguishing different concepts.
      */
-    // eslint-disable-next-line @typescript-eslint/naming-convention
     constructor(readonly value: T, readonly __uniqueConceptName: U) {
         if (__uniqueConceptName == null) throw new MissingUniqueConceptName();
     }
 
-    /**
-     * A type-guard checking whether the given argument is a Concept.
-     * @param {ConceptAs<T> | T} concept - The concept to check.
-     * @returns {(any) => boolean} The concept type predicate.
-     */
-    static isConcept<T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T): concept is ConceptAs<T, U> {
-        return typeGuard(concept, ConceptAs);
-    }
-
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     equals(other: any): boolean {
-        if (other == null) return false;
-        if (ConceptAs.isConcept(other) && other.__uniqueConceptName !== this.__uniqueConceptName) return false;
-        const comparableValue = ConceptAs.isConcept(other) ? other.value : other as T;
-        if (comparableValue == null) return false;
-        switch (typeof comparableValue) {
-            case 'number':
-            case 'bigint':
-            case 'string':
-            case 'boolean':
-                return comparableValue === this.value;
-            default:
-                return (comparableValue as IEquatable).equals(this.value);
+        if (other === null || other === undefined) return false;
+
+        let comparableValue = other;
+        if (isConcept(other)) {
+            if (other.__uniqueConceptName !== this.__uniqueConceptName) return false;
+            comparableValue = other.value;
         }
+
+        switch (typeof this.value) {
+            case 'string':
+            case 'number':
+            case 'boolean':
+            case 'bigint':
+                return comparableValue === this.value;
+        }
+
+        if (isEquatable(this.value)) {
+            return this.value.equals(comparableValue);
+        }
+
+        return false;
     }
 
     /**
@@ -61,6 +59,30 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
         return this.value.toString();
     }
 }
+
+/**
+ * Checks whether or not an object is an instance of {@link ConceptAs}.
+ * @param {any} object - The object to check.
+ * @returns {boolean} True if the object is an {@link ConceptAs}, false if not.
+ */
+export const isConcept = (object: any): object is ConceptAs<ConceptBase, string> => {
+    if (typeof object !== 'object') return false;
+
+    const { __uniqueConceptName, value } = object;
+    if (typeof __uniqueConceptName !== 'string') return false;
+    switch (typeof value) {
+        case 'function':
+        case 'undefined':
+        case 'symbol':
+            return false;
+        case 'object':
+            if (!isEquatable(value)) return false;
+    }
+
+    if (!isEquatable(object)) return false;
+
+    return true;
+};
 
 /**
  * Creates a new concept of the given type with the provided value.
