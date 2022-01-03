@@ -1,20 +1,32 @@
 {
     "name": "@dolittle/rules.testing",
     "version": "5.0.1",
-    "description": "",
-    "author": "",
+    "description": "Dolittle is a decentralized, distributed, event-driven microservice platform built to harness the power of events.",
+    "keywords": [
+        "Dolittle",
+        "Events",
+        "Event Sourcing",
+        "Domain Driven Design",
+        "Event Driven Architecture",
+        "Line of Business",
+        "ES",
+        "DDD",
+        "EDA",
+        "LOB"
+    ],
+    "author": "all contributors",
     "license": "MIT",
     "publishConfig": {
         "access": "public"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dolittle-interaction/Javascript.Client.git"
+        "url": "git+https://github.com/dolittle/Javascript.Fundamentals.git"
     },
     "bugs": {
-        "url": "https://github.com/dolittle-interaction/Javascript.Client/issues"
+        "url": "https://github.com/dolittle/Javascript.Fundamentals/issues"
     },
-    "homepage": "https://github.com/dolittle-interaction/Javascript.Client#readme",
+    "homepage": "https://github.com/dolittle/Javascript.Fundamentals#readme",
     "files": [
         "Distribution",
         "**/*.ts"
