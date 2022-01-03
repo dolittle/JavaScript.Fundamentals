@@ -11,22 +11,22 @@ import { Cause } from './Cause';
 export interface IRuleContext {
 
     /**
-     * Gets the owner for the context
-     * @returns {*}
+     * Gets the owner for the context.
+     * @returns {any}
      */
     readonly owner: any;
 
     /**
-     * Gets any broken rules
+     * Gets any broken rules.
      * @returns {Array<BrokenRule>}
      */
     readonly brokenRules: BrokenRule[];
 
     /**
      * Fail for a specific rule, subject and a cause of failure.
-     * @param {IRule} rule - Rule to fail
-     * @param {*} subject - Subject that failed
-     * @param {Cause} cause - Cause of failure
+     * @param {IRule} rule - Rule to fail.
+     * @param {any} subject - Subject that failed.
+     * @param {Cause} cause - Cause of failure.
      */
     fail(rule: IRule, subject: any, cause: Cause): void;
 }

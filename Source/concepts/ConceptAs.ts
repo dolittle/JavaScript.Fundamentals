@@ -3,23 +3,22 @@
 
 import { IEquatable } from '@dolittle/rudiments';
 import { typeGuard, Constructor } from '@dolittle/types';
+
 import { MissingUniqueConceptName } from './MissingUniqueConceptName';
 
 type ConceptBase = number | bigint | string | boolean | IEquatable;
 
 /**
- * Represents a concept of a primitive value or something that is equatable to something.
- *
- * @export
- * @class Concept
- * @implements {IEquatable}
- * @template T
+ * Represents a concept of a primitive value or something that is equatable.
+ * @template T The type of the underlying concept value.
+ * @template U The unique concept name.
  */
 export class ConceptAs<T extends ConceptBase, U extends string> implements IEquatable {
 
     /**
-     * Creates an instance of Concept.
-     * @param {T} value
+     * Initializes a new instance of the {@link ConceptAs} class.
+     * @param {T} value - The underlying concept value.
+     * @param {U} __uniqueConceptName - The unique concept name to use for distinguishing different concepts.
      */
     // eslint-disable-next-line @typescript-eslint/naming-convention
     constructor(readonly value: T, readonly __uniqueConceptName: U) {
@@ -28,11 +27,8 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
 
     /**
      * A type-guard checking whether the given argument is a Concept.
-     *
-     * @static
-     * @template T
-     * @param {(ConceptAs<T> | T)} concept
-     * @returns {concept is ConceptAs<T, U>}
+     * @param {ConceptAs<T> | T} concept - The concept to check.
+     * @returns {(any) => boolean} The concept type predicate.
      */
     static isConcept<T extends ConceptBase, U extends string>(concept: ConceptAs<T, U> | T): concept is ConceptAs<T, U> {
         return typeGuard(concept, ConceptAs);
@@ -58,17 +54,23 @@ export class ConceptAs<T extends ConceptBase, U extends string> implements IEqua
     }
 
     /**
-     * The string representation of this instance.
-     *
-     * @returns {string}
+     * The string representation of this concept instance.
+     * @returns {string} - The concept value as a string.
      */
     toString(): string {
         return this.value.toString();
     }
 }
 
-export function conceptFrom<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(
-    conceptConstructor: Constructor<ConceptAs<T, U>>,
-    concept: T): C {
+/**
+ * Creates a new concept of the given type with the provided value.
+ * @param {Constructor<ConceptAs<T, U>>} conceptConstructor - The type of the concept to create.
+ * @param {T} concept - The underlying concept value to use.
+ * @returns {C} The created concept.
+ * @template C The type of the concept to create.
+ * @template T The type of the underlyinc concept value.
+ * @template U The unque concept name.
+ */
+export function conceptFrom<C extends ConceptAs<T, U>, T extends ConceptBase, U extends string>(conceptConstructor: Constructor<ConceptAs<T, U>>, concept: T): C {
     return new conceptConstructor(concept) as C;
 }

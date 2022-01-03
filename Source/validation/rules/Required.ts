@@ -6,7 +6,7 @@ import { IRuleContext, Reason, ValueRule, Cause } from '@dolittle/rules';
 import { Guid } from '@dolittle/rudiments';
 
 /**
- * Represents a {ValueRule} for required - any value must be a valid existing value
+ * Represents a {ValueRule} for required - any value must be a valid existing value.
  */
 export class Required extends ValueRule {
 

@@ -1,16 +1,17 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRuleContext, ValueRule, Cause } from '@dolittle/rules';
+import { IRuleContext, ValueRule } from '@dolittle/rules';
+
 import { Reasons } from './Reasons';
 
 /**
- * Represents a {ValueRule} for greater than - any value must be greater than a given value.
+ * Represents a {@link ValueRule} for greater than - any value must be greater than a given value.
  */
 export class GreaterThan extends ValueRule {
     /**
-     * Initializes a new instance of the {GreaterThan} class.
-     * @param {*} _value - Value that the input value must be greater than.
+     * Initializes a new instance of the {@link GreaterThan} class.
+     * @param {any} _value - Value that the input value must be greater than.
      */
     constructor(private _value: any) {
         super();
@@ -18,7 +19,6 @@ export class GreaterThan extends ValueRule {
 
     /**
      * Gets the value that input value must be greater than.
-     * @returns {TValue}
      */
     get value(): any {
         return this._value;

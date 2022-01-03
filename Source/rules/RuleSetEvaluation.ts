@@ -6,13 +6,13 @@ import { BrokenRule } from './BrokenRule';
 import { RuleContext } from './RuleContext';
 
 /**
- * Represents evaluation of a {RuleSet}.
+ * Represents evaluation of a {@link RuleSet}.
  */
 export class RuleSetEvaluation {
     private _brokenRules: BrokenRule[] = new Array<BrokenRule>();
 
     /**
-     * Initializes a new instance of the {RuleSet} class.
+     * Initializes a new instance of the {@link RuleSet} class.
      * @param {RuleSet} _ruleSet - RuleSet the evaluation is for.
      */
     constructor(private readonly _ruleSet: RuleSet) {
@@ -20,7 +20,6 @@ export class RuleSetEvaluation {
 
     /**
      * Gets a value indicating whether or not the evaluation is successful.
-     * @returns {boolean}
      */
     get isSuccess(): boolean {
         return this._brokenRules.length === 0;
@@ -28,7 +27,6 @@ export class RuleSetEvaluation {
 
     /**
      * Gets any broken rules.
-     * @returns {ReadonlyArray<BrokenRule>}
      */
     get brokenRules(): readonly BrokenRule[] {
         return this._brokenRules;
@@ -36,8 +34,8 @@ export class RuleSetEvaluation {
 
     /**
      * Evaluates all rules in the rule set.
-     * @param {*} owner - Owning container.
-     * @returns {Promise<void>}
+     * @param {any} owner - Owning container.
+     * @returns {Promise<any>} A Promise that when resolved returns the evaluation results.
      */
     async evaluate(owner: any): Promise<any> {
         const context = new RuleContext(owner);

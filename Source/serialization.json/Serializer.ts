@@ -3,7 +3,7 @@
 
 import { ISerializer } from './ISerializer';
 
-/**
+/**.
  * Represents an implementation of ISerializer
  *
  * @export

@@ -4,13 +4,13 @@
 import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
 
 /**
- * Represents a set of {IRule} - rules. This type is immutable.
+ * Represents a set of {@link IRule} - rules. This type is immutable.
  */
 export class RuleSet {
     private readonly _rules: readonly RuleWithSubjectProvider[];
 
     /**
-     * Initializes a new instance of the {RuleSet} class.
+     * Initializes a new instance of the {@link RuleSet} class.
      * @param {...RuleWithSubjectProvider[]} rules - Rules for the RuleSet.
      */
     constructor(...rules: RuleWithSubjectProvider[]) {
@@ -18,8 +18,7 @@ export class RuleSet {
     }
 
     /**
-     * Gets the rules in the {RuleSet}.
-     * @returns {ReadonlyArray<RuleWithSubjectProvider>}
+     * Gets the rules in the {@link RuleSet}.
      */
     get rules(): readonly RuleWithSubjectProvider[] {
         return this._rules;

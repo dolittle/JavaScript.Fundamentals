@@ -5,29 +5,27 @@ import { IRule } from './IRule';
 import { ISubjectProvider } from './ISubjectProvider';
 
 /**
- * Represents a {IRule} with a {ISubjectProvider}
+ * Represents a {@link IRule} with a {@link ISubjectProvider}.
  */
 export class RuleWithSubjectProvider {
 
     /**
-     * Initializes a new instance of the {RuleWithSubjectProvider} class.
-     * @param {IRule} _rule - The rule
-     * @param {ISubjectProvider} _subjectProvider - The subject provider
+     * Initializes a new instance of the {@link RuleWithSubjectProvider} class.
+     * @param {IRule} _rule - The rule.
+     * @param {ISubjectProvider} _subjectProvider - The subject provider.
      */
     constructor(private readonly _rule: IRule, private readonly _subjectProvider: ISubjectProvider) {
     }
 
     /**
-     * Gets the rule
-     * @returns {IRule}
+     * Gets the rule.
      */
     get rule(): IRule {
         return this._rule;
     }
 
     /**
-     * Gets the subject provider
-     * @returns {ISubjectProvider}
+     * Gets the subject provider.
      */
     get subjectProvider(): ISubjectProvider {
         return this._subjectProvider;

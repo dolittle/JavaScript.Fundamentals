@@ -24,28 +24,28 @@ declare module './index'
 
         /**
          * Defines a greater than comparer rule for the property. See {GreaterThan}.
-         * @param {*} value - The value that the property has to be greater than.
+         * @param {any} value - The value that the property has to be greater than.
          * @returns {PropertyValueRuleBuilder<GreaterThan>}
          */
         greaterThan(value: any): PropertyValueRuleBuilder<GreaterThan>;
 
         /**
          * Defines a greater than or equal comparer rule for the property. See {GreaterThanOrEqual}.
-         * @param {*} value - The value that the property has to be greater than or equal to.
+         * @param {any} value - The value that the property has to be greater than or equal to.
          * @returns {PropertyValueRuleBuilder<GreaterThanOrEqual>}
          */
         greaterThanOrEqual(value: any): PropertyValueRuleBuilder<GreaterThanOrEqual>;
 
         /**
          * Defines a less than comparer rule for the property. See {LessThan}.
-         * @param {*} value - The value that the property has to be less than.
+         * @param {any} value - The value that the property has to be less than.
          * @returns {PropertyValueRuleBuilder<LessThan>}
          */
         lessThan(value: any): PropertyValueRuleBuilder<LessThan>;
 
         /**
          * Defines a less than or equal comparer rule for the property. See {LessThanOrEqual}.
-         * @param {*} value - The value that the property has to be less than or equal to.
+         * @param {any} value - The value that the property has to be less than or equal to.
          * @returns {PropertyValueRuleBuilder<LessThanOrEqual>}
          */
         lessThanOrEqual(value: any): PropertyValueRuleBuilder<LessThanOrEqual>;
@@ -118,7 +118,6 @@ PropertyRuleSetBuilder.prototype.notNull = function () {
     this.addRuleBuilder(ruleBuilder);
     return ruleBuilder;
 };
-
 
 PropertyRuleSetBuilder.prototype.regex = function (expression: string) {
     const ruleBuilder = new PropertyValueRuleBuilder(this.propertyDescriptor, () => new Regex(expression));

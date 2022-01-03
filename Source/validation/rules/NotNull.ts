@@ -5,7 +5,7 @@ import { IRuleContext, ValueRule, Cause } from '@dolittle/rules';
 import { Reasons } from './Reasons';
 
 /**
- * Represents a {ValueRule} for required - any value must be a valid existing value
+ * Represents a {ValueRule} for required - any value must be a valid existing value.
  */
 export class NotNull extends ValueRule {
 

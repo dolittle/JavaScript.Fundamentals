@@ -6,15 +6,15 @@ import { RuleSetContainer } from './RuleSetContainer';
 import { RuleSetEvaluation } from './RuleSetEvaluation';
 
 /**
- * Represents the evaluation of {RuleSetContainer}
+ * Represents the evaluation of {@link RuleSetContainer}.
  */
 export class RuleSetContainerEvaluation {
     private _brokenRules: BrokenRule[] = new Array<BrokenRule>();
     private readonly _ruleSetEvaluations: RuleSetEvaluation[] = new Array<RuleSetEvaluation>();
 
     /**
-     * Initializes a new instance of the {RuleSetContainerEvaluation} class.
-     * @param ruleSetContainer
+     * Initializes a new instance of the {@link RuleSetContainerEvaluation} class.
+     * @param {RuleSetContainer} ruleSetContainer - The rule set container.
      */
     constructor(ruleSetContainer: RuleSetContainer) {
         this._ruleSetEvaluations = ruleSetContainer.ruleSets.map(_ => new RuleSetEvaluation(_));
@@ -22,7 +22,6 @@ export class RuleSetContainerEvaluation {
 
     /**
      * Gets a value indicating whether or not the evaluation is successful.
-     * @returns {boolean}
      */
     get isSuccess(): boolean {
         return this._brokenRules.length === 0;
@@ -30,7 +29,6 @@ export class RuleSetContainerEvaluation {
 
     /**
      * Gets any broken rules.
-     * @returns {ReadonlyArray<BrokenRule>}
      */
     get brokenRules(): readonly BrokenRule[] {
         return this._brokenRules;
@@ -38,7 +36,7 @@ export class RuleSetContainerEvaluation {
 
     /**
      * Evaluates all rules in all rule sets.
-     * @param {*} owner - Owning container.
+     * @param {any} owner - Owning container.
      * @returns {Promise<void>}
      */
     async evaluate(owner: any): Promise<void> {

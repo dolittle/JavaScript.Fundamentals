@@ -5,7 +5,6 @@ import sinon from 'sinon';
 import { RuleSetBuilder } from '../RuleSetBuilder';
 import { RuleBuilder } from '../RuleBuilder';
 
-
 describe('when building with two rule builders added', () => {
     const builder = new RuleSetBuilder();
     const firstRuleWithSubjectProvider = {};

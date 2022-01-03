@@ -4,7 +4,7 @@
 import { Reason } from './Reason';
 
 /**
- * Represents the actual cause and instance of a {Reason}
+ * Represents the actual cause and instance of a {@link Reason}.
  */
 export class Cause {
     private readonly _args: Map<string, any> = new Map<string, any>();
@@ -12,9 +12,9 @@ export class Cause {
     private readonly _description: string;
 
     /**
-     * Initializes a new instance of the {Cause} class.
+     * Initializes a new instance of the {@link Cause} class.
      * @param {Reason} _reason - The reason the cause is for.
-     * @param {*} args - The arguments for the cause.
+     * @param {any} args - The arguments for the cause.
      */
     constructor(private readonly _reason: Reason, args: any) {
         args = args ?? {};
@@ -27,32 +27,28 @@ export class Cause {
     }
 
     /**
-     * Gets the reason the cause is for
-     * @returns {Reason}
+     * Gets the reason the cause is for.
      */
     get reason(): Reason {
         return this._reason;
     }
 
     /**
-     * Gets the rendered title string
-     * @returns {string}
+     * Gets the rendered title string.
      */
     get title(): string {
         return this._title;
     }
 
     /**
-     * Gets the rendered description string
-     * @returns {string}
+     * Gets the rendered description string.
      */
     get description(): string {
         return this._description;
     }
 
     /**
-     * Gets any arguments passed to the {Cause}
-     * @returns {any}
+     * Gets any arguments passed to the {@link Cause}.
      */
     get arguments(): ReadonlyMap<string, any> {
         return this._args;

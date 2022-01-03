@@ -8,4 +8,3 @@ export class string_concept extends ConceptAs<string, 'string_concept'> {
         super(value, 'string_concept');
     }
 }
-

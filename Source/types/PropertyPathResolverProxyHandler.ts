@@ -2,24 +2,36 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 /**
- * Object proxy handler
- * @template TObject
+ * Represents an implementation of {@link ProxyHandler} that keeps track of nested property accesses.
  */
 export class PropertyPathResolverProxyHandler implements ProxyHandler<any> {
     _property = '';
     _segments: string[] = [];
 
+    /**
+     * Initializes a new instance of the {@link PropertyPathResolverProxyHandler} class.
+     * @param {PropertyPathResolverProxyHandler} [_root] - The optional root proxy handler.
+     */
     constructor(private readonly _root?: PropertyPathResolverProxyHandler) {
     }
 
+    /**
+     * Gets the property that was accessed.
+     */
     get property(): string {
         return this._property;
     }
 
+    /**
+     * Gets all the property segments that was accessed.
+     */
     get segments(): readonly string[] {
         return this._segments;
     }
 
+    /**
+     * Gets the full path of the property that was accessed.
+     */
     get path(): string {
         return this._segments.join('.');
     }

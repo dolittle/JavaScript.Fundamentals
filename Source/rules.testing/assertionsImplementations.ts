@@ -1,8 +1,9 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { RuleContext, Reason, IRule } from '@dolittle/rules';
 import { Assertion } from 'chai';
+
+import { RuleContext, Reason, IRule } from '@dolittle/rules';
 
 Assertion.addMethod('failWith', function (rule: IRule, subject: any, reason: Reason) {
     new Assertion(this._obj).to.be.instanceOf(RuleContext);

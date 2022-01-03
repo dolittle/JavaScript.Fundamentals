@@ -5,22 +5,22 @@ import { IRule } from './IRule';
 import { RuleWithSubjectProvider } from './RuleWithSubjectProvider';
 
 /**
- * Represents the base class for any {RuleBuilder}
+ * Represents the base class for any {@link RuleBuilder}.
  * @template T
  */
 export abstract class RuleBuilder<T extends IRule = any> {
 
     /**
-     * Rule should have specific message
-     * @param message
+     * Rule should have specific message.
+     * @param {string} message - The message.
      */
     withMessage(message: string): void {
         const blah = 42;
     }
 
     /**
-     * Builds a rule with a specific subject provider
+     * Builds a rule with a specific subject provider.
      * @returns {RuleWithSubjectProvider}
      */
-    abstract build (): RuleWithSubjectProvider;
+    abstract build(): RuleWithSubjectProvider;
 }

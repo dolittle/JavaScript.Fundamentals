@@ -7,14 +7,14 @@ import { IRule } from './IRule';
 import { IRuleContext } from './IRuleContext';
 
 /**
- * Represents the implementation of {IRuleContext}
+ * Represents the implementation of {IRuleContext}.
  */
 export class RuleContext implements IRuleContext {
     private _brokenRules: Map<IRule, BrokenRule> = new Map<IRule, BrokenRule>();
 
     /**
      * Initializes a new instance of the {RuleContext} class.
-     * @param {*} _owner - The owner of any subjects being evaluated in the context.
+     * @param {any} _owner - The owner of any subjects being evaluated in the context.
      */
     constructor(private readonly _owner: any) {
     }

@@ -5,7 +5,6 @@ import { PropertyAccessorDescriptor } from '@dolittle/types';
 import { PropertyValueSubjectProvider } from '../PropertyValueSubjectProvider';
 import { RuleContext } from '../RuleContext';
 
-
 class ThirdLevelType {
     get value(): number {
         return 42;
@@ -25,7 +24,6 @@ class TopLevelType {
         this.secondLevel = new SecondLevelType();
     }
 }
-
 
 describe('when accessing a nested property', () => {
     const accessor = (_: TopLevelType) => _.secondLevel.thirdLevel.value;

@@ -16,20 +16,16 @@ const getString = (num: number) => {
 };
 
 /**
- * Represents a Guid according to the http://www.ietf.org/rfc/rfc4122.txt
- *
- * @export
- * @class Guid
+ * Represents a Guid according to the http://www.ietf.org/rfc/rfc4122.txt.
  */
 export class Guid implements IEquatable {
 
     /**
-     * Gets an empty {Guid}
+     * Gets an empty {Guid}.
      */
     static readonly empty = new Guid([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]);
 
     private _stringVersion = '';
-
 
     /**
      * Initializes a new instance of the {Guid} class.
@@ -49,8 +45,8 @@ export class Guid implements IEquatable {
     }
 
     /**
-     * Create a new {Guid}
-     * @returns {Guid}
+     * Creates a new random {@link Guid}.
+     * @returns {Guid} The random Guid.
      */
     static create(): Guid {
         const d0 = Math.random() * 0xFFFFFFFF | 0;
@@ -81,8 +77,9 @@ export class Guid implements IEquatable {
     }
 
     /**
-     * Parses a string and turns it into a {Guid}.
-     * @param {string} guid String representation of guid.
+     * Parses a string and turns it into a {@link Guid}.
+     * @param {string} guid - String representation of Guid.
+     * @returns {Guid} The parsed Guid.
      */
     static parse(guid: string): Guid {
         const bytes: number[] = [];
@@ -96,9 +93,9 @@ export class Guid implements IEquatable {
 
     /**
      * Parses if the type is a string parse, otherwise pass through the input as desired output type.
-     * @template T Type to handle for
-     * @param {string|T} input String or the generic type.
-     * @returns identifier Parsed or passed through
+     * @template T Type to handle for.
+     * @param {string|T} input - String or the generic type.
+     * @returns {T} Identifier Parsed or passed through.
      */
     static as<T extends Guid = Guid>(input: string | T): T {
         if (typeof input === 'string') {
@@ -107,17 +104,15 @@ export class Guid implements IEquatable {
         return input as T;
     }
 
-    /**
-     * @inheritdoc
-     */
+    /** @inheritdoc */
     equals(other: any): boolean {
         if (typeGuard(other, Guid) || typeGuard(other, 'string')) return Guid.as(other).toString() === this.toString();
         return false;
     }
 
     /**
-     * Return a string representation of the {Guid} in the format: 00000000-0000-0000-0000-000000000000
-     * @returns {string}
+     * Return a string representation of the {@link Guid} in the format: 00000000-0000-0000-0000-000000000000.
+     * @returns {string} The formatted string.
      */
     toString(): string {
         return this._stringVersion;

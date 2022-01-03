@@ -6,13 +6,14 @@ import { ObservableCollectionIterator } from './ObservableCollectionIterator';
 
 /**
  * Represents a collection of items that can be observed for changes.
+ * @template T The type of the observable values.
  */
 export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Iterable<T> {
     private readonly _added: Subject<T[]>;
     private readonly _removed: Subject<T[]>;
 
     /**
-     * Initializes a new instance of the {ObservableCollection<T>} class.
+     * Initializes a new instance of the {@link ObservableCollection} class.
      */
     constructor() {
         super([]);
@@ -21,14 +22,14 @@ export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Ite
     }
 
     /**
-     * Gets the added {Subject<T>}.
+     * Gets the added {@link Subject}.
      */
     get added(): Subject<T[]> {
         return this._added;
     }
 
     /**
-     * Gets the removed {Subject<T>}.
+     * Gets the removed {@link Subject}.
      */
     get removed(): Subject<T[]> {
         return this._removed;
@@ -41,7 +42,6 @@ export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Ite
 
     /**
      * Gets the length of the collection.
-     * @returns {number} Length of the collection.
      */
     get length(): number {
         return this.value.length;
@@ -58,8 +58,8 @@ export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Ite
 
     /**
      * Push items to the collection.
-     * @param {T[]} items - Rest of items.
-     * @returns {number} - Number of items in the collection after push.
+     * @param {T[]} items - The items to push.
+     * @returns {number} Number of items in the collection after push.
      */
     push(...items: T[]): number {
         const result = this.value.push(...items);
@@ -67,6 +67,11 @@ export class ObservableCollection<T> extends BehaviorSubject<T[]> implements Ite
         return result;
     }
 
+    /**
+     * Remove items from the collection.
+     * @param {...any} items - The items to remove.
+     * @returns {number} The number of items in the collection after removing.
+     */
     remove(...items: T[]): number {
         let current = this.value;
         items.forEach(item => {
