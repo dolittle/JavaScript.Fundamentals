@@ -7,18 +7,20 @@ import { Guid } from '@dolittle/rudiments';
 /**
  * Represents the unique identifier for a Reason.
  */
-
 export class ReasonId extends ConceptAs<Guid, '@dolittle/rules.ReasonId'> {
+    /**
+     * Initializes a new instance of the {@link ReasonId} class.
+     * @param {Guid} id - The reason id.
+     */
     constructor(id: Guid) {
         super(id, '@dolittle/rules.ReasonId');
     }
 
-    /**
-     * Creates a {ReasonId} from {string} or {Guid}
-     *
+    /**.
+     * Creates a {@link ReasonId} from {@link string} or {@link Guid}
      * @static
-     * @param {(string | Guid)} id
-     * @returns {ReasonId}
+     * @param {string | Guid} id - The reason id.
+     * @returns {ReasonId} The created concept.
      */
     static from(id: string | Guid): ReasonId {
         return conceptFrom(ReasonId, Guid.as(id));

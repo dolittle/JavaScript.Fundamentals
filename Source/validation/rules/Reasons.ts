@@ -1,9 +1,11 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { Reason, ReasonId } from '@dolittle/rules';
-import { Guid } from '@dolittle/rudiments';
+import { Reason } from '@dolittle/rules';
 
+/**
+ * Defines a set of {@link Reason} for broken rules.
+ */
 export class Reasons {
     /**
      * When a value is null, this is the reason given.
@@ -33,5 +35,5 @@ export class Reasons {
     /**
      * When something is longer than it should, this is the reason given.
      */
-    static LengthIsTooShort: Reason = Reason.create('E0F8D478-A353-4926-893E-DD367E2F2ACF', 'Length {length} is too short');
+    static LengthIsTooShort: Reason = Reason.create('E0F8D478-A353-4926-893E-DD367E2F2ACF', 'Length {length} is too short');
 }

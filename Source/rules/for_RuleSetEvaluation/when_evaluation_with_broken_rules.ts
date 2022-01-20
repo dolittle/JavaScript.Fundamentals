@@ -30,7 +30,6 @@ class SubjectProvider implements ISubjectProvider {
     }
 }
 
-
 describe('when evaluation with broken rules', async () => {
     const owner = { something: 42 };
     const ruleSet = new RuleSet(new RuleWithSubjectProvider(new Rule(), new SubjectProvider()));

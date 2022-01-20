@@ -10,7 +10,6 @@ import { RuleWithSubjectProvider } from '../RuleWithSubjectProvider';
 import { RuleSetEvaluation } from '../RuleSetEvaluation';
 import { Guid } from '@dolittle/rudiments';
 
-
 class Rule implements IRule {
     static reason = Reason.create(Guid.parse('b06b2dcc-5c4c-4a62-bd3d-95909b131a46'), 'My Reason');
     static ruleContextPassedIn: IRuleContext;
@@ -29,7 +28,6 @@ class SubjectProvider implements ISubjectProvider {
         return SubjectProvider.subject;
     }
 }
-
 
 describe('when evaluation does not have any broken rules', async () => {
     const owner = { something: 42 };

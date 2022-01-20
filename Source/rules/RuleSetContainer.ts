@@ -4,13 +4,13 @@
 import { RuleSet } from './RuleSet';
 
 /**
- * Represents a container of different {RuleSet} - sets of rules
+ * Represents a container of different {@link RuleSet} - sets of rules.
  */
 export class RuleSetContainer {
     private readonly _ruleSets: readonly RuleSet[];
 
     /**
-     * Initializes a new instance of the {RuleSetContainer} class.
+     * Initializes a new instance of the {@link RuleSetContainer} class.
      * @param {...RuleSet[]} ruleSets - RuleSets for the container.
      */
     constructor(...ruleSets: RuleSet[]) {
@@ -18,8 +18,7 @@ export class RuleSetContainer {
     }
 
     /**
-     * Gets all the rule sets
-     * @returns {ReadonlyArray<RuleSet>}
+     * Gets all the rule sets.
      */
     get ruleSets(): readonly RuleSet[] {
         return this._ruleSets;

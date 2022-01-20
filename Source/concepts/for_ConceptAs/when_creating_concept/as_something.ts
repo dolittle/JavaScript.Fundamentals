@@ -1,19 +1,25 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+import { describeThis } from '@dolittle/typescript.testing';
+
+import { ConceptAs } from '../../ConceptAs';
+import { isConcept } from '../../isConcept';
+import { conceptFrom } from '../../conceptFrom';
+
 import { some_concept, some_base } from '../given/some_concept';
-import { ConceptAs, conceptFrom } from '../../ConceptAs';
 
 class another_something extends ConceptAs<some_base, 'another_something'> {
     constructor(base: some_base) {
         super(base, 'another_something');
     }
 }
-describe('when creating concept as something', () => {
+
+describeThis(__filename, () => {
     const value = new some_base('x', 42);
     const concept = new some_concept(value);
 
-    it('should be a concept', () => ConceptAs.isConcept(concept).should.be.true);
+    it('should be a concept', () => isConcept(concept).should.be.true);
     it('should have the correct value', () => concept.value.should.equal(value));
     it('should equal the value', () => concept.equals(value).should.be.true);
     it('should equal itself', () => concept.equals(concept).should.be.true);

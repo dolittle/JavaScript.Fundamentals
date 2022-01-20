@@ -5,7 +5,7 @@ import { IRuleContext, Reason, ValueRule, Cause } from '@dolittle/rules';
 import { Guid } from '@dolittle/rudiments';
 
 /**
- * Represents a {ValueRule} for email - any value must be a valid email
+ * Represents a {ValueRule} for email - any value must be a valid email.
  */
 export class Email extends ValueRule {
     static InvalidEmail = Reason.create('A62F369F-9C92-4A06-96C3-654AB0E15119', "Invalid Email '{value}'");

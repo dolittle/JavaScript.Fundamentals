@@ -1,20 +1,32 @@
 {
     "name": "@dolittle/rules.testing",
-    "version": "5.0.1",
-    "description": "",
-    "author": "",
+    "version": "6.0.0-gimli.0",
+    "description": "Dolittle is a decentralized, distributed, event-driven microservice platform built to harness the power of events.",
+    "keywords": [
+        "Dolittle",
+        "Events",
+        "Event Sourcing",
+        "Domain Driven Design",
+        "Event Driven Architecture",
+        "Line of Business",
+        "ES",
+        "DDD",
+        "EDA",
+        "LOB"
+    ],
+    "author": "all contributors",
     "license": "MIT",
     "publishConfig": {
         "access": "public"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dolittle-interaction/Javascript.Client.git"
+        "url": "git+https://github.com/dolittle/Javascript.Fundamentals.git"
     },
     "bugs": {
-        "url": "https://github.com/dolittle-interaction/Javascript.Client/issues"
+        "url": "https://github.com/dolittle/Javascript.Fundamentals/issues"
     },
-    "homepage": "https://github.com/dolittle-interaction/Javascript.Client#readme",
+    "homepage": "https://github.com/dolittle/Javascript.Fundamentals#readme",
     "files": [
         "Distribution",
         "**/*.ts"
@@ -25,14 +37,12 @@
         "prebuild": "yarn clean",
         "postbuild": "yarn lint",
         "build": "tsc -b",
-        "clean": "gulp clean --gulpfile ../../node_modules/@dolittle/typescript.build/Gulpfile.js",
-        "test:run": "gulp test-run --gulpfile ../../node_modules/@dolittle/typescript.build/Gulpfile.js",
-        "test:clean": "gulp test-clean --gulpfile ../../node_modules/@dolittle/typescript.build/Gulpfile.js",
-        "lint": "gulp lint --gulpfile ../../node_modules/@dolittle/typescript.build/Gulpfile.js",
-        "lint:fix": "gulp lint-fix --gulpfile ../../node_modules/@dolittle/typescript.build/Gulpfile.js"
+        "clean": "tsc -b --clean",
+        "test": "mocha",
+        "lint": "eslint --quiet --ext .ts ./",
+        "lint:fix": "eslint --quiet --ext .ts ./ --fix"
     },
     "dependencies": {
-        "@dolittle/rules": "5.0.1",
-        "chai": "4.2.0"
+        "@dolittle/rules": "6.0.0-gimli.0"
     }
 }

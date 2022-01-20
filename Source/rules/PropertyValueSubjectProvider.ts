@@ -3,7 +3,7 @@
 
 import { PropertyAccessorDescriptor } from '@dolittle/types';
 import { IRuleContext } from './IRuleContext';
-import { ISubjectProvider } from './ISubjectProvider';
+import { ISubjectProvider } from './ISubjectProvider';
 
 /**
  * Represents an implementation of {ISubjectProvider} for providing values from an owning object from the {IRuleContext}.
@@ -12,7 +12,7 @@ export class PropertyValueSubjectProvider implements ISubjectProvider {
 
     /**
      * Creates an instance of object value subject provider.
-     * @param {PropertyAccessorDescriptor} _propertyDescriptor - The actual property descriptor.
+     * @param {PropertyAccessorDescriptor} _propertyDescriptor - The actual property descriptor.
      */
     constructor(private readonly _propertyDescriptor: PropertyAccessorDescriptor) {
     }

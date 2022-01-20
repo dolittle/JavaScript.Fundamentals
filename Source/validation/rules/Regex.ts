@@ -1,19 +1,18 @@
 // Copyright (c) Dolittle. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-import { IRuleContext, Reason, ValueRule, Cause } from '@dolittle/rules';
-import { Guid } from '@dolittle/rudiments';
+import { IRuleContext, Reason, ValueRule } from '@dolittle/rules';
 
 /**
- * Represents a {ValueRule} for specific regular expression - any value must conform to a regular expression
+ * Represents a {@link ValueRule} for specific regular expression - any value must conform to a regular expression.
  */
 export class Regex extends ValueRule {
     static NotConformingToExpression: Reason = Reason.create('BE58A125-40DB-47EA-B260-37F7AF4455C5', "Value '{value}' does not conform to regular expression");
     private _regExp: RegExp;
 
     /**
-     * Initializes a new instance of the {Regex} class.
-     * @param _expression
+     * Initializes a new instance of the {@link Regex} class.
+     * @param {string} _expression - The regular expression.
      */
     constructor(private _expression: string) {
         super();
