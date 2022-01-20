@@ -1,6 +1,6 @@
 {
     "name": "@dolittle/rules",
-    "version": "6.0.0-gimli.0",
+    "version": "6.0.0",
     "description": "Dolittle is a decentralized, distributed, event-driven microservice platform built to harness the power of events.",
     "keywords": [
         "Dolittle",
@@ -43,9 +43,9 @@
         "lint:fix": "eslint --quiet --ext .ts ./ --fix"
     },
     "dependencies": {
-        "@dolittle/concepts": "6.0.0-gimli.0",
-        "@dolittle/rudiments": "6.0.0-gimli.0",
-        "@dolittle/specifications": "6.0.0-gimli.0",
-        "@dolittle/types": "6.0.0-gimli.0"
+        "@dolittle/concepts": "6.0.0",
+        "@dolittle/rudiments": "6.0.0",
+        "@dolittle/specifications": "6.0.0",
+        "@dolittle/types": "6.0.0"
     }
 }

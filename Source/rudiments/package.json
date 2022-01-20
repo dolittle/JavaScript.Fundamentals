@@ -1,6 +1,6 @@
 {
     "name": "@dolittle/rudiments",
-    "version": "6.0.0-gimli.0",
+    "version": "6.0.0",
     "description": "Dolittle is a decentralized, distributed, event-driven microservice platform built to harness the power of events.",
     "keywords": [
         "Dolittle",
@@ -43,6 +43,6 @@
         "lint:fix": "eslint --quiet --ext .ts ./ --fix"
     },
     "dependencies": {
-        "@dolittle/types": "6.0.0-gimli.0"
+        "@dolittle/types": "6.0.0"
     }
 }
